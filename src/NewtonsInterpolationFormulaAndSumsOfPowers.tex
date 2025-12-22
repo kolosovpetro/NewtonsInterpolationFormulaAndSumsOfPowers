@@ -16,6 +16,7 @@
 \usepackage{physics}
 \usepackage{booktabs}
 \usepackage{url}
+\usepackage{mdframed}
 
 % margins and layout
 \linespread{1.7}
@@ -36,11 +37,14 @@
 \newcommand{\stirlingii}{\genfrac{\{}{\}}{0pt}{}}
 \newcommand{\eulerianNumber}{\genfrac{\langle}{\rangle}{0pt}{}}
 
+\newcommand{\KnuthRFoldSum}[3]{\Sigma^{#1}\,{#2}^{#3}}
+\newcommand{\KnuthRFoldPartialSum}[4]{\Sigma^{#1}_{#2}\,{#3}^{#4}}
+
 % for llceil coeffcient
-\newcommand{\nobarfrac}{\genfrac{}{}{0pt}{}}
-\def\llceil{\left\lceil\kern-3.5pt\left\lceil}
-\def\rrfloor{\right\rfloor\kern-3.5pt\right\rfloor}
-\newcommand \llceilCoefficient [3] {\llceil \nobarfrac{#1}{#2} \rrfloor_{#3}}
+%\newcommand{\nobarfrac}{\genfrac{}{}{0pt}{}}
+%\def\llceil{\left\lceil\kern-3.5pt\left\lceil}
+%\def\rrfloor{\right\rfloor\kern-3.5pt\right\rfloor}
+%\newcommand \llceilCoefficient [3] {\llceil \nobarfrac{#1}{#2} \rrfloor_{#3}}
 
 % ~~~ Rascal numbers ~~~
 %\newcommand \rascalNumber [3] {\binom{#1}{#2}_{#3}}
@@ -74,8 +78,8 @@
 
 %\numberwithin{equation}{section}
 
-\title[LaTeX Template for GitHub]
-{LaTeX Template for GitHub}
+\title[Newton's interpolation formula and sums of powers]
+{Newton's interpolation formula and sums of powers}
 \author[Petro Kolosov]{Petro Kolosov}
 \date{\today}
 
@@ -136,18 +140,23 @@
     \maketitle
 
     \begin{abstract}
-        \input{sections/01_abstract}
+        \input{sections/abstract}
     \end{abstract}
 
 %    \tableofcontents
 
 
     \section{Introduction} \label{sec:introduction}
-    \input{sections/02_introduction}
+    \input{sections/01_introduction}
+
+    \clearpage
+
+    \section{Proof of Segmented hockey stick identity}\label{sec:proof-of-segmented-hockey-stick-identity}
+    \input{sections/02_proof_of_segmented_hockey_stick_identity}
 
 
-    \section{Conclusions}\label{sec:conclusions}
-    \input{sections/03_conclusions}
+%    \section{Conclusions}\label{sec:conclusions}
+%    \input{sections/conclusions}
 
     \bibliographystyle{unsrt}
     \bibliography{NewtonsInterpolationFormulaAndSumsOfPowers}

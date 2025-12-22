@@ -1,33 +1,36 @@
 \begin{thebibliography}{1}
 
-\bibitem{derivative_of_polynomials_via_double_limit}
-Petro Kolosov.
-\newblock Finding the derivative of polynomials via double limit.
-\newblock {\em GitHub}, 2024.
+\bibitem{newton1850newton}
+{Newton, Isaac and Chittenden, N.W.}
+\newblock {\em {Newton's Principia: the mathematical principles of natural
+  philosophy}}.
+\newblock {New-York, D. Adee}, 1850.
 \newblock
-  \url{https://kolosovpetro.github.io/pdf/FindingTheDerivativeOfPolynomialsViaDoubleLimit.pdf}.
+  \url{https://archive.org/details/bub_gb_KaAIAAAAIAAJ/page/466/mode/2up}.
 
-\bibitem{alekseyev2018mathoverflow}
-{Alekseyev, Max}.
-\newblock {MathOverflow answer 297916/113033}, 2018.
-\newblock \url{https://mathoverflow.net/a/297916/113033}.
+\bibitem{graham1994concrete}
+{Graham, Ronald L. and Knuth, Donald E. and Patashnik, Oren}.
+\newblock {\em {Concrete mathematics: A foundation for computer science (second
+  edition)}}.
+\newblock {Addison-Wesley Publishing Company, Inc.}, 1994.
+\newblock \url {https://archive.org/details/concrete-mathematics}.
 
-\bibitem{oeis_coefficients_u_m_l_k_defined_by_polynomial_identity_3}
-Petro Kolosov.
-\newblock {The coefficients U(m, l, k), m = 3 defined by the polynomial
-  identity}, 2018.
-\newblock \url{https://oeis.org/A316387}.
+\bibitem{pfaff2007deriving}
+Thomas~J Pfaff.
+\newblock Deriving a formula for sums of powers of integers.
+\newblock {\em Pi Mu Epsilon Journal}, 12(7):425--430, 2007.
+\newblock \url{https://www.jstor.org/stable/24340705}.
 
-\bibitem{oeis_numerators_of_the_coefficient_a_m_r}
-Petro Kolosov.
-\newblock {Entry A302971 in The On-Line Encyclopedia of Integer Sequences},
-  2018.
-\newblock \url{https://oeis.org/A302971}.
+\bibitem{cereceda2022sums}
+{Cereceda, Jos{\'e} L.}
+\newblock {Sums of powers of integers and generalized Stirling numbers of the
+  second kind}.
+\newblock {\em {arXiv preprint arXiv:2211.11648}}, 2022.
+\newblock \url{https://arxiv.org/abs/2211.11648}.
 
-\bibitem{oeis_denominators_of_the_coefficient_a_m_r}
-Petro Kolosov.
-\newblock {Entry A304042 in The On-Line Encyclopedia of Integer Sequences},
-  2018.
-\newblock \url{https://oeis.org/A304042}.
+\bibitem{sloane2003line}
+{Sloane, Neil JA and others}.
+\newblock {The on-line encyclopedia of integer sequences}, 2003.
+\newblock \url{https://oeis.org/}.
 
 \end{thebibliography}
