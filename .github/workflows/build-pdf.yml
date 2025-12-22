@@ -16,15 +16,15 @@ env:
 
 jobs:
   build-pdf:
-    uses: kolosovpetro/github-latex-template/.github/workflows/build-pdf-template.yml@main
+    uses: kolosovpetro/NewtonsInterpolationFormulaAndSumsOfPowers/.github/workflows/build-pdf-template.yml@main
     with:
-      file_name: 'github-latex-template'
+      file_name: 'NewtonsInterpolationFormulaAndSumsOfPowers'
       enable_patch_version: true
       runs_on: 'ubuntu-latest'
       workflow_name: 'Build PDF'
       build_assets_path: |
-        src/github-latex-template.tex
-        src/github-latex-template.bbl
-        src/github-latex-template.bib
+        src/NewtonsInterpolationFormulaAndSumsOfPowers.tex
+        src/NewtonsInterpolationFormulaAndSumsOfPowers.bbl
+        src/NewtonsInterpolationFormulaAndSumsOfPowers.bib
         src/sections
       working_directory_for_latex: 'src'
