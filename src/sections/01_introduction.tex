@@ -33,11 +33,9 @@
 
 \begin{proposition}[Newton series for monomial reversed]
     \label{prop:newton-series-for-monomial-reversed}
-    \begin{mdframed}
-        \begin{align*}
-            n^m = \sum_{k=0}^{m} \binom{n-t}{k} \Delta^{k} t^m
-        \end{align*}
-    \end{mdframed}
+    \begin{align*}
+        n^m = \sum_{k=0}^{m} \binom{n-t}{k} \Delta^{k} t^m
+    \end{align*}
     \begin{proof}
         By setting $n \rightarrow n-t$ into~\eqref{corollary:newton-series-for-binomial-reversed}.
     \end{proof}
@@ -58,28 +56,24 @@ Thus, for arbitrary integer $t$
 \end{align*}
 \begin{proposition}[Segmented Hockey stick identity]
     \label{prop:segmented-hockey-stick-identity}
-    \begin{mdframed}
-        For integers $n,t$ and $j$
-        \begin{align*}
-            \sum_{k=0}^{n} \binom{-t+k}{j} &= (-1)^j \binom{j+t}{j+1} +  \binom{n-t+1}{j+1}
-        \end{align*}
-    \end{mdframed}
+    For integers $n,t$ and $j$
+    \begin{align*}
+        \sum_{k=0}^{n} \binom{-t+k}{j} &= (-1)^j \binom{j+t}{j+1} +  \binom{n-t+1}{j+1}
+    \end{align*}
 \end{proposition}
-
-\begin{theorem}[Ordinary sums of powers via Newton's series]
-    \label{theorem:ordinary-sums-of-powers-via-newtons-series}
-    \begin{mdframed}
-        For non-negative integers $n,m$ and arbitrary integer $t$
-        \begin{align*}
-            \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^m \left[ (-1)^j \binom{j+t-1}{j+1} +  \binom{n-t+1}{j+1} \right]
-        \end{align*}
-    \end{mdframed}
+Therefore,
+\begin{proposition}[Ordinary sums of powers via Newton's series]
+    \label{prop:ordinary-sums-of-powers-via-newtons-series}
+    For non-negative integers $n,m$ and arbitrary integer $t$
+    \begin{align*}
+        \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^m \left[ (-1)^j \binom{j+t-1}{j+1} +  \binom{n-t+1}{j+1} \right]
+    \end{align*}
     \begin{proof}
         Ordinary sum of powers is given by $\KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^m  \sum_{k=1}^{n} \binom{-t+k}{j}$,
         where $\sum_{k=1}^{n} \binom{-t+k}{j} =  (-1)^{j} \binom{j+t-1}{j+1} + \binom{n-t+1}{j+1}$
         by means of segmented hockey stick identity~\eqref{prop:segmented-hockey-stick-identity}.
     \end{proof}
-\end{theorem}
+\end{proposition}
 The special cases for $t=0$ and $t=1$ are widely known and appear in literature quite frequently.
 For $t=0$ and $m=3$ we have the famous identity
 \begin{align*}
@@ -98,14 +92,10 @@ Interestingly enough that the paper~\cite{cereceda2022sums} gives the formula fo
     \KnuthRFoldSum{1}{n}{k} = \sum_{j=0}^{k} j! \left[ \binom{n+1-r}{j+1} + (-1)^j \binom{r+j-1}{j+1} \right] \stirlingii{k}{j}_{r}
 \end{align*}
 where $\stirlingii{k}{j}_{r}$ are generalized Stirling numbers of the second kind.
-The formula above is essentially identical to~\eqref{theorem:ordinary-sums-of-powers-via-newtons-series}.
-Let be a conjecture
-\begin{conjecture}
-    \begin{align*}
-        \Delta^{j} t^m = j! \stirlingii{m}{j}_{t}
-    \end{align*}
-\end{conjecture}
-By considering the special cases of the theorem~\eqref{theorem:ordinary-sums-of-powers-via-newtons-series} for $t=4$,
+The formula above is essentially identical to~\eqref{prop:ordinary-sums-of-powers-via-newtons-series},
+which yields the identity for finite differences $\Delta^{j} t^m = j! \stirlingii{m}{j}_{t}$.
+
+By considering the special cases of the theorem~\eqref{prop:ordinary-sums-of-powers-via-newtons-series} for $t=4$,
 we observe rather unexpected formulas for sums of powers, that are
 \begin{align*}
     \KnuthRFoldSum{1}{n}{0} &= 1  \left( \binom{n-3}{1} + \binom{3}{1}  \right) \\
@@ -113,6 +103,7 @@ we observe rather unexpected formulas for sums of powers, that are
     \KnuthRFoldSum{1}{n}{2} &= 16 \left( \binom{n-3}{1} + \binom{3}{1}  \right)  + 9  \left( \binom{n-3}{2} - \binom{4}{2}  \right) + 2  \left( \binom{n-2}{3} + \binom{5}{3}  \right) \\
     \KnuthRFoldSum{1}{n}{3} &= 64 \left( \binom{n-3}{1} + \binom{3}{1}  \right)  + 61 \left( \binom{n-3}{2} - \binom{4}{2}  \right) + 30 \left( \binom{n-3}{3} + \binom{5}{3}  \right) \\ &+ 6 \left( \binom{n-3}{4} - \binom{6}{4}  \right)
 \end{align*}
+The coefficients $1,4,1,16,9,\dots$ are given by the sequence [ID] in the OEIS~\cite{sloane2003line}.
 To obtain the formula for double sum of powers, we simply apply summation operator over the ordinary sum again, thus
 \begin{align*}
     \KnuthRFoldSum{2}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ (-1)^{j} \sum_{k=1}^{n} \binom{j+t-1}{j+1} + \sum_{k=1}^{n} \binom{k-t+1}{j+1} \right]
