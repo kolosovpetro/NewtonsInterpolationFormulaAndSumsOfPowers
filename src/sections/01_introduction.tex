@@ -28,20 +28,13 @@ Which indeed holds, because
 \end{align*}
 
 \begin{proposition}[Newton's series for power]
-    For non-negative integers $m$ and $n$
+    For non-negative integers $m,n$ and arbitrary integer $t$
     \label{prop:newton-series-for-monomial-reversed}
     \begin{align*}
         n^m = \sum_{k=0}^{m} \binom{n-t}{k} \Delta^{k} t^m
     \end{align*}
 \end{proposition}
 
-%\begin{definition}[Multifold sum of powers recurrence]
-%    \begin{align*}
-%        \KnuthRFoldSum{0}{n}{m}   &= n^m \\
-%        \KnuthRFoldSum{1}{n}{m}   &= \KnuthRFoldSum{0}{1}{m} + \KnuthRFoldSum{0}{2}{m} + \cdots + \KnuthRFoldSum{0}{n}{m} \\
-%        \KnuthRFoldSum{r+1}{n}{m} &= \KnuthRFoldSum{r}{1}{m} + \KnuthRFoldSum{r}{2}{m} + \cdots + \KnuthRFoldSum{r}{n}{m}
-%    \end{align*}
-%\end{definition}
 Thus, for arbitrary integer $t$, the ordinary sum of powers is
 \begin{align*}
     \KnuthRFoldSum{1}{n}{m}
@@ -113,6 +106,7 @@ which yields
 \end{align*}
 Thus,
 \begin{proposition}[Double sums of powers via Newton's series]
+    For non-negative integers $n,m$ and arbitrary integer $t$
     \begin{align*}
         \KnuthRFoldSum{2}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ (-1)^{j} \binom{j+t-1}{j+1} n + (-1)^{j+1} \binom{j+t-1}{j+2} n^0 + \binom{n-t+2}{j+2} \right]
     \end{align*}
@@ -137,6 +131,7 @@ in the OEIS~\cite{sloane2003line}.
 
 Similarly, we obtain the formula for the triple sums of powers
 \begin{proposition}[Triple sums of powers via Newton's series]
+    For non-negative integers $n,m$ and arbitrary integer $t$
     \begin{align*}
         \KnuthRFoldSum{3}{n}{m} &= \sum_{j=0}^{m} \Delta^{j} t^m \Bigg[ (-1)^{j} \binom{j+t-1}{j+1} \KnuthRFoldSum{2}{n}{0} + (-1)^{j+1} \binom{j+t-1}{j+2} \KnuthRFoldSum{1}{n}{0} + \\
         &+ (-1)^{j+2} \binom{j+t-1}{j+3} \KnuthRFoldSum{0}{n}{0} +  \binom{n-t+3}{j+3} \Bigg]
@@ -159,6 +154,7 @@ Similarly, we obtain the formula for the triple sums of powers
 
 \begin{theorem}[Multifold sums of powers via Newton's series]
     \label{theorem:multifold-sums-of-powers-via-newtons-series}
+    For non-negative integers $r,n,m$ and arbitrary integer $t$
     \begin{align*}
         \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right]
     \end{align*}
@@ -168,7 +164,8 @@ Similarly, we obtain the formula for the triple sums of powers
     \end{proof}
 \end{theorem}
 We may observe that
-\begin{proposition}
+\begin{proposition}[Multifold sum of zero powers]
+    \label{prop:multifold-sum-of-zero-powers}
     For integers $r$ and $n$
     \begin{align*}
         \KnuthRFoldSum{r}{n}{0} = \binom{r+n-1}{r}
@@ -179,15 +176,47 @@ We may observe that
 \end{proposition}
 Which yields the following binomial variations of the Multifold
 sums of powers~\eqref{theorem:multifold-sums-of-powers-via-newtons-series}
-\begin{corollary}[Multifold sums of powers binomial form]
-    For non-negative integers $r,n$ and $m$
+\begin{proposition}[Multifold sums of powers binomial form]
+    For non-negative integers $r,n,m$ and arbitrary integer $t$
     \begin{align*}
         \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \binom{r-s+n-1}{r-s} \right) + \binom{n-t+r}{j+r} \right]
     \end{align*}
-\end{corollary}
-\begin{corollary}[Multifold sums of powers binomial form reindexed]
-    For non-negative integers $r,n$ and $m$
+\end{proposition}
+\begin{proposition}[Multifold sums of powers binomial form reindexed]
+    For non-negative integers $r,n,m$ and arbitrary integer $t$
     \begin{align*}
         \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \left( \sum_{s=0}^{r-1} (-1)^{j+s} \binom{j+t-1}{j+s+1} \binom{r-s+n-2}{r-s-1} \right) + \binom{n-t+r}{j+r} \right]
     \end{align*}
-\end{corollary}
+\end{proposition}
+Finite difference of power is closely related to Stirling numbers of the second kind
+\begin{lemma}[Finite difference via Stirling numbers]
+    \label{prop:finite-differences-via-stirling-numbers}
+    For non-negative integers $j,m$ and arbitrary integer $t$
+    \begin{align*}
+        \Delta^{j} t^{m} = \sum_{k=0}^{m} \binom{t}{k} \stirlingii{m}{j+k} (j+k)!
+    \end{align*}
+\end{lemma}
+which implies the variations of the formulas for sums of powers
+\begin{proposition}[Ordinary sums of powers via Stirling numbers]
+    For non-negative integers $n,m$ and arbitrary integer $t$
+    \begin{align*}
+        \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ (-1)^j \binom{j+t-1}{j+1} +  \binom{n-t+1}{j+1} \right] \binom{t}{k} \stirlingii{m}{j+k} (j+k)!
+    \end{align*}
+    \begin{proof}
+        By ordinary sums of powers via Newton's series~\eqref{prop:ordinary-sums-of-powers-via-newtons-series}
+        and finite difference via Stirling numbers of the second kind~\eqref{prop:finite-differences-via-stirling-numbers}.
+    \end{proof}
+\end{proposition}
+In general,
+\begin{proposition}[Multifold sums of powers via Stirling numbers]
+    For non-negative integers $r,n,m$ and arbitrary integer $t$
+    \begin{align*}
+        &\KnuthRFoldSum{r}{n}{m} \\
+        &= \sum_{j=0}^{m}\left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right] \sum_{k=0}^{m} \binom{t}{k} \stirlingii{m}{j+k} (j+k)!
+    \end{align*}
+    \begin{proof}
+        By multifold sums of powers via Newton's series~\eqref{theorem:multifold-sums-of-powers-via-newtons-series}
+        and finite difference via Stirling numbers of the second kind~\eqref{prop:finite-differences-via-stirling-numbers}.
+    \end{proof}
+\end{proposition}
+The proposition above can be presented in a pure binomial form as well, by means of the identity~\eqref{prop:multifold-sum-of-zero-powers}: $\KnuthRFoldSum{r}{n}{0} = \binom{r+n-1}{r}$.

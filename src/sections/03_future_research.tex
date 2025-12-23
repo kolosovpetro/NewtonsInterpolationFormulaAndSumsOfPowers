@@ -1,0 +1,44 @@
+﻿In this manuscript we focus on the idea to combine the Newton's interpolation formula and Hockey-stick identity
+for binomial coefficients to express the sums of powers seamlessly.
+
+This particular idea is great, however it can be generalized even further, so that the main aim is to
+utilize an interpolation formula for power $n^m$ in terms of \textit{abstract difference operator} $D(n^m)$ and binomial coefficients $\binom{f(n)}{k}$
+such that $n$ indicates the variable of power function.
+The difference operator can be arbitrary, for example: forward, backward, central differences etc.
+For example, the abstract interpolation formula is
+\begin{align*}
+    n^m = \sum_{k} \binom{f(n)}{k} D(n^m, k)
+\end{align*}
+Thus, the formula of sums of powers involves the abstract difference operator $D$ in some point $k$ and hockey stick
+identity over the binomial coefficients $\binom{n}{k}$.
+\begin{align*}
+    \KnuthRFoldSum{1}{n}{m} = \sum_{k} D(n^m, k) \sum_{j \leq n} \binom{f(j)}{k}
+\end{align*}
+Similarly, for multifold sums of powers
+\begin{align*}
+    \KnuthRFoldSum{r}{n}{m} = \sum_{k} D(n^m, k) \binom{f(n+r)}{k}
+\end{align*}
+Many of interpolation approaches involve rising factorials $x_{(n)}$, falling factorials $(x)_n$ or usual factorials $n!$,
+and thus can be expressed
+in terms of binomial coefficients, because
+\begin{align*}
+    \frac{(x)_n}{n!} = \binom{x}{n}; \quad \frac{x_{(n)}}{n!} = \binom{x+n-1}{n}
+\end{align*}
+
+In particular, Donald Knuth provides the formula multifold sums of odd powers~\cite{knuth1993johann}
+such that based on the operator of central finite differences of power evaluated in zero, that is
+\begin{proposition}[Multifold sums of odd powers]
+    \begin{align*}
+        \KnuthRFoldSum{r}{n}{2m-1}
+        &= \sum_{k=1}^{m} (2k-1)! T(2m, 2k) \binom{n+k-1+r}{2k-1+r} \\
+        &= \sum_{k=1}^{m} \binom{n+k-1+r}{2k-1+r} \frac{1}{2k} \delta^{2k} 0^{2m}
+    \end{align*}
+\end{proposition}
+where $T(n,k)$ are central factorial numbers of the second kind [citation], such that
+\begin{align*}
+    T(n, k) = \frac{1}{k!} \delta^k 0^n = \frac{1}{k!} \sum_{j=0}^{k} (-1)^j \binom{k}{j} \left( \frac{k}{2} - j \right)^n
+\end{align*}
+The Knuth's formula above utilizes the operator of central finite differences of power evaluated in zero,
+it is worth to research the existence of the sums of odd powers involving the central differences
+evaluated in arbitrary integer point $t$,
+similar multifold sums of powers via Newton's series~\eqref{theorem:multifold-sums-of-powers-via-newtons-series}.
