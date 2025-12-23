@@ -13,3 +13,4 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Configure template
 - Update bibliography
 - Add double sums of powers
+- Add abstract

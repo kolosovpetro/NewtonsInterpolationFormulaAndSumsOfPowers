@@ -21,22 +21,22 @@
     \end{mdframed}
 \end{example}
 
-\begin{corollary}[Newton series for binomial reversed]
-    \label{corollary:newton-series-for-binomial-reversed}
-    \begin{align*}
-    (n+t)
-        ^m &= \sum_{k=0}^{m} \binom{n}{k} \Delta^{k} t^m
-    \end{align*}
-\end{corollary}
+%\begin{corollary}[Newton series for binomial reversed]
+%    \label{corollary:newton-series-for-binomial-reversed}
+%    \begin{align*}
+%    (n+t)
+%        ^m &= \sum_{k=0}^{m} \binom{n}{k} \Delta^{k} t^m
+%    \end{align*}
+%\end{corollary}
 
-\begin{proposition}[Newton series for monomial reversed]
+\begin{proposition}[Newton series for power]
     \label{prop:newton-series-for-monomial-reversed}
     \begin{align*}
         n^m = \sum_{k=0}^{m} \binom{n-t}{k} \Delta^{k} t^m
     \end{align*}
-    \begin{proof}
-        By setting $n \rightarrow n-t$ into~\eqref{corollary:newton-series-for-binomial-reversed}.
-    \end{proof}
+%    \begin{proof}
+%        By setting $n \rightarrow n-t$ into~\eqref{corollary:newton-series-for-binomial-reversed}.
+%    \end{proof}
 \end{proposition}
 
 \begin{definition}[Multifold sum of powers recurrence]
@@ -142,14 +142,27 @@ Similarly, we obtain the formula for the triple sums of powers
         \begin{align*}
             &\KnuthRFoldSum{3}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^m \sum_{k=1}^{n}  \left[ (-1)^{j} \binom{j+t-1}{j+1} k^1 + (-1)^{j+1} \binom{j+t-1}{j+2} k^0 + \binom{k-t+2}{j+2} \right] \\
             &= \sum_{j=0}^{m} \Delta^{j} t^m \left[ (-1)^{j} \binom{j+t-1}{j+1} \sum_{k=1}^{n} k^1 + (-1)^{j+1} \binom{j+t-1}{j+2} \sum_{k=1}^{n} k^0 + \sum_{k=1}^{n}  \binom{k-t+2}{j+2} \right]
-%            &= \sum_{j=0}^{m} \Delta^{j} t^m \Bigg[ (-1)^{j} \binom{j+t-1}{j+1} \KnuthRFoldSum{2}{n}{0} + (-1)^{j+1} \binom{j+t-1}{j+2} \KnuthRFoldSum{1}{n}{0} + \\
-%            &+ (-1)^{j+2} \binom{j+t-1}{j+3} \KnuthRFoldSum{0}{n}{0} +  \binom{n-t+3}{j+3} \Bigg]
         \end{align*}
         Note that $\sum_{k=1}^{n} k^1 = \KnuthRFoldSum{2}{n}{0}$ and $\sum_{k=1}^{n} k^0 = \KnuthRFoldSum{1}{n}{0}$.
-        By segmented hockey stick identity~\eqref{prop:segmented-hockey-stick-identity}
+        Thus,
         \begin{align*}
             \sum_{k=1}^{n}  \binom{k-t+2}{j+2} = (-1)^{j+2} \binom{j+t-1}{j+3} \KnuthRFoldSum{0}{n}{0} +  \binom{n-t+3}{j+3}
         \end{align*}
+        by segmented hockey stick identity~\eqref{prop:segmented-hockey-stick-identity}.
         This completes the proof.
     \end{proof}
 \end{proposition}
+
+\begin{theorem}[Multifold sums of powers via Newton's series]
+    \label{theorem:multifold-sums-of-powers-via-newtons-series}
+        \begin{align*}
+            \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right]
+        \end{align*}
+    \begin{proof}
+        By Newton series for monomial reversed~\eqref{prop:newton-series-for-monomial-reversed} and repeated
+        segmented hockey stick identity~\eqref{prop:segmented-hockey-stick-identity}.
+    \end{proof}
+%    \begin{validate}
+%        r = 3; Table[MultifoldSumOfPowersRecurrence[r, n, m] - RFoldSumViaAlternatingBinomialCorrectionTerm[r, n, m, t], {n, 0, 10}, {m, 1, 10}, {t, 0, n}] // Flatten
+%    \end{validate}
+\end{theorem}
