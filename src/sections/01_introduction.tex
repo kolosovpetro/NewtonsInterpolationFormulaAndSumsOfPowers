@@ -96,7 +96,8 @@ we observe rather unexpected formulas for sums of powers, that are
 The coefficients $1,4,1,16,9,\dots$ are given by the sequence
 \href{https://oeis.org/A391633}{\texttt{A391633}}
 in the OEIS~\cite{sloane2003line}.
-To obtain the formula for double sum of powers, we simply apply summation operator over the ordinary sum again, thus
+To obtain the formula for double sum of powers, we simply apply summation operator over the ordinary sum of powers again,
+thus
 \begin{align*}
     \KnuthRFoldSum{2}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ (-1)^{j} \sum_{k=1}^{n} \binom{j+t-1}{j+1} + \sum_{k=1}^{n} \binom{k-t+1}{j+1} \right]
 \end{align*}
