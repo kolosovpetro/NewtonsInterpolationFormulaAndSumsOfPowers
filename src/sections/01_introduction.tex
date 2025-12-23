@@ -1,11 +1,9 @@
 \begin{proposition}
     \label{proposition:newton-series-in-arbitrary-point-a}
-    \begin{mdframed}
     (Newton's series around arbitrary point~\cite[Lemma V]{newton1850newton}.)
         \begin{align*}
             f(x) = \sum_{j=0}^{\infty} \binom{x-a}{j} \Delta^{j} f(a)
         \end{align*}
-    \end{mdframed}
 \end{proposition}
 
 \begin{example}[Newton series for cubes monomial]
@@ -92,8 +90,9 @@ Interestingly enough that the paper~\cite{cereceda2022sums} gives the formula fo
     \KnuthRFoldSum{1}{n}{k} = \sum_{j=0}^{k} j! \left[ \binom{n+1-r}{j+1} + (-1)^j \binom{r+j-1}{j+1} \right] \stirlingii{k}{j}_{r}
 \end{align*}
 where $\stirlingii{k}{j}_{r}$ are generalized Stirling numbers of the second kind.
-The formula above is essentially identical to~\eqref{prop:ordinary-sums-of-powers-via-newtons-series},
-which yields the identity for finite differences $\Delta^{j} t^m = j! \stirlingii{m}{j}_{t}$.
+The formula above is identical to the proposition~\eqref{prop:ordinary-sums-of-powers-via-newtons-series},
+which yields that finite differences can be expressed in terms of generalized Stirling numbers of the second kind,
+that is $\Delta^{j} t^m = j! \stirlingii{m}{j}_{t}$.
 
 By considering the special cases of the theorem~\eqref{prop:ordinary-sums-of-powers-via-newtons-series} for $t=4$,
 we observe rather unexpected formulas for sums of powers, that are
@@ -113,18 +112,16 @@ which yields
     \KnuthRFoldSum{2}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ (-1)^{j} \binom{j+t-1}{j+1} n + \sum_{k=1}^{n} \binom{k-t+1}{j+1} \right]
 \end{align*}
 Thus,
-\begin{theorem}[Double sums of powers via finite difference 2]
-    \begin{mdframed}
-        \begin{align*}
-            \KnuthRFoldSum{2}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ (-1)^{j} \binom{j+t-1}{j+1} n + (-1)^{j+1} \binom{j+t-1}{j+2} n^0 + \binom{n-t+2}{j+2} \right]
-        \end{align*}
-    \end{mdframed}
+\begin{proposition}[Double sums of powers via Newton's series]
+    \begin{align*}
+        \KnuthRFoldSum{2}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ (-1)^{j} \binom{j+t-1}{j+1} n + (-1)^{j+1} \binom{j+t-1}{j+2} n^0 + \binom{n-t+2}{j+2} \right]
+    \end{align*}
     \begin{proof}
         We have $\KnuthRFoldSum{2}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ (-1)^{j} \binom{j+t-1}{j+1} n + \sum_{k=1}^{n} \binom{k-t+1}{j+1} \right]$,
         where $\sum_{k=1}^{n} \binom{k-t+1}{j+1} = (-1)^{j+1} \binom{j+t-1}{j+2} n^0 + \binom{n-t+2}{j+2}$ by means of segmented hockey stick
         identity~\eqref{prop:segmented-hockey-stick-identity}.
     \end{proof}
-\end{theorem}
+\end{proposition}
 For example, given $t=5$, the double sums of powers are
 \begin{align*}
     \KnuthRFoldSum{2}{n}{0} &= 1 \left( \binom{n-3}{2} + \binom{4}{1} n - \binom{4}{2} \right) \\
@@ -134,3 +131,4 @@ For example, given $t=5$, the double sums of powers are
     \KnuthRFoldSum{2}{n}{3} &= 125 \left( \binom{n-3}{2} + \binom{4}{1} n - \binom{4}{2} \right) + 91 \left( \binom{n-3}{3} - \binom{5}{2} n + \binom{5}{3} \right) \\
     &+ 36 \left( \binom{n-3}{4} + \binom{6}{3} n - \binom{6}{4} \right) + 6 \left( \binom{n-3}{5} - \binom{7}{4} n + \binom{7}{5} \right)
 \end{align*}
+Similarly, we obtain the formula for the triple sums of powers
