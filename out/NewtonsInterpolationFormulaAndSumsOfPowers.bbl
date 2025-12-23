@@ -27,17 +27,17 @@ Thomas~J. Pfaff.
 \newblock {\em Pi Mu Epsilon Journal}, 12(7):425--430, 2007.
 \newblock \url{https://www.jstor.org/stable/24340705}.
 
+\bibitem{sloane2003line}
+{Sloane, Neil J.A. and others}.
+\newblock {The on-line encyclopedia of integer sequences}, 2003.
+\newblock \url{https://oeis.org/}.
+
 \bibitem{cereceda2022sums}
 {Cereceda, Jos{\'e} L.}
 \newblock {Sums of powers of integers and generalized Stirling numbers of the
   second kind}.
 \newblock {\em {arXiv preprint arXiv:2211.11648}}, 2022.
 \newblock \url{https://arxiv.org/abs/2211.11648}.
-
-\bibitem{sloane2003line}
-{Sloane, Neil J.A. and others}.
-\newblock {The on-line encyclopedia of integer sequences}, 2003.
-\newblock \url{https://oeis.org/}.
 
 \bibitem{steffensen1927interpolation}
 {Steffensen, Johan Frederik}.
