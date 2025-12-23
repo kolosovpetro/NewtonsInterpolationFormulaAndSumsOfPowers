@@ -16,6 +16,7 @@
 \usepackage{physics}
 \usepackage{booktabs}
 \usepackage{url}
+\usepackage{mdframed}
 
 % margins and layout
 \linespread{1.7}
@@ -23,8 +24,8 @@
 \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 \raggedbottom
 
-\newcommand \coeffA [3][A] {{\mathbf{#1}} \sb{#2,#3}}
-\newcommand \polynomialP [4][P]{{\mathbf{#1}}\sp{#2} \sb{#3}(#4)}
+%\newcommand \coeffA [3][A] {{\mathbf{#1}} \sb{#2,#3}}
+%\newcommand \polynomialP [4][P]{{\mathbf{#1}}\sp{#2} \sb{#3}(#4)}
 \newcommand \bernoulli [2][B] {{#1}\sb{#2}}
 
 %\newcommand \anglePower [2]{\langle #1 \rangle \sp{#2}}
@@ -36,11 +37,13 @@
 \newcommand{\stirlingii}{\genfrac{\{}{\}}{0pt}{}}
 \newcommand{\eulerianNumber}{\genfrac{\langle}{\rangle}{0pt}{}}
 
+\newcommand{\KnuthRFoldSum}[3]{\Sigma^{#1}\,{#2}^{#3}}
+
 % for llceil coeffcient
-\newcommand{\nobarfrac}{\genfrac{}{}{0pt}{}}
-\def\llceil{\left\lceil\kern-3.5pt\left\lceil}
-\def\rrfloor{\right\rfloor\kern-3.5pt\right\rfloor}
-\newcommand \llceilCoefficient [3] {\llceil \nobarfrac{#1}{#2} \rrfloor_{#3}}
+%\newcommand{\nobarfrac}{\genfrac{}{}{0pt}{}}
+%\def\llceil{\left\lceil\kern-3.5pt\left\lceil}
+%\def\rrfloor{\right\rfloor\kern-3.5pt\right\rfloor}
+%\newcommand \llceilCoefficient [3] {\llceil \nobarfrac{#1}{#2} \rrfloor_{#3}}
 
 % ~~~ Rascal numbers ~~~
 %\newcommand \rascalNumber [3] {\binom{#1}{#2}_{#3}}
@@ -74,84 +77,84 @@
 
 %\numberwithin{equation}{section}
 
-\title[LaTeX Template for GitHub]
-{LaTeX Template for GitHub}
+\title[Newton's interpolation formula and sums of powers]
+{Newton's interpolation formula and sums of powers}
 \author[Petro Kolosov]{Petro Kolosov}
 \date{\today}
 
 % metadata
-%\email{kolosovp94@gmail.com}
-%\address{Software Developer, DevOps Engineer}
-%\urladdr{https://kolosovpetro.github.io}
-%\subjclass[2010]{05A19, 05A10, 41A15, 11B83, 68W30}
-%\keywords{Polynomial identities,
-%    Finite differences,
-%    Binomial coefficients,
-%    Faulhaber's formula,
-%    Sums of powers,
-%    Bernoulli numbers,
-%    Bernoulli polynomials,
-%    Interpolation,
-%    Approximation,
-%    Discrete convolution,
-%    Combinatorics,
-%    Pascal's triangle,
-%    OEIS}
-%\hypersetup{
-%    pdftitle={LaTeX Template for GitHub},
-%    pdfproducer={LaTeX},
-%    pdfcreator={pdflatex},
-%    pdfauthor={Petro Kolosov},
-%    pdfsubject={LaTeX Template for GitHub},
-%    pdfkeywords={Polynomials,
-%    Finite differences,
-%    Interpolation,
-%    Approximation,
-%    Polynomial identities,
-%    Sums of powers,
-%    Power sums,
-%    Binomial theorem,
-%    Power function,
-%    Binomial coefficients,
-%    Multinomial coefficients,
-%    Bernoulli numbers,
-%    Bernoulli polynomials,
-%    Worpitzky identity,
-%    Pascal's triangle,
-%    Faulhaber's formula,
-%    Derivatives,
-%    Differential calculus,
-%    Partial differential equations,
-%    OEIS,
-%    Combinatorics,
-%    Discrete convolution,
-%    Sums of convolved powers,
-%    Convolved power sums,
-%    Dynamic systems,
-%    Time scales}
-%}
+\email{kolosovp94@gmail.com}
+\address{Software Developer, DevOps Engineer}
+\urladdr{https://kolosovpetro.github.io}
+\subjclass[2010]{05A19, 05A10, 41A15, 11B83}
+\keywords{Sums of powers,
+    Newton's interpolation formula,
+    Finite differences,
+    Binomial coefficients,
+    Faulhaber's formula,
+    Bernoulli numbers,
+    Bernoulli polynomials,
+    Interpolation,
+    Combinatorics,
+    Pascal's triangle,
+    Central factorial numbers,
+    OEIS}
+\hypersetup{
+    pdftitle={Newton's interpolation formula and sums of powers},
+    pdfproducer={LaTeX},
+    pdfcreator={pdflatex},
+    pdfauthor={Petro Kolosov},
+    pdfsubject={Newton's interpolation formula and sums of powers},
+    pdfkeywords={Finite differences,
+    Interpolation,
+    Polynomial identities,
+    Sums of powers,
+    Power sums,
+    Binomial theorem,
+    Power function,
+    Binomial coefficients,
+    Bernoulli numbers,
+    Bernoulli polynomials,
+    Worpitzky identity,
+    Pascal's triangle,
+    Faulhaber's formula,
+    OEIS,
+    Combinatorics,
+    Central factorial numbers}
+}
 
 \begin{document}
 
     \maketitle
 
     \begin{abstract}
-        \input{sections/01_abstract}
+        \input{sections/abstract}
     \end{abstract}
 
 %    \tableofcontents
 
 
-    \section{Introduction} \label{sec:introduction}
-    \input{sections/02_introduction}
+    \section{Introduction and main results}
+    \label{sec:introduction}
+    \input{sections/01_introduction}
+
+    \section{Future research}
+    \label{sec:future-research}
+    \input{sections/03_future_research}
 
 
-    \section{Conclusions}\label{sec:conclusions}
-    \input{sections/03_conclusions}
+    \section{Proof of Segmented hockey stick identity}
+    \label{sec:proof-of-segmented-hockey-stick-identity}
+    \input{sections/02_proof_of_segmented_hockey_stick_identity}
+
+
+%    \section{Conclusions}\label{sec:conclusions}
+%    \input{sections/conclusions}
 
     \bibliographystyle{unsrt}
-    \bibliography{github-latex-template}
+    \bibliography{NewtonsInterpolationFormulaAndSumsOfPowers}
 
+    \clearpage
     \input{metadata/license}
 
 \end{document}
