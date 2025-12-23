@@ -16,3 +16,4 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add abstract
 - Add binomial form of multifold sums of powers
 - Add future research
+- Add bibliography related to central factorial numbers

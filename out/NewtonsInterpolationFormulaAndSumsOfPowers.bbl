@@ -22,7 +22,7 @@
 \newblock \url {https://archive.org/details/concrete-mathematics}.
 
 \bibitem{pfaff2007deriving}
-Thomas~J Pfaff.
+Thomas~J. Pfaff.
 \newblock Deriving a formula for sums of powers of integers.
 \newblock {\em Pi Mu Epsilon Journal}, 12(7):425--430, 2007.
 \newblock \url{https://www.jstor.org/stable/24340705}.
@@ -35,8 +35,28 @@ Thomas~J Pfaff.
 \newblock \url{https://arxiv.org/abs/2211.11648}.
 
 \bibitem{sloane2003line}
-{Sloane, Neil JA and others}.
+{Sloane, Neil J.A. and others}.
 \newblock {The on-line encyclopedia of integer sequences}, 2003.
 \newblock \url{https://oeis.org/}.
+
+\bibitem{steffensen1927interpolation}
+{Steffensen, Johan Frederik}.
+\newblock {\em Interpolation}.
+\newblock {Williams \& Wilkins}, 1927.
+\newblock
+  \url{https://www.amazon.com/-/de/Interpolation-Second-Dover-Books-Mathematics-ebook/dp/B00GHQVON8}.
+
+\bibitem{carlitz1963divided}
+L.~Carlitz and John Riordan.
+\newblock The divided central differences of zero.
+\newblock {\em {Canadian Journal of Mathematics}}, 15:94--100, 1963.
+\newblock \url{https://doi.org/10.4153/CJM-1963-010-8}.
+
+\bibitem{riordan1968combinatorial}
+John Riordan.
+\newblock {\em Combinatorial identities}, volume 217.
+\newblock {Wiley New York}, 1968.
+\newblock
+  \url{https://www.amazon.com/-/de/Combinatorial-Identities-Probability-Mathematical-Statistics/dp/0471722758}.
 
 \end{thebibliography}
