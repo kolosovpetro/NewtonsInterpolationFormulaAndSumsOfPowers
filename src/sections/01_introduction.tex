@@ -1,52 +1,48 @@
+In this manuscript we derive the formulas for multifold sums of powers by utilizing
+Newton's interpolation formula.
+Furthermore, this manuscript provides the formulas for multifold sums of powers in terms of
+Stirling numbers of the second kind, and Eulerian numbers.
+
+Allow us to start from the definition of multifold sums of powers.
+We utilize the recurrence proposed by Donald Knuth in his article
+\textit{Johann Faulhaber and sums of powers}, see~\cite{knuth1993johann}
+\begin{align*}
+    \KnuthRFoldSum{0}{n}{m}   &= n^m \\
+    \KnuthRFoldSum{1}{n}{m}   &= \KnuthRFoldSum{0}{1}{m} + \KnuthRFoldSum{0}{2}{m} + \cdots + \KnuthRFoldSum{0}{n}{m} \\
+    \KnuthRFoldSum{r+1}{n}{m} &= \KnuthRFoldSum{r}{1}{m} + \KnuthRFoldSum{r}{2}{m} + \cdots + \KnuthRFoldSum{r}{n}{m}
+\end{align*}
+Throughout the paper, we utilize the Newton's interpolation formula as stated below
 \begin{proposition}
     \label{proposition:newton-series-in-arbitrary-point-a}
     (Newton's series around arbitrary point~\cite[Lemma V]{newton1850newton}.)
     \begin{align*}
         f(x) = \sum_{j=0}^{\infty} \binom{x-a}{j} \Delta^{j} f(a)
     \end{align*}
+    where $\Delta^{k} f(x) = \sum_{j=0}^{k} (-1)^{k-j} \binom{k}{j} f(x+j)$ is $k$-degree forward finite difference of $f$.
 \end{proposition}
+Which indeed holds, because
+\begin{align*}
+    n^3 &= 0 \binom{n}{0} + 1 \binom{n}{1} + 6 \binom{n}{2} + 6 \binom{n}{3} \\
+    n^3 &= 1 \binom{n-1}{0} + 7 \binom{n-1}{1} + 12 \binom{n-1}{2} + 6 \binom{n-1}{3} \\
+    n^3 &= 8 \binom{n-2}{0} + 19 \binom{n-2}{1} + 18 \binom{n-2}{2} + 6 \binom{n-2}{3}
+\end{align*}
 
-\begin{example}[Newton series for cubes monomial]
-    \label{example:newton-series-for-cubes-monomial}
-    \begin{align*}
-        n^3 &= 0 \binom{n}{0} + 1 \binom{n}{1} + 6 \binom{n}{2} + 6 \binom{n}{3} \\
-        n^3 &= 1 \binom{n-1}{0} + 7 \binom{n-1}{1} + 12 \binom{n-1}{2} + 6 \binom{n-1}{3} \\
-        n^3 &= 8 \binom{n-2}{0} + 19 \binom{n-2}{1} + 18 \binom{n-2}{2} + 6 \binom{n-2}{3}
-    \end{align*}
-    \begin{mdframed}
-        In general,
-        \begin{align*}
-            n^3 &= \Delta^0 t^3 \binom{n-t}{0} + \Delta^1 t^3 \binom{n-t}{1} + \Delta^2 t^3 \binom{n-t}{2} + \Delta^3 t^3 \binom{n-t}{3}
-        \end{align*}
-    \end{mdframed}
-\end{example}
-
-%\begin{corollary}[Newton series for binomial reversed]
-%    \label{corollary:newton-series-for-binomial-reversed}
-%    \begin{align*}
-%    (n+t)
-%        ^m &= \sum_{k=0}^{m} \binom{n}{k} \Delta^{k} t^m
-%    \end{align*}
-%\end{corollary}
-
-\begin{proposition}[Newton series for power]
+\begin{proposition}[Newton's series for power]
+    For non-negative integers $m$ and $n$
     \label{prop:newton-series-for-monomial-reversed}
     \begin{align*}
         n^m = \sum_{k=0}^{m} \binom{n-t}{k} \Delta^{k} t^m
     \end{align*}
-%    \begin{proof}
-%        By setting $n \rightarrow n-t$ into~\eqref{corollary:newton-series-for-binomial-reversed}.
-%    \end{proof}
 \end{proposition}
 
-\begin{definition}[Multifold sum of powers recurrence]
-    \begin{align*}
-        \KnuthRFoldSum{0}{n}{m}   &= n^m \\
-        \KnuthRFoldSum{1}{n}{m}   &= \KnuthRFoldSum{0}{1}{m} + \KnuthRFoldSum{0}{2}{m} + \cdots + \KnuthRFoldSum{0}{n}{m} \\
-        \KnuthRFoldSum{r+1}{n}{m} &= \KnuthRFoldSum{r}{1}{m} + \KnuthRFoldSum{r}{2}{m} + \cdots + \KnuthRFoldSum{r}{n}{m}
-    \end{align*}
-\end{definition}
-Thus, for arbitrary integer $t$
+%\begin{definition}[Multifold sum of powers recurrence]
+%    \begin{align*}
+%        \KnuthRFoldSum{0}{n}{m}   &= n^m \\
+%        \KnuthRFoldSum{1}{n}{m}   &= \KnuthRFoldSum{0}{1}{m} + \KnuthRFoldSum{0}{2}{m} + \cdots + \KnuthRFoldSum{0}{n}{m} \\
+%        \KnuthRFoldSum{r+1}{n}{m} &= \KnuthRFoldSum{r}{1}{m} + \KnuthRFoldSum{r}{2}{m} + \cdots + \KnuthRFoldSum{r}{n}{m}
+%    \end{align*}
+%\end{definition}
+Thus, for arbitrary integer $t$, the ordinary sum of powers is
 \begin{align*}
     \KnuthRFoldSum{1}{n}{m}
     = \sum_{k=1}^{n} \sum_{j=0}^{m} \binom{-t+k}{j} \Delta^{j} t^m
@@ -84,7 +80,9 @@ For instance,
     \KnuthRFoldSum{1}{n}{3} &= 1 \binom{n}{1} + 7 \binom{n}{2} + 12 \binom{n}{3} + 6 \binom{n}{4} \\
     \KnuthRFoldSum{1}{n}{4} &= 1 \binom{n}{1} +15 \binom{n}{2} +50 \binom{n}{3} +60 \binom{n}{4} +24 \binom{n}{5}
 \end{align*}
-The coefficients $1,7,12,6,1,15, \dots$ are given by the sequence [ID] in the OEIS~\cite{sloane2003line}.
+The coefficients $1,7,12,6,1,15, \dots$ are given by the sequence
+\href{https://oeis.org/A028246}{\texttt{A028246}}
+in the OEIS~\cite{sloane2003line}.
 Interestingly enough that the paper~\cite{cereceda2022sums} gives the formula for sums of powers
 \begin{align*}
     \KnuthRFoldSum{1}{n}{k} = \sum_{j=0}^{k} j! \left[ \binom{n+1-r}{j+1} + (-1)^j \binom{r+j-1}{j+1} \right] \stirlingii{k}{j}_{r}
@@ -102,7 +100,9 @@ we observe rather unexpected formulas for sums of powers, that are
     \KnuthRFoldSum{1}{n}{2} &= 16 \left( \binom{n-3}{1} + \binom{3}{1}  \right)  + 9  \left( \binom{n-3}{2} - \binom{4}{2}  \right) + 2  \left( \binom{n-2}{3} + \binom{5}{3}  \right) \\
     \KnuthRFoldSum{1}{n}{3} &= 64 \left( \binom{n-3}{1} + \binom{3}{1}  \right)  + 61 \left( \binom{n-3}{2} - \binom{4}{2}  \right) + 30 \left( \binom{n-3}{3} + \binom{5}{3}  \right) \\ &+ 6 \left( \binom{n-3}{4} - \binom{6}{4}  \right)
 \end{align*}
-The coefficients $1,4,1,16,9,\dots$ are given by the sequence [ID] in the OEIS~\cite{sloane2003line}.
+The coefficients $1,4,1,16,9,\dots$ are given by the sequence
+\href{https://oeis.org/A391633}{\texttt{A391633}}
+in the OEIS~\cite{sloane2003line}.
 To obtain the formula for double sum of powers, we simply apply summation operator over the ordinary sum again, thus
 \begin{align*}
     \KnuthRFoldSum{2}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ (-1)^{j} \sum_{k=1}^{n} \binom{j+t-1}{j+1} + \sum_{k=1}^{n} \binom{k-t+1}{j+1} \right]
@@ -131,6 +131,10 @@ For example, given $t=5$, the double sums of powers are
     \KnuthRFoldSum{2}{n}{3} &= 125 \left( \binom{n-3}{2} + \binom{4}{1} n - \binom{4}{2} \right) + 91 \left( \binom{n-3}{3} - \binom{5}{2} n + \binom{5}{3} \right) \\
     &+ 36 \left( \binom{n-3}{4} + \binom{6}{3} n - \binom{6}{4} \right) + 6 \left( \binom{n-3}{5} - \binom{7}{4} n + \binom{7}{5} \right)
 \end{align*}
+The coefficients $1,5,1,25,11,2,\dots$ are given by the sequence
+\href{https://oeis.org/A391635}{\texttt{A391635}}
+in the OEIS~\cite{sloane2003line}.
+
 Similarly, we obtain the formula for the triple sums of powers
 \begin{proposition}[Triple sums of powers via Newton's series]
     \begin{align*}
@@ -155,14 +159,35 @@ Similarly, we obtain the formula for the triple sums of powers
 
 \begin{theorem}[Multifold sums of powers via Newton's series]
     \label{theorem:multifold-sums-of-powers-via-newtons-series}
-        \begin{align*}
-            \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right]
-        \end{align*}
+    \begin{align*}
+        \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right]
+    \end{align*}
     \begin{proof}
-        By Newton series for monomial reversed~\eqref{prop:newton-series-for-monomial-reversed} and repeated
+        By Newton's series for power~\eqref{prop:newton-series-for-monomial-reversed} and repeated
         segmented hockey stick identity~\eqref{prop:segmented-hockey-stick-identity}.
     \end{proof}
-%    \begin{validate}
-%        r = 3; Table[MultifoldSumOfPowersRecurrence[r, n, m] - RFoldSumViaAlternatingBinomialCorrectionTerm[r, n, m, t], {n, 0, 10}, {m, 1, 10}, {t, 0, n}] // Flatten
-%    \end{validate}
 \end{theorem}
+We may observe that
+\begin{proposition}
+    For integers $r$ and $n$
+    \begin{align*}
+        \KnuthRFoldSum{r}{n}{0} = \binom{r+n-1}{r}
+    \end{align*}
+    \begin{proof}
+        By hockey stick identity $\sum_{k=0}^{t} \binom{j+k}{j} = \binom{j+t+1}{j+1}$.
+    \end{proof}
+\end{proposition}
+Which yields the following binomial variations of the Multifold
+sums of powers~\eqref{theorem:multifold-sums-of-powers-via-newtons-series}
+\begin{corollary}[Multifold sums of powers binomial form]
+    For non-negative integers $r,n$ and $m$
+    \begin{align*}
+        \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \binom{r-s+n-1}{r-s} \right) + \binom{n-t+r}{j+r} \right]
+    \end{align*}
+\end{corollary}
+\begin{corollary}[Multifold sums of powers binomial form reindexed]
+    For non-negative integers $r,n$ and $m$
+    \begin{align*}
+        \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \left( \sum_{s=0}^{r-1} (-1)^{j+s} \binom{j+t-1}{j+s+1} \binom{r-s+n-2}{r-s-1} \right) + \binom{n-t+r}{j+r} \right]
+    \end{align*}
+\end{corollary}
