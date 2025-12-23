@@ -1,9 +1,9 @@
 \begin{proposition}
     \label{proposition:newton-series-in-arbitrary-point-a}
     (Newton's series around arbitrary point~\cite[Lemma V]{newton1850newton}.)
-        \begin{align*}
-            f(x) = \sum_{j=0}^{\infty} \binom{x-a}{j} \Delta^{j} f(a)
-        \end{align*}
+    \begin{align*}
+        f(x) = \sum_{j=0}^{\infty} \binom{x-a}{j} \Delta^{j} f(a)
+    \end{align*}
 \end{proposition}
 
 \begin{example}[Newton series for cubes monomial]
@@ -84,7 +84,7 @@ For instance,
     \KnuthRFoldSum{1}{n}{3} &= 1 \binom{n}{1} + 7 \binom{n}{2} + 12 \binom{n}{3} + 6 \binom{n}{4} \\
     \KnuthRFoldSum{1}{n}{4} &= 1 \binom{n}{1} +15 \binom{n}{2} +50 \binom{n}{3} +60 \binom{n}{4} +24 \binom{n}{5}
 \end{align*}
-The coefficients $1,7,12, \dots$ are given by the sequence [ID] in the OEIS~\cite{sloane2003line}.
+The coefficients $1,7,12,6,1,15, \dots$ are given by the sequence [ID] in the OEIS~\cite{sloane2003line}.
 Interestingly enough that the paper~\cite{cereceda2022sums} gives the formula for sums of powers
 \begin{align*}
     \KnuthRFoldSum{1}{n}{k} = \sum_{j=0}^{k} j! \left[ \binom{n+1-r}{j+1} + (-1)^j \binom{r+j-1}{j+1} \right] \stirlingii{k}{j}_{r}
@@ -94,7 +94,7 @@ The formula above is identical to the proposition~\eqref{prop:ordinary-sums-of-p
 which yields that finite differences can be expressed in terms of generalized Stirling numbers of the second kind,
 that is $\Delta^{j} t^m = j! \stirlingii{m}{j}_{t}$.
 
-By considering the special cases of the theorem~\eqref{prop:ordinary-sums-of-powers-via-newtons-series} for $t=4$,
+By considering the special cases of the proposition~\eqref{prop:ordinary-sums-of-powers-via-newtons-series} for $t=4$,
 we observe rather unexpected formulas for sums of powers, that are
 \begin{align*}
     \KnuthRFoldSum{1}{n}{0} &= 1  \left( \binom{n-3}{1} + \binom{3}{1}  \right) \\
@@ -132,3 +132,24 @@ For example, given $t=5$, the double sums of powers are
     &+ 36 \left( \binom{n-3}{4} + \binom{6}{3} n - \binom{6}{4} \right) + 6 \left( \binom{n-3}{5} - \binom{7}{4} n + \binom{7}{5} \right)
 \end{align*}
 Similarly, we obtain the formula for the triple sums of powers
+\begin{proposition}[Triple sums of powers via Newton's series]
+    \begin{align*}
+        \KnuthRFoldSum{3}{n}{m} &= \sum_{j=0}^{m} \Delta^{j} t^m \Bigg[ (-1)^{j} \binom{j+t-1}{j+1} \KnuthRFoldSum{2}{n}{0} + (-1)^{j+1} \binom{j+t-1}{j+2} \KnuthRFoldSum{1}{n}{0} + \\
+        &+ (-1)^{j+2} \binom{j+t-1}{j+3} \KnuthRFoldSum{0}{n}{0} +  \binom{n-t+3}{j+3} \Bigg]
+    \end{align*}
+    \begin{proof}
+        By summing up the double powers sums, we get
+        \begin{align*}
+            &\KnuthRFoldSum{3}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^m \sum_{k=1}^{n}  \left[ (-1)^{j} \binom{j+t-1}{j+1} k^1 + (-1)^{j+1} \binom{j+t-1}{j+2} k^0 + \binom{k-t+2}{j+2} \right] \\
+            &= \sum_{j=0}^{m} \Delta^{j} t^m \left[ (-1)^{j} \binom{j+t-1}{j+1} \sum_{k=1}^{n} k^1 + (-1)^{j+1} \binom{j+t-1}{j+2} \sum_{k=1}^{n} k^0 + \sum_{k=1}^{n}  \binom{k-t+2}{j+2} \right]
+%            &= \sum_{j=0}^{m} \Delta^{j} t^m \Bigg[ (-1)^{j} \binom{j+t-1}{j+1} \KnuthRFoldSum{2}{n}{0} + (-1)^{j+1} \binom{j+t-1}{j+2} \KnuthRFoldSum{1}{n}{0} + \\
+%            &+ (-1)^{j+2} \binom{j+t-1}{j+3} \KnuthRFoldSum{0}{n}{0} +  \binom{n-t+3}{j+3} \Bigg]
+        \end{align*}
+        Note that $\sum_{k=1}^{n} k^1 = \KnuthRFoldSum{2}{n}{0}$ and $\sum_{k=1}^{n} k^0 = \KnuthRFoldSum{1}{n}{0}$.
+        By segmented hockey stick identity~\eqref{prop:segmented-hockey-stick-identity}
+        \begin{align*}
+            \sum_{k=1}^{n}  \binom{k-t+2}{j+2} = (-1)^{j+2} \binom{j+t-1}{j+3} \KnuthRFoldSum{0}{n}{0} +  \binom{n-t+3}{j+3}
+        \end{align*}
+        This completes the proof.
+    \end{proof}
+\end{proposition}
