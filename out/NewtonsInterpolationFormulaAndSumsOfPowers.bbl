@@ -71,4 +71,13 @@ John Riordan.
 \newblock {Reference request: identity in central factorial numbers}, 2020.
 \newblock \url{https://math.stackexchange.com/a/3665722/463487}.
 
+\bibitem{MathematicaPrograms}
+Petro Kolosov.
+\newblock Mathematica programs for finite differences, stirling numbers, and
+  sums of powers.
+\newblock
+  \url{https://github.com/kolosovpetro/FromFiniteDifferencesToStirlingNumbersAndSumsOfPowers/tree/main/mathematica},
+  2024.
+\newblock GitHub repository, Mathematica source files.
+
 \end{thebibliography}
