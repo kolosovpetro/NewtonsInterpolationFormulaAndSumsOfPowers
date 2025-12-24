@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{knuth1993johann}
 {Knuth, Donald E.}
@@ -58,5 +58,10 @@ John Riordan.
 \newblock {Wiley New York}, 1968.
 \newblock
   \url{https://www.amazon.com/-/de/Combinatorial-Identities-Probability-Mathematical-Statistics/dp/0471722758}.
+
+\bibitem{RiordanCentralFactorialMSE2020}
+{Markus Scheuer}.
+\newblock {Reference request: identity in central factorial numbers}, 2020.
+\newblock \url{https://math.stackexchange.com/a/3665722/463487}.
 
 \end{thebibliography}
