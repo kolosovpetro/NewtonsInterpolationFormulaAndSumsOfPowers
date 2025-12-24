@@ -216,7 +216,7 @@ In general,
     For non-negative integers $r,n,m$ and arbitrary integer $t$
     \begin{align*}
         &\KnuthRFoldSum{r}{n}{m} \\
-        &= \sum_{j=0}^{m}\left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right] \sum_{k=0}^{m} \binom{t}{k} \stirlingii{m}{j+k} (j+k)!
+        &= \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right] \binom{t}{k} \stirlingii{m}{j+k} (j+k)!
     \end{align*}
     \begin{proof}
         By multifold sums of powers via Newton's series~\eqref{theorem:multifold-sums-of-powers-via-newtons-series}
@@ -224,3 +224,33 @@ In general,
     \end{proof}
 \end{proposition}
 The proposition above can be presented in a pure binomial form as well, by means of the identity~\eqref{prop:multifold-sum-of-zero-powers}: $\KnuthRFoldSum{r}{n}{0} = \binom{r+n-1}{r}$.
+
+In addition, we are capable to express multifold sums of powers via Eulerian numbers, by
+expressing the forward finite difference via Worpitzky identity~\cite{Worpitzky1883}
+\begin{lemma}[Worpitzky identity]
+    For non-negative integers $t,m$
+    \begin{align*}
+        t^{m} = \sum_{k=0}^{m} \eulerian{m}{k} \binom{t+k}{m}
+    \end{align*}
+\end{lemma}
+where $\eulerian{n}{k}$ are Eulerian numbers.
+Thus,
+\begin{lemma}[Finite difference via Eulerian numbers]
+    \label{lem:finite-differences-via-eulerian-numbers}
+    For non-negative integers $j,m$ and arbitrary integer $t$
+    \begin{align*}
+        \Delta^{j} t^{m} = \sum_{k=0}^{m} \eulerian{m}{k} \binom{t+k}{m-j}
+    \end{align*}
+\end{lemma}
+Therefore,
+\begin{proposition}[Multifold sums of powers via Eulerian numbers]
+    For non-negative integers $r,n,m$ and arbitrary integer $t$
+    \begin{align*}
+        &\KnuthRFoldSum{r}{n}{m} \\
+        &= \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right] \eulerian{m}{k} \binom{t+k}{m-j}
+    \end{align*}
+    \begin{proof}
+        By multifold sums of powers via Newton's series~\eqref{theorem:multifold-sums-of-powers-via-newtons-series}
+        and finite difference via Eulerian numbers of the second kind~\eqref{lem:finite-differences-via-eulerian-numbers}.
+    \end{proof}
+\end{proposition}
