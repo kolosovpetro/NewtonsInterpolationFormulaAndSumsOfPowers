@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Fix README
 - Update metadata
 - Update MSC2010 subjects
+- Fix manuscript footer
 
 ## [1.0.0] - 24-Dec-2025
 
