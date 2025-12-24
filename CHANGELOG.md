@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Custom validate for theorem environment
 - Remove commented code
 - Remove unused files
+- Add Worpitzky identity (1883) original reference
 
 ## [1.0.0] - 24-Dec-2025
 
