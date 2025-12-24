@@ -2,7 +2,7 @@ First we split the sum $\sum_{k=0}^{n} \binom{-t+k}{j}$ into two sub-sums so tha
 \begin{align*}
     \sum_{k=0}^{n} \binom{-t+k}{j} &= \sum_{k=0}^{t-1} \binom{-t+k}{j} + \sum_{k=t}^{n} \binom{-t+k}{j}
 \end{align*}
-We assume that the two sums above run over the partition $\{0,1,2,\cdots,t,\cdots, n\}$ such that $t<n$.
+We assume that the two sums above run over the partition $\{0,1,2,\cdots,t,\cdots, n\}$, with $t<n$.
 Considering the sum $\sum_{k=0}^{t-1} \binom{-t+k}{j}$ we notice that
 \begin{align*}
     \sum_{k=0}^{t-1} \binom{-t+k}{j} = \binom{-t}{j}
@@ -13,7 +13,7 @@ Thus
 \begin{align*}
     \sum_{k=0}^{t-1} \binom{-t+k}{j} &= \sum_{k=1}^{t} \binom{-k}{j} = \sum_{k=0}^{t-1} \binom{-k-1}{j}
 \end{align*}
-By means of $\binom{-k}{j} = (-1)^j \binom{j+k-1}{j}$
+By using the identity $\binom{-k}{j} = (-1)^j \binom{j+k-1}{j}$, we obtain
 \begin{align*}
     \binom{-k-1}{j} &= \binom{-(k+1)}{j} = (-1)^j \binom{j+k}{j}
 \end{align*}
@@ -21,7 +21,7 @@ Thus
 \begin{align*}
     \sum_{k=0}^{t-1} \binom{-t+k}{j} = (-1)^j \sum_{k=0}^{t-1} \binom{j+k}{j} = (-1)^{j} \binom{j+t}{j+1}
 \end{align*}
-By means of Hockey stick identity $\sum_{k=0}^{t} \binom{j+k}{j} = \binom{j+t+1}{j+1}$.
+by the hockey-stick identity $\sum_{k=0}^{t} \binom{j+k}{j} = \binom{j+t+1}{j+1}$.
 
 Considering the sum $\sum_{k=t}^{n} \binom{-t+k}{j}$ we notice that
 \begin{align*}
@@ -31,8 +31,8 @@ Thus
 \begin{align*}
     \sum_{k=t}^{n} \binom{-t+k}{j} = \sum_{k=0}^{n-t} \binom{k}{j} = \binom{n-t+1}{j+1}
 \end{align*}
-By means of Hockey stick identity $\sum_{k=0}^{t} \binom{j+k}{j} = \binom{j+t+1}{j+1}$.
-Thus
+again by the hockey-stick identity $\sum_{k=0}^{t} \binom{j+k}{j} = \binom{j+t+1}{j+1}$.
+Combining the two parts, we obtain
 \begin{align*}
     \sum_{k=0}^{n} \binom{-t+k}{j} &= (-1)^j \binom{j+t}{j+1} +  \binom{n-t+1}{j+1}
 \end{align*}
