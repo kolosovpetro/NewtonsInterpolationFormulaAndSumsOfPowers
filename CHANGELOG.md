@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Fix English grammar in introduction
 - Fix English grammar in backward difference form
 - Fix English grammar in future research
+- Fix English grammar in conclusions
 
 ## [1.1.0] - 24-Dec-2025
 
