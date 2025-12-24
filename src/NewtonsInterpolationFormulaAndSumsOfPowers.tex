@@ -24,6 +24,11 @@
 \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 \raggedbottom
 
+% custom validate environment, similar to begin{proof}
+\newenvironment{validate}
+{\begin{proof}[Validation (Mathematica)]}
+{\end{proof}}
+
 %\newcommand \coeffA [3][A] {{\mathbf{#1}} \sb{#2,#3}}
 %\newcommand \polynomialP [4][P]{{\mathbf{#1}}\sp{#2} \sb{#3}(#4)}
 \newcommand \bernoulli [2][B] {{#1}\sb{#2}}
