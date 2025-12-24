@@ -178,6 +178,24 @@ which is
         applications of the segmented hockey stick identity~\eqref{prop:segmented-hockey-stick-identity}.
     \end{proof}
 \end{theorem}
+In its explicit form
+\begin{example}[Explicit expansion of the $s$--sum in the $r$-fold case]
+    For non-negative integers $r,n,m$ and an arbitrary integer $t$, the $r$-fold sum
+    $\KnuthRFoldSum{r}{n}{m}$ can be written as
+    \begin{align*}
+        \KnuthRFoldSum{r}{n}{m}
+        &= \sum_{j=0}^{m} \Delta^{j} t^{m} \Big[
+            (-1)^{j}   \binom{j+t-1}{j+1} \KnuthRFoldSum{r-1}{n}{0}
+            + (-1)^{j+1} \binom{j+t-1}{j+2} \KnuthRFoldSum{r-2}{n}{0} \\
+            &\qquad\qquad\quad
+            + (-1)^{j+2} \binom{j+t-1}{j+3} \KnuthRFoldSum{r-3}{n}{0}
+            + \cdots
+            + (-1)^{j+r-1} \binom{j+t-1}{j+r} \KnuthRFoldSum{0}{n}{0} \\
+            &\qquad\qquad\quad
+            + \binom{n-t+r}{j+r}
+            \Big]
+    \end{align*}
+\end{example}
 We may observe that
 \begin{proposition}[Multifold sum of zero powers]
     \label{prop:multifold-sum-of-zero-powers}
