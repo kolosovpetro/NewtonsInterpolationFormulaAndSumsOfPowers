@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Fix year in Mathematica package bibliography
 - Fix DOI: now it points to all versions on zenodo
 - Rename license.tex -> footer.tex
+- Fix English grammar in introduction
 
 ## [1.1.0] - 24-Dec-2025
 
