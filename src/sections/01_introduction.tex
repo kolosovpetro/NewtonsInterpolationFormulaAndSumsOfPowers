@@ -1,7 +1,5 @@
-In this manuscript we derive the formulas for multifold sums of powers by utilizing
-Newton's interpolation formula.
-Furthermore, this manuscript provides the formulas for multifold sums of powers in terms of
-Stirling numbers of the second kind, and Eulerian numbers.
+In this manuscript we derive formulas for multifold sums of powers by utilizing Newton's interpolation formula.
+Furthermore, we provide formulas for multifold sums of powers in terms of Stirling numbers of the second kind and Eulerian numbers.
 
 Allow us to start from the definition of multifold sums of powers.
 We utilize the recurrence proposed by Donald Knuth in his article
@@ -217,8 +215,7 @@ In general,
 \begin{proposition}[Multifold sums of powers via Stirling numbers]
     For non-negative integers $r,n,m$ and an arbitrary integer $t$
     \begin{align*}
-        &\KnuthRFoldSum{r}{n}{m} \\
-        &= \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right] \binom{t}{k} \stirlingii{m}{j+k} (j+k)!
+        \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right] \binom{t}{k} \stirlingii{m}{j+k} (j+k)!
     \end{align*}
     \begin{proof}
         By multifold sums of powers via Newton's series~\eqref{theorem:multifold-sums-of-powers-via-newtons-series}
@@ -248,8 +245,7 @@ Therefore,
 \begin{proposition}[Multifold sums of powers via Eulerian numbers]
     For non-negative integers $r,n,m$ and an arbitrary integer $t$
     \begin{align*}
-        &\KnuthRFoldSum{r}{n}{m} \\
-        &= \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right] \eulerian{m}{k} \binom{t+k}{m-j}
+        \KnuthRFoldSum{r}{n}{m}= \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right] \eulerian{m}{k} \binom{t+k}{m-j}
     \end{align*}
     \begin{proof}
         By multifold sums of powers via Newton's series~\eqref{theorem:multifold-sums-of-powers-via-newtons-series}

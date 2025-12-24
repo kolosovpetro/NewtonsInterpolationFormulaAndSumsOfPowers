@@ -1,9 +1,9 @@
 # Newton's interpolation formula and sums of powers
 
-In this manuscript we derive the formulas for multifold sums of powers by utilizing
-Newton's interpolation formula.
-Furthermore, this manuscript provides the formulas for multifold sums of powers in terms of
-Stirling numbers of the second kind, and Eulerian numbers.
+## Abstract
+
+In this manuscript we derive formulas for multifold sums of powers by utilizing Newton's interpolation formula.
+Furthermore, we provide formulas for multifold sums of powers in terms of Stirling numbers of the second kind and Eulerian numbers.
 
 **DOI**: https://doi.org/10.5281/zenodo.18040979
 
