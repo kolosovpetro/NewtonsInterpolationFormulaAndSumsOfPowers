@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 ### Changed
 
 - Add Acknowledgements Markus Scheuer for bibliography
+- Fix README
+- Update metadata
+- Update MSC2010 subjects
 
 ## [1.0.0] - 24-Dec-2025
 
