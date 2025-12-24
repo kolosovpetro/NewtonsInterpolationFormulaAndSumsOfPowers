@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - In progress
+
+### Changed
+
+- Fix readme
+- Fix year in Mathematica package bibliography
+- Fix DOI: now it points to all versions on zenodo
+- Rename license.tex -> footer.tex
+- Fix English grammar in introduction
+- Fix English grammar in backward difference form
+- Fix English grammar in future research
+- Fix English grammar in conclusions
+- Update abstract
+- Fix English grammar in proof of segmented hockey stick identity
+- Fix DOI in citation file
+- Add examples for triple sums of powers
+- Add explicit example for multifold sums of powers
+
 ## [1.1.0] - 24-Dec-2025
 
 ### Changed
