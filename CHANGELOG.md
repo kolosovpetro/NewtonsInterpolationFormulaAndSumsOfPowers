@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add formula for multifold sums of powers in Eulerian numbers
 - Add mathematica programs
 - Add conclusions
+- Fix build artifacts
 
 ## [1.0.0] - 24-Dec-2025
 
