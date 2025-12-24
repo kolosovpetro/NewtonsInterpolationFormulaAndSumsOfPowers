@@ -51,6 +51,12 @@ RFoldSumViaAlternatingBinomialCorrectionTerm2::usage=""
 RFoldSumViaAlternatingBinomialCorrectionTerm3::usage=""
 RFoldSumViaAlternatingBinomialCorrectionTerm4::usage=""
 VanishingCorrectionCaseOfTheRFoldSum::usage=""
+MultifoldSumsOfPowersViaNewtonsSeries::usage=""
+ValidateMultifoldSumsOfPowersViaNewtonsSeries::usage=""
+ValidateFiniteDifferenceViaStirlingNumbers::usage=""
+EulerianNumber::usage=""
+FiniteDifferenceViaEulerianNumbers::usage=""
+ValidateFiniteDifferenceViaEulerianNumbers::usage=""
 (* END: Newton's series and sums of powers package *)
 (* =========================================================================DOCS END=================================================================== *)
 
@@ -125,10 +131,22 @@ RFoldSumViaAlternatingBinomialCorrectionTerm2[r_, n_, m_, t_]:= Sum[FiniteDiffer
 RFoldSumViaAlternatingBinomialCorrectionTerm3[r_, n_, m_, t_]:= Sum[FiniteDifferenceOfPowerOrderN[t, m, j] * ((Sum[(-1)^(j+s-1) * Binomial[j+t-1, j+s]*Binomial[r-s+n-1, r-s], {s, 1, r}] + Binomial[n-t+r, j+r])), {j, 0, m}];
 RFoldSumViaAlternatingBinomialCorrectionTerm4[r_, n_, m_, t_]:= Sum[FiniteDifferenceOfPowerOrderN[t, m, j] * ((Sum[(-1)^(j+s) * Binomial[j+t-1, j+s+1]*Binomial[r-s+n-2, r-s-1], {s, 0, r-1}] + Binomial[n-t+r, j+r])), {j, 0, m}];
 VanishingCorrectionCaseOfTheRFoldSum[r_, t_, m_] := Sum[FiniteDifferenceOfPowerOrderN[t, j, m] * Sum[(-1)^(j+s-1) * Binomial[j+t-1, j+s]*MultifoldSumOfPowersRecurrence[r-s, 1, 0], {s, 1, r}], {j, 0, m}];
+MultifoldSumsOfPowersViaNewtonsSeries[r_, n_, m_, t_]:= Sum[FiniteDifferenceOfPowerOrderN[t, m, j] * ((Sum[(-1)^(j+s-1) * Binomial[j+t-1, j+s]*MultifoldSumOfPowersRecurrence[r-s, n, 0], {s, 1, r}] + Binomial[n-t+r, j+r])), {j, 0, m}];
+ValidateMultifoldSumsOfPowersViaNewtonsSeries[r_] := Table[MultifoldSumOfPowersRecurrence[r,n,m]-MultifoldSumsOfPowersViaNewtonsSeries[r,n,m,t],{n,0,10},{m,0,10},{t,0,n}]//Flatten
+ValidateFiniteDifferenceViaStirlingNumbers[t_]:= Table[FiniteDifferencesViaStirlingNumbersReindexed[n,k, t] - FiniteDifferenceOfPowerOrderN[t, n,k], {n, 0, 20}, {k, 0, n}] //Flatten
+EulerianNumber[0, 0] = 1;
+EulerianNumber[n_, k_] /; k < 0 || k >= n := 0;
+EulerianNumber[n_, k_] := EulerianNumber[n, k] =
+  (k + 1) EulerianNumber[n - 1, k] + (n - k) EulerianNumber[n - 1, k - 1];
+FiniteDifferenceViaEulerianNumbers[m_, j_, t_]:= Sum[EulerianNumber[m,k]* Binomial[t+k, m-j], {k, 0, m}]; 
+ValidateFiniteDifferenceViaEulerianNumbers[t_]:=Table[FiniteDifferenceViaEulerianNumbers[n,k, t]-FiniteDifferenceOfPowerOrderN[t, n,k], {n, 0, 20}, {k, 0, n}] //Flatten
 (* END: Newton's series and sums of powers *)
 
 End[ ]
 EndPackage[ ]
+
+
+
 
 
 

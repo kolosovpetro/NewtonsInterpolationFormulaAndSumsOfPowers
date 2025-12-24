@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Remove unused files
 - Add Worpitzky identity (1883) original reference
 - Add formula for multifold sums of powers in Eulerian numbers
+- Add mathematica programs
 
 ## [1.0.0] - 24-Dec-2025
 

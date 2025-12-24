@@ -158,14 +158,21 @@ Similarly, we obtain the formula for the triple sums of powers
 
 \begin{theorem}[Multifold sums of powers via Newton's series]
     \label{theorem:multifold-sums-of-powers-via-newtons-series}
-    For non-negative integers $r,n,m$ and arbitrary integer $t$
-    \begin{align*}
-        \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right]
-    \end{align*}
+    \begin{mdframed}
+        For non-negative integers $r,n,m$ and arbitrary integer $t$
+        \begin{align*}
+            \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right]
+        \end{align*}
+    \end{mdframed}
     \begin{proof}
         By Newton's series for power~\eqref{prop:newton-series-for-monomial-reversed} and repeated
         segmented hockey stick identity~\eqref{prop:segmented-hockey-stick-identity}.
     \end{proof}
+%    \begin{validate} Use the mathematica package~\cite{MathematicaPrograms} for $r=1,2,3,\dots$
+%        \begin{itemize}
+%            \item \texttt{ValidateMultifoldSumsOfPowersViaNewtonsSeries[r]}
+%        \end{itemize}
+%    \end{validate}
 \end{theorem}
 We may observe that
 \begin{proposition}[Multifold sum of zero powers]
@@ -194,7 +201,7 @@ sums of powers~\eqref{theorem:multifold-sums-of-powers-via-newtons-series}
 \end{proposition}
 Finite difference of power is closely related to Stirling numbers of the second kind
 \begin{lemma}[Finite difference via Stirling numbers]
-    \label{prop:finite-differences-via-stirling-numbers}
+    \label{lem:finite-differences-via-stirling-numbers}
     For non-negative integers $j,m$ and arbitrary integer $t$
     \begin{align*}
         \Delta^{j} t^{m} = \sum_{k=0}^{m} \binom{t}{k} \stirlingii{m}{j+k} (j+k)!
@@ -208,7 +215,7 @@ which implies the variations of the formulas for sums of powers
     \end{align*}
     \begin{proof}
         By ordinary sums of powers via Newton's series~\eqref{prop:ordinary-sums-of-powers-via-newtons-series}
-        and finite difference via Stirling numbers of the second kind~\eqref{prop:finite-differences-via-stirling-numbers}.
+        and finite difference via Stirling numbers of the second kind~\eqref{lem:finite-differences-via-stirling-numbers}.
     \end{proof}
 \end{proposition}
 In general,
@@ -220,7 +227,7 @@ In general,
     \end{align*}
     \begin{proof}
         By multifold sums of powers via Newton's series~\eqref{theorem:multifold-sums-of-powers-via-newtons-series}
-        and finite difference via Stirling numbers of the second kind~\eqref{prop:finite-differences-via-stirling-numbers}.
+        and finite difference via Stirling numbers of the second kind~\eqref{lem:finite-differences-via-stirling-numbers}.
     \end{proof}
 \end{proposition}
 The proposition above can be presented in a pure binomial form as well, by means of the identity~\eqref{prop:multifold-sum-of-zero-powers}: $\KnuthRFoldSum{r}{n}{0} = \binom{r+n-1}{r}$.
