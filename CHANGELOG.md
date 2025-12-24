@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Fix DOI: now it points to all versions on zenodo
 - Rename license.tex -> footer.tex
 - Fix English grammar in introduction
+- Fix English grammar in backward difference form
+- Fix English grammar in future research
 
 ## [1.1.0] - 24-Dec-2025
 
