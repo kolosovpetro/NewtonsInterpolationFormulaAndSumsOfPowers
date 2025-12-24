@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add citation file
 - Add citation for mathematica programs
 - Custom validate for theorem environment
+- Remove commented code
 
 ## [1.0.0] - 24-Dec-2025
 
