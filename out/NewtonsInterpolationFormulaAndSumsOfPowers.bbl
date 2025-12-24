@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{knuth1993johann}
 {Knuth, Donald E.}
@@ -39,6 +39,13 @@ Thomas~J. Pfaff.
 \newblock {\em {arXiv preprint arXiv:2211.11648}}, 2022.
 \newblock \url{https://arxiv.org/abs/2211.11648}.
 
+\bibitem{Worpitzky1883}
+J.~Worpitzky.
+\newblock Studien über die bernoullischen und eulerschen zahlen.
+\newblock {\em Journal für die reine und angewandte Mathematik}, 94:203--232,
+  1883.
+\newblock \url{http://eudml.org/doc/148532}.
+
 \bibitem{steffensen1927interpolation}
 {Steffensen, Johan Frederik}.
 \newblock {\em Interpolation}.
@@ -58,5 +65,19 @@ John Riordan.
 \newblock {Wiley New York}, 1968.
 \newblock
   \url{https://www.amazon.com/-/de/Combinatorial-Identities-Probability-Mathematical-Statistics/dp/0471722758}.
+
+\bibitem{RiordanCentralFactorialMSE2020}
+{Markus Scheuer}.
+\newblock {Reference request: identity in central factorial numbers}, 2020.
+\newblock \url{https://math.stackexchange.com/a/3665722/463487}.
+
+\bibitem{MathematicaPrograms}
+Petro Kolosov.
+\newblock Mathematica programs for finite differences, stirling numbers, and
+  sums of powers.
+\newblock
+  \url{https://github.com/kolosovpetro/FromFiniteDifferencesToStirlingNumbersAndSumsOfPowers/tree/main/mathematica},
+  2024.
+\newblock GitHub repository, Mathematica source files.
 
 \end{thebibliography}
