@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Fix English grammar in conclusions
 - Update abstract
 - Fix English grammar in proof of segmented hockey stick identity
+- Fix DOI in citation file
 
 ## [1.1.0] - 24-Dec-2025
 
