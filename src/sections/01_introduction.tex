@@ -67,7 +67,6 @@ For $t=0$ and $m=3$ we have the famous identity
 which was discussed in~\cite[p. 190]{graham1994concrete} and in~\cite{pfaff2007deriving}.
 The coefficients $0, 1, 6, 6, 0, 1, 14, 36, 24, \dots$ are given by the sequence
 \href{https://oeis.org/A131689}{\texttt{A131689}} in the OEIS~\cite{sloane2003line}.
-
 The special cases for $t=1$ and $m=2,3,4,5$ were discussed in~\cite{cereceda2022sums}.
 For instance,
 \begin{align*}
@@ -97,6 +96,11 @@ we observe rather unexpected formulas for sums of powers, namely
 The coefficients $1,4,1,16,9,\dots$ are given by the sequence
 \href{https://oeis.org/A391633}{\texttt{A391633}}
 in the OEIS~\cite{sloane2003line}.
+In general,
+\begin{align*}
+    \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \Delta^{j} 4^m \left[ \binom{n-3}{j+1} + (-1)^j \binom{j+3}{j+1}  \right].
+\end{align*}
+
 To obtain the formula for double sum of powers, we apply the summation operator over the ordinary sum of powers again,
 thus
 \begin{align*}
@@ -130,6 +134,10 @@ For example, given $t=5$, the double sums of powers are
 The coefficients $1,5,1,25,11,2,\dots$ are given by the sequence
 \href{https://oeis.org/A391635}{\texttt{A391635}}
 in the OEIS~\cite{sloane2003line}.
+In general,
+\begin{align*}
+    \KnuthRFoldSum{2}{n}{m} = \sum_{j=0}^{m} \Delta^{j} 5^{m} \left[ \binom{n-3}{j+2} + (-1)^{j} \binom{j+4}{j+1} n^1 + (-1)^{j+1} \binom{j+4}{j+2} n^0 \right]
+\end{align*}
 
 Similarly, we obtain the formula for the triple sums of powers
 \begin{proposition}[Triple sums of powers via Newton's series]
@@ -161,6 +169,11 @@ For example, given $t=4$, the triple sums of powers are
     \KnuthRFoldSum{3}{n}{2} &= 16 \left( \binom{n-1}{3} + \binom{3}{1} \KnuthRFoldSum{2}{n}{0} - \binom{3}{2} \KnuthRFoldSum{1}{n}{0} + \binom{3}{3} \KnuthRFoldSum{0}{n}{0} \right) \\
     &+ 9 \left( \binom{n-1}{4} - \binom{4}{2} \KnuthRFoldSum{2}{n}{0} + \binom{4}{3} \KnuthRFoldSum{1}{n}{0} - \binom{4}{4} \KnuthRFoldSum{0}{n}{0} \right) \\
     &+ 2 \left( \binom{n-1}{5} + \binom{5}{3} \KnuthRFoldSum{2}{n}{0} - \binom{5}{4} \KnuthRFoldSum{1}{n}{0} + \binom{5}{5} \KnuthRFoldSum{0}{n}{0} \right)
+\end{align*}
+In general,
+\begin{align*}
+    \KnuthRFoldSum{3}{n}{m} &= \sum_{j=0}^{m} \Delta^{j} 4^m \Bigg[ (-1)^{j} \binom{j+3}{j+1} \KnuthRFoldSum{2}{n}{0} + (-1)^{j+1} \binom{j+3}{j+2} \KnuthRFoldSum{1}{n}{0} + \\
+    &+ (-1)^{j+2} \binom{j+3}{j+3} \KnuthRFoldSum{0}{n}{0} +  \binom{n-1}{j+3} \Bigg]
 \end{align*}
 
 Continuing similarly, we are able to derive the formula for multifold sums of powers,
