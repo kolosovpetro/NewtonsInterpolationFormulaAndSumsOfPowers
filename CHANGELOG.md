@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 
 - Fix link to mathematica programs
 - Add references in txt format
+- Add general formula to examples
 
 ## [1.2.0] - 24-Dec-2025
 

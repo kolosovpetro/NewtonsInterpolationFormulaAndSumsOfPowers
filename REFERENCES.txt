@@ -1,4 +1,4 @@
-﻿Knuth, D. E. (1993). Johann Faulhaber and sums of powers. Mathematics of Computation, 61(203), 277–294. https://arxiv.org/abs/math/9207222
+Knuth, D. E. (1993). Johann Faulhaber and sums of powers. Mathematics of Computation, 61(203), 277–294. https://arxiv.org/abs/math/9207222
 
 Newton, I., & Chittenden, N. W. (1850). Newton's Principia: The mathematical principles of natural philosophy. New-York: D. Adee. https://archive.org/details/bub_gb_KaAIAAAAIAAJ/page/466/mode/2up
 
