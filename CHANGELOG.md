@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 ### Changed
 
 - Fix link to mathematica programs
+- Add references in txt format
 
 ## [1.2.0] - 24-Dec-2025
 
