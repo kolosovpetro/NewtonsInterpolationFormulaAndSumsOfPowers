@@ -7,7 +7,7 @@ Reallocating 'name_of_file' (item size: 1) to 43 items.
 Database file #1: NewtonsInterpolationFormulaAndSumsOfPowers.bib
 You've used 12 entries,
             1791 wiz_defined-function locations,
-            531 strings with 6131 characters,
+            531 strings with 6120 characters,
 and the built_in function-call counts, 2096 in all, are:
 = -- 200
 > -- 52
