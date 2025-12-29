@@ -13,6 +13,15 @@ Furthermore, we provide formulas for multifold sums of powers in terms of Stirli
 Bernoulli numbers, Bernoulli polynomials, Interpolation, Combinatorics, Central factorial numbers, OEIS, Stirling numbers,
 Eulerian numbers, Worpitzky identity.
 
+## OEIS
+
+- https://oeis.org/A131689 - Triangle of numbers T(n,k) = k!*Stirling2(n,k) read by rows, T(n, k) for 0 <= k <= n.
+- https://oeis.org/A028246 - Triangular array a(n,k) = (1/k)*Sum_{i=0..k} (-1)^(k-i)*binomial(k,i)*i^n; n >= 1, 1 <= k <= n, read by rows.
+- https://oeis.org/A038719 - Triangle T(n,k) (0 <= k <= n) giving number of chains of length k in partially ordered set formed from subsets of n-set by inclusion.
+- https://oeis.org/A391552 - Triangle read by rows: T(n,k) = Sum_{j=0..k} (-1)^(k-j) * binomial(k,j) * (3+j)^n.
+- https://oeis.org/A391633 - Triangle read by rows: T(n,k) = Sum_{j=0..k} (-1)^(k-j) * binomial(k,j) * (4+j)^n.
+- https://oeis.org/A391635 - Triangle read by rows: T(n,k) = Sum_{j=0..k} (-1)^(k-j) * binomial(k,j) * (5+j)^n.
+
 ## References
 
 - Knuth, D. E. (1993). Johann Faulhaber and sums of powers. Mathematics of Computation, 61(203), 277–294. https://arxiv.org/abs/math/9207222
