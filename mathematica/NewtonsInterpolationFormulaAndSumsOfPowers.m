@@ -4,6 +4,8 @@ BeginPackage["NewtonsInterpolationFormulaAndSumsOfPowers`"]
 
 (* BEGIN: Newton's series and sums of powers package *)
 FiniteDifferenceOfPowerOrderN::usage="Validates corollary:forward-finite-difference-of-power"
+BackwardFiniteDifferenceOfPowerOrderN::usage=""
+CentralDifference::usage=""
 NewtonSeriesForMonomialReindexed::usage="Validates proposition:newton-series-for-monomial-reindexed"
 NewtonSeriesForPowerInZero::usage="Validates corollary:newton-series-for-power-in-zero"
 NewtonSeriesForPowerInZeroReversed::usage="Validates corollary:newton-series-for-power-in-zero-reversed"
@@ -53,10 +55,22 @@ RFoldSumViaAlternatingBinomialCorrectionTerm4::usage=""
 VanishingCorrectionCaseOfTheRFoldSum::usage=""
 MultifoldSumsOfPowersViaNewtonsSeries::usage=""
 ValidateMultifoldSumsOfPowersViaNewtonsSeries::usage=""
+MultifoldSumsOfPowersViaCentralDifferences::usage=""
+ValidateMultifoldSumsOfPowersViaCentralDifferences::usage=""
+MultifoldSumsOfPowersViaBackwardDifferences::usage=""
+ValidateMultifoldSumsOfPowersViaBackwardDifferences::usage=""
 ValidateFiniteDifferenceViaStirlingNumbers::usage=""
 EulerianNumber::usage=""
 FiniteDifferenceViaEulerianNumbers::usage=""
 ValidateFiniteDifferenceViaEulerianNumbers::usage=""
+MultifoldSumsOfPowersViaStirlingNumbers::usage=""
+ValidateMultifoldSumsOfPowersViaStirlingNumbers::usage=""
+MultifoldSumsOfPowersViaEulerianNumbers::usage=""
+ValidateMultifoldSumsOfPowersViaEulerianNumbers::usage=""
+MultifoldSumsOfPowersBinomialForm::usage=""
+ValidateMultifoldSumsOfPowersBinomialForm::usage=""
+MultifoldSumsOfPowersBinomialFormReindexed::usage=""
+ValidateMultifoldSumsOfPowersBinomialFormReindexed::usage=""
 (* END: Newton's series and sums of powers package *)
 (* =========================================================================DOCS END=================================================================== *)
 
@@ -71,6 +85,8 @@ Protect[Power];
 
 (* BEGIN: Newton's series and sums of powers package *)
 FiniteDifferenceOfPowerOrderN[variable_, exp_, order_]:= Sum[(-1)^(order-j) * Binomial[order, j] * (variable+j)^(exp), {j, 0, order}];
+BackwardFiniteDifferenceOfPowerOrderN[variable_, exp_, order_]:= Sum[(-1)^j * Binomial[order, j] * (variable-j)^exp, {j, 0, order}];
+CentralDifference[x_, n_, k_] := Sum[(-1)^j * Binomial[k, j] * (x + k/2 -j)^n, {j, 0, k}];
 NewtonSeriesForMonomialReindexed[n_, t_, m_]:= Sum[Binomial[t,k]*FiniteDifferenceOfPowerOrderN[n-t,m,k], {k,0,m}];
 NewtonSeriesForPowerInZero[n_, m_]:= Sum[Binomial[n, m-k] * FiniteDifferenceOfPowerOrderN[0, m, m-k], {k, 0, m}];
 NewtonSeriesForPowerInZeroReversed[n_, m_]:= Sum[Binomial[n, k] * FiniteDifferenceOfPowerOrderN[0, m, k], {k, 0, m}];
@@ -140,13 +156,22 @@ EulerianNumber[n_, k_] := EulerianNumber[n, k] =
   (k + 1) EulerianNumber[n - 1, k] + (n - k) EulerianNumber[n - 1, k - 1];
 FiniteDifferenceViaEulerianNumbers[m_, j_, t_]:= Sum[EulerianNumber[m,k]* Binomial[t+k, m-j], {k, 0, m}]; 
 ValidateFiniteDifferenceViaEulerianNumbers[t_]:=Table[FiniteDifferenceViaEulerianNumbers[n,k, t]-FiniteDifferenceOfPowerOrderN[t, n,k], {n, 0, 20}, {k, 0, n}] //Flatten
+MultifoldSumsOfPowersViaCentralDifferences[r_, n_, m_, t_]:= Sum[CentralDifference[t+j/2, m, j] * ((Sum[(-1)^(j+s-1) * Binomial[j+t-1, j+s]*MultifoldSumOfPowersRecurrence[r-s, n, 0], {s, 1, r}] + Binomial[n-t+r, j+r])), {j, 0, m}];
+ValidateMultifoldSumsOfPowersViaCentralDifferences[r_] := Table[MultifoldSumOfPowersRecurrence[r,n,m]-MultifoldSumsOfPowersViaCentralDifferences[r,n,m,t],{n,0,10},{m,0,10},{t,0,n}]//Flatten
+MultifoldSumsOfPowersViaBackwardDifferences[r_, n_, m_, t_]:= Sum[BackwardFiniteDifferenceOfPowerOrderN[t+j, m, j] * ((Sum[(-1)^(j+s-1) * Binomial[j+t-1, j+s]*MultifoldSumOfPowersRecurrence[r-s, n, 0], {s, 1, r}] + Binomial[n-t+r, j+r])), {j, 0, m}];
+ValidateMultifoldSumsOfPowersViaBackwardDifferences[r_] := Table[MultifoldSumOfPowersRecurrence[r,n,m]-MultifoldSumsOfPowersViaBackwardDifferences[r,n,m,t],{n,0,10},{m,0,10},{t,0,n}]//Flatten
+MultifoldSumsOfPowersViaStirlingNumbers[r_, n_, m_, t_]:= Sum[FiniteDifferencesViaStirlingNumbersReindexed[m,j,t] * ((Sum[(-1)^(j+s-1) * Binomial[j+t-1, j+s]*MultifoldSumOfPowersRecurrence[r-s, n, 0], {s, 1, r}] + Binomial[n-t+r, j+r])), {j, 0, m}];
+ValidateMultifoldSumsOfPowersViaStirlingNumbers[r_] := Table[MultifoldSumOfPowersRecurrence[r,n,m]-MultifoldSumsOfPowersViaStirlingNumbers[r,n,m,t],{n,0,10},{m,0,10},{t,0,n}]//Flatten
+MultifoldSumsOfPowersViaEulerianNumbers[r_, n_, m_, t_]:= Sum[FiniteDifferenceViaEulerianNumbers[m,j,t] * ((Sum[(-1)^(j+s-1) * Binomial[j+t-1, j+s]*MultifoldSumOfPowersRecurrence[r-s, n, 0], {s, 1, r}] + Binomial[n-t+r, j+r])), {j, 0, m}];
+ValidateMultifoldSumsOfPowersViaEulerianNumbers[r_] := Table[MultifoldSumOfPowersRecurrence[r,n,m]-MultifoldSumsOfPowersViaEulerianNumbers[r,n,m,t],{n,0,10},{m,0,10},{t,0,n}]//Flatten
+MultifoldSumsOfPowersBinomialForm[r_, n_, m_, t_]:= Sum[FiniteDifferenceOfPowerOrderN[t, m, j] * ((Sum[(-1)^(j+s-1) * Binomial[j+t-1, j+s]* Binomial[r-s+n-1, r-s], {s, 1, r}] + Binomial[n-t+r, j+r])), {j, 0, m}];
+ValidateMultifoldSumsOfPowersBinomialForm[r_] := Table[MultifoldSumOfPowersRecurrence[r,n,m]-MultifoldSumsOfPowersBinomialForm[r,n,m,t],{n,0,10},{m,0,10},{t,0,n}]//Flatten
+MultifoldSumsOfPowersBinomialFormReindexed[r_, n_, m_, t_]:= Sum[FiniteDifferenceOfPowerOrderN[t, m, j] * ((Sum[(-1)^(j+s) * Binomial[j+t-1, j+s+1]* Binomial[r-s+n-2, r-s-1], {s, 0, r-1}] + Binomial[n-t+r, j+r])), {j, 0, m}];
+ValidateMultifoldSumsOfPowersBinomialFormReindexed[r_] := Table[MultifoldSumOfPowersRecurrence[r,n,m]-MultifoldSumsOfPowersBinomialFormReindexed[r,n,m,t],{n,0,10},{m,0,10},{t,0,n}]//Flatten
 (* END: Newton's series and sums of powers *)
 
 End[ ]
 EndPackage[ ]
-
-
-
 
 
 

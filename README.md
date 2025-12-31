@@ -9,9 +9,9 @@ Furthermore, we provide formulas for multifold sums of powers in terms of Stirli
 
 **MSC2010**: 05A19, 05A10, 11B83, 03C40.
 
-**Keywords**: Sums of powers, Newton's interpolation formula, Finite differences, Binomial coefficients, Faulhaber's formula,
-Bernoulli numbers, Bernoulli polynomials, Interpolation, Combinatorics, Central factorial numbers, OEIS, Stirling numbers,
-Eulerian numbers, Worpitzky identity.
+**Keywords**: Sums of powers, Newton's interpolation formula, Finite differences, Binomial coefficients, Newton's series,
+Faulhaber's formula, Bernoulli numbers, Bernoulli polynomials, Interpolation, Combinatorics, Central factorial numbers,
+OEIS, Stirling numbers, Eulerian numbers, Worpitzky identity.
 
 ## OEIS
 

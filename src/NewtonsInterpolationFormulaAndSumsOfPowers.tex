@@ -65,6 +65,7 @@
     Newton's interpolation formula,
     Finite differences,
     Binomial coefficients,
+    Newton's series,
     Faulhaber's formula,
     Bernoulli numbers,
     Bernoulli polynomials,
@@ -81,11 +82,14 @@
     pdfcreator={pdflatex},
     pdfauthor={Petro Kolosov},
     pdfsubject={Newton's interpolation formula and sums of powers},
-    pdfkeywords={Finite differences,
+    pdfkeywords={Newton's interpolation formula,
+    Finite differences,
     Interpolation,
+    Polynomials,
     Sums of powers,
     Stirling numbers,
     Eulerian numbers,
+    Newton's series,
     Power sums,
     Binomial theorem,
     Power function,
@@ -95,6 +99,7 @@
     Worpitzky identity,
     Pascal's triangle,
     Faulhaber's formula,
+    Central factorials,
     OEIS,
     Combinatorics,
     Central factorial numbers}
@@ -102,11 +107,13 @@
 
 \begin{document}
 
-    \maketitle
-
     \begin{abstract}
         \input{sections/abstract}
     \end{abstract}
+
+    \maketitle
+
+    \addcontentsline{toc}{section}{Abstract}
 
     \tableofcontents
 
@@ -120,10 +127,14 @@
     \label{sec:backward-difference-form}
     \input{sections/03_backward_difference_form}
 
+    \section{Central difference form}
+    \label{sec:central-diffrence-form}
+    \input{sections/04_central_difference_form}
+
 
     \section{Future research}
     \label{sec:future-research}
-    \input{sections/04_future_research}
+    \input{sections/05_future_research}
 
 
     \section{Proof of Segmented hockey stick identity}

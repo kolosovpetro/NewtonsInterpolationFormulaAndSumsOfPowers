@@ -223,16 +223,22 @@ We may observe that
 Which yields the following binomial variations of the multifold
 sums of powers~\eqref{theorem:multifold-sums-of-powers-via-newtons-series}
 \begin{proposition}[Multifold sums of powers binomial form]
-    For non-negative integers $r,n,m$ and an arbitrary integer $t$
-    \begin{align*}
-        \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \binom{r-s+n-1}{r-s} \right) + \binom{n-t+r}{j+r} \right]
-    \end{align*}
+    \label{prop:multifold-sums-of-powers-binomial-form}
+    \begin{mdframed}
+        For non-negative integers $r,n,m$ and an arbitrary integer $t$
+        \begin{align*}
+            \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \binom{r-s+n-1}{r-s} \right) + \binom{n-t+r}{j+r} \right]
+        \end{align*}
+    \end{mdframed}
 \end{proposition}
-\begin{proposition}[Multifold sums of powers binomial form reindexed]
-    For non-negative integers $r,n,m$ and an arbitrary integer $t$
-    \begin{align*}
-        \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \left( \sum_{s=0}^{r-1} (-1)^{j+s} \binom{j+t-1}{j+s+1} \binom{r-s+n-2}{r-s-1} \right) + \binom{n-t+r}{j+r} \right]
-    \end{align*}
+\begin{proposition}[Multifold sums of powers binomial form re-indexed]
+    \label{prop:multifold-sums-of-powers-binomial-form-reindexed}
+    \begin{mdframed}
+        For non-negative integers $r,n,m$ and an arbitrary integer $t$
+        \begin{align*}
+            \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \left( \sum_{s=0}^{r-1} (-1)^{j+s} \binom{j+t-1}{j+s+1} \binom{r-s+n-2}{r-s-1} \right) + \binom{n-t+r}{j+r} \right]
+        \end{align*}
+    \end{mdframed}
 \end{proposition}
 Finite differences of powers are closely related to Stirling numbers of the second kind
 \begin{lemma}[Finite differences via Stirling numbers]
@@ -255,10 +261,13 @@ Which implies variations of the formulas for sums of powers
 \end{proposition}
 In general,
 \begin{proposition}[Multifold sums of powers via Stirling numbers]
-    For non-negative integers $r,n,m$ and an arbitrary integer $t$
-    \begin{align*}
-        \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right] \binom{t}{k} \stirlingii{m}{j+k} (j+k)!
-    \end{align*}
+    \label{prop:multifold-sums-of-powers-via-stirling-numbers}
+    \begin{mdframed}
+        For non-negative integers $r,n,m$ and an arbitrary integer $t$
+        \begin{align*}
+            \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right] \binom{t}{k} \stirlingii{m}{j+k} (j+k)!
+        \end{align*}
+    \end{mdframed}
     \begin{proof}
         By multifold sums of powers via Newton's series~\eqref{theorem:multifold-sums-of-powers-via-newtons-series}
         and finite difference via Stirling numbers of the second kind~\eqref{lem:finite-differences-via-stirling-numbers}.
@@ -285,10 +294,13 @@ Thus,
 \end{lemma}
 Therefore,
 \begin{proposition}[Multifold sums of powers via Eulerian numbers]
-    For non-negative integers $r,n,m$ and an arbitrary integer $t$
-    \begin{align*}
-        \KnuthRFoldSum{r}{n}{m}= \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right] \eulerian{m}{k} \binom{t+k}{m-j}
-    \end{align*}
+    \label{prop:multifold-sums-of-powers-via-eulerian-numbers}
+    \begin{mdframed}
+        For non-negative integers $r,n,m$ and an arbitrary integer $t$
+        \begin{align*}
+            \KnuthRFoldSum{r}{n}{m}= \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right] \eulerian{m}{k} \binom{t+k}{m-j}
+        \end{align*}
+    \end{mdframed}
     \begin{proof}
         By multifold sums of powers via Newton's series~\eqref{theorem:multifold-sums-of-powers-via-newtons-series}
         and finite difference via Eulerian numbers of the second kind~\eqref{lem:finite-differences-via-eulerian-numbers}.
