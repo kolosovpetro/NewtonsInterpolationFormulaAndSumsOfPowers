@@ -67,6 +67,10 @@ MultifoldSumsOfPowersViaStirlingNumbers::usage=""
 ValidateMultifoldSumsOfPowersViaStirlingNumbers::usage=""
 MultifoldSumsOfPowersViaEulerianNumbers::usage=""
 ValidateMultifoldSumsOfPowersViaEulerianNumbers::usage=""
+MultifoldSumsOfPowersBinomialForm::usage=""
+ValidateMultifoldSumsOfPowersBinomialForm::usage=""
+MultifoldSumsOfPowersBinomialFormReindexed::usage=""
+ValidateMultifoldSumsOfPowersBinomialFormReindexed::usage=""
 (* END: Newton's series and sums of powers package *)
 (* =========================================================================DOCS END=================================================================== *)
 
@@ -160,6 +164,10 @@ MultifoldSumsOfPowersViaStirlingNumbers[r_, n_, m_, t_]:= Sum[FiniteDifferencesV
 ValidateMultifoldSumsOfPowersViaStirlingNumbers[r_] := Table[MultifoldSumOfPowersRecurrence[r,n,m]-MultifoldSumsOfPowersViaStirlingNumbers[r,n,m,t],{n,0,10},{m,0,10},{t,0,n}]//Flatten
 MultifoldSumsOfPowersViaEulerianNumbers[r_, n_, m_, t_]:= Sum[FiniteDifferenceViaEulerianNumbers[m,j,t] * ((Sum[(-1)^(j+s-1) * Binomial[j+t-1, j+s]*MultifoldSumOfPowersRecurrence[r-s, n, 0], {s, 1, r}] + Binomial[n-t+r, j+r])), {j, 0, m}];
 ValidateMultifoldSumsOfPowersViaEulerianNumbers[r_] := Table[MultifoldSumOfPowersRecurrence[r,n,m]-MultifoldSumsOfPowersViaEulerianNumbers[r,n,m,t],{n,0,10},{m,0,10},{t,0,n}]//Flatten
+MultifoldSumsOfPowersBinomialForm[r_, n_, m_, t_]:= Sum[FiniteDifferenceOfPowerOrderN[t, m, j] * ((Sum[(-1)^(j+s-1) * Binomial[j+t-1, j+s]* Binomial[r-s+n-1, r-s], {s, 1, r}] + Binomial[n-t+r, j+r])), {j, 0, m}];
+ValidateMultifoldSumsOfPowersBinomialForm[r_] := Table[MultifoldSumOfPowersRecurrence[r,n,m]-MultifoldSumsOfPowersBinomialForm[r,n,m,t],{n,0,10},{m,0,10},{t,0,n}]//Flatten
+MultifoldSumsOfPowersBinomialFormReindexed[r_, n_, m_, t_]:= Sum[FiniteDifferenceOfPowerOrderN[t, m, j] * ((Sum[(-1)^(j+s) * Binomial[j+t-1, j+s+1]* Binomial[r-s+n-2, r-s-1], {s, 0, r-1}] + Binomial[n-t+r, j+r])), {j, 0, m}];
+ValidateMultifoldSumsOfPowersBinomialFormReindexed[r_] := Table[MultifoldSumOfPowersRecurrence[r,n,m]-MultifoldSumsOfPowersBinomialFormReindexed[r,n,m,t],{n,0,10},{m,0,10},{t,0,n}]//Flatten
 (* END: Newton's series and sums of powers *)
 
 End[ ]

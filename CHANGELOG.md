@@ -16,7 +16,9 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add Mathematica programs for central difference form
 - Add Mathematica programs for Stirling form
 - Add Mathematica programs for Eulerian form
-- Update mathematica documentation
+- Update Mathematica documentation
+- Add Mathematica programs for multifold sums of powers binomial form
+- Add Mathematica programs for multifold sums of powers binomial form re-indexed
 
 ## [1.2.1] - 25-Dec-2025
 
