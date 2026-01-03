@@ -13,6 +13,12 @@ Furthermore, we provide formulas for multifold sums of powers in terms of Stirli
 Faulhaber's formula, Bernoulli numbers, Bernoulli polynomials, Interpolation, Combinatorics, Central factorial numbers,
 OEIS, Stirling numbers, Eulerian numbers, Worpitzky identity.
 
+## Related projects
+
+- [Newton's interpolation formula and sums of powers (2025)](https://github.com/kolosovpetro/NewtonsInterpolationFormulaAndSumsOfPowers)
+- [Sums of powers via central finite differences and Newton's formula (2025)](https://github.com/kolosovpetro/SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula)
+- [Sums of powers via backward finite differences and Newton's formula (2025)](https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula)
+
 ## OEIS
 
 - https://oeis.org/A131689 - Triangle of numbers T(n,k) = k!*Stirling2(n,k) read by rows, T(n, k) for 0 <= k <= n.
@@ -36,4 +42,7 @@ OEIS, Stirling numbers, Eulerian numbers, Worpitzky identity.
 - Riordan, J. (1968). Combinatorial identities (Vol. 217). Wiley New York. https://www.amazon.com/-/de/Combinatorial-Identities-Probability-Mathematical-Statistics/dp/0471722758
 - Scheuer, M. (2020). Reference request: identity in central factorial numbers. https://math.stackexchange.com/a/3665722/463487
 - Kolosov, P. (2025). Mathematica programs for finite differences, Stirling numbers, and sums of powers. GitHub repository. https://github.com/kolosovpetro/NewtonsInterpolationFormulaAndSumsOfPowers/tree/main/mathematica
+- Kolosov, P. (2025). Newton's interpolation formula and sums of powers. Zenodo. https://doi.org/10.5281/zenodo.18040979
+- Kolosov, P. (2025). Sums of powers via central finite differences and Newton's formula. Zenodo. https://doi.org/10.5281/zenodo.18096789
+- Kolosov, P. (2025). Sums of powers via backward finite differences and Newton's formula. Zenodo. https://doi.org/10.5281/zenodo.18118011
 
