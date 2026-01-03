@@ -17,7 +17,7 @@ OEIS, Stirling numbers, Eulerian numbers, Worpitzky identity.
 
 - [Newton's interpolation formula and sums of powers (2025)](https://github.com/kolosovpetro/NewtonsInterpolationFormulaAndSumsOfPowers)
 - [Sums of powers via central finite differences and Newton's formula (2025)](https://github.com/kolosovpetro/SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula)
-- [Sums of powers via backward finite differences and Newton's formula (2025)](https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula)
+- [Sums of powers via backward finite differences and Newton's formula (2026)](https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula)
 
 ## OEIS
 
@@ -44,5 +44,5 @@ OEIS, Stirling numbers, Eulerian numbers, Worpitzky identity.
 - Kolosov, P. (2025). Mathematica programs for finite differences, Stirling numbers, and sums of powers. GitHub repository. https://github.com/kolosovpetro/NewtonsInterpolationFormulaAndSumsOfPowers/tree/main/mathematica
 - Kolosov, P. (2025). Newton's interpolation formula and sums of powers. Zenodo. https://doi.org/10.5281/zenodo.18040979
 - Kolosov, P. (2025). Sums of powers via central finite differences and Newton's formula. Zenodo. https://doi.org/10.5281/zenodo.18096789
-- Kolosov, P. (2025). Sums of powers via backward finite differences and Newton's formula. Zenodo. https://doi.org/10.5281/zenodo.18118011
+- Kolosov, P. (2026). Sums of powers via backward finite differences and Newton's formula. Zenodo. https://doi.org/10.5281/zenodo.18118011
 
