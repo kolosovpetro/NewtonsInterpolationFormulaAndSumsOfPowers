@@ -53,10 +53,12 @@ Thus, for an arbitrary integer $t$, the ordinary sum of powers is
 Therefore,
 \begin{proposition}[Ordinary sums of powers via Newton's series]
     \label{prop:ordinary-sums-of-powers-via-newtons-series}
-    For non-negative integers $n,m$ and an arbitrary integer $t$
-    \begin{align*}
-        \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^m \left[ (-1)^j \binom{j+t-1}{j+1} +  \binom{n-t+1}{j+1} \right]
-    \end{align*}
+    \begin{mdframed}
+        For non-negative integers $n,m$ and an arbitrary integer $t$
+        \begin{align*}
+            \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^m \left[ (-1)^j \binom{j+t-1}{j+1} +  \binom{n-t+1}{j+1} \right]
+        \end{align*}
+    \end{mdframed}
     \begin{proof}
         Ordinary sum of powers is given by $\KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^m  \sum_{k=1}^{n} \binom{-t+k}{j}$,
         where $\sum_{k=1}^{n} \binom{-t+k}{j} =  (-1)^{j} \binom{j+t-1}{j+1} + \binom{n-t+1}{j+1}$
@@ -255,10 +257,12 @@ Finite differences of powers are closely related to Stirling numbers of the seco
 Which implies variations of the formulas for sums of powers
 \begin{proposition}[Ordinary sums of powers via Stirling numbers]
     \label{prop:ordinary-sums-of-powers-via-stirling-numbers}
-    For non-negative integers $n,m$ and arbitrary integer $t$
-    \begin{align*}
-        \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ (-1)^j \binom{j+t-1}{j+1} +  \binom{n-t+1}{j+1} \right] \binom{t}{k} \stirlingii{m}{j+k} (j+k)!
-    \end{align*}
+    \begin{mdframed}
+        For non-negative integers $n,m$ and arbitrary integer $t$
+        \begin{align*}
+            \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ (-1)^j \binom{j+t-1}{j+1} +  \binom{n-t+1}{j+1} \right] \binom{t}{k} \stirlingii{m}{j+k} (j+k)!
+        \end{align*}
+    \end{mdframed}
     \begin{proof}
         By ordinary sums of powers via Newton's series~\eqref{prop:ordinary-sums-of-powers-via-newtons-series}
         and forward finite difference via Stirling numbers of the second kind~\eqref{lem:finite-differences-via-stirling-numbers}.
@@ -320,7 +324,19 @@ Therefore,
         and forward finite difference via Eulerian numbers~\eqref{lem:finite-differences-via-eulerian-numbers}.
     \end{proof}
 \end{proposition}
-By setting $r=1$ and $t=0$ into~\eqref{prop:multifold-sums-of-powers-via-eulerian-numbers} yields a well-known identity for
+Which implies variations of the formulas for sums of powers
+
+\begin{proposition}
+    \label{prop:sums-of-powers-via-eulerian-numbers}
+    \begin{mdframed}
+        For non-negative integers $n,m$ and an arbitrary integer $t$
+        \begin{align*}
+            \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ (-1)^j \binom{j+t-1}{j+1} +  \binom{n-t+1}{j+1} \right] \eulerian{m}{k} \binom{t+k}{m-j}
+        \end{align*}
+    \end{mdframed}
+\end{proposition}
+
+By setting $t=0$ into~\eqref{prop:sums-of-powers-via-eulerian-numbers} yields a well-known identity for
 sums of powers in terms of Eulerian numbers
 \begin{corollary}[Sums of powers via Eulerian numbers]
     For non-negative integers $n,m$
