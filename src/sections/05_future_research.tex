@@ -45,7 +45,7 @@ and Newton's interpolation formula for central differences~\cite{kolosov_2025_18
     \begin{align*}
         \KnuthRFoldSum{r}{n}{2m-1}
         &= \sum_{k=1}^{m} \binom{n+k-1+r}{2k-1+r} \frac{1}{2k} \delta^{2k} 0^{2m} \\
-        &= \sum_{k=1}^{m} (2k-1)! T(2m, 2k) \binom{n+k-1+r}{2k-1+r}
+        &= \sum_{k=1}^{m} \binom{n+k-1+r}{2k-1+r} (2k-1)! T(2m, 2k)
     \end{align*}
 \end{proposition}
 where $T(n,k)$ are the central factorial numbers of the second
