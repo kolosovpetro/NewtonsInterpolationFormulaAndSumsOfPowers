@@ -5,44 +5,44 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: unsrt.bst
 Reallocating 'name_of_file' (item size: 1) to 43 items.
 Database file #1: NewtonsInterpolationFormulaAndSumsOfPowers.bib
-You've used 14 entries,
+You've used 16 entries,
             1791 wiz_defined-function locations,
-            539 strings with 6395 characters,
-and the built_in function-call counts, 2354 in all, are:
-= -- 220
-> -- 60
+            554 strings with 6856 characters,
+and the built_in function-call counts, 2731 in all, are:
+= -- 257
+> -- 68
 < -- 1
-+ -- 29
-- -- 15
-* -- 91
-:= -- 381
-add.period$ -- 52
-call.type$ -- 14
-change.case$ -- 10
++ -- 33
+- -- 17
+* -- 111
+:= -- 440
+add.period$ -- 59
+call.type$ -- 16
+change.case$ -- 11
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 109
-empty$ -- 274
-format.name$ -- 15
-if$ -- 534
+cite$ -- 16
+duplicate$ -- 128
+empty$ -- 317
+format.name$ -- 17
+if$ -- 619
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 13
-newline$ -- 83
-num.names$ -- 14
-pop$ -- 59
+int.to.str$ -- 16
+missing$ -- 16
+newline$ -- 94
+num.names$ -- 16
+pop$ -- 66
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 38
+skip$ -- 43
 stack$ -- 0
-substring$ -- 93
-swap$ -- 15
+substring$ -- 118
+swap$ -- 17
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 21
-width$ -- 16
-write$ -- 167
+while$ -- 25
+width$ -- 18
+write$ -- 190

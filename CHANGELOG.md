@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 
 - Add corollary for t=0 in Eulerian numbers
 - Add corollary for t=0 in Stirling numbers
+- Update future research
+- Move proof section
 
 ## [1.3.2] - 03-Jan-2026
 
