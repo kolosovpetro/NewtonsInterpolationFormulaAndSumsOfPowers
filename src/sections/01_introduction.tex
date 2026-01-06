@@ -98,10 +98,14 @@ The coefficients $1,7,12,6,1,15, \dots$ is the sequence
 in the OEIS~\cite{sloane2003line}.
 
 Interestingly enough that the paper~\cite{cereceda2022sums} gives the formula for sums of powers
+
 \begin{align*}
     \KnuthRFoldSum{1}{n}{k} = \sum_{j=0}^{k} j! \left[ \binom{n+1-r}{j+1} + (-1)^j \binom{r+j-1}{j+1} \right] \stirlingii{k}{j}_{r}
 \end{align*}
+
 where $\stirlingii{k}{j}_{r}$ are generalized Stirling numbers of the second kind.
+
+
 The formula above is identical to the 
 proposition~\eqref{prop:ordinary-sums-of-powers-via-newtons-series},
 which implies that finite differences can be expressed 

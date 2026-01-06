@@ -18,6 +18,8 @@ jobs:
       file_name: 'NewtonsInterpolationFormulaAndSumsOfPowers'
       enable_patch_version: true
       enable_pandoc: true
+      enable_html_deploy: true
+      html_deploy_path: 'sums-of-powers-newtons-formula'
       runs_on: 'ubuntu-latest'
       workflow_name: 'Build and Deploy PDF'
       build_assets_path: |

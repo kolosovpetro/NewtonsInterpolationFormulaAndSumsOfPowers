@@ -29,12 +29,14 @@ Similarly, for multifold sums of powers
 \begin{align*}
     \KnuthRFoldSum{r}{n}{m} = \sum_{k} D(n^m, k) \binom{f(n+r)}{k}
 \end{align*}
-Many interpolation approaches involve rising factorials $x_{(n)}$, falling factorials $(x)_n$,
-or regular factorials $n!$,
+Many interpolation approaches involve rising factorials $\risingFactorial{x}{n}$, 
+falling factorials $\fallingFactorial{x}{n}$, or regular factorials $n!$,
 and thus can be expressed
 in terms of binomial coefficients, because
 \begin{align*}
-    \frac{(x)_n}{n!} = \binom{x}{n}; \quad \frac{x_{(n)}}{n!} = \binom{x+n-1}{n}.
+    \frac{\fallingFactorial{x}{n}}{n!} = \binom{x}{n}; \quad 
+    \frac{\risingFactorial{x}{n}}{n!} = \binom{x+n-1}{n}; \quad 
+    \centralFactorial{x}{n} = n \fallingFactorial{x+\frac{n}{2}-1}{n-1}
 \end{align*}
 
 In particular, Donald Knuth provides the formula for multifold sums of odd powers~\cite{knuth1993johann}
