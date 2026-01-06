@@ -51,7 +51,17 @@ Thus, for an arbitrary integer $t$, the ordinary sum of powers is
         \sum_{k=0}^{n} \binom{-t+k}{j} &= (-1)^j \binom{j+t}{j+1} +  \binom{n-t+1}{j+1}
     \end{align*}
 \end{proposition}
-Therefore,
+Hence,
+\begin{align*}
+    \sum_{k=1}^{n} \binom{-t+k}{j} 
+    &= (-1)^j \binom{j+t}{j+1} +  \binom{n-t+1}{j+1} - \binom{-t}{j} \\
+    &= (-1)^j \binom{j+t}{j+1} - (-1)^j \binom{j+t-1}{j} +  \binom{n-t+1}{j+1} \\
+    &= (-1)^j \binom{j+t-1}{j+1} +  \binom{n-t+1}{j+1}
+\end{align*}
+because $\binom{-t}{j} = (-1)^j \binom{j+t-1}{j}$ 
+and by recurrence $\binom{t+1}{k} = \binom{t}{k} + \binom{t}{k+1}$.
+
+This implies formula for sums of powers
 \begin{proposition}[Ordinary sums of powers via Newton's series]
     \label{prop:ordinary-sums-of-powers-via-newtons-series}
     \begin{mdframed}
@@ -128,10 +138,12 @@ which yields
 Thus,
 \begin{proposition}[Double sums of powers via Newton's series]
     \label{prop:double-sums-of-powers-via-newtons-series}
-    For non-negative integers $n,m$ and an arbitrary integer $t$
-    \begin{align*}
-        \KnuthRFoldSum{2}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ (-1)^{j} \binom{j+t-1}{j+1} n + (-1)^{j+1} \binom{j+t-1}{j+2} n^0 + \binom{n-t+2}{j+2} \right]
-    \end{align*}
+    \begin{mdframed}
+        For non-negative integers $n,m$ and an arbitrary integer $t$
+        \begin{align*}
+            \KnuthRFoldSum{2}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ (-1)^{j} \binom{j+t-1}{j+1} n + (-1)^{j+1} \binom{j+t-1}{j+2} n^0 + \binom{n-t+2}{j+2} \right]
+        \end{align*}
+    \end{mdframed}
     \begin{proof}
         We have $\KnuthRFoldSum{2}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ (-1)^{j} \binom{j+t-1}{j+1} n + \sum_{k=1}^{n} \binom{k-t+1}{j+1} \right]$,
         where $\sum_{k=1}^{n} \binom{k-t+1}{j+1} = (-1)^{j+1} \binom{j+t-1}{j+2} n^0 + \binom{n-t+2}{j+2}$ by means of segmented hockey stick

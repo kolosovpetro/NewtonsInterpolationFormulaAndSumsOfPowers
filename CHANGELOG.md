@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 
 - Rework metadata
 - Enable pandoc actions
+- Updates in Mathematica
 
 
 ## [1.4.1] - 05-Jan-2026
