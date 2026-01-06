@@ -1,5 +1,4 @@
 \documentclass[12pt,letterpaper,oneside,reqno]{amsart}
-\usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
@@ -13,9 +12,7 @@
 \usepackage{array}
 \usepackage{enumitem}
 \usepackage{etoolbox}
-\usepackage{physics}
 \usepackage{booktabs}
-\usepackage{url}
 \usepackage{mdframed}
 
 % margins and layout
@@ -66,52 +63,12 @@
 \date{\today}
 
 % metadata
+\input{metadata/msc2010.tex}
+\input{metadata/keywords.tex}
+\input{metadata/hypersetup.tex}
 \address{DevOps Engineer}
+\email{kolosovp94@gmail.com}
 \urladdr{https://kolosovpetro.github.io}
-\subjclass[2010]{05A19, 05A10, 41A15, 11B83}
-\keywords{Sums of powers,
-    Newton's interpolation formula,
-    Finite differences,
-    Binomial coefficients,
-    Newton's series,
-    Faulhaber's formula,
-    Bernoulli numbers,
-    Bernoulli polynomials,
-    Interpolation,
-    Combinatorics,
-    Central factorial numbers,
-    Stirling numbers,
-    Eulerian numbers,
-    Worpitzky identity,
-    OEIS}
-\hypersetup{
-    pdftitle={Newton's interpolation formula and sums of powers},
-    pdfproducer={LaTeX},
-    pdfcreator={pdflatex},
-    pdfauthor={Petro Kolosov},
-    pdfsubject={Newton's interpolation formula and sums of powers},
-    pdfkeywords={Newton's interpolation formula,
-    Finite differences,
-    Interpolation,
-    Polynomials,
-    Sums of powers,
-    Stirling numbers,
-    Eulerian numbers,
-    Newton's series,
-    Power sums,
-    Binomial theorem,
-    Power function,
-    Binomial coefficients,
-    Bernoulli numbers,
-    Bernoulli polynomials,
-    Worpitzky identity,
-    Pascal's triangle,
-    Faulhaber's formula,
-    Central factorials,
-    OEIS,
-    Combinatorics,
-    Central factorial numbers}
-}
 
 \begin{document}
 
@@ -147,22 +104,26 @@
     \input{sections/05_future_research}
 
 
-    \section{Conclusions}\label{sec:conclusions}
+    \section*{Conclusions}
     \input{sections/conclusions}
 
 
-    \section{Acknowledgements}\label{sec:acknowledgements}
+    \section*{Acknowledgements}
     \input{sections/acknowledgements}
 
     \bibliographystyle{unsrt}
     \bibliography{NewtonsInterpolationFormulaAndSumsOfPowers}
 
+    \clearpage
+
     \input{metadata/footer}
 
-    \section{Proof of Segmented hockey stick identity}
-    \label{sec:proof-of-segmented-hockey-stick-identity}
+    \clearpage
+
+    \section*{Proof of Segmented hockey stick identity}
     \input{sections/proof_of_segmented_hockey_stick_identity}
 
+    \clearpage
 
     \section{Mathematica programs}\label{sec:mathematica-programs}
     \input{sections/mathematica_programs}

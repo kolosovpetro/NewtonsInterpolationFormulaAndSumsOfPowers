@@ -51,7 +51,17 @@ Thus, for an arbitrary integer $t$, the ordinary sum of powers is
         \sum_{k=0}^{n} \binom{-t+k}{j} &= (-1)^j \binom{j+t}{j+1} +  \binom{n-t+1}{j+1}
     \end{align*}
 \end{proposition}
-Therefore,
+Hence,
+\begin{align*}
+    \sum_{k=1}^{n} \binom{-t+k}{j} 
+    &= (-1)^j \binom{j+t}{j+1} +  \binom{n-t+1}{j+1} - \binom{-t}{j} \\
+    &= (-1)^j \binom{j+t}{j+1} - (-1)^j \binom{j+t-1}{j} +  \binom{n-t+1}{j+1} \\
+    &= (-1)^j \binom{j+t-1}{j+1} +  \binom{n-t+1}{j+1}
+\end{align*}
+because $\binom{-t}{j} = (-1)^j \binom{j+t-1}{j}$ 
+and by recurrence $\binom{t+1}{k} = \binom{t}{k} + \binom{t}{k+1}$.
+
+This implies formula for sums of powers
 \begin{proposition}[Ordinary sums of powers via Newton's series]
     \label{prop:ordinary-sums-of-powers-via-newtons-series}
     \begin{mdframed}
@@ -72,17 +82,21 @@ For $t=0$ and $m=3$ we have the famous identity
     \KnuthRFoldSum{1}{n}{3} = 0 \binom{n+1}{1} + 1 \binom{n+1}{2} + 6 \binom{n+1}{3} + 6 \binom{n+1}{4}
 \end{align*}
 which was discussed in~\cite[p. 190]{graham1994concrete} and in~\cite{pfaff2007deriving}.
+
 The coefficients $0, 1, 6, 6, 0, 1, 14, 36, 24, \dots$ is the sequence
 \href{https://oeis.org/A131689}{\texttt{A131689}} in the OEIS~\cite{sloane2003line}.
+
 The special cases for $t=1$ and $m=2,3,4,5$ were discussed in~\cite{cereceda2022sums}.
 For instance,
 \begin{align*}
     \KnuthRFoldSum{1}{n}{3} &= 1 \binom{n}{1} + 7 \binom{n}{2} + 12 \binom{n}{3} + 6 \binom{n}{4} \\
     \KnuthRFoldSum{1}{n}{4} &= 1 \binom{n}{1} +15 \binom{n}{2} +50 \binom{n}{3} +60 \binom{n}{4} +24 \binom{n}{5}
 \end{align*}
+
 The coefficients $1,7,12,6,1,15, \dots$ is the sequence
 \href{https://oeis.org/A028246}{\texttt{A028246}}
 in the OEIS~\cite{sloane2003line}.
+
 Interestingly enough that the paper~\cite{cereceda2022sums} gives the formula for sums of powers
 \begin{align*}
     \KnuthRFoldSum{1}{n}{k} = \sum_{j=0}^{k} j! \left[ \binom{n+1-r}{j+1} + (-1)^j \binom{r+j-1}{j+1} \right] \stirlingii{k}{j}_{r}
@@ -124,10 +138,12 @@ which yields
 Thus,
 \begin{proposition}[Double sums of powers via Newton's series]
     \label{prop:double-sums-of-powers-via-newtons-series}
-    For non-negative integers $n,m$ and an arbitrary integer $t$
-    \begin{align*}
-        \KnuthRFoldSum{2}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ (-1)^{j} \binom{j+t-1}{j+1} n + (-1)^{j+1} \binom{j+t-1}{j+2} n^0 + \binom{n-t+2}{j+2} \right]
-    \end{align*}
+    \begin{mdframed}
+        For non-negative integers $n,m$ and an arbitrary integer $t$
+        \begin{align*}
+            \KnuthRFoldSum{2}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ (-1)^{j} \binom{j+t-1}{j+1} n + (-1)^{j+1} \binom{j+t-1}{j+2} n^0 + \binom{n-t+2}{j+2} \right]
+        \end{align*}
+    \end{mdframed}
     \begin{proof}
         We have $\KnuthRFoldSum{2}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ (-1)^{j} \binom{j+t-1}{j+1} n + \sum_{k=1}^{n} \binom{k-t+1}{j+1} \right]$,
         where $\sum_{k=1}^{n} \binom{k-t+1}{j+1} = (-1)^{j+1} \binom{j+t-1}{j+2} n^0 + \binom{n-t+2}{j+2}$ by means of segmented hockey stick
@@ -335,7 +351,7 @@ Therefore,
 \end{proposition}
 Which implies variations of the formulas for sums of powers
 
-\begin{proposition}
+\begin{proposition}[Ordinary sums of powers via Eulerian numbers]
     \label{prop:sums-of-powers-via-eulerian-numbers}
     \begin{mdframed}
         For non-negative integers $n,m$ and an arbitrary integer $t$
@@ -347,7 +363,7 @@ Which implies variations of the formulas for sums of powers
 
 By setting $t=0$ into~\eqref{prop:sums-of-powers-via-eulerian-numbers} yields a well-known identity for
 sums of powers in terms of Eulerian numbers
-\begin{corollary}[Sums of powers via Eulerian numbers]
+\begin{corollary}[Sums of powers via Eulerian numbers in zero]
     \begin{mdframed}
         For non-negative integers $n,m$
         \begin{align*}
