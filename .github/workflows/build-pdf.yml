@@ -16,7 +16,7 @@ env:
 
 jobs:
   build-pdf:
-    uses: kolosovpetro/NewtonsInterpolationFormulaAndSumsOfPowers/.github/workflows/build-pdf-template.yml@main
+    uses: kolosovpetro/github-latex-template/.github/workflows/build-pdf-template.yml@main
     with:
       file_name: 'NewtonsInterpolationFormulaAndSumsOfPowers'
       enable_patch_version: true
