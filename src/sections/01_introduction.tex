@@ -15,7 +15,6 @@ We utilize the recurrence proposed by Donald Knuth in his article
 \end{align*}
 Throughout the paper, we utilize the Newton's interpolation formula as stated below
 \begin{proposition}
-    \label{proposition:newton-series-in-arbitrary-point-a}
     (Newton's interpolation formula~\cite[Lemma V]{newton1850newton}.)
     \begin{align*}
         f(x) = \sum_{j=0}^{\infty} \binom{x-a}{j} \Delta^{j} f(a)
@@ -31,8 +30,8 @@ Which is indeed true, because
 \end{align*}
 
 \begin{proposition}[Newton's series for power]
-    For non-negative integers $m,n$ and an arbitrary integer $t$
     \label{prop:newton-series-for-monomial-reversed}
+    For non-negative integers $m,n$ and an arbitrary integer $t$
     \begin{align*}
         n^m = \sum_{k=0}^{m} \binom{n-t}{k} \Delta^{k} t^m
     \end{align*}
@@ -46,10 +45,15 @@ Thus, for an arbitrary integer $t$, the ordinary sum of powers is
 \end{align*}
 \begin{proposition}[Segmented Hockey stick identity]
     \label{prop:segmented-hockey-stick-identity}
-    For integers $n,t$ and $j$
-    \begin{align*}
-        \sum_{k=0}^{n} \binom{-t+k}{j} &= (-1)^j \binom{j+t}{j+1} +  \binom{n-t+1}{j+1}
-    \end{align*}
+    \begin{mdframed}
+        For integers $n,t$ and $j$
+        \begin{align*}
+            \sum_{k=0}^{n} \binom{-t+k}{j} &= (-1)^j \binom{j+t}{j+1} +  \binom{n-t+1}{j+1}
+        \end{align*}
+    \end{mdframed}
+    \begin{proof}
+        See section~\eqref{sec:proof-of-segmented-hockey-stick-identity}.
+    \end{proof}
 \end{proposition}
 Hence,
 \begin{align*}
@@ -184,7 +188,8 @@ Similarly, we obtain the formula for the triple sums of powers
         powers~\eqref{prop:double-sums-of-powers-via-newtons-series}, 
         we get
         \begin{align*}
-            &\KnuthRFoldSum{3}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^m \sum_{k=1}^{n}  \left[ (-1)^{j} \binom{j+t-1}{j+1} k^1 + (-1)^{j+1} \binom{j+t-1}{j+2} k^0 + \binom{k-t+2}{j+2} \right] \\
+            \KnuthRFoldSum{3}{n}{m} 
+            &= \sum_{j=0}^{m} \Delta^{j} t^m \sum_{k=1}^{n}  \left[ (-1)^{j} \binom{j+t-1}{j+1} k^1 + (-1)^{j+1} \binom{j+t-1}{j+2} k^0 + \binom{k-t+2}{j+2} \right] \\
             &= \sum_{j=0}^{m} \Delta^{j} t^m \left[ (-1)^{j} \binom{j+t-1}{j+1} \sum_{k=1}^{n} k^1 + (-1)^{j+1} \binom{j+t-1}{j+2} \sum_{k=1}^{n} k^0 + \sum_{k=1}^{n}  \binom{k-t+2}{j+2} \right]
         \end{align*}
         Note that $\sum_{k=1}^{n} k^1 = \KnuthRFoldSum{2}{n}{0}$ and $\sum_{k=1}^{n} k^0 = \KnuthRFoldSum{1}{n}{0}$.

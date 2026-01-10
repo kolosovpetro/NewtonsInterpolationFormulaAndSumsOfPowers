@@ -7,28 +7,11 @@ FiniteDifferenceOfPowerOrderN::usage=""
 BackwardFiniteDifferenceOfPowerOrderN::usage=""
 CentralDifference::usage=""
 
-ShiftedHockeyStickIdentityLHS::usage=""
-ShiftedHockeyStickIdentityRHS::usage=""
-ShiftedHockeyStickIdentityRHS1::usage=""
-ShiftedHockeyStickIdentityRHS2::usage=""
-ShiftedHockeyStickIdentityRHS3::usage=""
-ShiftedHockeyStickIdentityRHS4::usage=""
-ShiftedHockeyStickIdentityRHS5::usage=""
-ShiftedHockeyStickIdentityLHS1::usage=""
-ShiftedHockeyStickIdentityRHS6::usage=""
-ShiftedHockeyStickIdentityRHS7::usage=""
-
 OrdinarySumsOfPowersViaNewtonsSeries::usage="Validates Proposition \\label{prop:ordinary-sums-of-powers-via-newtons-series}"
 ValidateOrdinarySumsOfPowersViaNewtonsSeries::usage="Validates Proposition \\label{prop:ordinary-sums-of-powers-via-newtons-series}"
 
 DoubleSumsOfPowersViaNewtonsSeries::usage="Validates Proposition prop:double-sums-of-powers-via-newtons-series"
 ValidateDoubleSumsOfPowersViaNewtonsSeries::usage="Validates Proposition prop:double-sums-of-powers-via-newtons-series"
-
-TripleSumsOfPowersViaFiniteDifference2::usage=""
-TripleSumsOfPowersViaFiniteDifference21::usage=""
-TripleSumsOfPowersViaFiniteDifference22::usage=""
-TripleSumsOfPowersViaFiniteDifference23::usage=""
-TripleSumsOfPowersViaFiniteDifference24::usage=""
 
 MultifoldSumOfPowersRecurrence::usage="Computes $\\KnuthRFoldSum{r}{n}{m}$"
 
@@ -62,6 +45,25 @@ MultifoldSumsOfPowersBinomialFormReindexed::usage="Validates Proposition~\\eqref
 ValidateMultifoldSumsOfPowersBinomialFormReindexed::usage="Validates Proposition~\\eqref{prop:multifold-sums-of-powers-binomial-form-reindexed}"
 
 (* END: Newton's series and sums of powers package *)
+
+(* TEMP formulas *)
+ShiftedHockeyStickIdentityLHS::usage=""
+ShiftedHockeyStickIdentityRHS::usage=""
+ShiftedHockeyStickIdentityRHS1::usage=""
+ShiftedHockeyStickIdentityRHS2::usage=""
+ShiftedHockeyStickIdentityRHS3::usage=""
+ShiftedHockeyStickIdentityRHS4::usage=""
+ShiftedHockeyStickIdentityRHS5::usage=""
+ShiftedHockeyStickIdentityLHS1::usage=""
+ShiftedHockeyStickIdentityRHS6::usage=""
+ShiftedHockeyStickIdentityRHS7::usage=""
+
+TripleSumsOfPowersViaFiniteDifference2::usage=""
+TripleSumsOfPowersViaFiniteDifference21::usage=""
+TripleSumsOfPowersViaFiniteDifference22::usage=""
+TripleSumsOfPowersViaFiniteDifference23::usage=""
+TripleSumsOfPowersViaFiniteDifference24::usage=""
+(* TEMP formulas *)
 (* =========================================================================DOCS END=================================================================== *)
 
 (*BEGIN: Define 0^x = 1 for all x *)
@@ -87,33 +89,6 @@ ValidateOrdinarySumsOfPowersViaNewtonsSeries[max_]:= Table[MultifoldSumOfPowersR
 
 DoubleSumsOfPowersViaNewtonsSeries[n_, m_, t_] := Sum[FiniteDifferenceOfPowerOrderN[t, m, j] * ((-1)^j * Binomial[j+t-1, j+1] * n + (-1)^(j+1)* Binomial[j+t-1, j+2] + Binomial[n-t+2, j+2]), {j, 0, m}];
 ValidateDoubleSumsOfPowersViaNewtonsSeries[max_] := Table[MultifoldSumOfPowersRecurrence[2, n, m] - DoubleSumsOfPowersViaNewtonsSeries[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
-
-ShiftedHockeyStickIdentityLHS[t_, j_, n_]:= Sum[Binomial[-t+k, j], {k, 0, n}];
-ShiftedHockeyStickIdentityRHS[t_, j_, n_]:= Sum[Binomial[-t+k, j], {k, 0, t-1}] + Sum[Binomial[-t+k, j], {k, t, n}];
-ShiftedHockeyStickIdentityRHS1[t_, j_, n_]:= Sum[Binomial[-k-1, j], {k, 0, t-1}] + Sum[Binomial[-t+k, j], {k, t, n}];
-ShiftedHockeyStickIdentityRHS2[t_, j_, n_]:= (-1)^j * Sum[Binomial[j+k, j], {k, 0, t-1}] + Sum[Binomial[-t+k, j], {k, t, n}];
-ShiftedHockeyStickIdentityRHS3[t_, j_, n_]:= (-1)^j * Binomial[j+t, j+1] + Sum[Binomial[-t+k, j], {k, t, n}];
-ShiftedHockeyStickIdentityRHS4[t_, j_, n_]:= (-1)^j * Binomial[j+t, j+1] + Sum[Binomial[k, j], {k, 0, n-t}];
-ShiftedHockeyStickIdentityRHS5[t_, j_, n_]:= (-1)^j * Binomial[j+t, j+1] + Binomial[n-t+1, j+1];
-ShiftedHockeyStickIdentityLHS1[t_, j_, n_]:= Sum[Binomial[-t+k, j], {k, 1, n}];
-ShiftedHockeyStickIdentityRHS6[t_, j_, n_]:= Sum[Binomial[-t+k+1, j], {k, 0, n-1}];
-ShiftedHockeyStickIdentityRHS7[t_, j_, n_]:= (-1)^(j)*Binomial[j+t-1, j+1] + Binomial[n-t+1, j+1];
-
-TripleSumsOfPowersViaFiniteDifference2[n_, t_, m_] := Sum[FiniteDifferenceOfPowerOrderN[t, m, j] * Sum[(-1)^j * Binomial[j+t-1, j+1] k^1 + (-1)^(j+1) * Binomial[j+t-1, j+2]*k^0 + Binomial[k-t+2, j+2], {k, 1, n}], {j, 0, m}];
-TripleSumsOfPowersViaFiniteDifference21[n_, t_, m_] := Sum[FiniteDifferenceOfPowerOrderN[t, m, j] * (-1)^j * Binomial[j+t-1, j+1] * MultifoldSumOfPowersRecurrence[2, n, 0] + (-1)^(j+1) * Binomial[j+t-1, j+2]* MultifoldSumOfPowersRecurrence[1, n, 0] + (-1)^(j+2) * Binomial[j+t-1, j+3] * MultifoldSumOfPowersRecurrence[0, n, 0] + Binomial[n-t+3, j+3], {j, 0, m}];
-TripleSumsOfPowersViaFiniteDifference22[n_, t_, m_] :=
-Sum[
-  FiniteDifferenceOfPowerOrderN[t, m, j]*
-   Sum[
-    (-1)^j*Binomial[j + t - 1, j + 1]*k +
-    (-1)^(j + 1)*Binomial[j + t - 1, j + 2] +
-    Binomial[k - t + 2, j + 2],
-    {k, 1, n}
-   ],
-  {j, 0, m}
-];
-TripleSumsOfPowersViaFiniteDifference23[n_, t_, m_] := Sum[FiniteDifferenceOfPowerOrderN[t, m, j] * ((-1)^j * Binomial[j+t-1, j+1] * (1/2*(n^2+n)) + (-1)^(j+1) * Binomial[j+t-1, j+2]*n + (-1)^(j+2) * Binomial[j+t-1, j+3] + Binomial[n-t+3, j+3]), {j, 0, m}];
-TripleSumsOfPowersViaFiniteDifference24[n_, t_, m_] := Sum[FiniteDifferenceOfPowerOrderN[t, m, j] * ((-1)^j * Binomial[j+t-1, j+1] * MultifoldSumOfPowersRecurrence[2, n, 0] + (-1)^(j+1) * Binomial[j+t-1, j+2]* MultifoldSumOfPowersRecurrence[1, n, 0] + (-1)^(j+2) * Binomial[j+t-1, j+3] * MultifoldSumOfPowersRecurrence[0, n, 0] + Binomial[n-t+3, j+3]), {j, 0, m}];
 
 FiniteDifferencesViaStirlingNumbers[n_, k_, x_]:= Sum[Binomial[x, t-k] * StirlingS2[n, t] * t!, {t, 0, n}];
 FiniteDifferencesViaStirlingNumbersReindexed[n_, k_, x_]:= Sum[Binomial[x, t] * StirlingS2[n, k+t] * (k+t)!, {t, 0, n}];
@@ -147,6 +122,37 @@ ValidateMultifoldSumsOfPowersBinomialForm[r_] := Table[MultifoldSumOfPowersRecur
 MultifoldSumsOfPowersBinomialFormReindexed[r_, n_, m_, t_]:= Sum[FiniteDifferenceOfPowerOrderN[t, m, j] * ((Sum[(-1)^(j+s) * Binomial[j+t-1, j+s+1]* Binomial[r-s+n-2, r-s-1], {s, 0, r-1}] + Binomial[n-t+r, j+r])), {j, 0, m}];
 ValidateMultifoldSumsOfPowersBinomialFormReindexed[r_] := Table[MultifoldSumOfPowersRecurrence[r,n,m]-MultifoldSumsOfPowersBinomialFormReindexed[r,n,m,t],{n,0,10},{m,0,10},{t,0,n}]//Flatten
 (* END: Newton's series and sums of powers *)
+
+(* Some TEMP formulas *)
+
+ShiftedHockeyStickIdentityLHS[t_, j_, n_]:= Sum[Binomial[-t+k, j], {k, 0, n}];
+ShiftedHockeyStickIdentityRHS[t_, j_, n_]:= Sum[Binomial[-t+k, j], {k, 0, t-1}] + Sum[Binomial[-t+k, j], {k, t, n}];
+ShiftedHockeyStickIdentityRHS1[t_, j_, n_]:= Sum[Binomial[-k-1, j], {k, 0, t-1}] + Sum[Binomial[-t+k, j], {k, t, n}];
+ShiftedHockeyStickIdentityRHS2[t_, j_, n_]:= (-1)^j * Sum[Binomial[j+k, j], {k, 0, t-1}] + Sum[Binomial[-t+k, j], {k, t, n}];
+ShiftedHockeyStickIdentityRHS3[t_, j_, n_]:= (-1)^j * Binomial[j+t, j+1] + Sum[Binomial[-t+k, j], {k, t, n}];
+ShiftedHockeyStickIdentityRHS4[t_, j_, n_]:= (-1)^j * Binomial[j+t, j+1] + Sum[Binomial[k, j], {k, 0, n-t}];
+ShiftedHockeyStickIdentityRHS5[t_, j_, n_]:= (-1)^j * Binomial[j+t, j+1] + Binomial[n-t+1, j+1];
+ShiftedHockeyStickIdentityLHS1[t_, j_, n_]:= Sum[Binomial[-t+k, j], {k, 1, n}];
+ShiftedHockeyStickIdentityRHS6[t_, j_, n_]:= Sum[Binomial[-t+k+1, j], {k, 0, n-1}];
+ShiftedHockeyStickIdentityRHS7[t_, j_, n_]:= (-1)^(j)*Binomial[j+t-1, j+1] + Binomial[n-t+1, j+1];
+
+TripleSumsOfPowersViaFiniteDifference2[n_, t_, m_] := Sum[FiniteDifferenceOfPowerOrderN[t, m, j] * Sum[(-1)^j * Binomial[j+t-1, j+1] k^1 + (-1)^(j+1) * Binomial[j+t-1, j+2]*k^0 + Binomial[k-t+2, j+2], {k, 1, n}], {j, 0, m}];
+TripleSumsOfPowersViaFiniteDifference21[n_, t_, m_] := Sum[FiniteDifferenceOfPowerOrderN[t, m, j] * (-1)^j * Binomial[j+t-1, j+1] * MultifoldSumOfPowersRecurrence[2, n, 0] + (-1)^(j+1) * Binomial[j+t-1, j+2]* MultifoldSumOfPowersRecurrence[1, n, 0] + (-1)^(j+2) * Binomial[j+t-1, j+3] * MultifoldSumOfPowersRecurrence[0, n, 0] + Binomial[n-t+3, j+3], {j, 0, m}];
+TripleSumsOfPowersViaFiniteDifference22[n_, t_, m_] :=
+Sum[
+  FiniteDifferenceOfPowerOrderN[t, m, j]*
+   Sum[
+    (-1)^j*Binomial[j + t - 1, j + 1]*k +
+    (-1)^(j + 1)*Binomial[j + t - 1, j + 2] +
+    Binomial[k - t + 2, j + 2],
+    {k, 1, n}
+   ],
+  {j, 0, m}
+];
+TripleSumsOfPowersViaFiniteDifference23[n_, t_, m_] := Sum[FiniteDifferenceOfPowerOrderN[t, m, j] * ((-1)^j * Binomial[j+t-1, j+1] * (1/2*(n^2+n)) + (-1)^(j+1) * Binomial[j+t-1, j+2]*n + (-1)^(j+2) * Binomial[j+t-1, j+3] + Binomial[n-t+3, j+3]), {j, 0, m}];
+TripleSumsOfPowersViaFiniteDifference24[n_, t_, m_] := Sum[FiniteDifferenceOfPowerOrderN[t, m, j] * ((-1)^j * Binomial[j+t-1, j+1] * MultifoldSumOfPowersRecurrence[2, n, 0] + (-1)^(j+1) * Binomial[j+t-1, j+2]* MultifoldSumOfPowersRecurrence[1, n, 0] + (-1)^(j+2) * Binomial[j+t-1, j+3] * MultifoldSumOfPowersRecurrence[0, n, 0] + Binomial[n-t+3, j+3]), {j, 0, m}];
+
+(* Some TEMP formulas *)
 
 End[ ]
 EndPackage[ ]
