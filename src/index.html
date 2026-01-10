@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Petro Kolosov" />
-  <meta name="dcterms.date" content="2026-01-10" />
+  <meta name="dcterms.date" content="2026-01-11" />
   <title>Newton’s interpolation formula and sums of powers</title>
   <style>
     /* Default styles provided by pandoc.
@@ -209,7 +209,7 @@
 <header id="title-block-header">
 <h1 class="title">Newton’s interpolation formula and sums of powers</h1>
 <p class="author">Petro Kolosov</p>
-<p class="date">2026-01-10</p>
+<p class="date">2026-01-11</p>
 <div class="abstract">
 <div class="abstract-title">Abstract</div>
 <p>In this manuscript we derive formulas for multifold sums of powers by
@@ -251,7 +251,7 @@ class="math display">\[\begin{align*}
 \end{align*}\]</span> where <span class="math inline">\(\Delta^{k} f(a)
 = \sum_{j=0}^{k} (-1)^{k-j} \binom{k}{j} f(a+j)\)</span> are <span
 class="math inline">\(k\)</span>-degree forward finite differences of
-<span class="math inline">\(f\)</span> evaluated in point <span
+function <span class="math inline">\(f\)</span> evaluated in point <span
 class="math inline">\(a\)</span>.</em></p>
 </div>
 <p>Which is indeed true, because <span
@@ -557,9 +557,10 @@ series). <em></em></p>
 class="math inline">\(r,n,m\)</span> and an arbitrary integer <span
 class="math inline">\(t\)</span> <span
 class="math display">\[\begin{align*}
-            \Sigma^{r}\,{n}^{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[
-\left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s}
-\Sigma^{r-s}\,{n}^{0} \right) + \binom{n-t+r}{j+r} \right]
+            \Sigma^{r}\,{n}^{m}
+            = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \binom{n-t+r}{j+r}
++ \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \Sigma^{r-s}\,{n}^{0}
+\right]
 \end{align*}\]</span></em></p>
 </div>
 <div class="proof">
@@ -583,16 +584,15 @@ class="math inline">\(r\)</span>-fold sum <span
 class="math inline">\(\Sigma^{r}\,{n}^{m}\)</span> can be written as
 <span class="math display">\[\begin{align*}
         \Sigma^{r}\,{n}^{m}
-        &amp;= \sum_{j=0}^{m} \Delta^{j} t^{m} \Big[
+        &amp;= \sum_{j=0}^{m} \Delta^{j} t^{m} \Bigg[
+            \binom{n-t+r}{j+r} +
             (-1)^{j}   \binom{j+t-1}{j+1} \Sigma^{r-1}\,{n}^{0}
             + (-1)^{j+1} \binom{j+t-1}{j+2} \Sigma^{r-2}\,{n}^{0} \\
             &amp;\qquad\qquad\quad
             + (-1)^{j+2} \binom{j+t-1}{j+3} \Sigma^{r-3}\,{n}^{0}
             + \cdots
-            + (-1)^{j+r-1} \binom{j+t-1}{j+r} \Sigma^{0}\,{n}^{0} \\
-            &amp;\qquad\qquad\quad
-            + \binom{n-t+r}{j+r}
-            \Big]
+            + (-1)^{j+r-1} \binom{j+t-1}{j+r} \Sigma^{0}\,{n}^{0}
+            \Bigg]
 \end{align*}\]</span></em></p>
 </div>
 <p>We may observe that</p>
@@ -622,9 +622,10 @@ form). <em></em></p>
 class="math inline">\(r,n,m\)</span> and an arbitrary integer <span
 class="math inline">\(t\)</span> <span
 class="math display">\[\begin{align*}
-            \Sigma^{r}\,{n}^{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[
-\left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s}
-\binom{r-s+n-1}{r-s} \right) + \binom{n-t+r}{j+r} \right]
+            \Sigma^{r}\,{n}^{m}
+            = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \binom{n-t+r}{j+r}
++ \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \binom{r-s+n-1}{r-s}
+\right]
 \end{align*}\]</span></em></p>
 </div>
 </div>
@@ -637,9 +638,10 @@ form re-indexed). <em></em></p>
 class="math inline">\(r,n,m\)</span> and an arbitrary integer <span
 class="math inline">\(t\)</span> <span
 class="math display">\[\begin{align*}
-            \Sigma^{r}\,{n}^{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[
-\left( \sum_{s=0}^{r-1} (-1)^{j+s} \binom{j+t-1}{j+s+1}
-\binom{r-s+n-2}{r-s-1} \right) + \binom{n-t+r}{j+r} \right]
+            \Sigma^{r}\,{n}^{m}
+            = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \binom{n-t+r}{j+r}
++ \sum_{s=0}^{r-1} (-1)^{j+s} \binom{j+t-1}{j+s+1}
+\binom{r-s+n-2}{r-s-1} \right]
 \end{align*}\]</span></em></p>
 </div>
 </div>
@@ -650,8 +652,8 @@ of the second kind</p>
 <em>For non-negative integers <span class="math inline">\(j,m\)</span>
 and an arbitrary integer <span class="math inline">\(t\)</span> <span
 class="math display">\[\begin{align*}
-        \Delta^{j} t^{m} = \sum_{k=0}^{m} \binom{t}{k}
-\genfrac{\{}{\}}{0pt}{}{m}{j+k} (j+k)!
+        \Delta^{j} t^{m} = \sum_{k=0}^{m}
+\genfrac{\{}{\}}{0pt}{}{m}{j+k} \binom{t}{k} (j+k)!
 \end{align*}\]</span></em></p>
 </div>
 <p>Which implies variations of the formulas for sums of powers</p>
@@ -664,9 +666,10 @@ numbers). <em></em></p>
 class="math inline">\(n,m\)</span> and arbitrary integer <span
 class="math inline">\(t\)</span> <span
 class="math display">\[\begin{align*}
-            \Sigma^{1}\,{n}^{m} = \sum_{j=0}^{m} \sum_{k=0}^{m} \left[
-(-1)^j \binom{j+t-1}{j+1} +  \binom{n-t+1}{j+1} \right] \binom{t}{k}
-\genfrac{\{}{\}}{0pt}{}{m}{j+k} (j+k)!
+            \Sigma^{1}\,{n}^{m}
+            = \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ (-1)^j
+\binom{j+t-1}{j+1} +  \binom{n-t+1}{j+1} \right]
+\genfrac{\{}{\}}{0pt}{}{m}{j+k} \binom{t}{k} (j+k)!
 \end{align*}\]</span></em></p>
 </div>
 <div class="proof">
@@ -704,10 +707,11 @@ Stirling numbers). <em></em></p>
 class="math inline">\(r,n,m\)</span> and an arbitrary integer <span
 class="math inline">\(t\)</span> <span
 class="math display">\[\begin{align*}
-            \Sigma^{r}\,{n}^{m} = \sum_{j=0}^{m} \sum_{k=0}^{m} \left[
-\left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s}
-\Sigma^{r-s}\,{n}^{0} \right) + \binom{n-t+r}{j+r} \right] \binom{t}{k}
-\genfrac{\{}{\}}{0pt}{}{m}{j+k} (j+k)!
+            \Sigma^{r}\,{n}^{m}
+            = \sum_{j=0}^{m} \sum_{k=0}^{m}
+            \left[ \binom{n-t+r}{j+r} + \sum_{s=1}^{r} (-1)^{j+s-1}
+\binom{j+t-1}{j+s} \Sigma^{r-s}\,{n}^{0} \right]
+            \genfrac{\{}{\}}{0pt}{}{m}{j+k} \binom{t}{k} (j+k)!
 \end{align*}\]</span></em></p>
 </div>
 <div class="proof">
@@ -761,10 +765,11 @@ Eulerian numbers). <em></em></p>
 class="math inline">\(r,n,m\)</span> and an arbitrary integer <span
 class="math inline">\(t\)</span> <span
 class="math display">\[\begin{align*}
-            \Sigma^{r}\,{n}^{m}= \sum_{j=0}^{m} \sum_{k=0}^{m} \left[
-\left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s}
-\Sigma^{r-s}\,{n}^{0} \right) + \binom{n-t+r}{j+r} \right]
-\binom{t+k}{m-j} \genfrac{\langle}{\rangle}{0pt}{}{m}{k}
+            \Sigma^{r}\,{n}^{m}
+            =\sum_{j=0}^{m} \sum_{k=0}^{m}
+            \left[ \binom{n-t+r}{j+r} + \sum_{s=1}^{r} (-1)^{j+s-1}
+\binom{j+t-1}{j+s} \Sigma^{r-s}\,{n}^{0} \right] \binom{t+k}{m-j}
+\genfrac{\langle}{\rangle}{0pt}{}{m}{k}
 \end{align*}\]</span></em></p>
 </div>
 <div class="proof">
@@ -834,9 +839,10 @@ backward differences). <em></em></p>
 class="math inline">\(r,n,m\)</span> and an arbitrary integer <span
 class="math inline">\(t\)</span> <span
 class="math display">\[\begin{align*}
-            \Sigma^{r}\,{n}^{m} = \sum_{j=0}^{m} \nabla^{j} (t+j)^{m}
-\left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s}
-\Sigma^{r-s}\,{n}^{0} \right) + \binom{n-t+r}{j+r} \right]
+            \Sigma^{r}\,{n}^{m}
+            = \sum_{j=0}^{m} \nabla^{j} (t+j)^{m} \left[
+\binom{n-t+r}{j+r} +  \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s}
+\Sigma^{r-s}\,{n}^{0} \right]
 \end{align*}\]</span></em></p>
 </div>
 <div class="proof">
@@ -872,10 +878,10 @@ differences). <em></em></p>
 class="math inline">\(r,n,m\)</span> and an arbitrary integer <span
 class="math inline">\(t\)</span> <span
 class="math display">\[\begin{align*}
-            \Sigma^{r}\,{n}^{m} = \sum_{j=0}^{m} \delta^{j} \left( t +
-\frac{j}{2} \right)^m \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1}
-\binom{j+t-1}{j+s} \Sigma^{r-s}\,{n}^{0} \right) + \binom{n-t+r}{j+r}
-\right]
+            \Sigma^{r}\,{n}^{m}
+            = \sum_{j=0}^{m} \delta^{j} \left( t + \frac{j}{2} \right)^m
+\left[\binom{n-t+r}{j+r} + \sum_{s=1}^{r} (-1)^{j+s-1}
+\binom{j+t-1}{j+s} \Sigma^{r-s}\,{n}^{0} \right]
 \end{align*}\]</span></em></p>
 </div>
 <div class="proof">

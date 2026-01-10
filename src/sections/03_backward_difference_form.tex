@@ -13,7 +13,8 @@ Thus,
     \begin{mdframed}
         For non-negative integers $r,n,m$ and an arbitrary integer $t$
         \begin{align*}
-            \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \nabla^{j} (t+j)^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right]
+            \KnuthRFoldSum{r}{n}{m} 
+            = \sum_{j=0}^{m} \nabla^{j} (t+j)^{m} \left[ \binom{n-t+r}{j+r} +  \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right]
         \end{align*}
     \end{mdframed}
     \begin{proof}

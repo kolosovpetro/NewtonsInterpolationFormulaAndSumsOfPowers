@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Clean-ups in Mathematica package
 - Generate pandoc HTML
 - Fix README link
+- Fix nested equations
 
 ## [1.6.0] - 06-Jan-2026
 

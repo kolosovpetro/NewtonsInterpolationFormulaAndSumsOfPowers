@@ -20,7 +20,7 @@ Throughout the paper, we utilize the Newton's interpolation formula as stated be
         f(x) = \sum_{j=0}^{\infty} \binom{x-a}{j} \Delta^{j} f(a)
     \end{align*}
     where $\Delta^{k} f(a) = \sum_{j=0}^{k} (-1)^{k-j} \binom{k}{j} f(a+j)$ 
-    are $k$-degree forward finite differences of $f$ evaluated in point $a$.
+    are $k$-degree forward finite differences of function $f$ evaluated in point $a$.
 \end{proposition}
 Which is indeed true, because
 \begin{align*}
@@ -223,7 +223,8 @@ which is
     \begin{mdframed}
         For non-negative integers $r,n,m$ and an arbitrary integer $t$
         \begin{align*}
-            \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right]
+            \KnuthRFoldSum{r}{n}{m} 
+            = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \binom{n-t+r}{j+r} + \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right]
         \end{align*}
     \end{mdframed}
     \begin{proof}
@@ -237,16 +238,15 @@ In its explicit form
     $\KnuthRFoldSum{r}{n}{m}$ can be written as
     \begin{align*}
         \KnuthRFoldSum{r}{n}{m}
-        &= \sum_{j=0}^{m} \Delta^{j} t^{m} \Big[
+        &= \sum_{j=0}^{m} \Delta^{j} t^{m} \Bigg[ 
+            \binom{n-t+r}{j+r} + 
             (-1)^{j}   \binom{j+t-1}{j+1} \KnuthRFoldSum{r-1}{n}{0}
             + (-1)^{j+1} \binom{j+t-1}{j+2} \KnuthRFoldSum{r-2}{n}{0} \\
             &\qquad\qquad\quad
             + (-1)^{j+2} \binom{j+t-1}{j+3} \KnuthRFoldSum{r-3}{n}{0}
             + \cdots
-            + (-1)^{j+r-1} \binom{j+t-1}{j+r} \KnuthRFoldSum{0}{n}{0} \\
-            &\qquad\qquad\quad
-            + \binom{n-t+r}{j+r}
-            \Big]
+            + (-1)^{j+r-1} \binom{j+t-1}{j+r} \KnuthRFoldSum{0}{n}{0} 
+            \Bigg]
     \end{align*}
 \end{example}
 We may observe that
@@ -267,7 +267,8 @@ sums of powers~\eqref{theorem:multifold-sums-of-powers-via-newtons-series}
     \begin{mdframed}
         For non-negative integers $r,n,m$ and an arbitrary integer $t$
         \begin{align*}
-            \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \binom{r-s+n-1}{r-s} \right) + \binom{n-t+r}{j+r} \right]
+            \KnuthRFoldSum{r}{n}{m} 
+            = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \binom{n-t+r}{j+r} + \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \binom{r-s+n-1}{r-s} \right]
         \end{align*}
     \end{mdframed}
 \end{proposition}
@@ -276,7 +277,8 @@ sums of powers~\eqref{theorem:multifold-sums-of-powers-via-newtons-series}
     \begin{mdframed}
         For non-negative integers $r,n,m$ and an arbitrary integer $t$
         \begin{align*}
-            \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \left( \sum_{s=0}^{r-1} (-1)^{j+s} \binom{j+t-1}{j+s+1} \binom{r-s+n-2}{r-s-1} \right) + \binom{n-t+r}{j+r} \right]
+            \KnuthRFoldSum{r}{n}{m} 
+            = \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \binom{n-t+r}{j+r} + \sum_{s=0}^{r-1} (-1)^{j+s} \binom{j+t-1}{j+s+1} \binom{r-s+n-2}{r-s-1} \right]
         \end{align*}
     \end{mdframed}
 \end{proposition}
@@ -285,7 +287,7 @@ Finite differences of powers are closely related to Stirling numbers of the seco
     \label{lem:finite-differences-via-stirling-numbers}
     For non-negative integers $j,m$ and an arbitrary integer $t$
     \begin{align*}
-        \Delta^{j} t^{m} = \sum_{k=0}^{m} \binom{t}{k} \stirlingii{m}{j+k} (j+k)!
+        \Delta^{j} t^{m} = \sum_{k=0}^{m} \stirlingii{m}{j+k} \binom{t}{k} (j+k)!
     \end{align*}
 \end{lemma}
 Which implies variations of the formulas for sums of powers
@@ -294,7 +296,8 @@ Which implies variations of the formulas for sums of powers
     \begin{mdframed}
         For non-negative integers $n,m$ and arbitrary integer $t$
         \begin{align*}
-            \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ (-1)^j \binom{j+t-1}{j+1} +  \binom{n-t+1}{j+1} \right] \binom{t}{k} \stirlingii{m}{j+k} (j+k)!
+            \KnuthRFoldSum{1}{n}{m} 
+            = \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ (-1)^j \binom{j+t-1}{j+1} +  \binom{n-t+1}{j+1} \right] \stirlingii{m}{j+k} \binom{t}{k} (j+k)!
         \end{align*}
     \end{mdframed}
     \begin{proof}
@@ -316,7 +319,10 @@ In general,
     \begin{mdframed}
         For non-negative integers $r,n,m$ and an arbitrary integer $t$
         \begin{align*}
-            \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right] \binom{t}{k} \stirlingii{m}{j+k} (j+k)!
+            \KnuthRFoldSum{r}{n}{m} 
+            = \sum_{j=0}^{m} \sum_{k=0}^{m} 
+            \left[ \binom{n-t+r}{j+r} + \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right] 
+            \stirlingii{m}{j+k} \binom{t}{k} (j+k)!
         \end{align*}
     \end{mdframed}
     \begin{proof}
@@ -350,7 +356,9 @@ Therefore,
     \begin{mdframed}
         For non-negative integers $r,n,m$ and an arbitrary integer $t$
         \begin{align*}
-            \KnuthRFoldSum{r}{n}{m}= \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ \left( \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right) + \binom{n-t+r}{j+r} \right] \binom{t+k}{m-j} \eulerian{m}{k}
+            \KnuthRFoldSum{r}{n}{m} 
+            =\sum_{j=0}^{m} \sum_{k=0}^{m} 
+            \left[ \binom{n-t+r}{j+r} + \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right] \binom{t+k}{m-j} \eulerian{m}{k}
         \end{align*}
     \end{mdframed}
     \begin{proof}
