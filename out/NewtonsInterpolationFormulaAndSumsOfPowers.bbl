@@ -24,6 +24,13 @@ Petro Kolosov.
 \newblock
   \url{https://archive.org/details/bub_gb_KaAIAAAAIAAJ/page/466/mode/2up}.
 
+\bibitem{graham1994concrete}
+{Graham, Ronald L. and Knuth, Donald E. and Patashnik, Oren}.
+\newblock {\em {Concrete mathematics: A foundation for computer science (second
+  edition)}}.
+\newblock {Addison-Wesley Publishing Company, Inc.}, 1994.
+\newblock \url {https://archive.org/details/concrete-mathematics}.
+
 \bibitem{pfaff2007deriving}
 Thomas~J. Pfaff.
 \newblock Deriving a formula for sums of powers of integers.
