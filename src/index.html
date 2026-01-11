@@ -336,10 +336,32 @@ data-reference="prop:segmented-hockey-stick-identity">[prop:segmented-hockey-sti
 </div>
 <p>The special cases for <span class="math inline">\(t=0\)</span> and
 <span class="math inline">\(t=1\)</span> are widely known and appear in
-literature quite frequently. For <span
-class="math inline">\(t=0\)</span> and <span
-class="math inline">\(m=3\)</span> we have the famous identity <span
-class="math display">\[\begin{align*}
+literature quite frequently.</p>
+<div class="corollary">
+<p><strong>Corollary 5</strong>. <em>By setting <span
+class="math inline">\(t=0\)</span> into <a
+href="#prop:ordinary-sums-of-powers-via-newtons-series"
+data-reference-type="eqref"
+data-reference="prop:ordinary-sums-of-powers-via-newtons-series">[prop:ordinary-sums-of-powers-via-newtons-series]</a>
+<span class="math display">\[\begin{align*}
+            \Sigma^{1}\,{n}^{m} = \sum_{j=0}^{m} \binom{n+1}{j+1}
+\Delta^{j} 0^m
+\end{align*}\]</span></em></p>
+</div>
+<div class="corollary">
+<p><strong>Corollary 6</strong>. <em>By setting <span
+class="math inline">\(t=1\)</span> into <a
+href="#prop:ordinary-sums-of-powers-via-newtons-series"
+data-reference-type="eqref"
+data-reference="prop:ordinary-sums-of-powers-via-newtons-series">[prop:ordinary-sums-of-powers-via-newtons-series]</a>
+<span class="math display">\[\begin{align*}
+        \Sigma^{1}\,{n}^{m} = \sum_{j=0}^{m} \binom{n}{j+1} \Delta^{j}
+1^m
+\end{align*}\]</span></em></p>
+</div>
+<p>In particular, by setting <span class="math inline">\(t=0\)</span>
+and <span class="math inline">\(m=3\)</span> we have the famous identity
+<span class="math display">\[\begin{align*}
     \Sigma^{1}\,{n}^{3} = 0 \tbinom{n+1}{1} + 1 \tbinom{n+1}{2} + 6
 \tbinom{n+1}{3} + 6 \tbinom{n+1}{4}
 \end{align*}\]</span> which was discussed in <span class="citation"
@@ -352,15 +374,15 @@ href="https://oeis.org/A131689"><code>A131689</code></a> in the
 OEIS <span class="citation" data-cites="sloane2003line">(Sloane, Neil
 J.A. and others 2003)</span>.</p>
 <p>The special cases for <span class="math inline">\(t=1\)</span> and
-<span class="math inline">\(m=2,3,4,5\)</span> were discussed in <span
+<span class="math inline">\(m=2,3,4,5\)</span> were shown in <span
 class="citation" data-cites="cereceda2022sums">(Cereceda, José L.
 2022)</span>. For instance, <span class="math display">\[\begin{align*}
-    \Sigma^{1}\,{n}^{3}
-    &amp;= 1 \tbinom{n}{1} + 7 \tbinom{n}{2} + 12 \tbinom{n}{3} + 6
-\tbinom{n}{4} \\
-    \Sigma^{1}\,{n}^{4}
-    &amp;= 1 \tbinom{n}{1} +15 \tbinom{n}{2} +50 \tbinom{n}{3} +60
-\tbinom{n}{4} +24 \tbinom{n}{5}
+    \Sigma^{1}\,{n}^{3} &amp;= 1 \tbinom{n}{1} + 7 \tbinom{n}{2} + 12
+\tbinom{n}{3} + 6 \tbinom{n}{4} \\
+    \Sigma^{1}\,{n}^{4} &amp;= 1 \tbinom{n}{1} +15 \tbinom{n}{2} +50
+\tbinom{n}{3} +60 \tbinom{n}{4} +24 \tbinom{n}{5} \\
+    \Sigma^{1}\,{n}^{5} &amp;= 1 \tbinom{n}{1} +31 \tbinom{n}{2} +180
+\tbinom{n}{3} +390 \tbinom{n}{4} +360 \tbinom{n}{5} + 120 \tbinom{n}{6}
 \end{align*}\]</span></p>
 <p>The coefficients <span class="math inline">\(1,7,12,6,1,15,
 \dots\)</span> is the sequence <a
@@ -368,7 +390,7 @@ href="https://oeis.org/A028246"><code>A028246</code></a> in the
 OEIS <span class="citation" data-cites="sloane2003line">(Sloane, Neil
 J.A. and others 2003)</span>.</p>
 <p>Interestingly enough that the paper <span class="citation"
-data-cites="cereceda2022sums">(Cereceda, José L. 2022)</span> gives the
+data-cites="cereceda2022sums">(Cereceda, José L. 2022)</span> gives
 formula for sums of powers</p>
 <p><span class="math display">\[\begin{align*}
     \Sigma^{1}\,{n}^{k} = \sum_{j=0}^{k} j! \left[ \binom{n+1-r}{j+1} +
@@ -377,7 +399,7 @@ formula for sums of powers</p>
 <p>where <span
 class="math inline">\(\genfrac{\{}{\}}{0pt}{}{k}{j}_{r}\)</span> are
 generalized Stirling numbers of the second kind.</p>
-<p>The formula above is identical to the proposition <a
+<p>The formula above is identical to proposition <a
 href="#prop:ordinary-sums-of-powers-via-newtons-series"
 data-reference-type="eqref"
 data-reference="prop:ordinary-sums-of-powers-via-newtons-series">[prop:ordinary-sums-of-powers-via-newtons-series]</a>,
@@ -432,7 +454,7 @@ class="math display">\[\begin{align*}
 \end{align*}\]</span> Thus,</p>
 <div id="prop:double-sums-of-powers-via-newtons-series"
 class="proposition">
-<p><strong>Proposition 5</strong> (Double sums of powers via Newton’s
+<p><strong>Proposition 7</strong> (Double sums of powers via Newton’s
 series). <em></em></p>
 <div class="mdframed">
 <p><em>For non-negative integers <span
@@ -490,7 +512,7 @@ J.A. and others 2003)</span>.</p>
 \end{align*}\]</span></p>
 <p>Similarly, we obtain the formula for the triple sums of powers</p>
 <div class="proposition">
-<p><strong>Proposition 6</strong> (Triple sums of powers via Newton’s
+<p><strong>Proposition 8</strong> (Triple sums of powers via Newton’s
 series). <em>For non-negative integers <span
 class="math inline">\(n,m\)</span> and an arbitrary integer <span
 class="math inline">\(t\)</span> <span
@@ -562,7 +584,7 @@ class="math display">\[\begin{align*}
 which is</p>
 <div id="theorem:multifold-sums-of-powers-via-newtons-series"
 class="theorem">
-<p><strong>Theorem 7</strong> (Multifold sums of powers via Newton’s
+<p><strong>Theorem 9</strong> (Multifold sums of powers via Newton’s
 series). <em></em></p>
 <div class="mdframed">
 <p><em>For non-negative integers <span
@@ -587,7 +609,7 @@ data-reference="prop:segmented-hockey-stick-identity">[prop:segmented-hockey-sti
 </div>
 <p>In its explicit form</p>
 <div class="example">
-<p><strong>Example 8</strong> (Explicit expansion of the <span
+<p><strong>Example 10</strong> (Explicit expansion of the <span
 class="math inline">\(s\)</span>–sum in the <span
 class="math inline">\(r\)</span>-fold case). <em>For non-negative
 integers <span class="math inline">\(r,n,m\)</span> and an arbitrary
@@ -609,7 +631,7 @@ class="math inline">\(\Sigma^{r}\,{n}^{m}\)</span> can be written as
 </div>
 <p>We may observe that</p>
 <div id="prop:multifold-sum-of-zero-powers" class="proposition">
-<p><strong>Proposition 9</strong> (Multifold sum of zero powers).
+<p><strong>Proposition 11</strong> (Multifold sum of zero powers).
 <em>For integers <span class="math inline">\(r\)</span> and <span
 class="math inline">\(n\)</span> <span
 class="math display">\[\begin{align*}
@@ -627,7 +649,7 @@ data-reference-type="eqref"
 data-reference="theorem:multifold-sums-of-powers-via-newtons-series">[theorem:multifold-sums-of-powers-via-newtons-series]</a></p>
 <div id="prop:multifold-sums-of-powers-binomial-form"
 class="proposition">
-<p><strong>Proposition 10</strong> (Multifold sums of powers binomial
+<p><strong>Proposition 12</strong> (Multifold sums of powers binomial
 form). <em></em></p>
 <div class="mdframed">
 <p><em>For non-negative integers <span
@@ -643,7 +665,7 @@ class="math display">\[\begin{align*}
 </div>
 <div id="prop:multifold-sums-of-powers-binomial-form-reindexed"
 class="proposition">
-<p><strong>Proposition 11</strong> (Multifold sums of powers binomial
+<p><strong>Proposition 13</strong> (Multifold sums of powers binomial
 form re-indexed). <em></em></p>
 <div class="mdframed">
 <p><em>For non-negative integers <span
@@ -660,7 +682,7 @@ class="math display">\[\begin{align*}
 <p>Finite differences of powers are closely related to Stirling numbers
 of the second kind</p>
 <div id="lem:finite-differences-via-stirling-numbers" class="lemma">
-<p><strong>Lemma 12</strong> (Finite differences via Stirling numbers).
+<p><strong>Lemma 14</strong> (Finite differences via Stirling numbers).
 <em>For non-negative integers <span class="math inline">\(j,m\)</span>
 and an arbitrary integer <span class="math inline">\(t\)</span> <span
 class="math display">\[\begin{align*}
@@ -671,7 +693,7 @@ class="math display">\[\begin{align*}
 <p>Which implies variations of the formulas for sums of powers</p>
 <div id="prop:ordinary-sums-of-powers-via-stirling-numbers"
 class="proposition">
-<p><strong>Proposition 13</strong> (Ordinary sums of powers via Stirling
+<p><strong>Proposition 15</strong> (Ordinary sums of powers via Stirling
 numbers). <em></em></p>
 <div class="mdframed">
 <p><em>For non-negative integers <span
@@ -702,7 +724,7 @@ data-reference="prop:ordinary-sums-of-powers-via-stirling-numbers">[prop:ordinar
 yields well-known identity for sums of powers in terms of Stirling
 numbers</p>
 <div class="corollary">
-<p><strong>Corollary 14</strong>. <em>For non-negative integers <span
+<p><strong>Corollary 16</strong>. <em>For non-negative integers <span
 class="math inline">\(n,m\)</span> <span
 class="math display">\[\begin{align*}
         \Sigma^{1}\,{n}^{m} = \sum_{j=0}^{m} \binom{n+1}{j+1}
@@ -712,7 +734,7 @@ class="math display">\[\begin{align*}
 <p>In general,</p>
 <div id="prop:multifold-sums-of-powers-via-stirling-numbers"
 class="proposition">
-<p><strong>Proposition 15</strong> (Multifold sums of powers via
+<p><strong>Proposition 17</strong> (Multifold sums of powers via
 Stirling numbers). <em></em></p>
 <div class="mdframed">
 <p><em>For non-negative integers <span
@@ -748,7 +770,7 @@ Eulerian numbers, by expressing the forward finite difference via the
 Worpitzky identity <span class="citation"
 data-cites="Worpitzky1883">(Worpitzky 1883)</span></p>
 <div class="lemma">
-<p><strong>Lemma 16</strong> (Worpitzky identity). <em>For non-negative
+<p><strong>Lemma 18</strong> (Worpitzky identity). <em>For non-negative
 integers <span class="math inline">\(t,m\)</span> <span
 class="math display">\[\begin{align*}
         t^{m} = \sum_{k=0}^{m} \binom{t+k}{m}
@@ -759,7 +781,7 @@ class="math display">\[\begin{align*}
 class="math inline">\(\genfrac{\langle}{\rangle}{0pt}{}{n}{k}\)</span>
 are Eulerian numbers. Thus,</p>
 <div id="lem:finite-differences-via-eulerian-numbers" class="lemma">
-<p><strong>Lemma 17</strong> (Finite difference via Eulerian numbers).
+<p><strong>Lemma 19</strong> (Finite difference via Eulerian numbers).
 <em>For non-negative integers <span class="math inline">\(j,m\)</span>
 and an arbitrary integer <span class="math inline">\(t\)</span> <span
 class="math display">\[\begin{align*}
@@ -770,7 +792,7 @@ class="math display">\[\begin{align*}
 <p>Therefore,</p>
 <div id="prop:multifold-sums-of-powers-via-eulerian-numbers"
 class="proposition">
-<p><strong>Proposition 18</strong> (Multifold sums of powers via
+<p><strong>Proposition 20</strong> (Multifold sums of powers via
 Eulerian numbers). <em></em></p>
 <div class="mdframed">
 <p><em>For non-negative integers <span
@@ -797,7 +819,7 @@ data-reference="lem:finite-differences-via-eulerian-numbers">[lem:finite-differe
 </div>
 <p>Which implies variations of the formulas for sums of powers</p>
 <div id="prop:sums-of-powers-via-eulerian-numbers" class="proposition">
-<p><strong>Proposition 19</strong> (Ordinary sums of powers via Eulerian
+<p><strong>Proposition 21</strong> (Ordinary sums of powers via Eulerian
 numbers). <em></em></p>
 <div class="mdframed">
 <p><em>For non-negative integers <span
@@ -817,7 +839,7 @@ data-reference="prop:sums-of-powers-via-eulerian-numbers">[prop:sums-of-powers-v
 yields a well-known identity for sums of powers in terms of Eulerian
 numbers</p>
 <div class="corollary">
-<p><strong>Corollary 20</strong> (Sums of powers via Eulerian numbers in
+<p><strong>Corollary 22</strong> (Sums of powers via Eulerian numbers in
 zero). </p>
 <div class="mdframed">
 <p><em>For non-negative integers <span
@@ -835,7 +857,7 @@ data-reference-type="eqref"
 data-reference="theorem:multifold-sums-of-powers-via-newtons-series">[theorem:multifold-sums-of-powers-via-newtons-series]</a>
 can be expressed in terms of backward differences easily, because</p>
 <div id="prop:forward-via-backward-differences" class="proposition">
-<p><strong>Proposition 21</strong>. <em>For integers <span
+<p><strong>Proposition 23</strong>. <em>For integers <span
 class="math inline">\(j,m,t\)</span> <span
 class="math display">\[\begin{align*}
         \Delta^{j} t^{m} = \nabla^{j} (t+j)^{m}
@@ -844,7 +866,7 @@ class="math display">\[\begin{align*}
 <p>Thus,</p>
 <div id="prop:multifold-sums-of-powers-via-backward-difference"
 class="proposition">
-<p><strong>Proposition 22</strong> (Multifold sums of powers via
+<p><strong>Proposition 24</strong> (Multifold sums of powers via
 backward differences). <em></em></p>
 <div class="mdframed">
 <p><em>For non-negative integers <span
@@ -874,7 +896,7 @@ data-reference-type="eqref"
 data-reference="theorem:multifold-sums-of-powers-via-newtons-series">[theorem:multifold-sums-of-powers-via-newtons-series]</a>
 can be expressed in terms of central differences easily, because</p>
 <div id="prop:forward-via-central-differences" class="proposition">
-<p><strong>Proposition 23</strong>. <em>For integers <span
+<p><strong>Proposition 25</strong>. <em>For integers <span
 class="math inline">\(j,m,t\)</span> <span
 class="math display">\[\begin{align*}
         \Delta^{j} t^{m} = \delta^{j} \left( t+ \frac{j}{2} \right)^{m}
@@ -883,7 +905,7 @@ class="math display">\[\begin{align*}
 <p>Thus,</p>
 <div id="prop:multifold-sums-of-powers-via-central-differences"
 class="proposition">
-<p><strong>Proposition 24</strong> (Multifold sums of powers via central
+<p><strong>Proposition 26</strong> (Multifold sums of powers via central
 differences). <em></em></p>
 <div class="mdframed">
 <p><em>For non-negative integers <span
@@ -969,7 +991,7 @@ operator of central finite differences evaluated in zero, and Newton’s
 interpolation formula for central differences <span class="citation"
 data-cites="kolosov_2025_18098442">(Kolosov 2025b)</span></p>
 <div id="prop:knuth-sums-of-odd-powers" class="proposition">
-<p><strong>Proposition 25</strong> (Multifold sums of odd powers).
+<p><strong>Proposition 27</strong> (Multifold sums of odd powers).
 <em><span class="math display">\[\begin{align*}
         \Sigma^{r}\,{n}^{2m-1}
         &amp;= \sum_{k=1}^{m} \binom{n+k-1+r}{2k-1+r} \frac{1}{2k}
@@ -990,7 +1012,7 @@ class="math inline">\(T(n,k)\)</span> were defined by Riordan in <span
 class="citation" data-cites="riordan1968combinatorial">(Riordan 1968,
 ch. 6.5, formula (24))</span> by polynomial identity</p>
 <div class="lemma">
-<p><strong>Lemma 26</strong> (Riordan power identity). <em><span
+<p><strong>Lemma 28</strong> (Riordan power identity). <em><span
 class="math display">\[\begin{align*}
         n^m = \sum_{k=1}^{m} T(m,k) n^{[k]}
 \end{align*}\]</span> where <span class="math inline">\(n^{[k]}\)</span>
