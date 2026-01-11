@@ -12,7 +12,7 @@ Furthermore, we provide formulas for multifold sums of powers in terms of Stirli
 - **Keywords:** Sums of powers, Newton's interpolation formula, Finite differences, Binomial coefficients, Faulhaber's formula, Bernoulli numbers, Bernoulli polynomials Interpolation, Approximation, Discrete convolution, Combinatorics, Polynomial identities, Central factorial numbers, Stirling numbers, Eulerian numbers, Worpitzky identity, Pascal's triangle, OEIS
 - **License:** This work is licensed under a [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/)
 - **DOI:** https://doi.org/10.5281/zenodo.18040979
-- **Web Version:** https://kolosovpetro.github.io/math/test
+- **Web Version:** https://kolosovpetro.github.io/sums-of-powers-newtons-formula/
 - **Sources:** https://github.com/kolosovpetro/NewtonsInterpolationFormulaAndSumsOfPowers
 - **ORCID:** https://orcid.org/0000-0002-6544-8880
 - **Email:** kolosovp94@gmail.com
@@ -49,7 +49,3 @@ Furthermore, we provide formulas for multifold sums of powers in terms of Stirli
 - Kolosov, P. (2025). Newton's interpolation formula and sums of powers. Zenodo. https://doi.org/10.5281/zenodo.18040979
 - Kolosov, P. (2025). Sums of powers via central finite differences and Newton's formula. Zenodo. https://doi.org/10.5281/zenodo.18096789
 - Kolosov, P. (2026). Sums of powers via backward finite differences and Newton's formula. Zenodo. https://doi.org/10.5281/zenodo.18118011
-
-## Pandoc compile command
-
-- `pandoc NewtonsInterpolationFormulaAndSumsOfPowers.tex --mathjax --standalone --citeproc --bibliography=NewtonsInterpolationFormulaAndSumsOfPowers.bib --csl=chicago-author-date.csl -o index.html`

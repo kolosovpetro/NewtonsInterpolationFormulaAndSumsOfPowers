@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.0] - 11-Jan-2026
+
+### Changed
+
+- Rework links in bibliography
+- Remove unused bibliography
+- Clean-ups in Mathematica package
+- Generate pandoc HTML
+- Fix README link
+- Fix nested equations
+- Add wolframscript to validate main results
+- Examples use `tbinom` instead of `binom`
+- Add examples for t=0 and t=1
+
 ## [1.6.0] - 06-Jan-2026
 
 ### Changed
