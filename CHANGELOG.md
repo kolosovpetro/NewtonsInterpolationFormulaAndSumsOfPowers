@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Fix README link
 - Fix nested equations
 - Add wolframscript to validate main results
+- Examples use `tbinom` instead of `binom`
 
 ## [1.6.0] - 06-Jan-2026
 

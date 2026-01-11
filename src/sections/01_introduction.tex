@@ -24,9 +24,10 @@ Throughout the paper, we utilize the Newton's interpolation formula as stated be
 \end{proposition}
 Which is indeed true, because
 \begin{align*}
-    n^3 &= 0 \binom{n}{0} + 1 \binom{n}{1} + 6 \binom{n}{2} + 6 \binom{n}{3} \\
-    n^3 &= 1 \binom{n-1}{0} + 7 \binom{n-1}{1} + 12 \binom{n-1}{2} + 6 \binom{n-1}{3} \\
-    n^3 &= 8 \binom{n-2}{0} + 19 \binom{n-2}{1} + 18 \binom{n-2}{2} + 6 \binom{n-2}{3}
+    n^3 &= 0 \tbinom{n-0}{0}  + 1 \tbinom{n-0}{1}  + 6 \tbinom{n-0}{2}  + 6 \tbinom{n-0}{3} \\
+    n^3 &= 1 \tbinom{n-1}{0}  + 7 \tbinom{n-1}{1}  + 12 \tbinom{n-1}{2} + 6 \tbinom{n-1}{3} \\
+    n^3 &= 8 \tbinom{n-2}{0}  + 19 \tbinom{n-2}{1} + 18 \tbinom{n-2}{2} + 6 \tbinom{n-2}{3} \\
+    n^3 &= 27 \tbinom{n-3}{0} + 37 \tbinom{n-3}{1} + 24 \tbinom{n-3}{2} + 6 \tbinom{n-3}{3}
 \end{align*}
 
 \begin{proposition}[Newton's series for power]
@@ -83,7 +84,7 @@ This implies formula for sums of powers
 The special cases for $t=0$ and $t=1$ are widely known and appear in literature quite frequently.
 For $t=0$ and $m=3$ we have the famous identity
 \begin{align*}
-    \KnuthRFoldSum{1}{n}{3} = 0 \binom{n+1}{1} + 1 \binom{n+1}{2} + 6 \binom{n+1}{3} + 6 \binom{n+1}{4}
+    \KnuthRFoldSum{1}{n}{3} = 0 \tbinom{n+1}{1} + 1 \tbinom{n+1}{2} + 6 \tbinom{n+1}{3} + 6 \tbinom{n+1}{4}
 \end{align*}
 which was discussed in~\cite[p. 190]{graham1994concrete} and in~\cite{pfaff2007deriving}.
 
@@ -93,8 +94,10 @@ The coefficients $0, 1, 6, 6, 0, 1, 14, 36, 24, \dots$ is the sequence
 The special cases for $t=1$ and $m=2,3,4,5$ were discussed in~\cite{cereceda2022sums}.
 For instance,
 \begin{align*}
-    \KnuthRFoldSum{1}{n}{3} &= 1 \binom{n}{1} + 7 \binom{n}{2} + 12 \binom{n}{3} + 6 \binom{n}{4} \\
-    \KnuthRFoldSum{1}{n}{4} &= 1 \binom{n}{1} +15 \binom{n}{2} +50 \binom{n}{3} +60 \binom{n}{4} +24 \binom{n}{5}
+    \KnuthRFoldSum{1}{n}{3} 
+    &= 1 \tbinom{n}{1} + 7 \tbinom{n}{2} + 12 \tbinom{n}{3} + 6 \tbinom{n}{4} \\
+    \KnuthRFoldSum{1}{n}{4} 
+    &= 1 \tbinom{n}{1} +15 \tbinom{n}{2} +50 \tbinom{n}{3} +60 \tbinom{n}{4} +24 \tbinom{n}{5}
 \end{align*}
 
 The coefficients $1,7,12,6,1,15, \dots$ is the sequence
@@ -119,10 +122,10 @@ that is $\Delta^{j} t^m = j! \stirlingii{m}{j}_{t}$.
 By considering the special cases of the proposition~\eqref{prop:ordinary-sums-of-powers-via-newtons-series} for $t=4$,
 we observe rather unexpected formulas for sums of powers, namely
 \begin{align*}
-    \KnuthRFoldSum{1}{n}{0} &= 1  \left( \binom{n-3}{1} + \binom{3}{1}  \right) \\
-    \KnuthRFoldSum{1}{n}{1} &= 4  \left( \binom{n-3}{1} + \binom{3}{1}  \right)  + 1  \left( \binom{n-3}{2} - \binom{4}{2}  \right) \\
-    \KnuthRFoldSum{1}{n}{2} &= 16 \left( \binom{n-3}{1} + \binom{3}{1}  \right)  + 9  \left( \binom{n-3}{2} - \binom{4}{2}  \right) + 2  \left( \binom{n-2}{3} + \binom{5}{3}  \right) \\
-    \KnuthRFoldSum{1}{n}{3} &= 64 \left( \binom{n-3}{1} + \binom{3}{1}  \right)  + 61 \left( \binom{n-3}{2} - \binom{4}{2}  \right) + 30 \left( \binom{n-3}{3} + \binom{5}{3}  \right) \\ &+ 6 \left( \binom{n-3}{4} - \binom{6}{4}  \right)
+    \KnuthRFoldSum{1}{n}{0} &= 1  \left( \tbinom{n-3}{1} + \tbinom{3}{1}  \right) \\
+    \KnuthRFoldSum{1}{n}{1} &= 4  \left( \tbinom{n-3}{1} + \tbinom{3}{1}  \right)  + 1  \left( \tbinom{n-3}{2} - \tbinom{4}{2}  \right) \\
+    \KnuthRFoldSum{1}{n}{2} &= 16 \left( \tbinom{n-3}{1} + \tbinom{3}{1}  \right)  + 9  \left( \tbinom{n-3}{2} - \tbinom{4}{2}  \right) + 2  \left( \tbinom{n-2}{3} + \tbinom{5}{3}  \right) \\
+    \KnuthRFoldSum{1}{n}{3} &= 64 \left( \tbinom{n-3}{1} + \tbinom{3}{1}  \right)  + 61 \left( \tbinom{n-3}{2} - \tbinom{4}{2}  \right) + 30 \left( \tbinom{n-3}{3} + \tbinom{5}{3}  \right) \\ &+ 6 \left( \tbinom{n-3}{4} - \tbinom{6}{4}  \right)
 \end{align*}
 The coefficients $1,4,1,16,9,\dots$ is the sequence
 \href{https://oeis.org/A391633}{\texttt{A391633}}
@@ -160,12 +163,16 @@ Thus,
 \end{proposition}
 For example, by setting $t=5$, the double sums of powers are
 \begin{align*}
-    \KnuthRFoldSum{2}{n}{0} &= 1 \left( \binom{n-3}{2} + \binom{4}{1} n - \binom{4}{2} \right) \\
-    \KnuthRFoldSum{2}{n}{1} &= 5 \left( \binom{n-3}{2} + \binom{4}{1} n - \binom{4}{2} \right) + 1 \left( \binom{n-3}{3} - \binom{5}{2} n + \binom{5}{3} \right) \\
-    \KnuthRFoldSum{2}{n}{2} &= 25 \left( \binom{n-3}{2} + \binom{4}{1} n - \binom{4}{2} \right) + 11 \left( \binom{n-3}{3} - \binom{5}{2} n + \binom{5}{3} \right) \\
-    &+ 2 \left( \binom{n-3}{4} + \binom{6}{3} n - \binom{6}{4} \right) \\
-    \KnuthRFoldSum{2}{n}{3} &= 125 \left( \binom{n-3}{2} + \binom{4}{1} n - \binom{4}{2} \right) + 91 \left( \binom{n-3}{3} - \binom{5}{2} n + \binom{5}{3} \right) \\
-    &+ 36 \left( \binom{n-3}{4} + \binom{6}{3} n - \binom{6}{4} \right) + 6 \left( \binom{n-3}{5} - \binom{7}{4} n + \binom{7}{5} \right)
+    \KnuthRFoldSum{2}{n}{0} 
+    &= 1 \left( \tbinom{n-3}{2} + \tbinom{4}{1} n - \tbinom{4}{2} \right) \\
+    \KnuthRFoldSum{2}{n}{1} 
+    &= 5 \left( \tbinom{n-3}{2} + \tbinom{4}{1} n - \tbinom{4}{2} \right) + 1 \left( \tbinom{n-3}{3} - \tbinom{5}{2} n + \tbinom{5}{3} \right) \\
+    \KnuthRFoldSum{2}{n}{2} 
+    &= 25 \left( \tbinom{n-3}{2} + \tbinom{4}{1} n - \tbinom{4}{2} \right) + 11 \left( \tbinom{n-3}{3} - \tbinom{5}{2} n + \tbinom{5}{3} \right) \\
+    &+ 2 \left( \tbinom{n-3}{4} + \tbinom{6}{3} n - \tbinom{6}{4} \right) \\
+    \KnuthRFoldSum{2}{n}{3} 
+    &= 125 \left( \tbinom{n-3}{2} + \tbinom{4}{1} n - \tbinom{4}{2} \right) + 91 \left( \tbinom{n-3}{3} - \tbinom{5}{2} n + \tbinom{5}{3} \right) \\
+    &+ 36 \left( \tbinom{n-3}{4} + \tbinom{6}{3} n - \tbinom{6}{4} \right) + 6 \left( \tbinom{n-3}{5} - \tbinom{7}{4} n + \binom{7}{5} \right)
 \end{align*}
 The coefficients $1,5,1,25,11,2,\dots$ is the sequence
 \href{https://oeis.org/A391635}{\texttt{A391635}}
@@ -203,12 +210,15 @@ Similarly, we obtain the formula for the triple sums of powers
 \end{proposition}
 For example, by setting $t=4$, the triple sums of powers are
 \begin{align*}
-    \KnuthRFoldSum{3}{n}{0} &= 1 \left( \binom{n-1}{3} + \binom{3}{1} \KnuthRFoldSum{2}{n}{0} - \binom{3}{2} \KnuthRFoldSum{1}{n}{0} + \binom{3}{3} \KnuthRFoldSum{0}{n}{0} \right) \\
-    \KnuthRFoldSum{3}{n}{1} &= 4 \left( \binom{n-1}{3} + \binom{3}{1} \KnuthRFoldSum{2}{n}{0} - \binom{3}{2} \KnuthRFoldSum{1}{n}{0} + \binom{3}{3} \KnuthRFoldSum{0}{n}{0} \right) \\
-    &+ 1 \left( \binom{n-1}{4} - \binom{4}{2} \KnuthRFoldSum{2}{n}{0} + \binom{4}{3} \KnuthRFoldSum{1}{n}{0} - \binom{4}{4} \KnuthRFoldSum{0}{n}{0} \right) \\
-    \KnuthRFoldSum{3}{n}{2} &= 16 \left( \binom{n-1}{3} + \binom{3}{1} \KnuthRFoldSum{2}{n}{0} - \binom{3}{2} \KnuthRFoldSum{1}{n}{0} + \binom{3}{3} \KnuthRFoldSum{0}{n}{0} \right) \\
-    &+ 9 \left( \binom{n-1}{4} - \binom{4}{2} \KnuthRFoldSum{2}{n}{0} + \binom{4}{3} \KnuthRFoldSum{1}{n}{0} - \binom{4}{4} \KnuthRFoldSum{0}{n}{0} \right) \\
-    &+ 2 \left( \binom{n-1}{5} + \binom{5}{3} \KnuthRFoldSum{2}{n}{0} - \binom{5}{4} \KnuthRFoldSum{1}{n}{0} + \binom{5}{5} \KnuthRFoldSum{0}{n}{0} \right)
+    \KnuthRFoldSum{3}{n}{0} 
+    &= 1 \left( \tbinom{n-1}{3} + \tbinom{3}{1} \KnuthRFoldSum{2}{n}{0} - \tbinom{3}{2} \KnuthRFoldSum{1}{n}{0} + \tbinom{3}{3} \KnuthRFoldSum{0}{n}{0} \right) \\
+    \KnuthRFoldSum{3}{n}{1} 
+    &= 4 \left( \tbinom{n-1}{3} + \tbinom{3}{1} \KnuthRFoldSum{2}{n}{0} - \tbinom{3}{2} \KnuthRFoldSum{1}{n}{0} + \tbinom{3}{3} \KnuthRFoldSum{0}{n}{0} \right) \\
+    &+ 1 \left( \tbinom{n-1}{4} - \tbinom{4}{2} \KnuthRFoldSum{2}{n}{0} + \tbinom{4}{3} \KnuthRFoldSum{1}{n}{0} - \tbinom{4}{4} \KnuthRFoldSum{0}{n}{0} \right) \\
+    \KnuthRFoldSum{3}{n}{2} 
+    &= 16 \left( \tbinom{n-1}{3} + \tbinom{3}{1} \KnuthRFoldSum{2}{n}{0} - \tbinom{3}{2} \KnuthRFoldSum{1}{n}{0} + \tbinom{3}{3} \KnuthRFoldSum{0}{n}{0} \right) \\
+    &+ 9 \left( \tbinom{n-1}{4} - \tbinom{4}{2} \KnuthRFoldSum{2}{n}{0} + \tbinom{4}{3} \KnuthRFoldSum{1}{n}{0} - \tbinom{4}{4} \KnuthRFoldSum{0}{n}{0} \right) \\
+    &+ 2 \left( \tbinom{n-1}{5} + \tbinom{5}{3} \KnuthRFoldSum{2}{n}{0} - \tbinom{5}{4} \KnuthRFoldSum{1}{n}{0} + \tbinom{5}{5} \KnuthRFoldSum{0}{n}{0} \right)
 \end{align*}
 In general,
 \begin{align*}
