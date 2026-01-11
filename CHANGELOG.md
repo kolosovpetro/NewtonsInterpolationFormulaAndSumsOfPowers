@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Generate pandoc HTML
 - Fix README link
 - Fix nested equations
+- Add wolframscript to validate main results
 
 ## [1.6.0] - 06-Jan-2026
 
