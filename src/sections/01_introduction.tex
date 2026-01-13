@@ -333,10 +333,13 @@ sums of powers~\eqref{theorem:multifold-sums-of-powers-via-newtons-series}
     \label{prop:multifold-sums-of-powers-binomial-form}
     \begin{mdframed}
         For non-negative integers $r,n,m$ and an arbitrary integer $t$
-        \begin{align*}
-            \KnuthRFoldSum{r}{n}{m} &= \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \binom{n-t+r}{j+r} - \sum_{s=1}^{r} \binom{s-t}{j+s} \binom{r-s+n-1}{r-s} \right] \\
+        \begin{align}
+            \KnuthRFoldSum{r}{n}{m} &= \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \binom{n-t+r}{j+r} - \sum_{s=1}^{r} \binom{s-t}{j+s} \binom{r-s+n-1}{r-s} \right]
+            \label{eq:multifold-sums-of-powers-binomial-form-1}
+            \\
             \KnuthRFoldSum{r}{n}{m} &= \sum_{j=0}^{m} \Delta^{j} t^{m} \left[ \binom{n-t+r}{j+r} + \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \binom{r-s+n-1}{r-s} \right]
-        \end{align*}
+            \label{eq:multifold-sums-of-powers-binomial-form-2}
+        \end{align}
     \end{mdframed}
 \end{proposition}
 \begin{proposition}[Multifold sums of powers binomial form re-indexed]
