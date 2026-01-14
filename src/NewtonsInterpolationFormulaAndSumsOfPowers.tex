@@ -21,11 +21,6 @@
 \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 \raggedbottom
 
-% custom validate environment, similar to begin{proof}
-\newenvironment{validate}
-{\begin{proof}[Validation (Mathematica)]}
-{\end{proof}}
-
 \newcommand \bernoulli [2][B] {{#1}\sb{#2}}
 
 % factorial notations
@@ -41,9 +36,9 @@
 % free foot note
 \let\svthefootnote\thefootnote
 \newcommand\freefootnote[1]{%
-    \let\thefootnote\relax%
-    \footnotetext{#1}%
-    \let\thefootnote\svthefootnote%
+  \let\thefootnote\relax%
+  \footnotetext{#1}%
+  \let\thefootnote\svthefootnote%
 }
 
 \newtheorem{theorem}{Theorem}[section]
@@ -74,56 +69,52 @@
 
 \begin{document}
 
-    \begin{abstract}
-        \input{sections/abstract}
-    \end{abstract}
+\begin{abstract}
+  \input{sections/abstract}
+\end{abstract}
 
-    \maketitle
+\maketitle
 
-    \tableofcontents
+\tableofcontents
 
-    \freefootnote{DOI: \url{https://doi.org/10.5281/zenodo.18040979}}
-
-
-    \section{Introduction and main results}
-    \input{sections/01_introduction}
+\freefootnote{DOI: \url{https://doi.org/10.5281/zenodo.18040979}}
 
 
-    \section{Backward difference form}
-    \input{sections/03_backward_difference_form}
+\section{Introduction and main results}
+\input{sections/01_introduction}
 
-    \section{Central difference form}
-    \input{sections/04_central_difference_form}
+\section{Sums of powers in Stirling numbers}
+\input{sections/02_sums_of_powers_in_stirling_numbers.tex}
 
+\section{Sums of powers in Eulerian numbers}
+\input{sections/03_sums_of_powers_in_eulerian_numbers.tex}
 
-    \section{Future research}
-    \label{sec:future-research}
-    \input{sections/05_future_research}
+\section{Backward difference form}
+\input{sections/04_backward_difference_form}
 
+\section{Central difference form}
+\input{sections/05_central_difference_form}
 
-    \section*{Conclusions}
-    \input{sections/conclusions}
+\section{Future research}
+\label{sec:future-research}
+\input{sections/06_future_research}
 
+\section*{Conclusions}
+\input{sections/conclusions}
 
-    \section*{Acknowledgements}
-    \input{sections/acknowledgements}
+\section*{Acknowledgements}
+\input{sections/acknowledgements}
 
-    \bibliographystyle{unsrt}
-    \bibliography{NewtonsInterpolationFormulaAndSumsOfPowers}
+\bibliographystyle{unsrt}
+\bibliography{NewtonsInterpolationFormulaAndSumsOfPowers}
 
-    \clearpage
+\clearpage
 
-    \input{metadata/footer}
+\section{Mathematica programs}\label{sec:mathematica-programs}
+\input{sections/mathematica_programs}
 
-    \clearpage
+\clearpage
 
-    \section{Proof of Segmented hockey stick identity}
-    \label{sec:proof-of-segmented-hockey-stick-identity}
-    \input{sections/proof_of_segmented_hockey_stick_identity}
-
-    \clearpage
-
-    \section{Mathematica programs}\label{sec:mathematica-programs}
-    \input{sections/mathematica_programs}
+\input{metadata/footer}
 
 \end{document}

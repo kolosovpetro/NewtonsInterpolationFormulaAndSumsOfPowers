@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
+## [1.8.0] - 14-Jan-2026
+
+### Changed
+
+- Revise manuscript flow
+- Add mathematica programs
+- Configure VS code for latex
+- Move backward and central difference formulas to separate files
+- Updates in introduction
+- Updates in editor config
+- Add Stirling-Binomial forms for sums of powers
+- Add Eulerian-Binomial forms for sums of powers
+- Updates in metadata
+
 ## [1.7.1] - 11-Jan-2026
 
 ### Changed
