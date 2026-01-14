@@ -1,9 +1,15 @@
 {
   "editor.mouseWheelZoom": true,
-  "editor.fontSize": 14,
-  "editor.rulers": [140],
+  "editor.fontSize": 13,
+  "editor.rulers": [
+    80
+  ],
   "editor.wordWrap": "off",
   "window.zoomLevel": 0,
+  "editor.fontFamily": "JetBrains Mono, Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 1.6,
+  "editor.letterSpacing": 0.2,
   "[latex]": {
     "editor.defaultFormatter": "James-Yu.latex-workshop",
     "editor.formatOnSave": true
