@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Updates in editor config
 - Add Stirling-Binomial forms for sums of powers
 - Add Eulerian-Binomial forms for sums of powers
+- Updates in metadata
 
 ## [1.7.1] - 11-Jan-2026
 
