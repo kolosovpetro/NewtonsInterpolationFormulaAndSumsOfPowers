@@ -393,9 +393,9 @@ Finite differences of powers are closely related to Stirling numbers of the seco
         \Delta^{j} t^{m} = \sum_{k=0}^{m} \stirlingii{m}{j+k} \binom{t}{k} (j+k)!
     \end{align*}
 \end{lemma}
-Which implies variations of the formulas for sums of powers
-\begin{proposition}[Ordinary sums of powers via Stirling numbers]
-    \label{prop:ordinary-sums-of-powers-via-stirling-numbers}
+Which implies variations for ordinary sums of powers
+\begin{proposition}[Negated ordinary sums of powers via Stirling numbers]
+    \label{prop:negated-ordinary-sums-of-powers-via-stirling-numbers}
     \begin{mdframed}
         For non-negative integers $n,m$ and arbitrary integer $t$
         \begin{align*}
@@ -404,8 +404,8 @@ Which implies variations of the formulas for sums of powers
         \end{align*}
     \end{mdframed}
     \begin{proof}
-        By ordinary sums of powers via Newton's series~\eqref{prop:ordinary-sums-of-powers-via-newtons-series}
-        and forward finite difference via Stirling numbers of the second kind~\eqref{lem:finite-differences-via-stirling-numbers}.
+        By negated ordinary sums of powers via Newton's formula~\eqref{prop:negation-of-ordinary-sums-of-powers-via-newtons-formula}
+        and forward finite differences via Stirling numbers of the second kind~\eqref{lem:finite-differences-via-stirling-numbers}.
     \end{proof}
 \end{proposition}
 By setting $t=0$ into~\eqref{prop:ordinary-sums-of-powers-via-stirling-numbers}

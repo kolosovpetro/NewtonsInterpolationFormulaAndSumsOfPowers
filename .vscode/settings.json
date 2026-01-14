@@ -1,0 +1,16 @@
+{
+  "editor.rulers": [140],
+  "editor.wordWrap": "off",
+
+  "[latex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop",
+    "editor.formatOnSave": true
+  },
+
+  "latex-workshop.formatting.latex": "latexindent",
+  "latex-workshop.formatting.latexindent.path": "latexindent",
+  "latex-workshop.formatting.latexindent.args": [
+    "-l",
+    "-m"
+  ]
+}
