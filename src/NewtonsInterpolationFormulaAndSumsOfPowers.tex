@@ -23,8 +23,10 @@
 
 % custom validate environment, similar to begin{proof}
 \newenvironment{validate}
-{\begin{proof}[Validation (Mathematica)]}
-{\end{proof}}
+{
+\begin{proof}[Validation (Mathematica)]}
+  {
+\end{proof}}
 
 \newcommand \bernoulli [2][B] {{#1}\sb{#2}}
 
@@ -41,9 +43,9 @@
 % free foot note
 \let\svthefootnote\thefootnote
 \newcommand\freefootnote[1]{%
-    \let\thefootnote\relax%
-    \footnotetext{#1}%
-    \let\thefootnote\svthefootnote%
+  \let\thefootnote\relax%
+  \footnotetext{#1}%
+  \let\thefootnote\svthefootnote%
 }
 
 \newtheorem{theorem}{Theorem}[section]
@@ -74,50 +76,50 @@
 
 \begin{document}
 
-    \begin{abstract}
-        \input{sections/abstract}
-    \end{abstract}
+\begin{abstract}
+  \input{sections/abstract}
+\end{abstract}
 
-    \maketitle
+\maketitle
 
-    \tableofcontents
+\tableofcontents
 
-    \freefootnote{DOI: \url{https://doi.org/10.5281/zenodo.18040979}}
-
-
-    \section{Introduction and main results}
-    \input{sections/01_introduction}
+\freefootnote{DOI: \url{https://doi.org/10.5281/zenodo.18040979}}
 
 
-    \section{Backward difference form}
-    \input{sections/03_backward_difference_form}
-
-    \section{Central difference form}
-    \input{sections/04_central_difference_form}
+\section{Introduction and main results}
+\input{sections/01_introduction}
 
 
-    \section{Future research}
-    \label{sec:future-research}
-    \input{sections/05_future_research}
+\section{Backward difference form}
+\input{sections/03_backward_difference_form}
+
+\section{Central difference form}
+\input{sections/04_central_difference_form}
 
 
-    \section*{Conclusions}
-    \input{sections/conclusions}
+\section{Future research}
+\label{sec:future-research}
+\input{sections/05_future_research}
 
 
-    \section*{Acknowledgements}
-    \input{sections/acknowledgements}
+\section*{Conclusions}
+\input{sections/conclusions}
 
-    \bibliographystyle{unsrt}
-    \bibliography{NewtonsInterpolationFormulaAndSumsOfPowers}
 
-    \clearpage
+\section*{Acknowledgements}
+\input{sections/acknowledgements}
 
-    \section{Mathematica programs}\label{sec:mathematica-programs}
-    \input{sections/mathematica_programs}
+\bibliographystyle{unsrt}
+\bibliography{NewtonsInterpolationFormulaAndSumsOfPowers}
 
-    \clearpage
+\clearpage
 
-    \input{metadata/footer}
+\section{Mathematica programs}\label{sec:mathematica-programs}
+\input{sections/mathematica_programs}
+
+\clearpage
+
+\input{metadata/footer}
 
 \end{document}
