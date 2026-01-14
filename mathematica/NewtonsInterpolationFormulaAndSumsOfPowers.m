@@ -18,6 +18,9 @@ MultifoldSumOfPowersRecurrence::usage="Computes $\\KnuthRFoldSum{r}{n}{m}$"
 MultifoldSumsOfPowersViaNewtonsSeries::usage="Validates Theorem~\\eqref{theorem:multifold-sums-of-powers-via-newtons-series}"
 ValidateMultifoldSumsOfPowersViaNewtonsSeries::usage="Validates Theorem~\\eqref{theorem:multifold-sums-of-powers-via-newtons-series}"
 
+MultifoldSumsOfPowersViaNewtonsSeries2::usage="Validates Theorem~\\eqref{theorem:multifold-sums-of-powers-via-newtons-series}"
+ValidateMultifoldSumsOfPowersViaNewtonsSeries2::usage="Validates Theorem~\\eqref{theorem:multifold-sums-of-powers-via-newtons-series}"
+
 MultifoldSumsOfPowersViaCentralDifferences::usage="Validates Proposition~\\eqref{prop:multifold-sums-of-powers-via-central-differences}"
 ValidateMultifoldSumsOfPowersViaCentralDifferences::usage="Validates Proposition~\\eqref{prop:multifold-sums-of-powers-via-central-differences}"
 
@@ -43,6 +46,8 @@ ValidateMultifoldSumsOfPowersBinomialForm::usage="Validates Proposition~\\eqref{
 
 MultifoldSumsOfPowersBinomialFormReindexed::usage="Validates Proposition~\\eqref{prop:multifold-sums-of-powers-binomial-form-reindexed}"
 ValidateMultifoldSumsOfPowersBinomialFormReindexed::usage="Validates Proposition~\\eqref{prop:multifold-sums-of-powers-binomial-form-reindexed}"
+
+ValidateMultifoldSumOfZeroPowers::usage=""
 
 (* END: Newton's series and sums of powers package *)
 
@@ -98,6 +103,10 @@ MultifoldSumsOfPowersViaNewtonsSeries[r_, n_, m_, t_] :=
 Sum[FiniteDifferenceOfPowerOrderN[t, m, j] * (Binomial[n-t+r, j+r] + Sum[(-1)^(j+s-1) * Binomial[j+t-1, j+s] * MultifoldSumOfPowersRecurrence[r-s, n, 0], {s, 1, r}]), {j, 0, m}];
 ValidateMultifoldSumsOfPowersViaNewtonsSeries[r_] := Table[MultifoldSumOfPowersRecurrence[r,n,m]-MultifoldSumsOfPowersViaNewtonsSeries[r,n,m,t],{n,0,10},{m,0,10},{t,0,n}]//Flatten
 
+MultifoldSumsOfPowersViaNewtonsSeries2[r_, n_, m_, t_] := 
+Sum[FiniteDifferenceOfPowerOrderN[t, m, j] * (Binomial[n-t+r, j+r] - Sum[Binomial[s-t, j+s] * MultifoldSumOfPowersRecurrence[r-s, n, 0], {s, 1, r}]), {j, 0, m}];
+ValidateMultifoldSumsOfPowersViaNewtonsSeries2[r_] := Table[MultifoldSumOfPowersRecurrence[r,n,m]-MultifoldSumsOfPowersViaNewtonsSeries[r,n,m,t],{n,0,10},{m,0,10},{t,0,n}]//Flatten
+
 EulerianNumber[0, 0] = 1;
 EulerianNumber[n_, k_] /; k < 0 || k >= n := 0;
 EulerianNumber[n_, k_] := EulerianNumber[n, k] =(k + 1) EulerianNumber[n - 1, k] + (n - k) EulerianNumber[n - 1, k - 1];
@@ -128,6 +137,7 @@ ValidateMultifoldSumsOfPowersBinomialForm[r_] := Table[MultifoldSumOfPowersRecur
 MultifoldSumsOfPowersBinomialFormReindexed[r_, n_, m_, t_]:= 
 Sum[FiniteDifferenceOfPowerOrderN[t, m, j] * (Binomial[n-t+r, j+r] + Sum[(-1)^(j+s) * Binomial[j+t-1, j+s+1]* Binomial[r-s+n-2, r-s-1], {s, 0, r-1}]), {j, 0, m}];
 ValidateMultifoldSumsOfPowersBinomialFormReindexed[r_] := Table[MultifoldSumOfPowersRecurrence[r,n,m]-MultifoldSumsOfPowersBinomialFormReindexed[r,n,m,t],{n,0,10},{m,0,10},{t,0,n}]//Flatten
+ValidateMultifoldSumOfZeroPowers[max_] := Table[MultifoldSumOfPowersRecurrence[r, n, 0] - Binomial[r+n-1, r], {r, 0, max}, {n, 0, max}]//Flatten
 (* END: Newton's series and sums of powers *)
 
 (* Some TEMP formulas *)
