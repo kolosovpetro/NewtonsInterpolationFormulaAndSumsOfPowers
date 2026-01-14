@@ -14,5 +14,14 @@
     "editor.defaultFormatter": "James-Yu.latex-workshop",
     "editor.formatOnSave": true
   },
-  "latex-workshop.formatting.latex": "tex-fmt"
+  "latex-workshop.formatting.latex": "tex-fmt",
+  "cSpell.language": "en",
+  "cSpell.enabled": true,
+  "cSpell.words": [
+    "Bohner",
+    "Eulerian",
+    "OEIS",
+    "Riordan",
+    "Worpitzky"
+  ]
 }

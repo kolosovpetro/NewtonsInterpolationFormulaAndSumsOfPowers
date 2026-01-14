@@ -1,26 +1,35 @@
 In this manuscript we focus on the idea to combine
-Newton's interpolation formula for forward differences~\eqref{prop:newton-series-for-monomial-reversed}
-and the hockey-stick family identities (e.g~\eqref{prop:segmented-hockey-stick-identity}) to express the sums of powers seamlessly.
+Newton's interpolation formula for forward
+differences~\eqref{prop:newtons-interpolation-formula-for-powers}
+and hockey-stick family
+identities~\eqref{prop:generalized-hockey-stick-identity}
+and~\eqref{lem:shifted-generalized-hockey-stick-identity}
+to derive formulas for ordinary and multifold sums of powers seamlessly.
 
 This particular idea is great, however it can be generalized even further.
-Thus, the main idea is to utilize an interpolation formula for power $n^m$ in terms of \textit{abstract difference operator} $D(n^m)$
+Thus, the main idea is to utilize an interpolation formula for power $n^m$
+in terms of \textit{abstract difference operator} $D(n^m)$
 and binomial coefficients $\binom{f(n)}{k}$.
 
-We are not limited to linear difference operators $\Delta, \nabla, \delta$, there is a complete theory
-on dynamic differential equations on time-scales, founded by Bohner and Peterson~\cite{Bohner2001DynamicEO}.
+We are not limited to linear difference operators $\Delta, \nabla, \delta$,
+there is a complete theory
+on dynamic differential equations on time-scales, founded by
+Bohner and Peterson~\cite{Bohner2001DynamicEO}.
 For example, Jackson~\cite{jackson_1909} derivative is given by
 
 \begin{align*}
   D_q(f(x)) = \frac{f(qx) - f(x)}{qx-x}
 \end{align*}
 
-Thus, finding interpolation formula for $f(x)=x^n$ in terms of $D_q(f(x))$ implies new formulas for sums of powers.
+Thus, finding interpolation formula for $f(x)=x^n$ in terms of $D_q(f(x))$
+implies new formulas for sums of powers.
 
 In general, let be an abstract interpolation formula for powers
 \begin{align*}
   n^m = \sum_{k} \binom{f(n)}{k} D(n^m, k)
 \end{align*}
-Thus, the formula of sums of powers involves the abstract difference operator $D$ evaluated at some point $k$ and the hockey-stick
+Thus, the formula of sums of powers involves the abstract difference operator
+$D$ evaluated at some point $k$ and the hockey-stick
 family identity over the binomial coefficients $\binom{n}{k}$
 \begin{align*}
   \KnuthRFoldSum{1}{n}{m} = \sum_{k} D(n^m, k) \sum_{j \leq n} \binom{f(j)}{k}
@@ -39,10 +48,14 @@ in terms of binomial coefficients, because
   \centralFactorial{x}{n} = n \fallingFactorial{x+\frac{n}{2}-1}{n-1}
 \end{align*}
 
-In particular, Donald Knuth provides the formula for multifold sums of odd powers~\cite{knuth1993johann}
+In particular, Donald Knuth provides the formula for multifold sums of
+odd powers~\cite{knuth1993johann}
 based on operator of central finite differences evaluated in zero,
-and Newton's interpolation formula for central differences~\cite{kolosov_2025_18098442}
+and Newton's interpolation formula for central
+differences~\cite{kolosov_2025_18098442}
+
 \begin{proposition}[Multifold sums of odd powers]
+  For non-negative integers $r,n,m$
   \label{prop:knuth-sums-of-odd-powers}
   \begin{align*}
     \KnuthRFoldSum{r}{n}{2m-1}
@@ -50,14 +63,18 @@ and Newton's interpolation formula for central differences~\cite{kolosov_2025_18
     &= \sum_{k=1}^{m} \binom{n+k-1+r}{2k-1+r} (2k-1)! T(2m, 2k)
   \end{align*}
 \end{proposition}
+
 where $T(n,k)$ are the central factorial numbers of the second
-kind, see~\cite[section 58]{steffensen1927interpolation} and~\cite[formula (10a)]{carlitz1963divided}
+kind, see~\cite[section 58]{steffensen1927interpolation}
+and~\cite[formula (10a)]{carlitz1963divided}
 \begin{align*}
-  T(n, k) = \frac{1}{k!} \delta^k 0^n = \frac{1}{k!} \sum_{j=0}^{k} (-1)^j \binom{k}{j} \left( \frac{k}{2} - j \right)^n
+  T(n, k) = \frac{1}{k!} \delta^k 0^n = \frac{1}{k!}
+  \sum_{j=0}^{k} (-1)^j \binom{k}{j} \left( \frac{k}{2} - j \right)^n
 \end{align*}
 Central factorial numbers of the second kind $T(n,k)$ were defined by Riordan
 in~\cite[ch. 6.5, formula (24)]{riordan1968combinatorial}
 by polynomial identity
+
 \begin{lemma} [Riordan power identity]
   \begin{align*}
     n^m = \sum_{k=1}^{m} T(m,k) \centralFactorial{n}{k}
@@ -65,13 +82,16 @@ by polynomial identity
   where $\centralFactorial{n}{k}$ are central factorials
   $\centralFactorial{n}{k} = n \prod_{j=0}^{k-1} \left( n + \frac{k}{2} -j \right)$.
 \end{lemma}
+
 The sequence
 \href{https://oeis.org/A008957}{\texttt{A008957}}
-in the OEIS~\cite{sloane2003line} provides non-zero central factorial numbers of the second kind $T(2n,2k)$.
+in the OEIS~\cite{sloane2003line} is the sequence of
+central factorial numbers of the second kind $T(2n,2k)$.
 
 As future research direction,
 the Knuth's formula~\eqref{prop:knuth-sums-of-odd-powers} utilizes the operator
 of central finite differences evaluated in zero.
-Thus, it is worth to investigate the existence of sums of odd powers involving the central differences
+Thus, it is worth to investigate the existence of sums of odd powers involving
+the central differences
 evaluated at an arbitrary integer point $t$,
 similar to multifold sums of powers via Newton's series for central differences.

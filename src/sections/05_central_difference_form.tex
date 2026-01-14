@@ -1,5 +1,6 @@
-The formula for multifold sums of powers via Newton's
-series~\eqref{theorem:multifold-sums-of-powers-via-newtons-series}
+Identity for multifold sums of powers via Newton's
+interpolation
+formula~\eqref{theorem:multifold-sums-of-powers-via-newtons-formula}
 can be expressed in terms of central differences easily, because
 \begin{proposition} For integers $j,m,t$
   \label{prop:forward-via-central-differences}
@@ -7,19 +8,19 @@ can be expressed in terms of central differences easily, because
     \Delta^{j} t^{m} = \delta^{j} \left( t+ \frac{j}{2} \right)^{m}
   \end{align*}
 \end{proposition}
-Thus,
+Thus, by negated multifold sums of powers via Newton's
+formula~\eqref{theorem:negated-multifold-sums-of-powers-via-newtons-formula}
+and by proposition~\eqref{prop:forward-via-central-differences}.
 \begin{proposition}[Multifold sums of powers via central differences]
   \label{prop:multifold-sums-of-powers-via-central-differences}
   \begin{mdframed}
     For non-negative integers $r,n,m$ and an arbitrary integer $t$
     \begin{align*}
       \KnuthRFoldSum{r}{n}{m}
-      = \sum_{j=0}^{m} \delta^{j} \left( t + \frac{j}{2} \right)^m
-      \left[\binom{n-t+r}{j+r} + \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right]
+      = \sum_{j=0}^{m}
+      \left[\binom{n-t+r}{j+r}
+        + \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0}
+      \right] \delta^{j} \left( t + \frac{j}{2} \right)^m
     \end{align*}
   \end{mdframed}
-  \begin{proof}
-    By multifold sums of powers via Newton's series~\eqref{theorem:multifold-sums-of-powers-via-newtons-series} and
-    by proposition~\eqref{prop:forward-via-central-differences}.
-  \end{proof}
 \end{proposition}

@@ -111,7 +111,6 @@ follows
 Hence, by Newton's interpolation formula for
 powers~\eqref{prop:newtons-interpolation-formula-for-powers},
 the ordinary sum of powers is
-
 \begin{align*}
   \KnuthRFoldSum{1}{n}{m}
   = \sum_{k=1}^{n} \sum_{j=0}^{m} \binom{k-t}{j} \Delta^{j} t^m
@@ -267,7 +266,7 @@ identity~\eqref{lem:shifted-generalized-hockey-stick-identity}, we get
 \end{proposition}
 
 By negated hockey stick
-identity~\eqref{lem:negation-of-shifted-hockey-stick-identity} yieds
+identity~\eqref{lem:negation-of-shifted-hockey-stick-identity} yields
 
 \begin{proposition}[Negated double sums of powers via Newton's formula]
   \label{prop:negated-double-sums-of-powers-via-newtons-formula}
@@ -349,7 +348,6 @@ identity~\eqref{lem:negation-of-shifted-hockey-stick-identity} yields
 
 For example, by setting $t=4$ into triple sums of powers via Newton's
 formula~\eqref{prop:triple-sums-of-powers-via-newtons-formula} gives
-
 \begin{align*}
   \KnuthRFoldSum{3}{n}{0}
   &= 1 \left( \tbinom{n-1}{3} + \tbinom{3}{1} \KnuthRFoldSum{2}{n}{0} - \tbinom{3}{2} \KnuthRFoldSum{1}{n}{0} + \tbinom{3}{3} \KnuthRFoldSum{0}{n}{0} \right) \\
@@ -390,7 +388,7 @@ we get formula for multifold sums of powers
   \end{mdframed}
 \end{theorem}
 
-By neageted hockey stick
+By negated hockey stick
 identity~\eqref{lem:negation-of-shifted-hockey-stick-identity}, another
 variation of multifold sums of powers follows
 
@@ -401,13 +399,13 @@ variation of multifold sums of powers follows
     \begin{align*}
       \KnuthRFoldSum{r}{n}{m}
       = \sum_{j=0}^{m} \Delta^{j} t^{m}
-      \left[ \binom{n-t+r}{j+r} + \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right]
+      \left[ \binom{n-t+r}{j+r}
+      + \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right]
     \end{align*}
   \end{mdframed}
 \end{theorem}
 
 In its explicit form
-
 \begin{align*}
   \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \Bigg[
     \binom{n-t+r}{j+r}
@@ -434,6 +432,11 @@ We may observe that
   \end{proof}
 \end{proposition}
 
+Thus,
+\begin{align*}
+  \KnuthRFoldSum{r-s}{n}{0} = \binom{r-s+n-1}{r-s}
+\end{align*}
+
 Which yields binomial variations of
 multifold sums of powers via Newton's
 formula~\eqref{theorem:multifold-sums-of-powers-via-newtons-formula}
@@ -445,7 +448,9 @@ formula~\eqref{theorem:multifold-sums-of-powers-via-newtons-formula}
     \begin{align*}
       \KnuthRFoldSum{r}{n}{m}
       = \sum_{j=0}^{m} \Delta^{j} t^{m}
-      \left[ \binom{n-t+r}{j+r} - \sum_{s=1}^{r} \binom{s-t}{j+s} \binom{r-s+n-1}{r-s} \right]
+      \left[ \binom{n-t+r}{j+r} -
+        \sum_{s=1}^{r} \binom{s-t}{j+s} \binom{r-s+n-1}{r-s}
+      \right]
     \end{align*}
   \end{mdframed}
 \end{proposition}
@@ -460,7 +465,9 @@ identity~\eqref{lem:negation-of-shifted-hockey-stick-identity} yields
     \begin{align*}
       \KnuthRFoldSum{r}{n}{m}
       &= \sum_{j=0}^{m} \Delta^{j} t^{m}
-      \left[ \binom{n-t+r}{j+r} + \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \binom{r-s+n-1}{r-s} \right]
+      \left[ \binom{n-t+r}{j+r} +
+        \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \binom{r-s+n-1}{r-s}
+      \right]
     \end{align*}
   \end{mdframed}
 \end{proposition}
@@ -474,7 +481,9 @@ By re-indexing the sum in $s$ gives
     \begin{align*}
       \KnuthRFoldSum{r}{n}{m}
       = \sum_{j=0}^{m} \Delta^{j} t^{m}
-      \left[ \binom{n-t+r}{j+r} + \sum_{s=0}^{r-1} (-1)^{j+s} \binom{j+t-1}{j+s+1} \binom{r-s+n-2}{r-s-1} \right]
+      \left[ \binom{n-t+r}{j+r} +
+        \sum_{s=0}^{r-1} (-1)^{j+s} \binom{j+t-1}{j+s+1} \binom{r-s+n-2}{r-s-1}
+      \right]
     \end{align*}
   \end{mdframed}
 \end{proposition}
