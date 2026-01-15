@@ -203,10 +203,10 @@ For example,
   &= 27\!\left[\tbinom{n-2}{2} + \tbinom{2}{2}\right]
   + 37\!\left[\tbinom{n-2}{3} - \tbinom{3}{3}\right]
   + 24\!\left[\tbinom{n-2}{4} + \tbinom{4}{4}\right]
-  + 6\!\left[\tbinom{n-2}{5} - \tbinom{5}{5}\right] \\
+  + 6\!\left[\tbinom{n-2}{5} - \tbinom{5}{5}\right]
 \end{align*}
-The special cases for $t=0$ and $t=1$ are widely known and appear
-in literature quite frequently
+% The special cases for $t=0$ and $t=1$ are widely known and appear
+% in literature quite frequently
 
 \begin{corollary}
   By setting $t=0$ into~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula}
@@ -215,6 +215,23 @@ in literature quite frequently
   \end{align*}
 \end{corollary}
 
+For example,
+\begin{align*}
+  \KnuthRFoldSum{1}{n}{2} &= 0 \tbinom{n+1}{1} + 1 \tbinom{n+1}{2} + 2  \tbinom{n+1}{3} \\
+  \KnuthRFoldSum{1}{n}{3} &= 0 \tbinom{n+1}{1} + 1 \tbinom{n+1}{2} + 6  \tbinom{n+1}{3} + 6   \tbinom{n+1}{4} \\
+  \KnuthRFoldSum{1}{n}{4} &= 0 \tbinom{n+1}{1} + 1 \tbinom{n+1}{2} + 14 \tbinom{n+1}{3} + 36  \tbinom{n+1}{4} + 24  \tbinom{n+1}{5} \\
+  \KnuthRFoldSum{1}{n}{5} &= 0 \tbinom{n+1}{1} + 1 \tbinom{n+1}{2} + 30 \tbinom{n+1}{3} + 150 \tbinom{n+1}{4} + 240 \tbinom{n+1}{5} + 120 \tbinom{n+1}{6}
+\end{align*}
+Note the famous identity
+$\KnuthRFoldSum{1}{n}{3} = 0 \tbinom{n+1}{1} + 1 \tbinom{n+1}{2}
++ 6 \tbinom{n+1}{3} + 6 \tbinom{n+1}{4}$
+which is  discussed in literature frequently, see~\cite[p. 190]{graham1994concrete}
+and in~\cite{pfaff2007deriving}.
+
+The coefficients $0,1,2,0, 1, 6, 6, 0, 1, 14, 36, 24, \dots$ is the sequence
+\href{https://oeis.org/A131689}{\texttt{A131689}}
+in the OEIS~\cite{sloane2003line}.
+
 \begin{corollary}
   By setting $t=1$ into~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula}
   \begin{align*}
@@ -222,30 +239,15 @@ in literature quite frequently
   \end{align*}
 \end{corollary}
 
-In particular, by setting $t=0$ and $m=3$
-into~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula},
-we have the famous identity
+For example,
 \begin{align*}
-  \KnuthRFoldSum{1}{n}{3}
-  = 0 \tbinom{n+1}{1} + 1 \tbinom{n+1}{2} + 6 \tbinom{n+1}{3} + 6 \tbinom{n+1}{4}
-\end{align*}
-which was discussed in~\cite[p. 190]{graham1994concrete}
-and in~\cite{pfaff2007deriving}.
-
-The coefficients $0, 1, 6, 6, 0, 1, 14, 36, 24, \dots$ is the sequence
-\href{https://oeis.org/A131689}{\texttt{A131689}}
-in the OEIS~\cite{sloane2003line}.
-
-The special cases for $t=1$ and $m=2,3,4,5$ were shown
-in~\cite{cereceda2022sums}.
-For instance,
-\begin{align*}
+  \KnuthRFoldSum{1}{n}{2} &= 1 \tbinom{n}{1} + 3 \tbinom{n}{2} +2   \tbinom{n}{3} \\
   \KnuthRFoldSum{1}{n}{3} &= 1 \tbinom{n}{1} + 7 \tbinom{n}{2} +12  \tbinom{n}{3} + 6  \tbinom{n}{4} \\
   \KnuthRFoldSum{1}{n}{4} &= 1 \tbinom{n}{1} +15 \tbinom{n}{2} +50  \tbinom{n}{3} +60  \tbinom{n}{4} + 24 \tbinom{n}{5} \\
   \KnuthRFoldSum{1}{n}{5} &= 1 \tbinom{n}{1} +31 \tbinom{n}{2} +180 \tbinom{n}{3} +390 \tbinom{n}{4} + 360 \tbinom{n}{5} + 120 \tbinom{n}{6}
 \end{align*}
 
-The coefficients $1,7,12,6,1,15, \dots$ is the sequence
+The coefficients $1,3,2,1,7,12,6,1,15, \dots$ is the sequence
 \href{https://oeis.org/A028246}{\texttt{A028246}}
 in the OEIS~\cite{sloane2003line}.
 
@@ -276,10 +278,10 @@ The formula~\eqref{eq:cereceda-sums-2} is the special case
 of ordinary sums of powers via Newton's
 formula~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula} with $t=-r$.
 
-By considering the case for $t=4$ of
+By setting $t=4$ into
 ordinary sums of powers via Newton's
 formula~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula},
-we observe rather unexpected formulas for sums of powers, namely
+we may observe rather unexpected formulas for sums of powers, namely
 \begin{align*}
   \KnuthRFoldSum{1}{n}{0} &= 1  \left( \tbinom{n-3}{1} + \tbinom{3}{1}  \right) \\
   \KnuthRFoldSum{1}{n}{1} &= 4  \left( \tbinom{n-3}{1} + \tbinom{3}{1}  \right)  + 1  \left( \tbinom{n-3}{2} - \tbinom{4}{2}  \right) \\
