@@ -105,4 +105,5 @@ for t=0,1,2,3
 and give response in two text blocks so that I easily copy paste any of it.
 In the first copy paste block give: example in latex format
 In the second copy paste block give: example in OEIS comment format, as per 
-guideline. In latex use \tbinom for shorter formulas
+guideline. In latex use \tbinom for shorter formulas. 
+Please use binomial coefficients only, do not replace them with their values
