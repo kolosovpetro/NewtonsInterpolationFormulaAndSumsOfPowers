@@ -57,3 +57,4 @@ S_3(n) = 27*(binomial(n-2,2)-binomial(-2,2))
        + 37*(binomial(n-2,3)-binomial(-2,3))
        + 24*(binomial(n-2,4)-binomial(-2,4))
        + 6*(binomial(n-2,5)-binomial(-2,5)).
+In general, for arbitrary integer t: S_3(n) = Sum_{k=0..3} T(t, k) * ( binomial(n-t+1,k+1) - binomial(1-t,k+1) ).
