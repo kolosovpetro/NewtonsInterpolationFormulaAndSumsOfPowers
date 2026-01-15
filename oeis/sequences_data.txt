@@ -13,6 +13,7 @@ F2(p,n,k) = Sum_{j=0..p} StirlingS2(p,k+j) * binomial(n,j) (k+j)!.
 F3(p,n,k) = Sum_{j=0..p} binomial(n+j, p-k) * E(p, j), where E(p, j) are Eulerian numbers (Cf. A008292).
 
 Cf. A048993, A008292, A007318, A131689, A028246, A038719, A391633, A391635.
+Columns: A000578(k=0), A003215(k=1), A008588(k=2), A010722(k=3).
 
 easy,tabf
 
