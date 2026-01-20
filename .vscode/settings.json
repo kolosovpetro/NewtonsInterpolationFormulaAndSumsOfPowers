@@ -19,17 +19,22 @@
   "cSpell.language": "en",
   "cSpell.enabled": true,
   "cSpell.words": [
+    "Bibtex",
     "Bohner",
     "citeproc",
     "Eulerian",
     "Faulhaber",
+    "Kolosov",
     "LASTEXITCODE",
     "Mathematica",
     "mathjax",
+    "nonstopmode",
     "OEIS",
     "ORCID",
     "pandoc",
+    "pdflatex",
     "Riordan",
+    "synctex",
     "tabl",
     "Worpitzky"
   ]

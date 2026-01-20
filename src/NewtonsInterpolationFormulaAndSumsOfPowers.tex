@@ -44,6 +44,15 @@
 % \raggedbottom
 % \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 
+% free foot note
+\newcommand{\freefootnote}[1]{%
+  \begingroup
+  \renewcommand{\thefootnote}{}%
+  \footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
 \newcommand \bernoulli [2][B] {{#1}\sb{#2}}
 
 % factorial notations
@@ -63,15 +72,6 @@
 \newcommand{\KnuthRFoldSum}[3]{\Sigma^{#1}\,{#2}^{#3}}
 
 \newcommand{\tsum}{\mathop{\textstyle\sum}}
-
-% free foot note
-\newcommand{\freefootnote}[1]{%
-  \begingroup
-  \renewcommand{\thefootnote}{}%
-  \footnote{#1}%
-  \addtocounter{footnote}{-1}%
-  \endgroup
-}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}[theorem]{Corollary}
