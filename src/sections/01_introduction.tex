@@ -8,7 +8,7 @@ combined with hockey stick identities to
 derive formulas for multifold sums of powers.
 In this manuscript, we use Newton's interpolation formula
 in forward finite differences.
-However, the Newton's formula approach for sums of powers is quite generic,
+However, Newton's formula approach for sums of powers is quite generic,
 as such it does not necessary requires to bind to forward difference operator
 specifically. Thus, formulas for sums of powers using backward and central
 differences can be found
@@ -27,7 +27,7 @@ We utilize the recurrence proposed by Donald Knuth in his article
     + \KnuthRFoldSum{r}{2}{m} + \cdots + \KnuthRFoldSum{r}{n}{m}.
   \end{align*}
 \end{proposition}
-Throughout the paper, we utilize the Newton's interpolation
+Throughout the paper, we utilize Newton's interpolation
 formula~\cite[Lemma V.]{newton1850newton} as stated below.
 \begin{proposition}[Newton's interpolation formula]
   Let $f\colon \mathbb{Z} \to \mathbb{C}$ be a function,
@@ -223,7 +223,7 @@ For example,
   + 24\!\left[\tbinom{n-2}{4} + \tbinom{4}{4}\right]
   + 6\!\left[\tbinom{n-2}{5} - \tbinom{5}{5}\right].
 \end{align*}
-By setting $t=0$ into the
+By setting $t=0$ into
 Proposition~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula}
 yields another well-known identity for sums of powers,
 see~\cite[p. 190]{graham1994concrete} and~\cite{pfaff2007deriving}.
@@ -253,7 +253,6 @@ The coefficients $0,1,2,0, 1, 6, 6, 0, 1, 14, 36, 24, \dots$ is the sequence
 \href{https://oeis.org/A131689}{\texttt{A131689}}
 in the OEIS~\cite{sloane2003line}.
 By setting $t=1$ into
-the
 Proposition~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula}, we get
 another well-known special case.
 \begin{corollary}
@@ -416,7 +415,7 @@ In general,
 \end{align*}
 By summing up double sums of
 powers~\eqref{prop:double-sums-of-powers-via-newtons-formula},
-we obtain the non-closed expression for triple sums of powers.
+we obtain non-closed expression for triple sums of powers.
 \begin{align*}
   \KnuthRFoldSum{3}{n}{m}
   = \sum_{j=0}^{m} \Delta^{j} t^m \sum_{k=1}^{n}
@@ -446,7 +445,7 @@ the closed form identity for triple sums of powers.
 \end{proposition}
 
 By utilizing Lemma~\eqref{lem:negated-hockey-stick-identity}
-on the
+on
 Proposition~\eqref{prop:triple-sums-of-powers-via-newtons-formula}
 yields its negated variation.
 \begin{proposition}[Negated triple sums of powers]
@@ -461,7 +460,7 @@ yields its negated variation.
   \end{align*}
 \end{proposition}
 
-For instance, by setting $t=4$ the
+For instance, by setting $t=4$ into
 Proposition~\eqref{prop:triple-sums-of-powers-via-newtons-formula},
 for $m=1$ we have,
 \begin{align*}
@@ -598,7 +597,7 @@ Hence,
 \end{align*}
 
 Therefore, we obtain a pure binomial form
-of the
+of
 Theorem~\eqref{theorem:multifold-sums-of-powers-via-newtons-formula}.
 
 \begin{proposition}[Multifold Binomial sums of powers]
@@ -614,7 +613,7 @@ Theorem~\eqref{theorem:multifold-sums-of-powers-via-newtons-formula}.
   \end{align*}
 \end{proposition}
 
-By Lemma~\eqref{lem:negated-hockey-stick-identity} on the
+By Lemma~\eqref{lem:negated-hockey-stick-identity} on
 Proposition~\eqref{prop:multifold-sums-of-powers-binomial-form},
 we obtain its negated version.
 
