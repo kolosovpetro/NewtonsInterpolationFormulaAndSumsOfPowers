@@ -1,15 +1,16 @@
 {
   "editor.mouseWheelZoom": true,
-  "editor.fontSize": 13,
+  "editor.fontSize": 14,
   "editor.rulers": [
     80
   ],
   "editor.wordWrap": "off",
   "window.zoomLevel": 0,
-  "editor.fontFamily": "JetBrains Mono, Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.lineHeight": 1.6,
   "editor.letterSpacing": 0.2,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
   "[latex]": {
     "editor.defaultFormatter": "James-Yu.latex-workshop",
     "editor.formatOnSave": true
@@ -18,12 +19,25 @@
   "cSpell.language": "en",
   "cSpell.enabled": true,
   "cSpell.words": [
+    "Bibtex",
     "Bohner",
+    "citeproc",
     "Eulerian",
     "Faulhaber",
+    "Kolosov",
+    "LASTEXITCODE",
+    "Markus",
     "Mathematica",
+    "mathjax",
+    "nonstopmode",
     "OEIS",
+    "ORCID",
+    "pandoc",
+    "pdflatex",
     "Riordan",
+    "Scheuer",
+    "synctex",
+    "tabl",
     "Worpitzky"
   ]
 }

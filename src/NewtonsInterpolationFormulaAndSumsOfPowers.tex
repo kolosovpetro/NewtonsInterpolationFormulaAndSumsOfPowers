@@ -2,24 +2,56 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
-\usepackage{float}
-\usepackage{mathrsfs}
-\usepackage{colonequals}
-\usepackage[font=small,labelfont=bf]{caption}
-\usepackage[unicode,pdfpagelabels,hyperindex,colorlinks=true,linkcolor=red,urlcolor=blue,citecolor=red]{hyperref}
-\usepackage{graphicx}
-\emergencystretch=1em
+% \usepackage{float}
+% \usepackage{mathrsfs}
+% \usepackage{colonequals}
+% \usepackage[font=small,labelfont=bf]{caption}
+% \usepackage{graphicx}
+% \usepackage{mdframed}
 \usepackage{array}
 \usepackage{enumitem}
-\usepackage{etoolbox}
 \usepackage{booktabs}
-\usepackage{mdframed}
+\usepackage[
+  unicode,                  % allow unicode characters in bookmarks
+  pdfpagelabels,            % use page numbers as labels in PDF
+  hyperindex,               % add page numbers to index entries as hyperlinks
+  colorlinks=true,          % color the text of links instead of boxes
+  linkcolor=red,            % color of internal links (sections, equations)
+  urlcolor=blue,            % color of URLs
+  citecolor=red             % color of citation links
+]{hyperref}
+
+\usepackage{geometry} % Page layout and margins
+
+% Geometry settings (each on its own line for clarity)
+\geometry{
+  left=1in,    % left margin
+  right=1in,   % right margin
+  top=1in,     % top margin
+  bottom=1in,  % bottom margin
+  %showframe    % draw the page frame (useful for checking margins)
+}
+
+% \usepackage{lineno}
+% \linenumbers
+% draw the page frame (useful for checking margins)
+% \geometry{showframe}
 
 % margins and layout
 \linespread{1.7}
-\usepackage[left=1in,right=1in,bottom=1in,top=1in]{geometry}
-\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
-\raggedbottom
+
+% \emergencystretch=1em
+% \raggedbottom
+% \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
+
+% free foot note
+\newcommand{\freefootnote}[1]{%
+  \begingroup
+  \renewcommand{\thefootnote}{}%
+  \footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
 
 \newcommand \bernoulli [2][B] {{#1}\sb{#2}}
 
@@ -29,17 +61,17 @@
 \newcommand{\risingFactorial}[2]{#1^{\left(#2\right)}}
 
 \newcommand{\stirlingii}{\genfrac{\{}{\}}{0pt}{}}
+\newcommand{\tstirlingii}[2]{%
+  {\textstyle\genfrac\{\}{0pt}{}{#1}{#2}}%
+}
 \newcommand{\eulerian}[2]{\genfrac{\langle}{\rangle}{0pt}{}{#1}{#2}} % Eulerian
+\newcommand{\teulerian}[2]{%
+  {\textstyle\genfrac\langle\rangle{0pt}{}{#1}{#2}}%
+}
 
 \newcommand{\KnuthRFoldSum}[3]{\Sigma^{#1}\,{#2}^{#3}}
 
-% free foot note
-\let\svthefootnote\thefootnote
-\newcommand\freefootnote[1]{%
-  \let\thefootnote\relax%
-  \footnotetext{#1}%
-  \let\thefootnote\svthefootnote%
-}
+\newcommand{\tsum}{\mathop{\textstyle\sum}}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}[theorem]{Corollary}
@@ -110,7 +142,8 @@
 
 \clearpage
 
-\section{Mathematica programs}\label{sec:mathematica-programs}
+\section{Mathematica programs}
+\label{sec:mathematica-programs}
 \input{sections/mathematica_programs}
 
 \clearpage

@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
+## [1.9.0] - In progress
+
+### Changed
+
+- Add OEIS files
+- Fix margins
+- Fix punctuation
+- Fix grammar
+- Fix long equations
+- Add initial release date
+
 ## [1.8.0] - 14-Jan-2026
 
 ### Changed

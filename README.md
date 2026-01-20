@@ -2,15 +2,16 @@
 
 ## Abstract
 
-In this manuscript we derive formulas for multifold sums of powers by utilizing Newton's interpolation formula.
+In this manuscript we derive formulas for multifold sums of powers by utilizing Newton's interpolation formula. 
 Furthermore, we provide formulas for multifold sums of powers in terms of Stirling numbers of the second kind and Eulerian numbers.
 
 
 ## Metadata
 
-- **MSC2010:** 05A19, 05A10, 41A15, 11B83
-- **Keywords:** Sums of powers, Newton's interpolation formula, Finite differences, Binomial coefficients, Faulhaber's formula, Bernoulli numbers, Bernoulli polynomials Interpolation, Approximation, Discrete convolution, Combinatorics, Polynomial identities, Central factorial numbers, Stirling numbers, Eulerian numbers, Worpitzky identity, Pascal's triangle, OEIS
-- **License:** This work is licensed under a [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/)
+- **Initial release date:** December 24, 2025.
+- **MSC2010:** 05A19, 05A10, 41A15, 11B83.
+- **Keywords:** Sums of powers, Newton's interpolation formula, Finite differences, Binomial coefficients, Faulhaber's formula, Bernoulli numbers, Bernoulli polynomials Interpolation, Approximation, Discrete convolution, Combinatorics, Polynomial identities, Central factorial numbers, Stirling numbers, Eulerian numbers, Worpitzky identity, Pascal's triangle, OEIS.
+- **License:** This work is licensed under a [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/).
 - **DOI:** https://doi.org/10.5281/zenodo.18040979
 - **Web Version:** https://kolosovpetro.github.io/sums-of-powers-newtons-formula/
 - **Sources:** https://github.com/kolosovpetro/NewtonsInterpolationFormulaAndSumsOfPowers
