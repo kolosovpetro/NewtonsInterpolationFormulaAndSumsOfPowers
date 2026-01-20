@@ -1,34 +1,32 @@
-Identity for multifold sums of powers via Newton's
-interpolation
-formula~\eqref{theorem:multifold-sums-of-powers-via-newtons-formula}
-can be expressed in terms of backward differences easily, because
+The formula for multifold sums of
+powers~\eqref{theorem:multifold-sums-of-powers-via-newtons-formula}
+can be expressed in terms of backward differences easily, because,
 
-\begin{proposition} For integers $j,m,t$
+\begin{proposition} For integers $j,m,t$,
   \label{prop:forward-via-backward-differences}
   \begin{align*}
-    \Delta^{j} t^{m} = \nabla^{j} (t+j)^{m}
+    \Delta^{j} t^{m} = \nabla^{j} (t+j)^{m}.
   \end{align*}
 \end{proposition}
 
-Therefore, by multifold sums of powers via Newton's
-formula~\eqref{theorem:multifold-sums-of-powers-via-newtons-formula}
-and by by proposition~\eqref{prop:forward-via-backward-differences}
+Therefore, by the Proposition~\eqref{prop:forward-via-backward-differences},
+we get the formula for sums of powers in terms of backward differences.
 
 \begin{proposition}[Multifold backward sums of powers]
   % \label{prop:multifold-sums-of-powers-via-backward-difference}
-  For integers $r\geq0, \; n\geq 0, \; m\geq 0$ and an arbitrary integer $t$
+  For integers $r,n,m\geq 0$, and an arbitrary integer $t$,
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     = \sum_{j=0}^{m}
     \left[ \binom{n-t+r}{j+r} -
       \sum_{s=1}^{r} \binom{s-t}{j+s} \KnuthRFoldSum{r-s}{n}{0}
-    \right] \nabla^{j} (t+j)^{m}
+    \right] \nabla^{j} (t+j)^{m}.
   \end{align*}
 \end{proposition}
 
-Thus, by negated multifold sums of powers via Newton's
-formula~\eqref{theorem:negated-multifold-sums-of-powers-via-newtons-formula}
-and by proposition~\eqref{prop:forward-via-backward-differences}
+By the Theorem~\eqref{theorem:negated-multifold-sums-of-powers-via-newtons-formula}
+and by the Proposition~\eqref{prop:forward-via-backward-differences} yields
+negated formula for sums of powers.
 
 \begin{proposition}[Negated backward sums of powers]
   \label{prop:multifold-sums-of-powers-via-backward-difference}
@@ -39,51 +37,55 @@ and by proposition~\eqref{prop:forward-via-backward-differences}
     = \sum_{j=0}^{m}
     \left[ \binom{n-t+r}{j+r} +
       \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0}
-    \right] \nabla^{j} (t+j)^{m}
+    \right] \nabla^{j} (t+j)^{m}.
   \end{align*}
 \end{proposition}
 
-By~\eqref{prop:multifold-sums-of-powers-binomial-form} and
-by~\eqref{prop:negated-multifold-sums-of-powers-binomial-form}
-yield multifold sums of powers in Eulerian-Binomial form
+By Proposition~\eqref{prop:multifold-sums-of-powers-binomial-form} and
+by negated Binomial sums of
+powers~\eqref{prop:negated-multifold-sums-of-powers-binomial-form},
+we obtain multifold sums of powers in Binomial form.
 
 \begin{proposition}[Multifold backward binomial sums of powers]
   % \label{prop:multifold-sums-of-powers-binomial-form}
   For integers $r\geq0$, and $n\geq 0$, and $m\geq 0$,
-  and an arbitrary integer $t$
+  and an arbitrary integer $t$,
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     = \sum_{j=0}^{m}
     \left[ \binom{n-t+r}{j+r} -
       \sum_{s=1}^{r} \binom{s-t}{j+s} \binom{r-s+n-1}{r-s}
-    \right] \nabla^{j} (t+j)^{m}
+    \right] \nabla^{j} (t+j)^{m}.
   \end{align*}
 \end{proposition}
+
+By negated hockey-stick identity~\eqref{lem:negated-hockey-stick-identity},
+the negated formula for sums of powers follows.
 
 \begin{proposition}[Negated backward binomial sums of powers]
   % \label{prop:negated-multifold-sums-of-powers-binomial-form}
   For integers $r\geq0$, and $n\geq 0$, and $m\geq 0$,
-  and an arbitrary integer $t$
+  and an arbitrary integer $t$,
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     &= \sum_{j=0}^{m}
     \left[ \binom{n-t+r}{j+r} +
       \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \binom{r-s+n-1}{r-s}
-    \right] \nabla^{j} (t+j)^{m}
+    \right] \nabla^{j} (t+j)^{m}.
   \end{align*}
 \end{proposition}
 
-By re-indexing the sum in $s$ gives
+By re-indexing the sum in $s$ gives its shifted variation.
 
-\begin{proposition}[Shifted Negated multifold backward binomial sums]
+\begin{proposition}[Shifted multifold backward Binomial sums]
   % \label{prop:negated-multifold-sums-of-powers-binomial-form-reindexed}
   For integers $r\geq0$, and $n\geq 0$, and $m\geq 0$,
-  and an arbitrary integer $t$
+  and an arbitrary integer $t$,
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     = \sum_{j=0}^{m}
     \left[ \binom{n-t+r}{j+r} +
       \sum_{s=0}^{r-1} (-1)^{j+s} \binom{j+t-1}{j+s+1} \binom{r-s+n-2}{r-s-1}
-    \right] \nabla^{j} (t+j)^{m}
+    \right] \nabla^{j} (t+j)^{m}.
   \end{align*}
 \end{proposition}

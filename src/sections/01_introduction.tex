@@ -1,9 +1,10 @@
 In this manuscript, we derive formulas for multifold sums of powers
 by utilizing Newton's interpolation formula.
 Furthermore, we provide formulas for multifold sums of powers in terms
-of Stirling numbers of the second kind and Eulerian numbers.
+of Stirling numbers of the second kind $\stirlingii{n}{k}$
+and Eulerian numbers $\eulerian{n}{k}$.
 The main idea is to utilize Newton's interpolation formula
-combined with hockey-stick family identities to
+combined with hockey-stick identities to
 derive formulas for multifold sums of powers.
 In this manuscript, we use Newton's interpolation formula
 in forward finite differences.
@@ -14,14 +15,18 @@ differences can be found
 in~\cite{kolosov_2026_18134757, kolosov_2025_18098442}, respectively.
 Allow us to start from the definition of multifold sums of powers.
 We utilize the recurrence proposed by Donald Knuth in his article
-\textit{Johann Faulhaber and sums of powers}, see~\cite{knuth1993johann}
-\begin{align*}
-  \KnuthRFoldSum{0}{n}{m}   &= n^m \\
-  \KnuthRFoldSum{1}{n}{m}   &= \KnuthRFoldSum{0}{1}{m} + \KnuthRFoldSum{0}{2}{m}
-  + \cdots + \KnuthRFoldSum{0}{n}{m} \\
-  \KnuthRFoldSum{r+1}{n}{m} &= \KnuthRFoldSum{r}{1}{m} + \KnuthRFoldSum{r}{2}{m}
-  + \cdots + \KnuthRFoldSum{r}{n}{m}
-\end{align*}
+\textit{Johann Faulhaber and sums of powers}, see~\cite{knuth1993johann}.
+\begin{proposition} [Multifold sums of powers recurrence]
+  \label{prop:multifold-sums-of-powers-recurrence}
+  For integers $r,n,m \geq 0$,
+  \begin{align*}
+    \KnuthRFoldSum{0}{n}{m}   &= n^m, \\
+    \KnuthRFoldSum{1}{n}{m}   &= \KnuthRFoldSum{0}{1}{m}
+    + \KnuthRFoldSum{0}{2}{m} + \cdots + \KnuthRFoldSum{0}{n}{m}, \\
+    \KnuthRFoldSum{r+1}{n}{m} &= \KnuthRFoldSum{r}{1}{m}
+    + \KnuthRFoldSum{r}{2}{m} + \cdots + \KnuthRFoldSum{r}{n}{m}.
+  \end{align*}
+\end{proposition}
 Throughout the paper, we utilize the Newton's interpolation
 formula~\cite[Lemma V]{newton1850newton} as stated below
 \begin{proposition}[Newton's interpolation formula]
@@ -42,7 +47,7 @@ Therefore, by setting $f(n)=n^m$ yields
 
 \begin{proposition}[Newton's formula for powers]
   \label{prop:newtons-interpolation-formula-for-powers}
-  Let $n,m\ge 0$ be integers, and let $t$ be an arbitrary integer. Then
+  Let $n,m\ge 0$ be integers, and let $t$ be an arbitrary integer. Then,
   \begin{align*}
     n^m = \sum_{k=0}^{m} \binom{n-t}{k} \Delta^{k} t^m.
   \end{align*}
@@ -57,19 +62,19 @@ is indeed true, because,
   n^3 &= 27 \tbinom{n-3}{0} + 37 \tbinom{n-3}{1} + 24 \tbinom{n-3}{2} + 6 \tbinom{n-3}{3}.
 \end{align*}
 
-\begin{proposition}[Generalized hockey-stick identity]
+\begin{lemma}[Generalized hockey stick identity]
   \label{prop:generalized-hockey-stick-identity}
-  For integers $a \leq b$ and $j$.
+  For integers $a \leq b$ and $j$,
   \begin{align*}
-    \sum_{k=a}^{b} \binom{k}{j} = \binom{b+1}{j+1} - \binom{a}{j+1}
+    \sum_{k=a}^{b} \binom{k}{j} = \binom{b+1}{j+1} - \binom{a}{j+1}.
   \end{align*}
   \begin{proof}
-    We have
+    We have,
     \begin{align*}
       \tsum_{k=a}^{b} \tbinom{k}{j} = \tbinom{a}{j} + \tbinom{a+1}{j}
       + \cdots + \tbinom{b}{j},
     \end{align*}
-    which implies
+    which implies,
     \begin{align*}
       \tsum_{k=a}^{b} \tbinom{k}{j} =
       \left( \tsum_{k=0}^{b} \tbinom{k}{j} \right)
@@ -78,7 +83,7 @@ is indeed true, because,
     \end{align*}
     Thus, by hockey stick identity
     $\tsum_{k=0}^{n} \binom{k}{j} = \binom{n+1}{j+1}$,
-    we get
+    we get,
     \begin{align*}
       \tsum_{k=a}^{b} \tbinom{k}{j}
       =
@@ -93,16 +98,16 @@ is indeed true, because,
     \end{align*}
     This completes the proof.
   \end{proof}
-\end{proposition}
+\end{lemma}
 Therefore, the shifted version of
-Proposition~\eqref{prop:generalized-hockey-stick-identity}
+the Lemma~\eqref{prop:generalized-hockey-stick-identity}
 follows.
 \begin{lemma} [Shifted hockey stick identity]
-  For integers $n,t,j,r$
+  For integers $n,t,j,r$,
   \label{lem:shifted-generalized-hockey-stick-identity}
   \begin{align*}
     \sum_{k=1}^{n} \binom{k-t+r}{j+r} = \sum_{k=1-t+r}^{n-t+r} \binom{k}{j+r}
-    = \binom{n-t+r+1}{j+r+1} - \binom{1-t+r}{j+r+1}
+    = \binom{n-t+r+1}{j+r+1} - \binom{1-t+r}{j+r+1}.
   \end{align*}
 \end{lemma}
 
@@ -120,12 +125,12 @@ Thus,
   &= (-1)^{j+r+1} \binom{(j+r+1)-(1-t+r)-1}{j+r+1} \\
   &= (-1)^{j+r+1} \binom{j+t-1}{j+r+1}.
 \end{align*}
-The formula above implies negated version of shifted hockey stick
+The formula above implies negated version of shifted hockey-stick
 identity~\eqref{lem:shifted-generalized-hockey-stick-identity}.
 
 \begin{lemma} [Negation of shifted hockey stick identity]
   \label{lem:negated-hockey-stick-identity}
-  For integers $n,t,j,r$
+  For integers $n,t,j,r$,
   \begin{align*}
     \sum_{k=1}^{n} \binom{k-t+r}{j+r}
     = \binom{n-t+r+1}{j+r+1} + (-1)^{j+r} \binom{j+t-1}{j+r+1}.
@@ -180,8 +185,9 @@ For example,
   + 24\!\left[\tbinom{n-2}{4}-\tbinom{-2}{4}\right]
   + 6\!\left[\tbinom{n-2}{5}-\tbinom{-2}{5}\right].
 \end{align*}
-By negation of shifted hockey stick
-identity~\eqref{lem:negation-of-shifted-hockey-stick-identity} yields
+By the Lemma~\eqref{lem:negated-hockey-stick-identity},
+we obtain negated version of
+the Proposition~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula}.
 
 \begin{proposition}[Negated ordinary power sums]
   \label{prop:negation-of-ordinary-sums-of-powers-via-newtons-formula}
@@ -218,9 +224,9 @@ For example,
   + 6\!\left[\tbinom{n-2}{5} - \tbinom{5}{5}\right].
 \end{align*}
 By setting $t=0$ into
-Proposition~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula}, we get
-the well-known identity for sums of powers, see~\cite[p. 190]{graham1994concrete}
-and in~\cite{pfaff2007deriving}.
+Proposition~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula},
+yields another well-known identity for sums of powers,
+see~\cite[p. 190]{graham1994concrete} and~\cite{pfaff2007deriving}.
 That is,
 \begin{corollary}
   For integers $n \geq 0$, and $m \geq 0$,
@@ -246,10 +252,14 @@ In particular,
 The coefficients $0,1,2,0, 1, 6, 6, 0, 1, 14, 36, 24, \dots$ is the sequence
 \href{https://oeis.org/A131689}{\texttt{A131689}}
 in the OEIS~\cite{sloane2003line}.
+By setting $t=1$ into
+the
+Proposition~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula}, we get
+another well-known special case.
 \begin{corollary}
-  By setting $t=1$ into~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula}
+  For non-negative integers $n,m$,
   \begin{align*}
-    \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \binom{n}{j+1} \Delta^{j} 1^m
+    \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \binom{n}{j+1} \Delta^{j} 1^m.
   \end{align*}
 \end{corollary}
 For instance,
@@ -273,34 +283,33 @@ in the OEIS~\cite{sloane2003line}.
 It is particularly interesting that the paper~\cite{cereceda2022sums}
 give formulas for sums of powers
 in terms of generalized Stirling numbers of
-the second kind $\stirlingii{k}{j}_{r}$,
+the second kind $\stirlingii{k}{j}_{r}$.
 \begin{align}
   \KnuthRFoldSum{1}{n}{k} &= \sum_{j=0}^{k} j!
   \left[
     \binom{n+1-r}{j+1} + (-1)^j \binom{r+j-1}{j+1}
-  \right] \stirlingii{k}{j}_{r}
+  \right] \stirlingii{k}{j}_{r},
   \label{eq:cereceda-sums-1}
   \\
   \KnuthRFoldSum{1}{n}{k} &= \sum_{j=0}^{k} j!
   \left[
     \binom{n+1-r}{j+1} + \binom{r+1}{j+1}
-  \right] \stirlingii{k}{j}_{-r}
+  \right] \stirlingii{k}{j}_{-r}.
   \label{eq:cereceda-sums-2}
 \end{align}
 The formula~\eqref{eq:cereceda-sums-1}
-is generalized Stirling numbers version of negated ordinary
-sums of powers via Newton's
-formula~\eqref{prop:negation-of-ordinary-sums-of-powers-via-newtons-formula},
-which implies that finite forward differences of powers can be expressed
-in terms of generalized Stirling numbers of the second kind:
+is a special case of
+Proposition~\eqref{prop:negation-of-ordinary-sums-of-powers-via-newtons-formula},
+in terms of generalized Stirling numbers $\stirlingii{k}{j}_{r}$.
+This implies that finite differences of powers can be expressed
+in terms of generalized Stirling numbers of the second kind,
 $\Delta^{j} t^m = j! \stirlingii{m}{j}_{t}$.
-The formula~\eqref{eq:cereceda-sums-2} is the special case
-of ordinary sums of powers via Newton's
-formula~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula} with $t=-r$.
+The formula~\eqref{eq:cereceda-sums-2} is a special case
+of the Proposition~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula}
+with $t=-r$.
 By setting $t=4$ into
-ordinary sums of powers via Newton's
-formula~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula},
-we may observe rather unexpected formulas for sums of powers, namely,
+the Proposition~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula},
+we observe rather unusual formulas for sums of powers, namely,
 \begin{align*}
   \KnuthRFoldSum{1}{n}{0} &= 1  \left( \tbinom{n-3}{1}
   + \tbinom{3}{1}  \right), \\
@@ -337,7 +346,7 @@ Thus,
     \binom{1-t}{j+1} \sum_{k=1}^{n} 1
   \right],
 \end{align*}
-which yields,
+which implies,
 \begin{align*}
   \KnuthRFoldSum{2}{n}{m}
   = \sum_{j=0}^{m} \Delta^{j} t^m
@@ -360,10 +369,9 @@ we get the formula for double sums of powers.
   \end{align*}
 \end{proposition}
 
-By utilizing negated hockey stick
-identity~\eqref{lem:negation-of-shifted-hockey-stick-identity}
-with Proposition~\eqref{prop:double-sums-of-powers-via-newtons-formula},
-we obtain new variation of it.
+By applying the Lemma~\eqref{lem:negated-hockey-stick-identity}
+on the Proposition~\eqref{prop:double-sums-of-powers-via-newtons-formula},
+we obtain negated variation of the formula for sums of powers.
 
 \begin{proposition}[Negated double sums of powers]
   \label{prop:negated-double-sums-of-powers-via-newtons-formula}
@@ -437,9 +445,8 @@ the closed form identity for triple sums of powers.
   \end{align*}
 \end{proposition}
 
-By using negated hockey stick
-identity~\eqref{lem:negation-of-shifted-hockey-stick-identity}
-on
+By utilizing the Lemma~\eqref{lem:negated-hockey-stick-identity}
+on the
 Proposition~\eqref{prop:triple-sums-of-powers-via-newtons-formula}
 yields its negated variation.
 \begin{proposition}[Negated triple sums of powers]
@@ -528,7 +535,7 @@ we derive the closed formula for multifold sums of powers.
 \end{theorem}
 
 By negated hockey stick
-identity~\eqref{lem:negation-of-shifted-hockey-stick-identity}, another
+identity~\eqref{lem:negated-hockey-stick-identity}, another
 variation of multifold sums of powers follows.
 \begin{theorem}[Negated multifold sums of powers]
   \label{theorem:negated-multifold-sums-of-powers-via-newtons-formula}
@@ -553,13 +560,12 @@ In its explicit form,
     &+ (-1)^{j+r-1} \tbinom{j+t-1}{j+r} \KnuthRFoldSum{0}{n}{0}
   \Big].
 \end{align*}
-We may observe the closed-form identity for
+We may notice the identity for closed-form of
 $\KnuthRFoldSum{r-1}{n}{0}$.
-That is,
 
 \begin{proposition}[Multifold sum of zero powers]
   \label{prop:multifold-sum-of-zero-powers}
-  For integers $r \geq 0$ and $n\geq 1$,
+  For integers $r \geq 0$, and $n\geq 1$,
   \begin{align*}
     \KnuthRFoldSum{r}{n}{0} = \binom{r+n-1}{r}.
   \end{align*}
@@ -608,8 +614,7 @@ Theorem~\eqref{theorem:multifold-sums-of-powers-via-newtons-formula}.
   \end{align*}
 \end{proposition}
 
-By applying negated hockey stick
-identity~\eqref{lem:negation-of-shifted-hockey-stick-identity} on the
+By Lemma~\eqref{lem:negated-hockey-stick-identity} on the
 Proposition~\eqref{prop:multifold-sums-of-powers-binomial-form},
 we obtain its negated version.
 
@@ -626,19 +631,19 @@ we obtain its negated version.
   \end{align*}
 \end{proposition}
 
-By re-indexing the sum in $s$ in the
+By re-indexing the sum in $s$ in
 Proposition~\eqref{prop:negated-multifold-sums-of-powers-binomial-form},
 we get its shifted form.
 
 \begin{proposition}[Shifted multifold Binomial sum of powers]
   \label{prop:negated-multifold-sums-of-powers-binomial-form-reindexed}
   For integers $r\geq 0$, and $n\geq 0$, and $m\geq 0$,
-  and an arbitrary integer $t$
+  and an arbitrary integer $t$,
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     = \sum_{j=0}^{m} \Delta^{j} t^{m}
     \left[ \binom{n-t+r}{j+r} +
       \sum_{s=0}^{r-1} (-1)^{j+s} \binom{j+t-1}{j+s+1} \binom{r-s+n-2}{r-s-1}
-    \right]
+    \right].
   \end{align*}
 \end{proposition}
