@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 
 - Add OEIS files
 - Fix margins
+- Fix punctuation
+- Fix grammar
+- Fix long equations
+- Add initial release date
 
 ## [1.8.0] - 14-Jan-2026
 
