@@ -18,7 +18,11 @@
 % margins and layout
 \linespread{1.7}
 \usepackage[left=1in,right=1in,bottom=1in,top=1in,showframe]{geometry}
-\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
+
+\usepackage{lineno}
+\linenumbers
+
+% \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 \raggedbottom
 
 \newcommand \bernoulli [2][B] {{#1}\sb{#2}}
@@ -38,6 +42,8 @@
 }
 
 \newcommand{\KnuthRFoldSum}[3]{\Sigma^{#1}\,{#2}^{#3}}
+
+\newcommand{\tsum}{\mathop{\textstyle\sum}}
 
 % free foot note
 \let\svthefootnote\thefootnote

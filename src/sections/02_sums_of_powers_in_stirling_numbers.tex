@@ -17,7 +17,7 @@ identity~\eqref{lem:finite-differences-via-stirling-numbers}
 \begin{proposition}[Ordinary sums of powers via Stirling numbers]
   \label{prop:ordinary-sums-of-powers-via-stirling-numbers}
   \begin{mdframed}
-    For non-negative integers $n,m$ and an arbitrary integer $t$
+    For integers $n\geq 0, \; m\geq 0$ and an arbitrary integer $t$
     \begin{align*}
       \KnuthRFoldSum{1}{n}{m}
       = \sum_{j=0}^{m} \sum_{k=0}^{m}
@@ -34,7 +34,7 @@ by finite differences~\eqref{lem:finite-differences-via-stirling-numbers}
 \begin{proposition}[Negated ordinary sums of powers via Stirling numbers]
   \label{prop:negated-ordinary-sums-of-powers-via-stirling-numbers}
   \begin{mdframed}
-    For non-negative integers $n,m$ and arbitrary integer $t$
+    For integers $n\geq 0, \; m\geq 0$ and an arbitrary integer $t$
     \begin{align*}
       \KnuthRFoldSum{1}{n}{m}
       = \sum_{j=0}^{m} \sum_{k=0}^{m}
@@ -63,7 +63,7 @@ we have
 \begin{proposition}[Multifold sums of powers via Stirling numbers]
   % \label{prop:multifold-sums-of-powers-via-newtons-formula}
   \begin{mdframed}
-    For non-negative integers $r,n,m$ and an arbitrary integer $t$
+    For integers $r\geq0, \; n\geq 0, \; m\geq 0$ and an arbitrary integer $t$
     \begin{align*}
       \KnuthRFoldSum{r}{n}{m}
       = \sum_{j=0}^{m} \sum_{k=0}^{m}
@@ -76,12 +76,15 @@ we have
 \begin{proposition}[Negated multifold sums of powers via Stirling numbers]
   \label{prop:multifold-sums-of-powers-via-stirling-numbers}
   \begin{mdframed}
-    For non-negative integers $r,n,m$ and an arbitrary integer $t$
+    For integers $r\geq0$, and $n\geq 0$, and $m\geq 0$,
+    and an arbitrary integer $t$
     \begin{align*}
       \KnuthRFoldSum{r}{n}{m}
       = \sum_{j=0}^{m} \sum_{k=0}^{m}
       \left[
-        \tbinom{n-t+r}{j+r} + \sum_{s=1}^{r} (-1)^{j+s-1} \tbinom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0}
+        \tbinom{n-t+r}{j+r}
+        + \sum_{s=1}^{r} (-1)^{j+s-1}
+        \tbinom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0}
       \right]
       \tstirlingii{m}{j+k} \tbinom{t}{k} (j+k)!
     \end{align*}
@@ -96,7 +99,7 @@ Therefore,
 \begin{proposition}[Multifold sums of powers Stirling-Binomial form]
   % \label{prop:multifold-sums-of-powers-binomial-form}
   \begin{mdframed}
-    For non-negative integers $r,n,m$ and an arbitrary integer $t$
+    For integers $r\geq0, \; n\geq 0, \; m\geq 0$ and an arbitrary integer $t$
     \begin{align*}
       \KnuthRFoldSum{r}{n}{m}
       = \sum_{j=0}^{m} \sum_{k=0}^{m}
@@ -109,7 +112,7 @@ Therefore,
 \begin{proposition}[Negated multifold sums of powers Stirling-Binomial form]
   % \label{prop:negated-multifold-sums-of-powers-binomial-form}
   \begin{mdframed}
-    For non-negative integers $r,n,m$ and an arbitrary integer $t$
+    For integers $r\geq0, \; n\geq 0, \; m\geq 0$ and an arbitrary integer $t$
     \begin{align*}
       \KnuthRFoldSum{r}{n}{m}
       = \sum_{j=0}^{m} \sum_{k=0}^{m}

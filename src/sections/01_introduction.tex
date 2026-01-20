@@ -21,15 +21,16 @@ We utilize the recurrence proposed by Donald Knuth in his article
 \textit{Johann Faulhaber and sums of powers}, see~\cite{knuth1993johann}
 \begin{align*}
   \KnuthRFoldSum{0}{n}{m}   &= n^m \\
-  \KnuthRFoldSum{1}{n}{m}   &= \KnuthRFoldSum{0}{1}{m} + \KnuthRFoldSum{0}{2}{m} + \cdots + \KnuthRFoldSum{0}{n}{m} \\
-  \KnuthRFoldSum{r+1}{n}{m} &= \KnuthRFoldSum{r}{1}{m} + \KnuthRFoldSum{r}{2}{m} + \cdots + \KnuthRFoldSum{r}{n}{m}
+  \KnuthRFoldSum{1}{n}{m}   &= \KnuthRFoldSum{0}{1}{m} + \KnuthRFoldSum{0}{2}{m}
+  + \cdots + \KnuthRFoldSum{0}{n}{m} \\
+  \KnuthRFoldSum{r+1}{n}{m} &= \KnuthRFoldSum{r}{1}{m} + \KnuthRFoldSum{r}{2}{m}
+  + \cdots + \KnuthRFoldSum{r}{n}{m}
 \end{align*}
 
 Throughout the paper, we utilize the Newton's interpolation
-formula as stated below
+formula~\cite[Lemma V]{newton1850newton} as stated below
 
-\begin{proposition}
-  (Newton's interpolation formula~\cite[Lemma V]{newton1850newton}.)
+\begin{proposition}[Newton's interpolation formula]
   \begin{align*}
     f(x) = \sum_{j=0}^{\infty} \binom{x-a}{j} \Delta^{j} f(a)
   \end{align*}
@@ -40,9 +41,9 @@ formula as stated below
 
 Therefore, by setting $f(n)=n^m$ yields
 
-\begin{proposition}[Newton's interpolation formula for powers]
+\begin{proposition}[Newton's formula for powers]
   \label{prop:newtons-interpolation-formula-for-powers}
-  For non-negative integers $m,n$ and an arbitrary integer $t$
+  Let $n,m\ge 0$ be integers, and let $t$ be an arbitrary integer. Then
   \begin{align*}
     n^m = \sum_{k=0}^{m} \binom{n-t}{k} \Delta^{k} t^m
   \end{align*}
@@ -58,20 +59,39 @@ Which is indeed true, because
 
 \begin{proposition}[Generalized hockey-stick identity]
   \label{prop:generalized-hockey-stick-identity}
-  For integers $a,b$ and $j$
+  For integers $a,b$ and $j$.
   \begin{align*}
     \sum_{k=a}^{b} \binom{k}{j} = \binom{b+1}{j+1} - \binom{a}{j+1}
   \end{align*}
   \begin{proof}
     We have
-    $\sum_{k=a}^{b} \binom{k}{j} = \binom{a}{j} + \binom{a+1}{j} + \cdots + \binom{b}{j}$,
-    which means that
-    $\sum_{k=a}^{b} \binom{k}{j} =
-    \left( \sum_{k=0}^{b} \binom{k}{j} \right) - \left( \sum_{k=0}^{a-1} \binom{k}{j} \right)$.
-    By hockey stick identity $\sum_{k=0}^{n} \binom{k}{j} = \binom{n+1}{j+1}$ yields
-    $\sum_{k=a}^{b} \binom{k}{j}
-    = \left( \sum_{k=0}^{b} \binom{k}{j} \right) - \left( \sum_{k=0}^{a-1} \binom{k}{j} \right)
-    = \binom{b+1}{j+1} - \binom{a}{j+1}$.
+    \begin{align*}
+      \tsum_{k=a}^{b} \tbinom{k}{j} = \tbinom{a}{j} + \tbinom{a+1}{j}
+      + \cdots + \tbinom{b}{j}
+    \end{align*}
+    which implies
+    \begin{align*}
+      \tsum_{k=a}^{b} \tbinom{k}{j} =
+      \left( \tsum_{k=0}^{b} \tbinom{k}{j} \right)
+      -
+      \left(\tsum_{k=0}^{a-1} \tbinom{k}{j}\right)
+    \end{align*}
+    By hockey stick identity
+    $\tsum_{k=0}^{n} \binom{k}{j} = \binom{n+1}{j+1}$,
+    we get
+    \begin{align*}
+      \tsum_{k=a}^{b} \tbinom{k}{j}
+      =
+      \left(
+        \tsum_{k=0}^{b} \tbinom{k}{j}
+      \right)
+      -
+      \left(
+        \tsum_{k=0}^{a-1} \tbinom{k}{j}
+      \right)
+      = \tbinom{b+1}{j+1} - \tbinom{a}{j+1}
+    \end{align*}
+    This completes the proof.
   \end{proof}
 \end{proposition}
 
@@ -129,10 +149,10 @@ By shifted hockey stick
 identity~\eqref{lem:shifted-generalized-hockey-stick-identity}
 closed form of ordinary sums of powers yields
 
-\begin{proposition}[Ordinary sums of powers via Newton's formula]
+\begin{proposition}[Ordinary power sums]
   \label{prop:ordinary-sums-of-powers-via-newtons-formula}
   \begin{mdframed}
-    For non-negative integers $n,m$ and an arbitrary integer $t$
+    For integers $n\geq 0$, and $m\geq 0$, and an arbitrary integer $t$
     \begin{align*}
       \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^m
       \left[ \binom{n-t+1}{j+1} - \binom{1-t}{j+1} \right]
@@ -169,10 +189,10 @@ For example,
 By negation of shifted hockey stick
 identity~\eqref{lem:negation-of-shifted-hockey-stick-identity} yields
 
-\begin{proposition}[Negated ordinary sums of powers via Newton's formula]
+\begin{proposition}[Negated ordinary power sums]
   \label{prop:negation-of-ordinary-sums-of-powers-via-newtons-formula}
   \begin{mdframed}
-    For non-negative integers $n,m$ and an arbitrary integer $t$
+    For integers $n\geq 0$, and $m\geq 0$, and an arbitrary integer $t$
     \begin{align*}
       \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^m
       \left[ \binom{n-t+1}{j+1} + (-1)^j \binom{j+t-1}{j+1} \right]
@@ -295,7 +315,10 @@ The coefficients $1,4,1,16,9,\dots$ is the sequence
 in the OEIS~\cite{sloane2003line}.
 In general,
 \begin{align*}
-  \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \Delta^{j} 4^m \left[ \binom{n-3}{j+1} + (-1)^j \binom{j+3}{j+1}  \right].
+  \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \Delta^{j} 4^m
+  \left[
+    \binom{n-3}{j+1} + (-1)^j \binom{j+3}{j+1}
+  \right].
 \end{align*}
 
 To derive formula for double sum of powers,
@@ -313,10 +336,10 @@ which yields
 By applying shifted hockey stick
 identity~\eqref{lem:shifted-generalized-hockey-stick-identity}, we get
 
-\begin{proposition}[Double sums of powers via Newton's formula]
+\begin{proposition}[Double sums of powers]
   \label{prop:double-sums-of-powers-via-newtons-formula}
   \begin{mdframed}
-    For non-negative integers $n,m$ and an arbitrary integer $t$
+    For integers $n\geq 0$, and $m\geq 0$, and an arbitrary integer $t$
     \begin{align*}
       \KnuthRFoldSum{2}{n}{m}
       = \sum_{j=0}^{m} \Delta^{j} t^m \left[ \binom{n-t+2}{j+1} - \binom{1-t}{j+1} n - \binom{2-t}{j+2} \right]
@@ -328,10 +351,10 @@ identity~\eqref{lem:shifted-generalized-hockey-stick-identity}, we get
 By negated hockey stick
 identity~\eqref{lem:negation-of-shifted-hockey-stick-identity} yields
 
-\begin{proposition}[Negated double sums of powers via Newton's formula]
+\begin{proposition}[Negated double sums of powers]
   \label{prop:negated-double-sums-of-powers-via-newtons-formula}
   \begin{mdframed}
-    For non-negative integers $n,m$ and an arbitrary integer $t$
+    For integers $n\geq 0$, and $m\geq 0$, and an arbitrary integer $t$
     \begin{align*}
       \KnuthRFoldSum{2}{n}{m}
       = \sum_{j=0}^{m} \Delta^{j} t^m \left[ \binom{n-t+2}{j+1} + (-1)^j \binom{j+t-1}{j+1} n + (-1)^{j+1} \binom{j+t-1}{j+2} \right]
@@ -377,10 +400,10 @@ and $1 = \KnuthRFoldSum{0}{n}{0}$.
 Therefore, by shifted hockey stick
 identity~\eqref{lem:shifted-generalized-hockey-stick-identity}, we get
 
-\begin{proposition}[Triple sums of powers via Newton's formula]
+\begin{proposition}[Triple sums of powers]
   \label{prop:triple-sums-of-powers-via-newtons-formula}
   \begin{mdframed}
-    For non-negative integers $n,m$ and an arbitrary integer $t$
+    For integers $n\geq 0$, and $m\geq 0$, and an arbitrary integer $t$
     \begin{align*}
       \KnuthRFoldSum{3}{n}{m}
       = \sum_{j=0}^{m} \Delta^{j} t^m
@@ -394,9 +417,9 @@ identity~\eqref{lem:shifted-generalized-hockey-stick-identity}, we get
 By negated hockey stick
 identity~\eqref{lem:negation-of-shifted-hockey-stick-identity} yields
 
-\begin{proposition}[Negated triple sums of powers via Newton's formula]
+\begin{proposition}[Negated triple sums of powers]
   \begin{mdframed}
-    For non-negative integers $n,m$ and an arbitrary integer $t$
+    For integers $n\geq 0$, and $m\geq 0$, and an arbitrary integer $t$
     \begin{align*}
       \KnuthRFoldSum{3}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^m \Bigg[ \binom{n-t+3}{j+3}
         &+ (-1)^{j} \binom{j+t-1}{j+1} \KnuthRFoldSum{2}{n}{0}
@@ -436,10 +459,11 @@ and Newton's formula for
 powers~\eqref{prop:newtons-interpolation-formula-for-powers},
 we get formula for multifold sums of powers
 
-\begin{theorem}[Multifold sums of powers via Newton's formula]
+\begin{theorem}[Multifold sums of powers]
   \label{theorem:multifold-sums-of-powers-via-newtons-formula}
   \begin{mdframed}
-    For non-negative integers $r,n,m$ and an arbitrary integer $t$
+    For integers $r\geq 0$, and $n\geq 0$, and $m\geq 0$,
+    and an arbitrary integer $t$
     \begin{align*}
       \KnuthRFoldSum{r}{n}{m}
       = \sum_{j=0}^{m} \Delta^{j} t^{m}
@@ -452,10 +476,11 @@ By negated hockey stick
 identity~\eqref{lem:negation-of-shifted-hockey-stick-identity}, another
 variation of multifold sums of powers follows
 
-\begin{theorem}[Negated multifold sums of powers via Newton's formula]
+\begin{theorem}[Negated multifold sums of powers]
   \label{theorem:negated-multifold-sums-of-powers-via-newtons-formula}
   \begin{mdframed}
-    For non-negative integers $r,n,m$ and an arbitrary integer $t$
+    For integers $r\geq 0$, and $n\geq 0$, and $m\geq 0$,
+    and an arbitrary integer $t$
     \begin{align*}
       \KnuthRFoldSum{r}{n}{m}
       = \sum_{j=0}^{m} \Delta^{j} t^{m}
@@ -482,7 +507,7 @@ We may observe that
 \begin{proposition}[Multifold sum of zero powers]
   \label{prop:multifold-sum-of-zero-powers}
   \begin{mdframed}
-    For integers $r$ and $n$
+    For integers $r \geq 0$ and $n \geq 0$
     \begin{align*}
       \KnuthRFoldSum{r}{n}{0} = \binom{r+n-1}{r}
     \end{align*}
@@ -504,7 +529,8 @@ formula~\eqref{theorem:multifold-sums-of-powers-via-newtons-formula}
 \begin{proposition}[Multifold sums of powers binomial form]
   \label{prop:multifold-sums-of-powers-binomial-form}
   \begin{mdframed}
-    For non-negative integers $r,n,m$ and an arbitrary integer $t$
+    For integers $r\geq 0$, and $n\geq 0$, and $m\geq 0$,
+    and an arbitrary integer $t$
     \begin{align*}
       \KnuthRFoldSum{r}{n}{m}
       = \sum_{j=0}^{m} \Delta^{j} t^{m}
@@ -518,10 +544,11 @@ formula~\eqref{theorem:multifold-sums-of-powers-via-newtons-formula}
 By negated hockey stick
 identity~\eqref{lem:negation-of-shifted-hockey-stick-identity} yields
 
-\begin{proposition}[Negated multifold sums of powers binomial form]
+\begin{proposition}[Negated multifold Binomial sum of powers]
   \label{prop:negated-multifold-sums-of-powers-binomial-form}
   \begin{mdframed}
-    For non-negative integers $r,n,m$ and an arbitrary integer $t$
+    For integers $r\geq 0$, and $n\geq 0$, and $m\geq 0$,
+    and an arbitrary integer $t$
     \begin{align*}
       \KnuthRFoldSum{r}{n}{m}
       &= \sum_{j=0}^{m} \Delta^{j} t^{m}
@@ -534,10 +561,11 @@ identity~\eqref{lem:negation-of-shifted-hockey-stick-identity} yields
 
 By re-indexing the sum in $s$ gives
 
-\begin{proposition}[Negated multifold sums of powers binomial form re-indexed]
+\begin{proposition}[Shifted multifold Binomial sum of powers]
   \label{prop:negated-multifold-sums-of-powers-binomial-form-reindexed}
   \begin{mdframed}
-    For non-negative integers $r,n,m$ and an arbitrary integer $t$
+    For integers $r\geq 0$, and $n\geq 0$, and $m\geq 0$,
+    and an arbitrary integer $t$
     \begin{align*}
       \KnuthRFoldSum{r}{n}{m}
       = \sum_{j=0}^{m} \Delta^{j} t^{m}
