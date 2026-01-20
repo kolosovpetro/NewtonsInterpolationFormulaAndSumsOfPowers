@@ -2,20 +2,16 @@ In this manuscript, we derive formulas for multifold sums of powers
 by utilizing Newton's interpolation formula.
 Furthermore, we provide formulas for multifold sums of powers in terms
 of Stirling numbers of the second kind and Eulerian numbers.
-
 The main idea is to utilize Newton's interpolation formula
 combined with hockey-stick family identities to
 derive formulas for multifold sums of powers.
-
 In this manuscript, we use Newton's interpolation formula
 in forward finite differences.
-
 However, the Newton's formula approach for sums of powers is quite generic,
 as such it does not necessary requires to bind to forward difference operator
 specifically. Thus, formulas for sums of powers using backward and central
 differences can be found
 in~\cite{kolosov_2026_18134757, kolosov_2025_18098442}, respectively.
-
 Allow us to start from the definition of multifold sums of powers.
 We utilize the recurrence proposed by Donald Knuth in his article
 \textit{Johann Faulhaber and sums of powers}, see~\cite{knuth1993johann}
@@ -26,10 +22,8 @@ We utilize the recurrence proposed by Donald Knuth in his article
   \KnuthRFoldSum{r+1}{n}{m} &= \KnuthRFoldSum{r}{1}{m} + \KnuthRFoldSum{r}{2}{m}
   + \cdots + \KnuthRFoldSum{r}{n}{m}
 \end{align*}
-
 Throughout the paper, we utilize the Newton's interpolation
 formula~\cite[Lemma V]{newton1850newton} as stated below
-
 \begin{proposition}[Newton's interpolation formula]
   \begin{align*}
     f(x) = \sum_{j=0}^{\infty} \binom{x-a}{j} \Delta^{j} f(a)
@@ -116,15 +110,13 @@ Recall the upper negation property of binomial coefficients
 \end{lemma}
 
 Thus,
-
 \begin{align*}
   \binom{1-t+r}{j+r+1}
-  = (-1)^{j+r+1} \binom{(j+r+1)-(1-t+r)-1}{j+r+1}
-  = (-1)^{j+r+1} \binom{j+t-1}{j+r+1}
+  &= (-1)^{j+r+1} \binom{(j+r+1)-(1-t+r)-1}{j+r+1} \\
+  &= (-1)^{j+r+1} \binom{j+t-1}{j+r+1}
 \end{align*}
-Such that negated version of shifted hockey stick
-identity~\eqref{lem:shifted-generalized-hockey-stick-identity}
-follows
+Which implies negated version of shifted hockey stick
+identity~\eqref{lem:shifted-generalized-hockey-stick-identity}.
 
 \begin{lemma} [Negation of shifted hockey stick identity]
   \label{lem:negation-of-shifted-hockey-stick-identity}
@@ -135,7 +127,7 @@ follows
   \end{align*}
 \end{lemma}
 
-Hence, by Newton's interpolation formula for
+Hence, by Newton's formula for
 powers~\eqref{prop:newtons-interpolation-formula-for-powers},
 the ordinary sum of powers is
 \begin{align*}
@@ -146,8 +138,8 @@ the ordinary sum of powers is
 
 where $t$ is an arbitrary integer.
 By shifted hockey stick
-identity~\eqref{lem:shifted-generalized-hockey-stick-identity}
-closed form of ordinary sums of powers yields
+identity~\eqref{lem:shifted-generalized-hockey-stick-identity},
+the closed form of ordinary sums of powers yields
 
 \begin{proposition}[Ordinary power sums]
   \label{prop:ordinary-sums-of-powers-via-newtons-formula}
@@ -258,7 +250,6 @@ in the OEIS~\cite{sloane2003line}.
     \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \binom{n}{j+1} \Delta^{j} 1^m
   \end{align*}
 \end{corollary}
-
 For example,
 \begin{align*}
   \KnuthRFoldSum{1}{n}{2} &= 1 \tbinom{n}{1} + 3 \tbinom{n}{2} +2   \tbinom{n}{3} \\
@@ -266,16 +257,13 @@ For example,
   \KnuthRFoldSum{1}{n}{4} &= 1 \tbinom{n}{1} +15 \tbinom{n}{2} +50  \tbinom{n}{3} +60  \tbinom{n}{4} + 24 \tbinom{n}{5} \\
   \KnuthRFoldSum{1}{n}{5} &= 1 \tbinom{n}{1} +31 \tbinom{n}{2} +180 \tbinom{n}{3} +390 \tbinom{n}{4} + 360 \tbinom{n}{5} + 120 \tbinom{n}{6}
 \end{align*}
-
 The coefficients $1,3,2,1,7,12,6,1,15, \dots$ is the sequence
 \href{https://oeis.org/A028246}{\texttt{A028246}}
 in the OEIS~\cite{sloane2003line}.
-
 Interestingly enough that the paper~\cite{cereceda2022sums}
 give formulas for sums of powers
 in terms of generalized Stirling numbers of
 the second kind $\stirlingii{k}{j}_{r}$
-
 \begin{theorem}[Cereceda (2022)]
   \begin{align}
     \KnuthRFoldSum{1}{n}{k} &= \sum_{j=0}^{k} j! \left[ \binom{n+1-r}{j+1} + (-1)^j \binom{r+j-1}{j+1} \right] \stirlingii{k}{j}_{r}
@@ -285,7 +273,6 @@ the second kind $\stirlingii{k}{j}_{r}$
     \label{eq:cereceda-sums-2}
   \end{align}
 \end{theorem}
-
 The formula~\eqref{eq:cereceda-sums-1}
 is generalized Stirling numbers version of negated ordinary
 sums of powers via Newton's
@@ -293,11 +280,9 @@ formula~\eqref{prop:negation-of-ordinary-sums-of-powers-via-newtons-formula},
 which implies that finite forward differences of powers can be expressed
 in terms of generalized Stirling numbers of the second kind:
 $\Delta^{j} t^m = j! \stirlingii{m}{j}_{t}$.
-
 The formula~\eqref{eq:cereceda-sums-2} is the special case
 of ordinary sums of powers via Newton's
 formula~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula} with $t=-r$.
-
 By setting $t=4$ into
 ordinary sums of powers via Newton's
 formula~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula},
@@ -367,15 +352,23 @@ interpolation formula~\eqref{prop:double-sums-of-powers-via-newtons-formula},
 we get
 \begin{align*}
   \KnuthRFoldSum{2}{n}{0}
-  &= 1 \left( \tbinom{n-3}{2} + \tbinom{4}{1} n - \tbinom{4}{2} \right) \\
+  &= 1 \left( \tbinom{n-3}{2} + \tbinom{4}{1} n - \tbinom{4}{2} \right)
+  \\
   \KnuthRFoldSum{2}{n}{1}
-  &= 5 \left( \tbinom{n-3}{2} + \tbinom{4}{1} n - \tbinom{4}{2} \right) + 1 \left( \tbinom{n-3}{3} - \tbinom{5}{2} n + \tbinom{5}{3} \right) \\
+  &= 5 \left( \tbinom{n-3}{2} + \tbinom{4}{1} n - \tbinom{4}{2} \right)
+  + 1 \left( \tbinom{n-3}{3} - \tbinom{5}{2} n + \tbinom{5}{3} \right)
+  \\
   \KnuthRFoldSum{2}{n}{2}
-  &= 25 \left( \tbinom{n-3}{2} + \tbinom{4}{1} n - \tbinom{4}{2} \right) + 11 \left( \tbinom{n-3}{3} - \tbinom{5}{2} n + \tbinom{5}{3} \right) \\
-  &+ 2 \left( \tbinom{n-3}{4} + \tbinom{6}{3} n - \tbinom{6}{4} \right) \\
-  \KnuthRFoldSum{2}{n}{3}
-  &= 125 \left( \tbinom{n-3}{2} + \tbinom{4}{1} n - \tbinom{4}{2} \right) + 91 \left( \tbinom{n-3}{3} - \tbinom{5}{2} n + \tbinom{5}{3} \right) \\
-  &+ 36 \left( \tbinom{n-3}{4} + \tbinom{6}{3} n - \tbinom{6}{4} \right) + 6 \left( \tbinom{n-3}{5} - \tbinom{7}{4} n + \tbinom{7}{5} \right)
+  &= 25 \left( \tbinom{n-3}{2} + \tbinom{4}{1} n - \tbinom{4}{2} \right)
+  + 11 \left( \tbinom{n-3}{3} - \tbinom{5}{2} n + \tbinom{5}{3} \right)
+  + 2 \left( \tbinom{n-3}{4} + \tbinom{6}{3} n - \tbinom{6}{4} \right)
+  % \\
+  % \KnuthRFoldSum{2}{n}{3}
+  % &= 125 \left( \tbinom{n-3}{2} + \tbinom{4}{1} n - \tbinom{4}{2} \right)
+  % + 91 \left( \tbinom{n-3}{3} - \tbinom{5}{2} n + \tbinom{5}{3} \right)
+  % \\
+  % &+ 36 \left( \tbinom{n-3}{4} + \tbinom{6}{3} n - \tbinom{6}{4} \right)
+  % + 6 \left( \tbinom{n-3}{5} - \tbinom{7}{4} n + \tbinom{7}{5} \right)
 \end{align*}
 The coefficients $1,5,1,25,11,2,\dots$ is the sequence
 \href{https://oeis.org/A391635}{\texttt{A391635}}
@@ -430,17 +423,76 @@ identity~\eqref{lem:negation-of-shifted-hockey-stick-identity} yields
 \end{proposition}
 
 For example, by setting $t=4$ into triple sums of powers via Newton's
-formula~\eqref{prop:triple-sums-of-powers-via-newtons-formula} gives
+formula~\eqref{prop:triple-sums-of-powers-via-newtons-formula},
+for $m=1$ we have
 \begin{align*}
-  \KnuthRFoldSum{3}{n}{0}
-  &= 1 \left( \tbinom{n-1}{3} + \tbinom{3}{1} \KnuthRFoldSum{2}{n}{0} - \tbinom{3}{2} \KnuthRFoldSum{1}{n}{0} + \tbinom{3}{3} \KnuthRFoldSum{0}{n}{0} \right) \\
   \KnuthRFoldSum{3}{n}{1}
-  &= 4 \left( \tbinom{n-1}{3} + \tbinom{3}{1} \KnuthRFoldSum{2}{n}{0} - \tbinom{3}{2} \KnuthRFoldSum{1}{n}{0} + \tbinom{3}{3} \KnuthRFoldSum{0}{n}{0} \right) \\
-  &+ 1 \left( \tbinom{n-1}{4} - \tbinom{4}{2} \KnuthRFoldSum{2}{n}{0} + \tbinom{4}{3} \KnuthRFoldSum{1}{n}{0} - \tbinom{4}{4} \KnuthRFoldSum{0}{n}{0} \right) \\
+  &= 4 \left(
+    \tbinom{n-1}{3}
+    + \tbinom{3}{1} \KnuthRFoldSum{2}{n}{0}
+    - \tbinom{3}{2} \KnuthRFoldSum{1}{n}{0}
+    + \tbinom{3}{3} \KnuthRFoldSum{0}{n}{0}
+  \right) \\
+  &+ 1 \left(
+    \tbinom{n-1}{4}
+    - \tbinom{4}{2} \KnuthRFoldSum{2}{n}{0}
+    + \tbinom{4}{3} \KnuthRFoldSum{1}{n}{0}
+  - \tbinom{4}{4} \KnuthRFoldSum{0}{n}{0} \right)
+  % \\
+  % \KnuthRFoldSum{3}{n}{2}
+  % &= 16
+  % \left(
+  %   \tbinom{n-1}{3}
+  %   + \tbinom{3}{1} \KnuthRFoldSum{2}{n}{0}
+  %   - \tbinom{3}{2} \KnuthRFoldSum{1}{n}{0}
+  % + \tbinom{3}{3} \KnuthRFoldSum{0}{n}{0} \right) \\
+  % &+ 9
+  % \left(
+  %   \tbinom{n-1}{4}
+  %   - \tbinom{4}{2} \KnuthRFoldSum{2}{n}{0}
+  %   + \tbinom{4}{3} \KnuthRFoldSum{1}{n}{0}
+  %   - \tbinom{4}{4} \KnuthRFoldSum{0}{n}{0}
+  % \right) \\
+  % &+ 2
+  % \left( \tbinom{n-1}{5}
+  %   + \tbinom{5}{3} \KnuthRFoldSum{2}{n}{0}
+  %   - \tbinom{5}{4} \KnuthRFoldSum{1}{n}{0}
+  % + \tbinom{5}{5} \KnuthRFoldSum{0}{n}{0} \right)
+\end{align*}
+For $m=2$ we have
+\begin{align*}
+  % \KnuthRFoldSum{3}{n}{1}
+  % &= 4 \left(
+  %   \tbinom{n-1}{3}
+  %   + \tbinom{3}{1} \KnuthRFoldSum{2}{n}{0}
+  %   - \tbinom{3}{2} \KnuthRFoldSum{1}{n}{0}
+  %   + \tbinom{3}{3} \KnuthRFoldSum{0}{n}{0}
+  % \right) \\
+  % &+ 1 \left(
+  %   \tbinom{n-1}{4}
+  %   - \tbinom{4}{2} \KnuthRFoldSum{2}{n}{0}
+  %   + \tbinom{4}{3} \KnuthRFoldSum{1}{n}{0}
+  % - \tbinom{4}{4} \KnuthRFoldSum{0}{n}{0} \right)
+  % \\
   \KnuthRFoldSum{3}{n}{2}
-  &= 16 \left( \tbinom{n-1}{3} + \tbinom{3}{1} \KnuthRFoldSum{2}{n}{0} - \tbinom{3}{2} \KnuthRFoldSum{1}{n}{0} + \tbinom{3}{3} \KnuthRFoldSum{0}{n}{0} \right) \\
-  &+ 9 \left( \tbinom{n-1}{4} - \tbinom{4}{2} \KnuthRFoldSum{2}{n}{0} + \tbinom{4}{3} \KnuthRFoldSum{1}{n}{0} - \tbinom{4}{4} \KnuthRFoldSum{0}{n}{0} \right) \\
-  &+ 2 \left( \tbinom{n-1}{5} + \tbinom{5}{3} \KnuthRFoldSum{2}{n}{0} - \tbinom{5}{4} \KnuthRFoldSum{1}{n}{0} + \tbinom{5}{5} \KnuthRFoldSum{0}{n}{0} \right)
+  &= 16
+  \left(
+    \tbinom{n-1}{3}
+    + \tbinom{3}{1} \KnuthRFoldSum{2}{n}{0}
+    - \tbinom{3}{2} \KnuthRFoldSum{1}{n}{0}
+  + \tbinom{3}{3} \KnuthRFoldSum{0}{n}{0} \right) \\
+  &+ 9
+  \left(
+    \tbinom{n-1}{4}
+    - \tbinom{4}{2} \KnuthRFoldSum{2}{n}{0}
+    + \tbinom{4}{3} \KnuthRFoldSum{1}{n}{0}
+    - \tbinom{4}{4} \KnuthRFoldSum{0}{n}{0}
+  \right) \\
+  &+ 2
+  \left( \tbinom{n-1}{5}
+    + \tbinom{5}{3} \KnuthRFoldSum{2}{n}{0}
+    - \tbinom{5}{4} \KnuthRFoldSum{1}{n}{0}
+  + \tbinom{5}{5} \KnuthRFoldSum{0}{n}{0} \right)
 \end{align*}
 The coefficients $1,4,1,16,9,\dots$ is the sequence
 \href{https://oeis.org/A391633}{\texttt{A391633}}
@@ -489,19 +541,15 @@ variation of multifold sums of powers follows
     \end{align*}
   \end{mdframed}
 \end{theorem}
-
 In its explicit form
 \begin{align*}
-  \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^{m} \Bigg[
-    \binom{n-t+r}{j+r}
-    &+ (-1)^{j}   \binom{j+t-1}{j+1} \KnuthRFoldSum{r-1}{n}{0}
-    + (-1)^{j+1} \binom{j+t-1}{j+2} \KnuthRFoldSum{r-2}{n}{0} \\
-    &+ (-1)^{j+2} \binom{j+t-1}{j+3} \KnuthRFoldSum{r-3}{n}{0}
-    + \cdots \\
-    &+ (-1)^{j+r-1} \binom{j+t-1}{j+r} \KnuthRFoldSum{0}{n}{0}
-  \Bigg]
+  \KnuthRFoldSum{r}{n}{m} = \tsum_{j=0}^{m} \Delta^{j} t^{m} \Big[
+    \tbinom{n-t+r}{j+r}
+    &+ (-1)^{j}   \tbinom{j+t-1}{j+1} \KnuthRFoldSum{r-1}{n}{0}
+    + (-1)^{j+1} \tbinom{j+t-1}{j+2} \KnuthRFoldSum{r-2}{n}{0} + \cdots \\
+    &+ (-1)^{j+r-1} \tbinom{j+t-1}{j+r} \KnuthRFoldSum{0}{n}{0}
+  \Big]
 \end{align*}
-
 We may observe that
 
 \begin{proposition}[Multifold sum of zero powers]
@@ -516,7 +564,6 @@ We may observe that
     By hockey stick identity $\sum_{k=0}^{t} \binom{j+k}{j} = \binom{j+t+1}{j+1}$.
   \end{proof}
 \end{proposition}
-
 Thus,
 \begin{align*}
   \KnuthRFoldSum{r-s}{n}{0} = \binom{r-s+n-1}{r-s}

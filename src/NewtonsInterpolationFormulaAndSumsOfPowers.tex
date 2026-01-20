@@ -17,7 +17,18 @@
 
 % margins and layout
 \linespread{1.7}
-\usepackage[left=1in,right=1in,bottom=1in,top=1in,showframe]{geometry}
+
+\usepackage{geometry} % Page layout and margins
+
+% Geometry settings (each on its own line for clarity)
+\geometry{
+  left=1in,    % left margin
+  right=1in,   % right margin
+  top=1in,     % top margin
+  bottom=1in,  % bottom margin
+  showframe    % draw the page frame (useful for checking margins)
+}
+
 
 \usepackage{lineno}
 \linenumbers
@@ -46,11 +57,12 @@
 \newcommand{\tsum}{\mathop{\textstyle\sum}}
 
 % free foot note
-\let\svthefootnote\thefootnote
-\newcommand\freefootnote[1]{%
-  \let\thefootnote\relax%
-  \footnotetext{#1}%
-  \let\thefootnote\svthefootnote%
+\newcommand{\freefootnote}[1]{%
+  \begingroup
+  \renewcommand{\thefootnote}{}%
+  \footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
 }
 
 \newtheorem{theorem}{Theorem}[section]
