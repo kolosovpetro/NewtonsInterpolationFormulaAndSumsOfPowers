@@ -21,16 +21,6 @@
   citecolor=red             % color of citation links
 ]{hyperref}
 
-\usepackage{lineno}
-\linenumbers
-
-% margins and layout
-\linespread{1.7}
-
-% \emergencystretch=1em
-% \raggedbottom
-% \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
-
 \usepackage{geometry} % Page layout and margins
 
 % Geometry settings (each on its own line for clarity)
@@ -39,8 +29,20 @@
   right=1in,   % right margin
   top=1in,     % top margin
   bottom=1in,  % bottom margin
-  showframe    % draw the page frame (useful for checking margins)
+  %showframe    % draw the page frame (useful for checking margins)
 }
+
+% \usepackage{lineno}
+% \linenumbers
+% draw the page frame (useful for checking margins)
+\geometry{showframe}
+
+% margins and layout
+\linespread{1.7}
+
+% \emergencystretch=1em
+% \raggedbottom
+% \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 
 \newcommand \bernoulli [2][B] {{#1}\sb{#2}}
 
