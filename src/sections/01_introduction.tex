@@ -99,8 +99,8 @@ is indeed true, because,
     This completes the proof.
   \end{proof}
 \end{lemma}
-Therefore, the shifted version of
-the Lemma~\eqref{prop:generalized-hockey-stick-identity}
+Therefore, shifted version of
+Lemma~\eqref{prop:generalized-hockey-stick-identity}
 follows.
 \begin{lemma} [Shifted hockey stick identity]
   For integers $n,t,j,r$,
@@ -125,10 +125,10 @@ Thus,
   &= (-1)^{j+r+1} \binom{(j+r+1)-(1-t+r)-1}{j+r+1} \\
   &= (-1)^{j+r+1} \binom{j+t-1}{j+r+1}.
 \end{align*}
-The formula above implies negated version of shifted hockey-stick
+Formula above implies negated version of shifted hockey-stick
 identity~\eqref{lem:shifted-generalized-hockey-stick-identity}.
 
-\begin{lemma} [Negation of shifted hockey stick identity]
+\begin{lemma} [Negated hockey stick identity]
   \label{lem:negated-hockey-stick-identity}
   For integers $n,t,j,r$,
   \begin{align*}
@@ -139,7 +139,7 @@ identity~\eqref{lem:shifted-generalized-hockey-stick-identity}.
 
 Hence, by Newton's formula for
 powers~\eqref{prop:newtons-interpolation-formula-for-powers},
-we get the formula for ordinary sums of powers.
+we get formula for ordinary sums of powers.
 \begin{align*}
   \KnuthRFoldSum{1}{n}{m}
   = \sum_{k=1}^{n} \sum_{j=0}^{m} \binom{k-t}{j} \Delta^{j} t^m
@@ -152,7 +152,7 @@ the closed form of ordinary sums of powers yields.
 
 \begin{proposition}[Ordinary power sums]
   \label{prop:ordinary-sums-of-powers-via-newtons-formula}
-  For integers $n\geq 0$, and $m\geq 0$, and an arbitrary integer $t$
+  For integers $n\geq 0$, and $m\geq 0$, and an arbitrary integer $t$,
   \begin{align*}
     \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^m
     \left[ \binom{n-t+1}{j+1} - \binom{1-t}{j+1} \right].
@@ -185,9 +185,9 @@ For example,
   + 24\!\left[\tbinom{n-2}{4}-\tbinom{-2}{4}\right]
   + 6\!\left[\tbinom{n-2}{5}-\tbinom{-2}{5}\right].
 \end{align*}
-By the Lemma~\eqref{lem:negated-hockey-stick-identity},
+By Lemma~\eqref{lem:negated-hockey-stick-identity},
 we obtain negated version of
-the Proposition~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula}.
+Proposition~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula}.
 
 \begin{proposition}[Negated ordinary power sums]
   \label{prop:negation-of-ordinary-sums-of-powers-via-newtons-formula}
@@ -297,18 +297,18 @@ the second kind $\stirlingii{k}{j}_{r}$.
   \right] \stirlingii{k}{j}_{-r}.
   \label{eq:cereceda-sums-2}
 \end{align}
-The formula~\eqref{eq:cereceda-sums-1}
+Formula~\eqref{eq:cereceda-sums-1}
 is a special case of
 Proposition~\eqref{prop:negation-of-ordinary-sums-of-powers-via-newtons-formula},
 in terms of generalized Stirling numbers $\stirlingii{k}{j}_{r}$.
 This implies that finite differences of powers can be expressed
 in terms of generalized Stirling numbers of the second kind,
 $\Delta^{j} t^m = j! \stirlingii{m}{j}_{t}$.
-The formula~\eqref{eq:cereceda-sums-2} is a special case
-of the Proposition~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula}
+Formula~\eqref{eq:cereceda-sums-2} is a special case
+of Proposition~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula}
 with $t=-r$.
 By setting $t=4$ into
-the Proposition~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula},
+Proposition~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula},
 we observe rather unusual formulas for sums of powers, namely,
 \begin{align*}
   \KnuthRFoldSum{1}{n}{0} &= 1  \left( \tbinom{n-3}{1}
@@ -356,7 +356,7 @@ which implies,
 \end{align*}
 By applying shifted hockey stick
 identity~\eqref{lem:shifted-generalized-hockey-stick-identity},
-we get the formula for double sums of powers.
+we get formula for double sums of powers.
 \begin{proposition}[Double sums of powers]
   \label{prop:double-sums-of-powers-via-newtons-formula}
   For integers $n\geq 0$, and $m\geq 0$, and an arbitrary integer $t$
@@ -369,9 +369,9 @@ we get the formula for double sums of powers.
   \end{align*}
 \end{proposition}
 
-By applying the Lemma~\eqref{lem:negated-hockey-stick-identity}
-on the Proposition~\eqref{prop:double-sums-of-powers-via-newtons-formula},
-we obtain negated variation of the formula for sums of powers.
+By applying Lemma~\eqref{lem:negated-hockey-stick-identity}
+on Proposition~\eqref{prop:double-sums-of-powers-via-newtons-formula},
+we obtain negated variation of formula for sums of powers.
 
 \begin{proposition}[Negated double sums of powers]
   \label{prop:negated-double-sums-of-powers-via-newtons-formula}
@@ -445,7 +445,7 @@ the closed form identity for triple sums of powers.
   \end{align*}
 \end{proposition}
 
-By utilizing the Lemma~\eqref{lem:negated-hockey-stick-identity}
+By utilizing Lemma~\eqref{lem:negated-hockey-stick-identity}
 on the
 Proposition~\eqref{prop:triple-sums-of-powers-via-newtons-formula}
 yields its negated variation.
