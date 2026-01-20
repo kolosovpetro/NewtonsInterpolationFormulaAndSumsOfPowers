@@ -80,8 +80,10 @@ we have
     \begin{align*}
       \KnuthRFoldSum{r}{n}{m}
       = \sum_{j=0}^{m} \sum_{k=0}^{m}
-      \left[ \binom{n-t+r}{j+r} + \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right]
-      \stirlingii{m}{j+k} \binom{t}{k} (j+k)!
+      \left[
+        \tbinom{n-t+r}{j+r} + \sum_{s=1}^{r} (-1)^{j+s-1} \tbinom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0}
+      \right]
+      \tstirlingii{m}{j+k} \tbinom{t}{k} (j+k)!
     \end{align*}
   \end{mdframed}
 \end{proposition}
@@ -111,8 +113,11 @@ Therefore,
     \begin{align*}
       \KnuthRFoldSum{r}{n}{m}
       = \sum_{j=0}^{m} \sum_{k=0}^{m}
-      \left[ \binom{n-t+r}{j+r} + \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \binom{r-s+n-1}{r-s} \right]
-      \stirlingii{m}{j+k} \binom{t}{k} (j+k)!
+      \left[
+        \tbinom{n-t+r}{j+r} + \sum_{s=1}^{r} (-1)^{j+s-1}
+        \tbinom{j+t-1}{j+s} \tbinom{r-s+n-1}{r-s}
+      \right]
+      \tstirlingii{m}{j+k} \tbinom{t}{k} (j+k)!
     \end{align*}
   \end{mdframed}
 \end{proposition}
