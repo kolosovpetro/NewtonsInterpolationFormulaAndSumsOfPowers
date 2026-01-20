@@ -1,23 +1,28 @@
-Finite differences of powers are closely related to Stirling numbers of the second kind
+Forward finite differences of powers are closely related
+to Stirling numbers of the second kind $\stirlingii{n}{k}$,
+as the following well-known lemma shows.
 
 \begin{lemma}[Stirling finite differences]
   \label{lem:finite-differences-via-stirling-numbers}
-  For non-negative integers $j,m$, and an arbitrary integer $t$
+  For non-negative integers $j,m$, and an arbitrary integer $t$,
   \begin{align*}
     \Delta^{j} t^{m} = \sum_{k=0}^{m} \stirlingii{m}{j+k} \binom{t}{k} (j+k)!
   \end{align*}
 \end{lemma}
 
-Which implies variations for ordinary sums of powers, by utilizing
-ordinary sums of powers via Newton's
-formula~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula}
-and finite differences
-identity~\eqref{lem:finite-differences-via-stirling-numbers}
+This lemma
+implies variations for ordinary sums of powers.
+By utilizing
+the formula for sums of powers
+in Proposition~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula},
+and Lemma~\eqref{lem:finite-differences-via-stirling-numbers}, we obtain
+the formula for sums of powers
+in terms of Stirling numbers of the second kind $\stirlingii{n}{k}$.
 
 \begin{proposition}[Stirling sums of powers]
   \label{prop:ordinary-sums-of-powers-via-stirling-numbers}
   For integers $r\geq0$, and $n\geq 0$, and $m\geq 0$,
-  and an arbitrary integer $t$
+  and an arbitrary integer $t$,
   \begin{align*}
     \KnuthRFoldSum{1}{n}{m}
     = \sum_{j=0}^{m} \sum_{k=0}^{m}
@@ -26,14 +31,17 @@ identity~\eqref{lem:finite-differences-via-stirling-numbers}
   \end{align*}
 \end{proposition}
 
-In addition, by negated ordinary sums of
-powers~\eqref{prop:negation-of-ordinary-sums-of-powers-via-newtons-formula} and
-by finite differences~\eqref{lem:finite-differences-via-stirling-numbers}
+In addition, by using the negated formula for sums of
+powers in
+Proposition~\eqref{prop:negation-of-ordinary-sums-of-powers-via-newtons-formula},
+with Lemma~\eqref{lem:finite-differences-via-stirling-numbers} for
+finite differences in Stirling numbers $\stirlingii{n}{k}$,
+we obtain new result.
 
 \begin{proposition}[Negated Stirling sums of powers]
   \label{prop:negated-ordinary-sums-of-powers-via-stirling-numbers}
   For integers $r\geq0$, and $n\geq 0$, and $m\geq 0$,
-  and an arbitrary integer $t$
+  and an arbitrary integer $t$,
   \begin{align*}
     \KnuthRFoldSum{1}{n}{m}
     = \sum_{j=0}^{m} \sum_{k=0}^{m}
@@ -42,26 +50,27 @@ by finite differences~\eqref{lem:finite-differences-via-stirling-numbers}
   \end{align*}
 \end{proposition}
 
-By setting $t=0$ into ordinary sums of powers via
-Stirling numbers~\eqref{prop:ordinary-sums-of-powers-via-stirling-numbers}
-yields well-known identity for sums of powers in terms of Stirling numbers
-
+By setting $t=0$ into the
+Proposition~\eqref{prop:negated-ordinary-sums-of-powers-via-stirling-numbers}
+yields well-known identity for sums of powers in terms of Stirling numbers.
+That is,
 \begin{corollary}
-  For non-negative integers $n,m$
+  For non-negative integers $n,m$,
   \begin{align*}
     \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \binom{n+1}{j+1} \stirlingii{m}{j} j!
   \end{align*}
 \end{corollary}
 
-For multifold sums of
-powers~\eqref{theorem:multifold-sums-of-powers-via-newtons-formula}
-and~\eqref{theorem:negated-multifold-sums-of-powers-via-newtons-formula}
-we have
+Similarly,
+the formula for multifold sums of
+powers
+in terms of Stirling numbers of the second kind $\stirlingii{n}{k}$
+follows.
 
 \begin{proposition}[Multifold Stirling sums of powers]
-  % \label{prop:multifold-sums-of-powers-via-newtons-formula}
+  \label{prop:multifold-stirling-sums-of-powers}
   For integers $r\geq0$, and $n\geq 0$, and $m\geq 0$,
-  and an arbitrary integer $t$
+  and an arbitrary integer $t$,
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     = \sum_{j=0}^{m} \sum_{k=0}^{m}
@@ -70,10 +79,15 @@ we have
   \end{align*}
 \end{proposition}
 
+By utilizing the Lemma~\eqref{lem:negated-hockey-stick-identity} for
+negated hockey-stick identity, we obtain the negated formula for
+multifold sums of powers in terms
+of Stirling numbers of the second kind $\stirlingii{n}{k}$.
+
 \begin{proposition}[Negated multifold Stirling sums of powers]
   \label{prop:multifold-sums-of-powers-via-stirling-numbers}
   For integers $r\geq0$, and $n\geq 0$, and $m\geq 0$,
-  and an arbitrary integer $t$
+  and an arbitrary integer $t$,
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     = \sum_{j=0}^{m} \sum_{k=0}^{m}
@@ -86,15 +100,18 @@ we have
   \end{align*}
 \end{proposition}
 
-The propositions above can be presented in a pure binomial form as well,
-by means of the identity~\eqref{prop:multifold-sum-of-zero-powers}:
+The Propositions~\eqref{prop:multifold-stirling-sums-of-powers},
+and~\eqref{prop:multifold-sums-of-powers-via-stirling-numbers}
+can be expressed in a pure binomial form,
+by means of the identity~\eqref{prop:multifold-sum-of-zero-powers},
+which implies that
 $\KnuthRFoldSum{r-s}{n}{0} = \binom{r-s+n-1}{r-s}$.
-Therefore,
+Therefore, we get multifold Stirling-Binomial formula for sums of powers.
 
 \begin{proposition}[Multifold Stirling-Binomial sums of powers]
   % \label{prop:multifold-sums-of-powers-binomial-form}
   For integers $r\geq0$, and $n\geq 0$, and $m\geq 0$,
-  and an arbitrary integer $t$
+  and an arbitrary integer $t$,
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     = \sum_{j=0}^{m} \sum_{k=0}^{m}
@@ -102,7 +119,7 @@ Therefore,
     \stirlingii{m}{j+k} \binom{t}{k} (j+k)!
   \end{align*}
 \end{proposition}
-
+Lemma~\eqref{lem:negated-hockey-stick-identity} yields its negated version.
 \begin{proposition}[Negated Stirling-Binomial sums of powers]
   % \label{prop:negated-multifold-sums-of-powers-binomial-form}
   For integers $r\geq0$, and $n\geq 0$, and $m\geq 0$,
