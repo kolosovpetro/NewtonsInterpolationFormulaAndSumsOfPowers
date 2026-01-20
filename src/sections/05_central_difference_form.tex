@@ -13,14 +13,12 @@ formula~\eqref{theorem:negated-multifold-sums-of-powers-via-newtons-formula}
 and by proposition~\eqref{prop:forward-via-central-differences}.
 \begin{proposition}[Multifold central sums of powers]
   \label{prop:multifold-sums-of-powers-via-central-differences}
-  \begin{mdframed}
-    For non-negative integers $r,n,m$ and an arbitrary integer $t$
-    \begin{align*}
-      \KnuthRFoldSum{r}{n}{m}
-      = \sum_{j=0}^{m}
-      \left[\binom{n-t+r}{j+r}
-        + \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0}
-      \right] \delta^{j} \left( t + \frac{j}{2} \right)^m
-    \end{align*}
-  \end{mdframed}
+  For non-negative integers $r,n,m$ and an arbitrary integer $t$
+  \begin{align*}
+    \KnuthRFoldSum{r}{n}{m}
+    = \sum_{j=0}^{m}
+    \left[\binom{n-t+r}{j+r}
+      + \sum_{s=1}^{r} (-1)^{j+s-1} \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0}
+    \right] \delta^{j} \left( t + \frac{j}{2} \right)^m
+  \end{align*}
 \end{proposition}
