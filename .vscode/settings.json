@@ -1,11 +1,12 @@
 {
   "editor.mouseWheelZoom": true,
-  "editor.fontSize": 14,
+  "editor.fontSize": 13,
   "editor.rulers": [
     80
   ],
   "editor.wordWrap": "off",
   "window.zoomLevel": 0,
+  "editor.fontFamily": "JetBrains Mono, Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.lineHeight": 1.6,
   "editor.letterSpacing": 0.2,
@@ -16,28 +17,26 @@
     "editor.formatOnSave": true
   },
   "latex-workshop.formatting.latex": "tex-fmt",
+  "latex-workshop.latex.autoBuild.run": "never",
   "cSpell.language": "en",
   "cSpell.enabled": true,
   "cSpell.words": [
-    "Bibtex",
     "Bohner",
-    "citeproc",
+    "Butzer",
+    "Cereceda",
     "Eulerian",
     "Faulhaber",
+    "howpublished",
     "Kolosov",
-    "LASTEXITCODE",
-    "Markus",
     "Mathematica",
-    "mathjax",
-    "nonstopmode",
     "OEIS",
     "ORCID",
     "pandoc",
-    "pdflatex",
+    "Principia",
+    "Refactorization",
     "Riordan",
-    "Scheuer",
-    "synctex",
     "tabl",
-    "Worpitzky"
+    "Worpitzky",
+    "Zenodo"
   ]
 }
