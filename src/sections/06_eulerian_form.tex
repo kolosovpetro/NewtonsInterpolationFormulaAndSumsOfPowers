@@ -1,0 +1,118 @@
+% Forward finite differences can be expressed in terms of
+% Eulerian numbers $\eulerian{n}{k}$,
+% by means of Worpitzky identity~\cite{Worpitzky1883}.
+
+% \begin{lemma}[Worpitzky identity]
+%   For non-negative integers $t,m$
+%   \begin{align*}
+%     t^{m} = \sum_{k=0}^{m} \binom{t+k}{m} \eulerian{m}{k},
+%   \end{align*}
+%   where $\eulerian{n}{k}$ are Eulerian numbers.
+% \end{lemma}
+% Thus, we obtain formula for finite differences of powers, in terms
+% of Eulerian numbers $\eulerian{n}{k}$.
+% \begin{lemma}[Eulerian finite differences]
+%   \label{lem:finite-differences-via-eulerian-numbers}
+%   For integers $j,m \geq 0$ and an arbitrary integer $t$,
+%   \begin{align*}
+%     \Delta^{j} t^{m} = \sum_{k=0}^{m} \binom{t+k}{m-j} \eulerian{m}{k}.
+%   \end{align*}
+% \end{lemma}
+
+% Hence, by multifold sums of
+% powers~\eqref{theorem:multifold-sums-of-powers-via-newtons-formula},
+% and by Lemma~\eqref{lem:finite-differences-via-eulerian-numbers},
+% we get formula for multifold sums of powers in terms of Eulerian
+% numbers $\eulerian{n}{k}$.
+
+% \begin{proposition}[Multifold Eulerian sums of powers]
+%   \label{prop:multifold-eulerian-sums-of-powers}
+%   For integers $r\geq0$, and $n\geq 0$, and $m\geq 0$,
+%   and an arbitrary integer $t$,
+%   \begin{align*}
+%     \KnuthRFoldSum{r}{n}{m}
+%     = \sum_{j=0}^{m} \sum_{k=0}^{m}
+%     \left[ \binom{n-t+r}{j+r} - \sum_{s=1}^{r} \binom{s-t}{j+s}
+%     \KnuthRFoldSum{r-s}{n}{0} \right]
+%     \binom{t+k}{m-j} \eulerian{m}{k}.
+%   \end{align*}
+% \end{proposition}
+
+% In addition, by negated multifold
+% sums of
+% powers~\eqref{theorem:negated-multifold-sums-of-powers-via-newtons-formula},
+% and by Lemma~\eqref{lem:finite-differences-via-eulerian-numbers},
+% yields negated version of
+% Proposition~\eqref{prop:multifold-eulerian-sums-of-powers}.
+% \begin{proposition}[Negated multifold Eulerian sums of powers]
+%   \label{prop:multifold-sums-of-powers-via-eulerian-numbers}
+%   For integers $r\geq0$, and $n\geq 0$, and $m\geq 0$,
+%   and an arbitrary integer $t$,
+%   \begin{align*}
+%     \KnuthRFoldSum{r}{n}{m}
+%     =\sum_{j=0}^{m} \sum_{k=0}^{m}
+%     \left[ \binom{n-t+r}{j+r} + \sum_{s=1}^{r} (-1)^{j+s-1}
+%     \binom{j+t-1}{j+s} \KnuthRFoldSum{r-s}{n}{0} \right]
+%     \binom{t+k}{m-j} \eulerian{m}{k}.
+%   \end{align*}
+% \end{proposition}
+
+% In particular,
+
+% \begin{proposition}[Negated Eulerian sums of powers]
+%   \label{prop:sums-of-powers-via-eulerian-numbers}
+%   For integers $r\geq0$, and $n\geq 0$, and $m\geq 0$,
+%   and an arbitrary integer $t$,
+%   \begin{align*}
+%     \KnuthRFoldSum{1}{n}{m}
+%     = \sum_{j=0}^{m} \sum_{k=0}^{m}
+%     \left[ \binom{n-t+1}{j+1} + (-1)^j \binom{j+t-1}{j+1} \right]
+%     \binom{t+k}{m-j} \eulerian{m}{k}.
+%   \end{align*}
+% \end{proposition}
+
+% By setting $t=0$ into
+% Proposition~\eqref{prop:sums-of-powers-via-eulerian-numbers}
+% yields a well-known identity for
+% sums of powers in terms of Eulerian numbers $\eulerian{n}{k}$.
+% \begin{corollary}[Eulerian sums of powers in zero]
+%   For integers $n\geq 0$, and $m\geq 0$,
+%   \begin{align*}
+%     \KnuthRFoldSum{1}{n}{m}=
+%     \sum_{j=0}^{m} \sum_{k=0}^{m}
+%     \binom{n+1}{j+1} \binom{k}{m-j} \eulerian{m}{k}.
+%   \end{align*}
+% \end{corollary}
+
+% By Propositions~\eqref{prop:multifold-sums-of-powers-binomial-form},
+% and~\eqref{prop:negated-multifold-sums-of-powers-binomial-form},
+% we obtain a formula for multifold sums of powers in Eulerian-Binomial form.
+% That is,
+
+% \begin{proposition}[Multifold Eulerian-Binomial sums of powers]
+%   % \label{prop:multifold-sums-of-powers-binomial-form}
+%   For integers $r\geq0$, and $n\geq 0$, and $m\geq 0$,
+%   and an arbitrary integer $t$,
+%   \begin{align*}
+%     \KnuthRFoldSum{r}{n}{m}
+%     = \sum_{j=0}^{m} \sum_{k=0}^{m}
+%     \left[ \binom{n-t+r}{j+r} -
+%       \sum_{s=1}^{r} \binom{s-t}{j+s} \binom{r-s+n-1}{r-s}
+%     \right]
+%     \binom{t+k}{m-j} \eulerian{m}{k}.
+%   \end{align*}
+% \end{proposition}
+% While its negated form is,
+% \begin{proposition}[Negated multifold Eulerian-Binomial sums of powers]
+%   % \label{prop:negated-multifold-sums-of-powers-binomial-form}
+%   For integers $r\geq0$, and $n\geq 0$, and $m\geq 0$,
+%   and an arbitrary integer $t$,
+%   \begin{align*}
+%     \KnuthRFoldSum{r}{n}{m}
+%     = \sum_{j=0}^{m} \sum_{k=0}^{m}
+%     \left[ \tbinom{n-t+r}{j+r} +
+%       \sum_{s=1}^{r} (-1)^{j+s-1} \tbinom{j+t-1}{j+s} \tbinom{r-s+n-1}{r-s}
+%     \right]
+%     \tbinom{t+k}{m-j} \teulerian{m}{k}.
+%   \end{align*}
+% \end{proposition}

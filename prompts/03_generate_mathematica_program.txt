@@ -1,0 +1,55 @@
+Generate Mathematica program to validate the identity
+
+\begin{theorem}
+  [Multifold sums of powers at zero]
+  For non-negative integers $r,n,m$
+  \begin{align*}
+    \KnuthRFoldSum{r}{n}{m}
+    =
+    \sum_{k=0}^{m}
+    \left[
+      \binom{n+\frac{k}{2}+\frac{2r-1}{2}}{k+r}
+      -
+      \sum_{s=0}^{r-1} \binom{\frac{k}{2} + \frac{2(r-s)-1}{2}}{k+r-s}
+      \KnuthRFoldSum{s}{n}{0}
+    \right] \frac{\delta^{k+1} 0^{m+1}}{k+1}.
+  \end{align*}
+\end{theorem}
+
+
+Use the example below, give your response in a separate code block so that I 
+copy paste it easily
+
+(* ================================================================ *)
+(*  Validates Centered Hockey Stick Identity                        *)
+(* ================================================================ *)
+
+ClearAll[ValidateCenteredHockeyStickIdentity];
+
+(* --------------------------------------------------------------- *)
+(*  Identity check                                                 *)
+(* --------------------------------------------------------------- *)
+
+ValidateCenteredHockeyStickIdentity[max_] :=
+  Flatten[
+    Table[
+      FullSimplify[
+        Sum[
+          Binomial[j - t + k/2 + r, k],
+          {j, 1, n}
+        ]
+        -
+        (
+          Binomial[n - t + k/2 + r + 1, k + 1]
+          -
+          Binomial[1 - t + k/2 + r, k + 1]
+        )
+      ],
+      {n, 1, max},
+      {t, -max, max},
+      {k, -max, max},
+      {r, -max, max}
+    ]
+  ];
+
+ValidateCenteredHockeyStickIdentity[10]
