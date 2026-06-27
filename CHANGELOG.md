@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 ### Changed
 
 - New file structure
+- Add auxiliary lemmas
 
 ## [1.9.2] - 24-Jan-2026
 
