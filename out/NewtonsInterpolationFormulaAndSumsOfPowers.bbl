@@ -6,6 +6,13 @@
 \newblock {\em {Mathematics of Computation}}, 61(203):277--294, 1993.
 \newblock \url{https://arxiv.org/abs/math/9207222}.
 
+\bibitem{steffensen1933definition}
+J.~F. Steffensen.
+\newblock On the definition of the central factorial.
+\newblock {\em Journal of the Institute of Actuaries (1886-1994)},
+  64(2):165--168, 1933.
+\newblock \url{https://www.jstor.org/stable/41137516}.
+
 \bibitem{newton1850newton}
 {Newton, Isaac and Chittenden, N.W.}
 \newblock {\em {Newton's Principia: the mathematical principles of natural
@@ -57,14 +64,5 @@ J.~Worpitzky.
 \newblock Studien über die bernoullischen und eulerschen zahlen.
 \newblock {\em Journal für die reine und angewandte Mathematik}, 94:203--232,
   1883.
-
-\bibitem{MathematicaPrograms}
-Petro Kolosov.
-\newblock Mathematica programs for finite differences, stirling numbers, and
-  sums of powers.
-\newblock
-  \url{https://github.com/kolosovpetro/NewtonsInterpolationFormulaAndSumsOfPowers/tree/main/mathematica},
-  2025.
-\newblock GitHub repository, Mathematica source files.
 
 \end{thebibliography}

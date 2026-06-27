@@ -195,3 +195,27 @@ by using Lemma~\eqref{lem:multifold-sum-of-zero-powers}
     \right] \Delta^{k} t^{m}.
   \end{align*}
 \end{proposition}
+Explicitly,
+\begin{align*}
+  \KnuthRFoldSum{r}{n}{m}
+  = \sum_{k=0}^{m}
+  \bigg[
+    \tbinom{n-t+r}{k+r}
+    -
+    \tbinom{r-t}{k+r}
+    \tbinom{n-1}{0}
+    -
+    \tbinom{r-1-t}{k+r-1}
+    \tbinom{n}{1}
+    -
+    \cdots
+    -
+    \tbinom{2-t}{k+2}
+    \tbinom{r+n-3}{r-2}
+    -
+    \tbinom{1-t}{k+1}
+    \tbinom{r+n-2}{r-1}
+  \bigg] \Delta^{k} t^{m}.
+\end{align*}
+For example,
+\input{examples/06_multifold_binomial_sums_of_powers_t_0_3.tex}
