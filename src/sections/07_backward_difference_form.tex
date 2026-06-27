@@ -1,3 +1,4 @@
+We have
 \begin{lemma}[Forward-Backward relation]
   \label{lem:forward-via-backward-differences}
   For non-negative integers $k,m$, and an arbitrary
@@ -6,3 +7,36 @@
     \Delta^{k} t^{m} = \nabla^{k} (t+k)^{m}.
   \end{align*}
 \end{lemma}
+Thus, from Theorem~\eqref{thm:multifold-sums-of-powers} follows
+\begin{proposition}[Multifold Backward sums]
+  \label{prop:multifold-backward-sums}
+  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+  \begin{align*}
+    \KnuthRFoldSum{r}{n}{m}
+    = \sum_{k=0}^{m}
+    \left[
+      \binom{n-t+r}{k+r}
+      -
+      \sum_{s=0}^{r-1}
+      \binom{r-s-t}{k+r-s}
+      \KnuthRFoldSum{s}{n}{0}
+    \right] \nabla^{k} (t+k)^{m}.
+  \end{align*}
+\end{proposition}
+By Lemma~\eqref{lem:multifold-sum-of-zero-powers},
+the pure binomial form follows
+\begin{proposition}[Multifold Backward-Binomial sums]
+  \label{prop:multifold-backward-binomial-sums}
+  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+  \begin{align*}
+    \KnuthRFoldSum{r}{n}{m}
+    = \sum_{k=0}^{m}
+    \left[
+      \binom{n-t+r}{k+r}
+      -
+      \sum_{s=0}^{r-1}
+      \binom{r-s-t}{k+r-s}
+      \binom{s+n-1}{s}
+    \right] \nabla^{k} (t+k)^{m}.
+  \end{align*}
+\end{proposition}

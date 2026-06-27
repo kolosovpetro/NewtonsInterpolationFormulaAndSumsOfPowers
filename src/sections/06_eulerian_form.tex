@@ -1,3 +1,4 @@
+We have
 \begin{lemma}[Worpitzky identity]
   \label{lem:worpitzky-identity}
   For non-negative integers $t,m$
@@ -22,3 +23,36 @@ of Eulerian numbers $\eulerian{m}{s}$
     and by Worpitzky identity~\eqref{lem:worpitzky-identity}.
   \end{proof}
 \end{lemma}
+Thus, from Theorem~\eqref{thm:multifold-sums-of-powers} follows
+\begin{proposition}[Multifold Eulerian sums]
+  \label{prop:multifold-eulerian-sums}
+  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+  \begin{align*}
+    \KnuthRFoldSum{r}{n}{m}
+    = \sum_{k=0}^{m} \sum_{s=0}^{m}
+    \left[
+      \binom{n-t+r}{k+r}
+      -
+      \sum_{s=0}^{r-1}
+      \binom{r-s-t}{k+r-s}
+      \KnuthRFoldSum{s}{n}{0}
+    \right] \binom{t+s}{m-k} \eulerian{m}{s}.
+  \end{align*}
+\end{proposition}
+By Lemma~\eqref{lem:multifold-sum-of-zero-powers},
+the pure binomial form follows
+\begin{proposition}[Multifold Eulerian-Binomial sums]
+  \label{prop:multifold-eulerian-binomial-sums}
+  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+  \begin{align*}
+    \KnuthRFoldSum{r}{n}{m}
+    = \sum_{k=0}^{m} \sum_{s=0}^{m}
+    \left[
+      \binom{n-t+r}{k+r}
+      -
+      \sum_{s=0}^{r-1}
+      \binom{r-s-t}{k+r-s}
+      \binom{s+n-1}{s}
+    \right] \binom{t+s}{m-k} \eulerian{m}{s}.
+  \end{align*}
+\end{proposition}
