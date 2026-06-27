@@ -1,18 +1,18 @@
 Generate Mathematica program to validate the identity:
 
-\begin{proposition}[Multifold Eulerian-Binomial sums]
-  \label{prop:multifold-eulerian-binomial-sums}
+\begin{proposition}[Multifold Backward sums]
+  \label{prop:multifold-backward-sums}
   For non-negative integers $r,n,m$, and an arbitrary integer $t$
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
-    = \sum_{k=0}^{m} \sum_{j=0}^{m}
+    = \sum_{k=0}^{m}
     \left[
       \binom{n-t+r}{k+r}
       -
       \sum_{s=0}^{r-1}
       \binom{r-s-t}{k+r-s}
-      \binom{s+n-1}{s}
-    \right] \binom{t+j}{m-k} \eulerian{m}{j}.
+      \KnuthRFoldSum{s}{n}{0}
+    \right] \nabla^{k} (t+k)^{m}.
   \end{align*}
 \end{proposition}
 

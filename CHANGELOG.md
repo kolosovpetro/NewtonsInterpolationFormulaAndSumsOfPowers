@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add test: `ValidateMultifoldStirlingBinomialSums.txt`
 - Add test: `ValidateMultifoldEulerianSums.txt`
 - Add test: `ValidateMultifoldEulerianBinomialSums.txt`
+- Add test: `ValidateMultifoldBackwardSums.txt`
 
 ## [1.9.2] - 24-Jan-2026
 
