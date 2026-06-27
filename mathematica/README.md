@@ -7,3 +7,4 @@
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldEulerianSums.txt"
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldEulerianBinomialSums.txt"
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldBackwardSums.txt"
+- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldCentralSums.txt"

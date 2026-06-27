@@ -1,7 +1,7 @@
 Generate Mathematica program to validate the identity:
 
-\begin{proposition}[Multifold Backward sums]
-  \label{prop:multifold-backward-sums}
+\begin{proposition}[Multifold Central sums]
+  \label{prop:multifold-central-sums}
   For non-negative integers $r,n,m$, and an arbitrary integer $t$
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
@@ -12,7 +12,7 @@ Generate Mathematica program to validate the identity:
       \sum_{s=0}^{r-1}
       \binom{r-s-t}{k+r-s}
       \KnuthRFoldSum{s}{n}{0}
-    \right] \nabla^{k} (t+k)^{m}.
+    \right] \delta^{k} \left( t+ \frac{k}{2} \right)^{m}.
   \end{align*}
 \end{proposition}
 
