@@ -1,7 +1,7 @@
 Generate Mathematica program to validate the identity:
 
-\begin{proposition}[Multifold Stirling sums]
-  \label{prop:multifold-stirling-sums}
+\begin{proposition}[Multifold Stirling-Binomial sums]
+  \label{prop:multifold-stirling-binomial-sums}
   For non-negative integers $r,n,m$, and an arbitrary integer $t$
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
@@ -11,7 +11,7 @@ Generate Mathematica program to validate the identity:
       -
       \sum_{s=0}^{r-1}
       \binom{r-s-t}{k+r-s}
-      \KnuthRFoldSum{s}{n}{0}
+      \binom{s+n-1}{s}
     \right] \stirlingii{m}{k+j} \binom{t}{j} (k+j)!
   \end{align*}
 \end{proposition}

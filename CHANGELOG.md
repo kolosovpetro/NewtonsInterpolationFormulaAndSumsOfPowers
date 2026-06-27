@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add Backward form
 - Add Central form
 - Add test: `ValidateMultifoldStirlingSums.txt`
+- Add test: `ValidateMultifoldStirlingBinomialSums.txt`
 
 ## [1.9.2] - 24-Jan-2026
 
