@@ -1,7 +1,7 @@
 Generate Mathematica program to validate the identity:
 
-\begin{proposition}[Multifold Eulerian sums]
-  \label{prop:multifold-eulerian-sums}
+\begin{proposition}[Multifold Eulerian-Binomial sums]
+  \label{prop:multifold-eulerian-binomial-sums}
   For non-negative integers $r,n,m$, and an arbitrary integer $t$
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
@@ -11,7 +11,7 @@ Generate Mathematica program to validate the identity:
       -
       \sum_{s=0}^{r-1}
       \binom{r-s-t}{k+r-s}
-      \KnuthRFoldSum{s}{n}{0}
+      \binom{s+n-1}{s}
     \right] \binom{t+j}{m-k} \eulerian{m}{j}.
   \end{align*}
 \end{proposition}
