@@ -1,5 +1,9 @@
 \begin{example} For non-negative integer $n$, we have
   \begin{align*}
+    \KnuthRFoldSum{1}{n}{1} &= 1 \tbinom{n+1}{1},
+    \\
+    \KnuthRFoldSum{1}{n}{1} &= 0 \tbinom{n+1}{1} + 1 \tbinom{n+1}{2},
+    \\
     \KnuthRFoldSum{1}{n}{2} &= 0 \tbinom{n+1}{1} + 1 \tbinom{n+1}{2}
     + 2  \tbinom{n+1}{3},
     \\
