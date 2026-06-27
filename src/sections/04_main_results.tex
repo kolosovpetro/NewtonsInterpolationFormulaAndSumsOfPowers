@@ -158,3 +158,40 @@ yields
 The coefficients $1,5,1,25,11,2,\dots$ is the sequence
 \href{https://oeis.org/A391635}{\texttt{A391635}}
 in the OEIS~\cite{sloane2003line}.
+Therefore, generalized formula for $r$-fold
+sums of powers is straightforward,
+repeating the same procedure as we have done for
+$\KnuthRFoldSum{1}{n}{m}$, and
+$\KnuthRFoldSum{2}{n}{m}$
+\begin{theorem}[Multifold sums of powers]
+  \label{thm:multifold-sums-of-powers}
+  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+  \begin{align*}
+    \KnuthRFoldSum{r}{n}{m}
+    = \sum_{k=0}^{m}
+    \left[
+      \binom{n-t+r}{k+r}
+      -
+      \sum_{s=0}^{r-1}
+      \binom{r-s-t}{k+r-s}
+      \KnuthRFoldSum{s}{n}{0}
+    \right] \Delta^{k} t^{m}.
+  \end{align*}
+\end{theorem}
+Which is quite remarkable in its pure binomial form,
+by using Lemma~\eqref{lem:multifold-sum-of-zero-powers}
+\begin{proposition}[Multifold binomial sums of powers]
+  \label{thm:multifold-binomial-sums-of-powers}
+  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+  \begin{align*}
+    \KnuthRFoldSum{r}{n}{m}
+    = \sum_{k=0}^{m}
+    \left[
+      \binom{n-t+r}{k+r}
+      -
+      \sum_{s=0}^{r-1}
+      \binom{r-s-t}{k+r-s}
+      \binom{s+n-1}{s}
+    \right] \Delta^{k} t^{m}.
+  \end{align*}
+\end{proposition}
