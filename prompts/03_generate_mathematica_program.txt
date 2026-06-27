@@ -1,18 +1,18 @@
 Generate Mathematica program to validate the identity:
 
-\begin{proposition}[Multifold binomial sums of powers]
-  \label{thm:multifold-binomial-sums-of-powers}
+\begin{proposition}[Multifold Stirling sums]
+  \label{prop:multifold-stirling-sums}
   For non-negative integers $r,n,m$, and an arbitrary integer $t$
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
-    = \sum_{k=0}^{m}
+    = \sum_{k=0}^{m} \sum_{s=0}^{m}
     \left[
       \binom{n-t+r}{k+r}
       -
       \sum_{s=0}^{r-1}
       \binom{r-s-t}{k+r-s}
-      \binom{s+n-1}{s}
-    \right] \Delta^{k} t^{m}.
+      \KnuthRFoldSum{s}{n}{0}
+    \right] \stirlingii{m}{k+s} \binom{t}{s} (k+s)!
   \end{align*}
 \end{proposition}
 

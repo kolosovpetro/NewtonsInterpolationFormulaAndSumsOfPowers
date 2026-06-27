@@ -16,7 +16,7 @@ of Eulerian numbers $\eulerian{m}{s}$
   \label{lem:finite-differences-via-eulerian-numbers}
   For non-negative integers $t,k$, and an arbitrary integer $t$,
   \begin{align*}
-    \Delta^{k} t^{m} = \sum_{s=0}^{m} \binom{t+s}{m-k} \eulerian{m}{s}.
+    \Delta^{k} t^{m} = \sum_{j=0}^{m} \binom{t+j}{m-k} \eulerian{m}{j}.
   \end{align*}
   \begin{proof}
     By binomial recurrence $\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}$,
@@ -29,14 +29,14 @@ Thus, from Theorem~\eqref{thm:multifold-sums-of-powers} follows
   For non-negative integers $r,n,m$, and an arbitrary integer $t$
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
-    = \sum_{k=0}^{m} \sum_{s=0}^{m}
+    = \sum_{k=0}^{m} \sum_{j=0}^{m}
     \left[
       \binom{n-t+r}{k+r}
       -
       \sum_{s=0}^{r-1}
       \binom{r-s-t}{k+r-s}
       \KnuthRFoldSum{s}{n}{0}
-    \right] \binom{t+s}{m-k} \eulerian{m}{s}.
+    \right] \binom{t+j}{m-k} \eulerian{m}{j}.
   \end{align*}
 \end{proposition}
 By Lemma~\eqref{lem:multifold-sum-of-zero-powers},
@@ -46,13 +46,13 @@ the pure binomial form follows
   For non-negative integers $r,n,m$, and an arbitrary integer $t$
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
-    = \sum_{k=0}^{m} \sum_{s=0}^{m}
+    = \sum_{k=0}^{m} \sum_{j=0}^{m}
     \left[
       \binom{n-t+r}{k+r}
       -
       \sum_{s=0}^{r-1}
       \binom{r-s-t}{k+r-s}
       \binom{s+n-1}{s}
-    \right] \binom{t+s}{m-k} \eulerian{m}{s}.
+    \right] \binom{t+j}{m-k} \eulerian{m}{j}.
   \end{align*}
 \end{proposition}
