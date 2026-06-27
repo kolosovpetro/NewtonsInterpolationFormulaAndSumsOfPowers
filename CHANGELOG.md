@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - New file structure
 - Add auxiliary lemmas
 - Updates in main results
+- Ordinary sums of powers formula
+- Double sums of powers formula
 
 ## [1.9.2] - 24-Jan-2026
 

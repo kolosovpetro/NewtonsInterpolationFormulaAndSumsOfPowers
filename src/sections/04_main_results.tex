@@ -115,3 +115,46 @@ yields rather unusual formulas for sums of powers
 The coefficients $1,4,1,16,9,\dots$ is the sequence
 \href{https://oeis.org/A391633}{\texttt{A391633}}
 in the OEIS~\cite{sloane2003line}.
+As we have all required identities in our disposal,
+consider the case of double sums of powers.
+Surely, we derive its formula with ease, and gracefully,
+by setting $r=1$ into hockey-stick identity from
+Lemma~\eqref{lem:forward-hockey-stick-identity},
+with additional correction terms $\KnuthRFoldSum{r}{n}{0}$.
+Therefore,
+\begin{proposition}[Double sums of powers]
+  \label{prop:double-sums-of-powers}
+  For non-negative integers $n,m$, and an arbitrary integer $t$
+  \begin{align*}
+    \KnuthRFoldSum{2}{n}{m}
+    = \sum_{k=0}^{m}
+    \left[
+      \binom{n-t+2}{k+2}
+      - \binom{1-t}{k+1} \KnuthRFoldSum{1}{n}{0}
+      - \binom{2-t}{k+2} \KnuthRFoldSum{0}{n}{0}
+    \right] \Delta^{k} t^m.
+  \end{align*}
+\end{proposition}
+Note that $\KnuthRFoldSum{1}{n}{0}=n$, and $\KnuthRFoldSum{0}{n}{0}=1$.
+By applying upper binomial negation formula
+from Lemma~\eqref{lem:upper-binomial-negation}
+yields
+\begin{proposition}[Double sums of powers negated]
+  \label{prop:double-sums-of-powers-negated}
+  For non-negative integers $n,m$, and an arbitrary integer $t$
+  \begin{align*}
+    \KnuthRFoldSum{2}{n}{m}
+    = \sum_{k=0}^{m}
+    \left[
+      \binom{n-t+2}{k+2} + (-1)^k \binom{k+t-1}{k+1} n
+      + (-1)^{k+1} \binom{k+t-1}{k+2}
+    \right] \Delta^{j} t^m.
+  \end{align*}
+\end{proposition}
+For example, by setting $t=5$ into
+Proposition~\eqref{prop:double-sums-of-powers-negated}
+yields
+\input{examples/05_double_sums_of_powers_t_5.tex}
+The coefficients $1,5,1,25,11,2,\dots$ is the sequence
+\href{https://oeis.org/A391635}{\texttt{A391635}}
+in the OEIS~\cite{sloane2003line}.
