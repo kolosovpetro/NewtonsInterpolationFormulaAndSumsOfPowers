@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add test: `ValidateMultifoldBackwardBinomialSums.txt`
 - Add test: `ValidateMultifoldCentralSums.txt`
 - Add test: `ValidateMultifoldCentralBinomialSums.txt`
+- Update Mathematica documentation
 
 ## [1.9.2] - 24-Jan-2026
 
