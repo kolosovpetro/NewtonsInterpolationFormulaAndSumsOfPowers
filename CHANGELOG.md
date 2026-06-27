@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Multifold sums of powers mathematica test
 - Multifold binomial sums of powers
 - Multifold binomial sums of powers mathematica test
+- Edits in Newton's formula proof
 
 ## [1.9.2] - 24-Jan-2026
 

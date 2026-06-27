@@ -6,45 +6,45 @@ The style file: unsrt.bst
 Reallocating 'name_of_file' (item size: 1) to 43 items.
 Database file #1: NewtonsInterpolationFormulaAndSumsOfPowers.bib
 Warning--I didn't find a database entry for "steffensen1933definition"
-You've used 7 entries,
+You've used 8 entries,
             1791 wiz_defined-function locations,
-            493 strings with 4972 characters,
-and the built_in function-call counts, 1195 in all, are:
-= -- 114
-> -- 28
+            499 strings with 5189 characters,
+and the built_in function-call counts, 1350 in all, are:
+= -- 128
+> -- 32
 < -- 0
-+ -- 14
-- -- 7
-* -- 47
-:= -- 198
-add.period$ -- 27
-call.type$ -- 7
++ -- 16
+- -- 8
+* -- 50
+:= -- 223
+add.period$ -- 31
+call.type$ -- 8
 change.case$ -- 5
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 56
-empty$ -- 137
-format.name$ -- 7
-if$ -- 268
+cite$ -- 8
+duplicate$ -- 66
+empty$ -- 156
+format.name$ -- 8
+if$ -- 305
 int.to.chr$ -- 0
-int.to.str$ -- 7
-missing$ -- 7
-newline$ -- 44
-num.names$ -- 7
-pop$ -- 27
+int.to.str$ -- 8
+missing$ -- 9
+newline$ -- 50
+num.names$ -- 8
+pop$ -- 33
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 18
+skip$ -- 20
 stack$ -- 0
 substring$ -- 50
-swap$ -- 7
+swap$ -- 8
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 11
-width$ -- 8
-write$ -- 86
+while$ -- 12
+width$ -- 9
+write$ -- 98
 (There was 1 warning)
