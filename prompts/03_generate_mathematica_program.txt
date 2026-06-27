@@ -1,4 +1,4 @@
-Generate Mathematica program to validate the identity
+Generate Mathematica program to validate the identity:
 
 \begin{proposition}[Multifold binomial sums of powers]
   \label{thm:multifold-binomial-sums-of-powers}
@@ -16,7 +16,7 @@ Generate Mathematica program to validate the identity
   \end{align*}
 \end{proposition}
 
-where 
+Use the definitions as follows, if they appear in identity under validation
 
 \begin{align*}
     \Delta^{k} f(t)
@@ -37,7 +37,16 @@ And
   \end{align*}
 \end{definition}
 
-Add also convention for x^0 = 1 for all x.
+Add convention for x^0 = 1 for all x.
+Treat symbol \nabla as backward finite difference.
+Treat symbol \delta as cental finite difference.
+Treat symbol \stirlingii as Stirling number of the second kind.
+
+EulerianNumber[0, 0] = 1;
+EulerianNumber[n_, k_] /; k < 0 || k >= n := 0;
+EulerianNumber[n_, k_] := EulerianNumber[n, k] =(k + 1) EulerianNumber[n - 1, k] + (n - k) EulerianNumber[n - 1, k - 1];
+
+
 
 
 Use the example below, give your response in a separate code block so that I 
