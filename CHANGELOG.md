@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add test: `ValidateMultifoldBackwardSums.txt`
 - Add test: `ValidateMultifoldBackwardBinomialSums.txt`
 - Add test: `ValidateMultifoldCentralSums.txt`
+- Add test: `ValidateMultifoldCentralBinomialSums.txt`
 
 ## [1.9.2] - 24-Jan-2026
 
