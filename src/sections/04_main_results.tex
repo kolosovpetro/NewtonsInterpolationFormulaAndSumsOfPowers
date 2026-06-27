@@ -8,9 +8,6 @@ For example,
   n^3 &= 27 \tbinom{n-3}{0} + 37 \tbinom{n-3}{1} + 24 \tbinom{n-3}{2} + 6 \tbinom{n-3}{3}.
 \end{align*}
 Thus, the transition to formula for sums of powers is quite straightforward,
-% Hence, by Newton's formula for
-% powers~\eqref{prop:newtons-interpolation-formula-for-powers},
-% we get formula for ordinary sums of powers.
 \begin{align*}
   \KnuthRFoldSum{1}{n}{m}
   = \sum_{k=0}^{m} \left[ \sum_{j=1}^{n} \binom{j-t}{k} \right] \Delta^{k} t^m.
@@ -39,7 +36,7 @@ because $\binom{-n}{k} = (-1)^{k} \binom{k+n-1}{k}$.
 By setting $t=0$ into
 Proposition~\eqref{prop:ordinary-sums-of-powers}
 yields one more well-known identity for sums of powers,
-mentioned in~\cite[p. 190]{graham1994concrete}, and~\cite{pfaff2007deriving}
+mentioned in~\cite[p. 190]{graham1994concrete}, and in~\cite{pfaff2007deriving}
 \begin{corollary}
   For non-negative integers $n,m$
   \begin{align*}
@@ -52,16 +49,79 @@ From the example above, we observe the coefficients $0,1,2,0, 1, 6, 6, 0, 1, 14,
 which is the sequence
 \href{https://oeis.org/A131689}{\texttt{A131689}}
 in the OEIS~\cite{sloane2003line}.
-% where $t$ is an arbitrary integer.
-% By shifted hockey stick
-% identity~\eqref{lem:shifted-generalized-hockey-stick-identity},
-% the closed form of ordinary sums of powers yields.
-
-% \begin{proposition}[Ordinary power sums]
-%   \label{prop:ordinary-sums-of-powers-via-newtons-formula}
-%   For integers $n\geq 0$, and $m\geq 0$, and an arbitrary integer $t$,
-%   \begin{align*}
-%     \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \Delta^{j} t^m
-%     \left[ \binom{n-t+1}{j+1} - \binom{1-t}{j+1} \right].
-%   \end{align*}
-% \end{proposition}
+By setting $t=1$ into
+Proposition~\eqref{prop:ordinary-sums-of-powers-via-newtons-formula}, we get
+another well-known special case
+\begin{corollary}
+  For non-negative integers $n,m$,
+  \begin{align*}
+    \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \binom{n}{j+1} \Delta^{j} 1^m,
+  \end{align*}
+\end{corollary}
+mentioned, for instance, in~\cite{cereceda2022sums}.
+For example,
+\input{examples/03_ordinary_sums_of_powers_t_1.tex}
+The coefficients $1,3,2,1,7,12,6,1,15, \dots$ is the sequence
+\href{https://oeis.org/A028246}{\texttt{A028246}}
+in the OEIS~\cite{sloane2003line}.
+It is interesting to note that the work~\cite{cereceda2022sums}
+provide formulas for sums of powers
+in terms of generalized Stirling numbers of
+the second kind $\stirlingii{k}{j}_{r}$,
+that is
+\begin{proposition}[Cereceda (2022)]
+  For non-negative integers $n,k$
+  \begin{align}
+    \label{eq:cereceda-sums-1}
+    \KnuthRFoldSum{1}{n}{k} &= \sum_{j=0}^{k} j!
+    \left[
+      \binom{n+1-r}{j+1} + (-1)^j \binom{r+j-1}{j+1}
+    \right] \stirlingii{k}{j}_{r},
+  \end{align}
+  And
+  \begin{align}
+    \label{eq:cereceda-sums-2}
+    \KnuthRFoldSum{1}{n}{k} &= \sum_{j=0}^{k} j!
+    \left[
+      \binom{n+1+r}{j+1} + \binom{r+1}{j+1}
+    \right] \stirlingii{k}{j}_{-r}.
+  \end{align}
+\end{proposition}
+Formula~\eqref{eq:cereceda-sums-1}
+is a special case of
+Proposition~\eqref{prop:ordinary-sums-of-powers}
+with setting $t \rightarrow r$, and upper negated binomial coefficient
+$\binom{1-t}{k+1}$, by using upper negation formula
+from Lemma~\eqref{lem:upper-binomial-negation}.
+We may observe that forward finite difference of powers $\Delta^{k} t^m $ can be expressed
+in terms of generalized Stirling numbers of the second kind, that is
+\begin{align}
+  \label{eq:gen-stirling-finit-difference}
+  \Delta^{k} t^m = k! \stirlingii{m}{k}_{t}.
+\end{align}
+Now, reviewing Formula~\eqref{eq:cereceda-sums-2}, we notice that it is a special case
+of Proposition~\eqref{prop:ordinary-sums-of-powers}
+with setting $t \rightarrow -r$, and by
+using Equation~\eqref{eq:gen-stirling-finit-difference}.
+For example, by setting $t=4$ into
+Proposition~\eqref{prop:ordinary-sums-of-powers}
+yields rather unusual formulas for sums of powers
+\begin{align*}
+  \KnuthRFoldSum{1}{n}{0} &= 1  \left( \tbinom{n-3}{1}
+  + \tbinom{3}{1}  \right), \\
+  \KnuthRFoldSum{1}{n}{1} &= 4  \left( \tbinom{n-3}{1}
+  + \tbinom{3}{1}  \right)  + 1  \left( \tbinom{n-3}{2}
+  - \tbinom{4}{2}  \right), \\
+  \KnuthRFoldSum{1}{n}{2} &= 16 \left( \tbinom{n-3}{1}
+  + \tbinom{3}{1}  \right)  + 9  \left( \tbinom{n-3}{2}
+  - \tbinom{4}{2}  \right)
+  + 2  \left( \tbinom{n-2}{3} + \tbinom{5}{3}  \right), \\
+  \KnuthRFoldSum{1}{n}{3} &= 64 \left( \tbinom{n-3}{1}
+  + \tbinom{3}{1}  \right)  + 61 \left( \tbinom{n-3}{2}
+  - \tbinom{4}{2}  \right)
+  + 30 \left( \tbinom{n-3}{3} + \tbinom{5}{3}  \right)
+  + 6 \left( \tbinom{n-3}{4} - \tbinom{6}{4}  \right).
+\end{align*}
+The coefficients $1,4,1,16,9,\dots$ is the sequence
+\href{https://oeis.org/A391633}{\texttt{A391633}}
+in the OEIS~\cite{sloane2003line}.

@@ -52,7 +52,7 @@ generalized factorials~\cite{steffensen1933definition}.
 \end{lemma}
 
 \begin{lemma}[Forward Newton's formula for powers]
-  \label{lem:newtons-interpolation-formula-for-powers}
+  \label{lem:forward-newtons-formula-for-powers}
   For non-negative integers $n,m$, and an arbitrary integer $t$
   \begin{align*}
     n^m = \sum_{k=0}^{m} \binom{n-t}{k} \Delta^{k} t^m.
@@ -127,6 +127,17 @@ generalized factorials~\cite{steffensen1933definition}.
         = \binom{r+n-1}{r}$.
     \end{enumerate}
     This completes the proof.
+  \end{proof}
+\end{lemma}
+
+\begin{lemma}[Upper Binomial negation]
+  \label{lem:upper-binomial-negation}
+  For integers $n,k$
+  \begin{align*}
+    \binom{-n}{k} = (-1)^{k} \binom{k+n-1}{k}
+  \end{align*}
+  \begin{proof}
+    See~\cite[p. 164, eq. (5.14)]{graham1994concrete}.
   \end{proof}
 \end{lemma}
 
