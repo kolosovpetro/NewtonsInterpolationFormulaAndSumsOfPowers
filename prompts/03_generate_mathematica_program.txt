@@ -5,14 +5,14 @@ Generate Mathematica program to validate the identity:
   For non-negative integers $r,n,m$, and an arbitrary integer $t$
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
-    = \sum_{k=0}^{m} \sum_{s=0}^{m}
+    = \sum_{k=0}^{m} \sum_{j=0}^{m}
     \left[
       \binom{n-t+r}{k+r}
       -
       \sum_{s=0}^{r-1}
       \binom{r-s-t}{k+r-s}
       \KnuthRFoldSum{s}{n}{0}
-    \right] \stirlingii{m}{k+s} \binom{t}{s} (k+s)!
+    \right] \stirlingii{m}{k+j} \binom{t}{j} (k+j)!
   \end{align*}
 \end{proposition}
 
