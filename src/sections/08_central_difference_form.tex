@@ -3,7 +3,15 @@ We have
   For non-negative integers $k,m$, and an arbitrary integer $t$
   \label{prop:forward-via-central-differences}
   \begin{align*}
-    \Delta^{k} t^{m} = \delta^{k} \left( t+ \frac{k}{2} \right)^{m}.
+    \Delta^{k} t^{m} = \delta^{k} \left( t+ \frac{k}{2} \right)^{m},
+  \end{align*}
+  where
+  \begin{align*}
+    \delta^{k} t^m
+    = \tsum_{j=0}^{k} (-1)^j \tbinom{k}{j}
+    \left(
+      t + \tfrac{k}{2} - j
+    \right)^{m}.
   \end{align*}
 \end{lemma}
 Thus, from Theorem~\eqref{thm:multifold-sums-of-powers} follows
