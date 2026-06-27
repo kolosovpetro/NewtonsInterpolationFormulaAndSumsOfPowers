@@ -40,6 +40,11 @@ Donald~E. Knuth.
 \newblock Two notes on notation, 1992.
 \newblock \url{https://arxiv.org/abs/math/9205211}.
 
+\bibitem{kolosov2026framework}
+Petro Kolosov.
+\newblock Sums of powers of integers: A complete framework for closed formulas,
+  June 2026.
+
 \bibitem{pfaff2007deriving}
 Thomas~J. Pfaff.
 \newblock Deriving a formula for sums of powers of integers.
