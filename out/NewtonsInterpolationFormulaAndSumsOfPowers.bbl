@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{knuth1993johann}
 {Knuth, Donald E.}
@@ -51,5 +51,20 @@ Thomas~J. Pfaff.
   second kind}.
 \newblock {\em {arXiv preprint arXiv:2211.11648}}, 2022.
 \newblock \url{https://arxiv.org/abs/2211.11648}.
+
+\bibitem{Worpitzky1883}
+J.~Worpitzky.
+\newblock Studien über die bernoullischen und eulerschen zahlen.
+\newblock {\em Journal für die reine und angewandte Mathematik}, 94:203--232,
+  1883.
+
+\bibitem{MathematicaPrograms}
+Petro Kolosov.
+\newblock Mathematica programs for finite differences, stirling numbers, and
+  sums of powers.
+\newblock
+  \url{https://github.com/kolosovpetro/NewtonsInterpolationFormulaAndSumsOfPowers/tree/main/mathematica},
+  2025.
+\newblock GitHub repository, Mathematica source files.
 
 \end{thebibliography}
