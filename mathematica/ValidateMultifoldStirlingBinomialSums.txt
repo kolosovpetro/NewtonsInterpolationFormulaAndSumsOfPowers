@@ -1,0 +1,99 @@
+(* ================================================================ *)
+(*  Validates Proposition: Multifold Stirling-Binomial Sums         *)
+(* ================================================================ *)
+
+ClearAll[
+  KnuthRFoldSum,
+  StirlingBinomialMultifoldSums,
+  ValidateMultifoldStirlingBinomialSums
+];
+
+(* --------------------------------------------------------------- *)
+(*  Convention: x^0 = 1 for all x                                   *)
+(* --------------------------------------------------------------- *)
+
+Begin["`Private`"]
+
+Unprotect[Power];
+Power[_?NumericQ | _, 0] = 1;
+Protect[Power];
+
+End[];
+
+
+(* --------------------------------------------------------------- *)
+(*  Multifold sums of powers                                        *)
+(* --------------------------------------------------------------- *)
+
+KnuthRFoldSum[r_, n_, m_] := 0 /; n <= 0;
+
+KnuthRFoldSum[0, n_, m_] := n^m;
+
+KnuthRFoldSum[r_, n_, m_] :=
+  Sum[
+    KnuthRFoldSum[r - 1, k, m],
+    {k, 1, n}
+  ] /; r > 0;
+
+
+(* --------------------------------------------------------------- *)
+(*  Proposition                                                     *)
+(*                                                                   *)
+(*  Σ^r n^m = Σ Σ                                                   *)
+(*    [                                                             *)
+(*      Binomial[n - t + r, k + r]                                  *)
+(*      - Σ Binomial[r - s - t, k + r - s] Binomial[s+n-1,s]        *)
+(*    ]                                                             *)
+(*    StirlingS2[m, k + j] Binomial[t, j] (k + j)!                  *)
+(* --------------------------------------------------------------- *)
+
+StirlingBinomialMultifoldSums[r_, n_, m_, t_] :=
+  Sum[
+    Sum[
+      (
+        Binomial[n - t + r, k + r]
+        -
+        Sum[
+          Binomial[r - s - t, k + r - s]
+            *
+          Binomial[s + n - 1, s],
+          {s, 0, r - 1}
+        ]
+      )
+      *
+      StirlingS2[m, k + j]
+      *
+      Binomial[t, j]
+      *
+      Factorial[k + j],
+      {j, 0, m}
+    ],
+    {k, 0, m}
+  ];
+
+
+(* --------------------------------------------------------------- *)
+(*  Validation routine                                              *)
+(* --------------------------------------------------------------- *)
+
+ValidateMultifoldStirlingBinomialSums[max_] :=
+  Flatten[
+    Table[
+      FullSimplify[
+        KnuthRFoldSum[r, n, m]
+          -
+        StirlingBinomialMultifoldSums[r, n, m, t]
+      ],
+      {r, 0, max},
+      {n, 1, max},
+      {m, 0, max},
+      {t, -max, max}
+    ]
+  ];
+
+
+(* --------------------------------------------------------------- *)
+(*  Run validation                                                  *)
+(* --------------------------------------------------------------- *)
+
+ValidateMultifoldStirlingBinomialSums[5]

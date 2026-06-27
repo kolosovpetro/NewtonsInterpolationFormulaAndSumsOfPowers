@@ -1,0 +1,109 @@
+(* ================================================================ *)
+(*  Validates Proposition: Multifold Eulerian Sums                 *)
+(* ================================================================ *)
+
+ClearAll[
+  KnuthRFoldSum,
+  EulerianMultifoldSums,
+  ValidateMultifoldEulerianSums
+];
+
+(* --------------------------------------------------------------- *)
+(*  Convention: x^0 = 1 for all x                                   *)
+(* --------------------------------------------------------------- *)
+
+Begin["`Private`"]
+
+Unprotect[Power];
+Power[_?NumericQ | _, 0] = 1;
+Protect[Power];
+
+End[];
+
+
+(* --------------------------------------------------------------- *)
+(*  Multifold sums of powers                                        *)
+(* --------------------------------------------------------------- *)
+
+KnuthRFoldSum[r_, n_, m_] := 0 /; n <= 0;
+
+KnuthRFoldSum[0, n_, m_] := n^m;
+
+KnuthRFoldSum[r_, n_, m_] :=
+  Sum[
+    KnuthRFoldSum[r - 1, k, m],
+    {k, 1, n}
+  ] /; r > 0;
+
+
+(* --------------------------------------------------------------- *)
+(*  Eulerian numbers                                                *)
+(* --------------------------------------------------------------- *)
+
+EulerianNumber[0, 0] = 1;
+EulerianNumber[n_, k_] /; k < 0 || k >= n := 0;
+EulerianNumber[n_, k_] :=
+  EulerianNumber[n, k] =
+    (k + 1) EulerianNumber[n - 1, k] +
+    (n - k) EulerianNumber[n - 1, k - 1];
+
+
+(* --------------------------------------------------------------- *)
+(*  Proposition                                                     *)
+(*                                                                   *)
+(*  Σ^r n^m = Σ Σ                                                   *)
+(*    [                                                             *)
+(*      Binomial[n - t + r, k + r]                                  *)
+(*      - Σ Binomial[r - s - t, k + r - s] Σ^s n^0                  *)
+(*    ]                                                             *)
+(*    Binomial[t + j, m - k] Eulerian[m, j]                         *)
+(* --------------------------------------------------------------- *)
+
+EulerianMultifoldSums[r_, n_, m_, t_] :=
+  Sum[
+    Sum[
+      (
+        Binomial[n - t + r, k + r]
+        -
+        Sum[
+          Binomial[r - s - t, k + r - s]
+            *
+          KnuthRFoldSum[s, n, 0],
+          {s, 0, r - 1}
+        ]
+      )
+      *
+      Binomial[t + j, m - k]
+      *
+      EulerianNumber[m, j],
+      {j, 0, m}
+    ],
+    {k, 0, m}
+  ];
+
+
+(* --------------------------------------------------------------- *)
+(*  Validation routine                                              *)
+(* --------------------------------------------------------------- *)
+
+ValidateMultifoldEulerianSums[max_] :=
+  Flatten[
+    Table[
+      FullSimplify[
+        KnuthRFoldSum[r, n, m]
+          -
+        EulerianMultifoldSums[r, n, m, t]
+      ],
+      {r, 0, max},
+      {n, 1, max},
+      {m, 0, max},
+      {t, -max, max}
+    ]
+  ];
+
+
+(* --------------------------------------------------------------- *)
+(*  Run validation                                                  *)
+(* --------------------------------------------------------------- *)
+
+ValidateMultifoldEulerianSums[5]

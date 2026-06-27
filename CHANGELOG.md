@@ -5,6 +5,36 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 28-Jun-2026
+
+### Changed
+
+- New file structure
+- Add auxiliary lemmas
+- Updates in main results
+- Ordinary sums of powers formula
+- Double sums of powers formula
+- Multifold sums of powers formula
+- Multifold sums of powers mathematica test
+- Multifold binomial sums of powers
+- Multifold binomial sums of powers mathematica test
+- Edits in Newton's formula proof
+- Add Stirling form
+- Add Eulerian form
+- Add Backward form
+- Add Central form
+- Add test: `ValidateMultifoldStirlingSums.txt`
+- Add test: `ValidateMultifoldStirlingBinomialSums.txt`
+- Add test: `ValidateMultifoldEulerianSums.txt`
+- Add test: `ValidateMultifoldEulerianBinomialSums.txt`
+- Add test: `ValidateMultifoldBackwardSums.txt`
+- Add test: `ValidateMultifoldBackwardBinomialSums.txt`
+- Add test: `ValidateMultifoldCentralSums.txt`
+- Add test: `ValidateMultifoldCentralBinomialSums.txt`
+- Update Mathematica documentation
+- Edits in Acknowledgements
+- Edits in Abstract
+
 ## [1.9.2] - 24-Jan-2026
 
 ### Changed
