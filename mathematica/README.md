@@ -10,3 +10,4 @@
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldBackwardBinomialSums.txt"
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldCentralSums.txt"
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldCentralBinomialSums.txt"
+- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "GenerateExamplesInPolynomialForm.txt"
