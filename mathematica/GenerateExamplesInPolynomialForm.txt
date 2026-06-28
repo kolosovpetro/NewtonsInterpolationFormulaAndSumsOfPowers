@@ -2,21 +2,26 @@
 (*  Definitions                                                     *)
 (* ================================================================ *)
 
-ClearAll[L, ForwardDifference];
+ClearAll[n,L, ForwardDifference];
+
+(* --------------------------------------------------------------- *)
+(*  Convention: x^0 = 1 for all x                                   *)
+(* --------------------------------------------------------------- *)
+
+Begin["`Private`"]
+
+Unprotect[Power];
+Power[_?NumericQ | _, 0] = 1;
+Protect[Power];
+
+End[];
 
 (* --------------------------------------------------------------- *)
 (*  Binomial coefficient appearing in the decomposition             *)
 (*  of prop:multifold-binomial-sums-of-powers                       *)
 (* --------------------------------------------------------------- *)
 
-L[n_, t_, r_, k_] :=
-  Binomial[n - t + r, k + r]
-  -
-  Sum[
-    Binomial[r - s - t, k + r - s] *
-      Binomial[s + n - 1, s],
-    {s, 0, r - 1}
-  ];
+L[n_, t_, r_, k_] := Binomial[n - t + r, k + r] - Sum[Binomial[r - s - t, k + r - s]*Binomial[s + n - 1, s], {s, 0, r - 1}];
 
 (* --------------------------------------------------------------- *)
 (*  Forward finite difference                                       *)
