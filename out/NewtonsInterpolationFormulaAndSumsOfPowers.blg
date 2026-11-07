@@ -1,21 +1,19 @@
-This is BibTeX, Version 0.99e
+This is BibTeX, Version 0.99d (TeX Live 2025/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: E:\RiderProjects\04_LATEX\NewtonsInterpolationFormulaAndSumsOfPowers\out\NewtonsInterpolationFormulaAndSumsOfPowers.aux
-Reallocating 'name_of_file' (item size: 1) to 6 items.
+The top-level auxiliary file: NewtonsInterpolationFormulaAndSumsOfPowers.aux
 The style file: unsrt.bst
-Reallocating 'name_of_file' (item size: 1) to 43 items.
 Database file #1: NewtonsInterpolationFormulaAndSumsOfPowers.bib
 You've used 11 entries,
             1791 wiz_defined-function locations,
-            521 strings with 5717 characters,
-and the built_in function-call counts, 1910 in all, are:
-= -- 181
-> -- 44
+            520 strings with 5520 characters,
+and the built_in function-call counts, 1986 in all, are:
+= -- 187
+> -- 59
 < -- 0
-+ -- 22
-- -- 11
-* -- 83
-:= -- 311
++ -- 26
+- -- 15
+* -- 92
+:= -- 324
 add.period$ -- 40
 call.type$ -- 11
 change.case$ -- 8
@@ -23,8 +21,8 @@ chr.to.int$ -- 0
 cite$ -- 11
 duplicate$ -- 89
 empty$ -- 221
-format.name$ -- 11
-if$ -- 430
+format.name$ -- 15
+if$ -- 444
 int.to.chr$ -- 0
 int.to.str$ -- 11
 missing$ -- 11
@@ -34,15 +32,15 @@ pop$ -- 41
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 29
+skip$ -- 31
 stack$ -- 0
-substring$ -- 96
+substring$ -- 100
 swap$ -- 11
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 18
+while$ -- 19
 width$ -- 13
 write$ -- 130

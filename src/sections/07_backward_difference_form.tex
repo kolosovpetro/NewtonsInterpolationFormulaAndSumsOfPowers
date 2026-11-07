@@ -1,8 +1,7 @@
-We have
+We first relate forward and backward finite differences.
 \begin{lemma}[Forward-Backward relation]
   \label{lem:forward-via-backward-differences}
-  For non-negative integers $k,m$, and an arbitrary
-  integer $t$
+  For non-negative integers $k$ and $m$ and an arbitrary integer $t$,
   \begin{align*}
     \Delta^{k} t^{m} = \nabla^{k} (t+k)^{m},
   \end{align*}
@@ -11,10 +10,10 @@ We have
     \nabla^{k} t^{m} = \tsum_{j=0}^{k} (-1)^j \tbinom{k}{j} (t-j)^m.
   \end{align*}
 \end{lemma}
-Thus, from Theorem~\eqref{thm:multifold-sums-of-powers} follows
+Applying Lemma~\eqref{lem:forward-via-backward-differences} to Theorem~\eqref{thm:multifold-sums-of-powers} gives the following formula.
 \begin{proposition}[Multifold Backward sums]
   \label{prop:multifold-backward-sums}
-  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+  For non-negative integers $r$, $n$, and $m$ and an arbitrary integer $t$,
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     = \sum_{k=0}^{m}
@@ -27,11 +26,10 @@ Thus, from Theorem~\eqref{thm:multifold-sums-of-powers} follows
     \right] \nabla^{k} (t+k)^{m}.
   \end{align*}
 \end{proposition}
-By Lemma~\eqref{lem:multifold-sum-of-zero-powers},
-the pure binomial form follows
+Applying Lemma~\eqref{lem:multifold-sum-of-zero-powers} gives the following pure binomial form.
 \begin{proposition}[Multifold Backward-Binomial sums]
   \label{prop:multifold-backward-binomial-sums}
-  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+  For non-negative integers $r$, $n$, and $m$ and an arbitrary integer $t$,
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     = \sum_{k=0}^{m}

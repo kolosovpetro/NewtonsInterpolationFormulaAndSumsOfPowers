@@ -1,7 +1,7 @@
 \begin{thebibliography}{10}
 
 \bibitem{knuth1993johann}
-{Knuth, Donald E.}
+Donald~E. Knuth.
 \newblock {Johann Faulhaber and sums of powers}.
 \newblock {\em {Mathematics of Computation}}, 61(203):277--294, 1993.
 \newblock \url{https://arxiv.org/abs/math/9207222}.
@@ -14,7 +14,7 @@ J.~F. Steffensen.
 \newblock \url{https://www.jstor.org/stable/41137516}.
 
 \bibitem{newton1850newton}
-{Newton, Isaac and Chittenden, N.W.}
+Isaac Newton and N.~W. Chittenden.
 \newblock {\em {Newton's Principia: the mathematical principles of natural
   philosophy}}.
 \newblock {New-York, D. Adee}, 1850.
@@ -29,11 +29,11 @@ J.~F. Steffensen.
   \url{https://www.amazon.com/-/de/Interpolation-Second-Dover-Books-Mathematics-ebook/dp/B00GHQVON8}.
 
 \bibitem{graham1994concrete}
-{Graham, Ronald L. and Knuth, Donald E. and Patashnik, Oren}.
+Ronald~L. Graham, Donald~E. Knuth, and Oren Patashnik.
 \newblock {\em {Concrete mathematics: A foundation for computer science (second
   edition)}}.
 \newblock {Addison-Wesley Publishing Company, Inc.}, 1994.
-\newblock \url {https://archive.org/details/concrete-mathematics}.
+\newblock \url{https://archive.org/details/concrete-mathematics}.
 
 \bibitem{knuth1992notesnotation}
 Donald~E. Knuth.
@@ -52,13 +52,13 @@ Thomas~J. Pfaff.
 \newblock \url{https://www.jstor.org/stable/24340705}.
 
 \bibitem{sloane2003line}
-{Sloane, Neil J.A. and others}.
+Neil J.~A. Sloane et~al.
 \newblock {The on-line encyclopedia of integer sequences}.
 \newblock \url{https://oeis.org/}, 2003.
 \newblock \url{https://oeis.org/}.
 
 \bibitem{cereceda2022sums}
-{Cereceda, Jos{\'e} L.}
+Jos{\'e}~L. Cereceda.
 \newblock {Sums of powers of integers and generalized Stirling numbers of the
   second kind}.
 \newblock {\em {arXiv preprint arXiv:2211.11648}}, 2022.

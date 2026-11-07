@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 07-Nov-2026
+
+### Added
+
+- Add Python-based LaTeX and HTML build scripts
+- Add Mathematica container validation and a GitHub Actions workflow
+
+### Changed
+
+- Correct the factorial conventions in forward and backward Newton formulas
+- Revise manuscript prose, equation punctuation, table captioning, and references
+- Reorganize Mathematica validation files and remove deprecated manuscript sources
+- Synchronize HTML metadata with the manuscript
+
 ## [2.0.1] - 28-Jun-2026
 
 ### Changed

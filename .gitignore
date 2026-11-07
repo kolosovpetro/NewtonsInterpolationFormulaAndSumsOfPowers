@@ -24,6 +24,7 @@
 # *.ps
 # *.eps
 #*.pdf
+Licensing/
 
 ## JetBrains
 .idea
