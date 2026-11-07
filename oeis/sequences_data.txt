@@ -6,7 +6,7 @@ Table read by rows: T(n,k) = Sum_{j=0..k} (-1)^(k-j) * binomial(k,j) * (n+j)^3, 
 
 José L. Cereceda, <a href="https://arxiv.org/abs/2211.11648">Sums of powers of integers and generalized Stirling numbers of the second kind</a>, arXiv:2211.11648 [math.NT], 2022.
 Donald E. Knuth, <a href="https://arxiv.org/abs/math/9207222">Johann Faulhaber and Sums of Powers</a>, arXiv:9207222 [math.CA], 1992.
-Petro Kolosov, <a href="https://doi.org/10.5281/zenodo.18040979">Newton's interpolation formula and sums of powers</a>, Zenodo, 2026.
+Petro Kolosov, <a href="https://doi.org/10.5281/zenodo.18040979">Newton's Interpolation Formula and Sums of Powers</a>, Zenodo, 2026.
 
 F1(p,n,k) = Sum_{j=0..k} (-1)^(k-j) * binomial(k,j) * (n+j)^p.
 F2(p,n,k) = Sum_{j=0..p} StirlingS2(p,k+j) * binomial(n,j) (k+j)!.

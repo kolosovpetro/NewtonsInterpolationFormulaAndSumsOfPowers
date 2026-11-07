@@ -1,4 +1,4 @@
-# Newton's interpolation formula and sums of powers
+# Newton's Interpolation Formula and Sums of Powers
 
 ## Abstract
 
@@ -18,10 +18,10 @@ In this manuscript, we derive closed formulas for multifold sums of powers of in
 
 ## Related projects
 
-- [Newton's interpolation formula and sums of powers (2025)](https://github.com/kolosovpetro/NewtonsInterpolationFormulaAndSumsOfPowers)
-- [Sums of powers via central finite differences and Newton's formula (2025)](https://github.com/kolosovpetro/SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula)
-- [Sums of powers via backward finite differences and Newton's formula (2026)](https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula)
-- [Sums of powers of integers: A complete framework for closed formulas (2026)](https://github.com/kolosovpetro/SumsOfPowersACompleteFrameworkForClosedForms)
+- [Newton's Interpolation Formula and Sums of Powers (2025)](https://github.com/kolosovpetro/NewtonsInterpolationFormulaAndSumsOfPowers)
+- [Sums of Powers via Central Finite Differences and Newton's Formula (2025)](https://github.com/kolosovpetro/SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula)
+- [Sums of Powers via Backward Finite Differences and Newton's Formula (2026)](https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula)
+- [Sums of Powers of Integers: A Complete Framework for Closed Formulas (2026)](https://github.com/kolosovpetro/SumsOfPowersACompleteFrameworkForClosedForms)
 
 ## OEIS
 
@@ -34,18 +34,18 @@ In this manuscript, we derive closed formulas for multifold sums of powers of in
 
 ## References
 
-- Knuth, D. E. (1993). Johann Faulhaber and sums of powers. Mathematics of Computation, 61(203), 277–294. https://arxiv.org/abs/math/9207222
-- Newton, I., & Chittenden, N. W. (1850). Newton's Principia: The mathematical principles of natural philosophy. New-York: D. Adee. https://archive.org/details/bub_gb_KaAIAAAAIAAJ/page/466/mode/2up
-- Graham, R. L., Knuth, D. E., & Patashnik, O. (1994). Concrete mathematics: A foundation for computer science (2nd ed.). Addison-Wesley Publishing Company, Inc. https://archive.org/details/concrete-mathematics
-- Pfaff, T. J. (2007). Deriving a formula for sums of powers of integers. Pi Mu Epsilon Journal, 12(7), 425–430. https://www.jstor.org/stable/24340705
-- Sloane, N. J. A., et al. (2003). The on-line encyclopedia of integer sequences. https://oeis.org/
-- Cereceda, J. L. (2022). Sums of powers of integers and generalized Stirling numbers of the second kind. arXiv preprint arXiv:2211.11648. https://arxiv.org/abs/2211.11648
-- Worpitzky, J. (1883). Studien über die bernoullischen und eulerschen zahlen. Journal für die reine und angewandte Mathematik, 94, 203–232. http://eudml.org/doc/148532
+- Knuth, D. E. (1993). Johann Faulhaber and Sums of Powers. Mathematics of Computation, 61(203), 277–294. https://arxiv.org/abs/math/9207222
+- Newton, I., & Chittenden, N. W. (1850). Newton's Principia: The Mathematical Principles of Natural Philosophy. New-York: D. Adee. https://archive.org/details/bub_gb_KaAIAAAAIAAJ/page/466/mode/2up
+- Graham, R. L., Knuth, D. E., & Patashnik, O. (1994). Concrete Mathematics: A Foundation for Computer Science (2nd ed.). Addison-Wesley Publishing Company, Inc. https://archive.org/details/concrete-mathematics
+- Pfaff, T. J. (2007). Deriving a Formula for Sums of Powers of Integers. Pi Mu Epsilon Journal, 12(7), 425–430. https://www.jstor.org/stable/24340705
+- Sloane, N. J. A., et al. (2003). The On-Line Encyclopedia of Integer Sequences. https://oeis.org/
+- Cereceda, J. L. (2022). Sums of Powers of Integers and Generalized Stirling Numbers of the Second Kind. arXiv preprint arXiv:2211.11648. https://arxiv.org/abs/2211.11648
+- Worpitzky, J. (1883). Studien über die Bernoullischen und Eulerschen Zahlen. Journal für die reine und angewandte Mathematik, 94, 203–232. http://eudml.org/doc/148532
 - Steffensen, J. F. (1927). Interpolation. Williams & Wilkins. https://www.amazon.com/-/de/Interpolation-Second-Dover-Books-Mathematics-ebook/dp/B00GHQVON8
-- Carlitz, L., & Riordan, J. (1963). The divided central differences of zero. Canadian Journal of Mathematics, 15, 94–100. https://doi.org/10.4153/CJM-1963-010-8
-- Riordan, J. (1968). Combinatorial identities (Vol. 217). Wiley New York. https://www.amazon.com/-/de/Combinatorial-Identities-Probability-Mathematical-Statistics/dp/0471722758
-- Scheuer, M. (2020). Reference request: identity in central factorial numbers. https://math.stackexchange.com/a/3665722/463487
-- Kolosov, P. (2025). Mathematica programs for finite differences, Stirling numbers, and sums of powers. GitHub repository. https://github.com/kolosovpetro/NewtonsInterpolationFormulaAndSumsOfPowers/tree/main/mathematica
-- Kolosov, P. (2025). Newton's interpolation formula and sums of powers. Zenodo. https://doi.org/10.5281/zenodo.18040979
-- Kolosov, P. (2025). Sums of powers via central finite differences and Newton's formula. Zenodo. https://doi.org/10.5281/zenodo.18096789
-- Kolosov, P. (2026). Sums of powers via backward finite differences and Newton's formula. Zenodo. https://doi.org/10.5281/zenodo.18118011
+- Carlitz, L., & Riordan, J. (1963). The Divided Central Differences of Zero. Canadian Journal of Mathematics, 15, 94–100. https://doi.org/10.4153/CJM-1963-010-8
+- Riordan, J. (1968). Combinatorial Identities (Vol. 217). Wiley New York. https://www.amazon.com/-/de/Combinatorial-Identities-Probability-Mathematical-Statistics/dp/0471722758
+- Scheuer, M. (2020). Reference Request: Identity in Central Factorial Numbers. https://math.stackexchange.com/a/3665722/463487
+- Kolosov, P. (2025). Mathematica Programs for Finite Differences, Stirling Numbers, and Sums of Powers. GitHub repository. https://github.com/kolosovpetro/NewtonsInterpolationFormulaAndSumsOfPowers/tree/main/mathematica
+- Kolosov, P. (2025). Newton's Interpolation Formula and Sums of Powers. Zenodo. https://doi.org/10.5281/zenodo.18040979
+- Kolosov, P. (2025). Sums of Powers via Central Finite Differences and Newton's Formula. Zenodo. https://doi.org/10.5281/zenodo.18096789
+- Kolosov, P. (2026). Sums of Powers via Backward Finite Differences and Newton's Formula. Zenodo. https://doi.org/10.5281/zenodo.18118011

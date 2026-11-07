@@ -1,19 +1,20 @@
-We have
+We first express forward finite differences in terms of Stirling numbers.
 \begin{lemma}[Stirling finite differences]
   \label{lem:finite-differences-via-stirling-numbers}
-  For non-negative integers $k,m$, and an arbitrary integer $t$,
+  For non-negative integers $k$ and $m$ and an arbitrary integer $t$,
   \begin{align*}
-    \Delta^{k} t^{m} = \sum_{j=0}^{m} \stirlingii{m}{k+j} \binom{t}{j} (k+j)!
+    \Delta^{k} t^{m} = \sum_{j=0}^{m} \stirlingii{m}{k+j} \binom{t}{j} (k+j)!.
   \end{align*}
   \begin{proof}
-    By well-known identity
-    $t^{m} = \sum_{j=0}^{m} \stirlingii{m}{j} \binom{t}{j} j!$
+    Applying the well-known identity
+    $t^{m} = \tsum_{j=0}^{m} \stirlingii{m}{j} \tbinom{t}{j} j!$
+    to the forward difference gives the stated formula.
   \end{proof}
 \end{lemma}
-Thus, from Theorem~\eqref{thm:multifold-sums-of-powers} follows
+Substituting this expression into Theorem~\eqref{thm:multifold-sums-of-powers} gives the following formula.
 \begin{proposition}[Multifold Stirling sums]
   \label{prop:multifold-stirling-sums}
-  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+  For non-negative integers $r$, $n$, and $m$ and an arbitrary integer $t$,
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     = \sum_{k=0}^{m} \sum_{j=0}^{m}
@@ -23,14 +24,13 @@ Thus, from Theorem~\eqref{thm:multifold-sums-of-powers} follows
       \sum_{s=0}^{r-1}
       \binom{r-s-t}{k+r-s}
       \KnuthRFoldSum{s}{n}{0}
-    \right] \stirlingii{m}{k+j} \binom{t}{j} (k+j)!
+    \right] \stirlingii{m}{k+j} \binom{t}{j} (k+j)!.
   \end{align*}
 \end{proposition}
-By Lemma~\eqref{lem:multifold-sum-of-zero-powers},
-the pure binomial form follows
+Applying Lemma~\eqref{lem:multifold-sum-of-zero-powers} gives the following pure binomial form.
 \begin{proposition}[Multifold Stirling-Binomial sums]
   \label{prop:multifold-stirling-binomial-sums}
-  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+  For non-negative integers $r$, $n$, and $m$ and an arbitrary integer $t$,
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     = \sum_{k=0}^{m} \sum_{j=0}^{m}
@@ -40,6 +40,6 @@ the pure binomial form follows
       \sum_{s=0}^{r-1}
       \binom{r-s-t}{k+r-s}
       \binom{s+n-1}{s}
-    \right] \stirlingii{m}{k+j} \binom{t}{j} (k+j)!
+    \right] \stirlingii{m}{k+j} \binom{t}{j} (k+j)!.
   \end{align*}
 \end{proposition}

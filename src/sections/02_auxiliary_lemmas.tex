@@ -1,10 +1,8 @@
-In this section, allow us to define a few lemmas, definitions, and conventions
-that serve as foundation for main results of this manuscript.
-For multifold sums of powers, we use the notation provided by Donald Knuth in~\cite{knuth1993johann},
-because it is simple and beautiful
-\begin{definition} [Multifold sums of powers]
+This section introduces several lemmas, definitions, and conventions that we use in the main results.
+We use the notation for multifold sums introduced by Donald Knuth in~\cite{knuth1993johann}.
+\begin{definition}[Multifold Sums of Powers]
   \label{def:multifold-sums-of-powers-recurrence}
-  For non-negative integers $r,n,m$
+  For non-negative integers $r$, $n$, and $m$, we define \emph{multifold sums of powers} by
   \begin{align*}
     \KnuthRFoldSum{0}{n}{m}   &= n^m, \\
     \KnuthRFoldSum{1}{n}{m}   &= \KnuthRFoldSum{0}{1}{m}
@@ -14,144 +12,139 @@ because it is simple and beautiful
   \end{align*}
 \end{definition}
 
-We utilize the following notation for rising factorials
-\begin{definition}[Rising factorials]
-  \label{def:rising-factorials}
-  For integers $n,k$
+We use the following notation for the \emph{falling factorial}.
+\begin{definition}[Falling Factorials]
+  \label{def:falling-factorials}
+  For integers $n$ and $k$,
   \begin{align*}
-    \risingFactorial{n}{k} =
+    \fallingFactorial{n}{k} =
     \begin{cases}
       0, \quad & \mathrm{if \; } k < 0, \\
       1, \quad & \mathrm{if \; } k = 0, \\
-      \prod_{j=0}^{k-1} (n+j), \quad & \mathrm{if \; } k>0.
+      \prod_{j=0}^{k-1} (n-j), \quad & \mathrm{if \; } k>0.
     \end{cases}
   \end{align*}
 \end{definition}
-We encourage the audience to read
-J. F. Steffensen's work on the definition of
-generalized factorials~\cite{steffensen1933definition}.
+J. F. Steffensen discusses generalized factorials in~\cite{steffensen1933definition}.
 
 \begin{lemma}[Forward Newton's formula]
   \label{lem:forward-newtons-formula}
-  Let $f\colon \mathbb{Z} \to \mathbb{C}$ be a function,
-  and let $t \in \mathbb{Z}$.
-  Then, for all $n \in \mathbb{Z}$,
+  Let $f\colon \mathbb{Z} \to \mathbb{C}$ be a function and let $t \in \mathbb{Z}$. For every $n \in \mathbb{Z}$,
   \begin{align*}
     f(n)
-    = \sum_{k=0}^{\infty} \frac{\risingFactorial{(n-t)}{k}}{k!} \Delta^{k} f(t)
+    = \sum_{k=0}^{\infty} \frac{\fallingFactorial{n-t}{k}}{k!} \Delta^{k} f(t)
     = \sum_{k=0}^{\infty} \binom{n-t}{k} \Delta^{k} f(t),
   \end{align*}
-  where the $k$-th forward difference $\Delta^{k} f(t)$ of $f$
+  where the $k$-th \emph{forward difference} $\Delta^{k} f(t)$ of $f$
   evaluated at $t$ is defined by
   \begin{align*}
     \Delta^{k} f(t)
     = \tsum_{j=0}^{k} (-1)^{k-j} \tbinom{k}{j} f(t+j).
   \end{align*}
   \begin{proof}
-    Originally revealed by Sir Isaac Newton in~\cite{newton1850newton}.
-    Expressed in modern mathematical notation by J. F. Steffensen
-    in~\cite[section 2, eq. (19)]{steffensen1927interpolation}.
-    By using identity
-    $\frac{\risingFactorial{(n-t)}{k}}{k!} = \binom{n-t}{k}$,
-    we get RHS.
+    Newton introduced this formula in~\cite{newton1850newton}. Steffensen expressed it in modern notation in~\cite[Section 2, Equation (19)]{steffensen1927interpolation}. The identity
+    $\frac{\fallingFactorial{n-t}{k}}{k!} = \tbinom{n-t}{k}$
+    gives the second expression.
   \end{proof}
 \end{lemma}
 
+The power case follows directly from the preceding formula.
 \begin{lemma}[Forward Newton's formula for powers]
   \label{lem:forward-newtons-formula-for-powers}
-  For non-negative integers $n,m$, and an arbitrary integer $t$
+  For non-negative integers $n$ and $m$ and an arbitrary integer $t$,
   \begin{align*}
     n^m = \sum_{k=0}^{m} \binom{n-t}{k} \Delta^{k} t^m.
   \end{align*}
   \begin{proof}
-    Special case of Lemma~\eqref{lem:forward-newtons-formula} for powers.
+    This is the special case of Lemma~\eqref{lem:forward-newtons-formula} obtained by taking $f(n)=n^m$.
   \end{proof}
 \end{lemma}
 
+We next recall a generalized hockey-stick identity.
 \begin{lemma}[Generalized hockey-stick identity]
   \label{lem:generalized-hockey-stick-identity}
-  For arbitrary integers $a,b$ and $j$,
+  For arbitrary integers $a$, $b$, and $j$,
   \begin{align*}
     \sum_{k=a}^{b} \binom{k}{j} = \binom{b+1}{j+1} - \binom{a}{j+1}.
   \end{align*}
   \begin{proof}
-    We have,
-    $\sum_{k=a}^{b} \binom{k}{j}
-    = \binom{a}{j} + \binom{a+1}{j} + \cdots + \binom{b}{j}
-    = \left( \sum_{k=0}^{b} \binom{k}{j} \right) - \left( \sum_{k=0}^{a-1} \binom{k}{j} \right)$.
-    By hockey-stick identity $\sum_{k=0}^{n} \binom{k}{j} = \binom{n+1}{j+1}$ yields,
+    We have
+    $\tsum_{k=a}^{b} \tbinom{k}{j}
+    = \tbinom{a}{j} + \tbinom{a+1}{j} + \cdots + \tbinom{b}{j}
+    = \left( \tsum_{k=0}^{b} \tbinom{k}{j} \right) - \left( \tsum_{k=0}^{a-1} \tbinom{k}{j} \right)$.
+    The hockey-stick identity $\tsum_{k=0}^{n} \tbinom{k}{j} = \tbinom{n+1}{j+1}$ therefore gives
     \begin{align*}
       \tsum_{k=a}^{b} \tbinom{k}{j}
       = \left( \tsum_{k=0}^{b} \tbinom{k}{j} \right) - \left( \tsum_{k=0}^{a-1} \tbinom{k}{j} \right)
       = \tbinom{b+1}{j+1} - \tbinom{a}{j+1}.
     \end{align*}
-    This completes the proof.
+    This proves the identity.
   \end{proof}
 \end{lemma}
 
+The following specialization will be useful in deriving the main results.
 \begin{lemma}[Forward hockey-stick identity]
   \label{lem:forward-hockey-stick-identity}
-  For integer $n\geq1$, and arbitrary integers $t,k,r$
+  For an integer $n\geq1$ and arbitrary integers $t$, $k$, and $r$,
   \begin{align*}
     \sum_{j=1}^{n} \binom{j-t+r}{k+r}
     = \binom{n-t+r+1}{k+r+1} - \binom{1-t+r}{k+r+1}.
   \end{align*}
   \begin{proof}
-    By setting $a=1-t+r$, and $b=n-t+1$
-    into Lemma~\eqref{lem:generalized-hockey-stick-identity}.
+    Set $a=1-t+r$ and $b=n-t+1$ in Lemma~\eqref{lem:generalized-hockey-stick-identity}.
   \end{proof}
 \end{lemma}
 
+We also record a formula for multifold sums of zero powers.
 \begin{lemma}[Multifold sums of zero powers]
   \label{lem:multifold-sum-of-zero-powers}
-  For non-negative integers $r,n$
+  For non-negative integers $r$ and $n$,
   \begin{align*}
     \KnuthRFoldSum{r}{n}{0} = \binom{r+n-1}{r}.
   \end{align*}
   \begin{proof}
-    \leavevmode\par
     \begin{enumerate}
-      \item Let $r=0$, then we have $\KnuthRFoldSum{0}{n}{0} = 1$,
-        by definition~\eqref{def:multifold-sums-of-powers-recurrence}.
-      \item Let $r=1$, then we have
+      \item When $r=0$, the definition gives $\KnuthRFoldSum{0}{n}{0} = 1$.
+      \item When $r=1$,
         $\KnuthRFoldSum{1}{n}{0}
-        = \sum_{k=1}^{n} 1 = \binom{n}{1}$.
-      \item Let $r=2$, then we have
+        = \tsum_{k=1}^{n} 1 = \tbinom{n}{1}$.
+      \item When $r=2$,
         $\KnuthRFoldSum{2}{n}{0}
-        = \sum_{k=1}^{n} \binom{k}{1}
-        = \binom{n+1}{2}$.
-      \item Let $r=3$, then we have
+        = \tsum_{k=1}^{n} \tbinom{k}{1}
+        = \tbinom{n+1}{2}$.
+      \item When $r=3$,
         $\KnuthRFoldSum{3}{n}{0}
-        = \sum_{k=1}^{n} \binom{k+1}{2}
-        = \binom{n+2}{3}$.
-      \item Similarly, for arbitrary integer $r$, by hockey-stick identity
-        $\sum_{k=1}^{n} \binom{k}{r} = \binom{n+1}{r+1}$,
-        yields
-        $\KnuthRFoldSum{r}{n}{0}
-        =  \sum_{k=1}^{n} \KnuthRFoldSum{r-1}{k}{0}
-        =  \sum_{k=1}^{n} \binom{k+r-2}{r-1}
-        = \binom{r+n-1}{r}$.
+        = \tsum_{k=1}^{n} \tbinom{k+1}{2}
+        = \tbinom{n+2}{3}$.
+      \item For general $r$, the recurrence and hockey-stick identity give
+        \begin{align*}
+          \KnuthRFoldSum{r}{n}{0}
+          &= \tsum_{k=1}^{n} \KnuthRFoldSum{r-1}{k}{0}
+           = \tsum_{k=1}^{n} \tbinom{k+r-2}{r-1} \\
+          &= \tbinom{r+n-1}{r}.
+        \end{align*}
     \end{enumerate}
-    This completes the proof.
+    This proves the formula.
   \end{proof}
 \end{lemma}
 
+The next lemma gives the upper-index negation identity for binomial coefficients.
 \begin{lemma}[Upper Binomial negation]
   \label{lem:upper-binomial-negation}
-  For integers $n,k$
+  For integers $n$ and $k$,
   \begin{align*}
-    \binom{-n}{k} = (-1)^{k} \binom{k+n-1}{k}
+    \binom{-n}{k} = (-1)^{k} \binom{k+n-1}{k}.
   \end{align*}
   \begin{proof}
-    See~\cite[p. 164, eq. (5.14)]{graham1994concrete}.
+    This identity is given in~\cite[p. 164, Equation~(5.14)]{graham1994concrete}.
   \end{proof}
 \end{lemma}
 
-\begin{convention} For all $x$
+Finally, we adopt the \emph{zero-power convention}.
+\begin{convention}[Zero Powers]
+  For every $x$,
   \begin{align*}
     x^0 = 1.
   \end{align*}
 \end{convention}
-Donald Knuth give extensive discussion on the convention $x^0=1$ for
-all $x$, including zero, in Concrete Mathematics~\cite[~p. 162]{graham1994concrete},
-and in~\cite{knuth1992notesnotation}.
+Donald Knuth discusses the convention $x^0=1$, including the case $x=0$, in \emph{Concrete Mathematics}~\cite[p. 162]{graham1994concrete} and in~\cite{knuth1992notesnotation}.
