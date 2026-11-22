@@ -5,7 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
-## [2.1.0] - 07-Nov-2026
+## [2.2.0] - Nov 22, 2026
+
+### Changed
+
+- Adjust CI to point to tag v2.1.0
+
+## [2.1.0] - Nov 7, 2026
 
 ### Added
 
@@ -19,14 +25,14 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Reorganize Mathematica validation files and remove deprecated manuscript sources
 - Synchronize HTML metadata with the manuscript
 
-## [2.0.1] - 28-Jun-2026
+## [2.0.1] - Jun 28, 2026
 
 ### Changed
 
 - Add examples for polynomial forms
 - Add Mathematica program: `GenerateExamplesInPolynomialForm.txt`
 
-## [2.0.0] - 28-Jun-2026
+## [2.0.0] - Jun 28, 2026
 
 ### Changed
 
@@ -56,7 +62,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Edits in Acknowledgements
 - Edits in Abstract
 
-## [1.9.2] - 24-Jan-2026
+## [1.9.2] - Jan 24, 2026
 
 ### Changed
 
@@ -64,13 +70,13 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Vs Code config: disable latex build on save
 - Fix comma in keywords
 
-## [1.9.1] - 20-Jan-2026
+## [1.9.1] - Jan 20, 2026
 
 ### Changed
 
 - Minor grammar fixes
 
-## [1.9.0] - 20-Jan-2026
+## [1.9.0] - Jan 20, 2026
 
 ### Changed
 
@@ -81,7 +87,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Fix long equations
 - Add initial release date
 
-## [1.8.0] - 14-Jan-2026
+## [1.8.0] - Jan 14, 2026
 
 ### Changed
 
@@ -95,13 +101,13 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add Eulerian-Binomial forms for sums of powers
 - Updates in metadata
 
-## [1.7.1] - 11-Jan-2026
+## [1.7.1] - Jan 11, 2026
 
 ### Changed
 
 - Fix url in html bibliography
 
-## [1.7.0] - 11-Jan-2026
+## [1.7.0] - Jan 11, 2026
 
 ### Changed
 
@@ -115,7 +121,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Examples use `tbinom` instead of `binom`
 - Add examples for t=0 and t=1
 
-## [1.6.0] - 06-Jan-2026
+## [1.6.0] - Jan 6, 2026
 
 ### Changed
 
@@ -126,7 +132,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Updates in footer
 
 
-## [1.5.0] - 06-Jan-2026
+## [1.5.0] - Jan 6, 2026
 
 ### Changed
 
@@ -135,7 +141,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Updates in Mathematica
 
 
-## [1.4.1] - 05-Jan-2026
+## [1.4.1] - Jan 5, 2026
 
 ### Changed
 
@@ -144,7 +150,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add Generate HTML script
 - Manuscript flow edits
 
-## [1.4.0] - 04-Jan-2026
+## [1.4.0] - Jan 4, 2026
 
 ### Changed
 
@@ -154,7 +160,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Move proof section
 - Add slides
 
-## [1.3.2] - 03-Jan-2026
+## [1.3.2] - Jan 3, 2026
 
 ### Changed
 
@@ -162,13 +168,13 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Update README
 - Update bibliography
 
-## [1.3.1] - 31-Dec-2025
+## [1.3.1] - Dec 31, 2025
 
 ### Changed
 
 - Minor edits in central difference forms
 
-## [1.3.0] - 31-Dec-2025
+## [1.3.0] - Dec 31, 2025
 
 ### Changed
 
@@ -183,7 +189,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add Mathematica programs for multifold sums of powers binomial form
 - Add Mathematica programs for multifold sums of powers binomial form re-indexed
 
-## [1.2.1] - 25-Dec-2025
+## [1.2.1] - Dec 25, 2025
 
 ### Changed
 
@@ -191,7 +197,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add references in txt format
 - Add general formula to examples
 
-## [1.2.0] - 24-Dec-2025
+## [1.2.0] - Dec 24, 2025
 
 ### Changed
 
@@ -209,7 +215,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add examples for triple sums of powers
 - Add explicit example for multifold sums of powers
 
-## [1.1.0] - 24-Dec-2025
+## [1.1.0] - Dec 24, 2025
 
 ### Changed
 
@@ -231,7 +237,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add conclusions
 - Fix build artifacts
 
-## [1.0.0] - 24-Dec-2025
+## [1.0.0] - Dec 24, 2025
 
 ### Changed
 
